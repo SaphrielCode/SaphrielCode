@@ -1,0 +1,42 @@
+Candidate A and frozen training batches
+
+Environment: .venv-data (Python 3.13, CPU-only PyTorch).
+Install on another machine with the same supported Python version:
+  python -m venv .venv-data
+  .venv-data\Scripts\python.exe -m pip install -r requirements-training.lock.txt
+
+Verify existing frozen material:
+  .venv-data\Scripts\python.exe tools/verify_tinystories.py
+  .venv-data\Scripts\python.exe tools/verify_batches.py
+
+Batch preparation has ALREADY run. It reuses the original token IDs and refuses to overwrite
+frozen batches. Do not rerun corpus preparation or train another tokenizer for comparisons.
+Tokenizer configuration and hash: data/TinyStoriesBatches128/tokenizer-lock.json.
+Batch policy and file hashes: data/TinyStoriesBatches128/manifest.json.
+DataEval.txt Section 3B records counts, boundaries, padding and the completed pilot.
+The actual tokenizer normalizer is NFC; newline conversion/outer-whitespace stripping is
+corpus preprocessing. Keep that distinction when encoding new text.
+
+Implementation: lm/model.py (decoder), lm/batches.py (split/window loader).
+Run a fresh ONE-UPDATE pilot, if explicitly requested:
+  .venv-data\Scripts\python.exe tools/pilot_candidate_a.py
+Each pilot creates a new results folder; it does not resume old weights or run sustained timing.
+The existing pilot passed. Results: results/PreparationAndPilot.json and its referenced pilot JSON.
+A one-step checkpoint is a diagnostic artifact, not a useful trained conversational model.
+The completed 128-token screen (24 accepted runs) and 15-minute sustained test are recorded in DataEval.txt Section 3C and results/CPUScreen128_20261111T021018Z/Findings.txt.
+Selected hardware baseline: Candidate A, batch 4, eight CPU threads.
+Sustained throughput was 1742.51 valid tokens/s; this is not an inference-speed or language-quality ranking.
+
+To run a NEW full screen only when requested:
+  .venv-data\Scripts\python.exe tools/run_cpu_screen.py
+This creates 24 fresh runs plus a fresh 900-second finalist, not a quick pilot.
+The current screen runner records the explicitly approved 1.25 GiB reserve, immediate 1 GiB stop and 4 GiB per-process limit.
+Successful measurements can be reused after an interruption via --resume <suite-directory>; learned model weights are never continued by that option.
+The Windows monitor follows the real worker interpreter beneath the venv launcher.
+No training process is left running after completion.
+
+LOCAL WORKSPACE
+The active project is C:\Users\leeme\SaphrielComDevice, outside OneDrive. Use its .venv-data\Scripts\python.exe and relative data/results paths.
+Open SaphrielComDevice.code-workspace in this local folder before further work.
+Historical reports may contain original OneDrive paths as provenance; do not use those paths to launch new work.
+No experiment was restarted during relocation.

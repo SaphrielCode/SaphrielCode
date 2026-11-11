@@ -1,0 +1,39 @@
+3A. FROZEN TINYSTORIES SUBSET - PREPARED, NOT AN LM TRAINING RESULT
+Dataset: roneneldan/TinyStories.
+Pinned revision: f54c09fd23315a6f9c86f9dc80f725de7d8f9c64.
+Dataset card lists CDLA-Sharing-1.0. Preserve the card, full license text and attribution to Ronen Eldan and Yuanzhi Li in corpus-references/TinyStories/.
+Source: the four supplied data/train-*.parquet files and supplied data/validation-*.parquet file, not the separate GPT4-only V2 text release. Full source-file SHA-256 checks passed before subset preparation.
+
+Selection:
+- Uniform row sampling without replacement across the entire supplied train split: 20,000 requested rows, Python Random.sample seed 1729.
+- Independently sample 2,000 rows from the supplied validation split using seed 1730. The first 1,000 sampled indices belong to validation and the next 1,000 to final test.
+- Store selected records in source-row order; the later training batch order remains controlled separately by seed 43.
+- Normalize NFC Unicode, CRLF/CR to LF, and outer whitespace only. Preserve internal whitespace and case.
+- Remove exact normalized duplicates globally, keeping test first, then validation, then training. Do not refill removed rows after selection.
+- Final counts: train 19,966; validation 1,000; final test 1,000. Removed 34 training rows. Zero exact normalized overlap remains across splits. Near-duplicate/paraphrase overlap has not been checked.
+
+Tokenizer and token counts:
+- ByteLevel BPE, trained from scratch only on retained training stories; vocabulary exactly 8,192 including four special entries.
+- Special IDs: pad=0, bos=1, eos=2, unk=3. Byte-level alphabet covers all bytes; no unknown IDs occurred in the prepared stories or the additional Unicode checks.
+- NFC normalization, no automatic prefix space, minimum merge frequency 2, tokenizer parallelism disabled; library versions and the saved tokenizer hash are in the manifest.
+- Training text tokens: 4,381,513; plus one EOS per story: 4,401,479 saved token IDs.
+- Validation text tokens: 215,320; including EOS: 216,320.
+- Final test text tokens: 212,472; including EOS: 213,472.
+- Saved streams contain text IDs followed by one EOS for each story; no automatic BOS, padding or fixed-length packing has been applied. Document offsets are preserved, allowing future packing/masking to be implemented explicitly.
+- Tokenizer SHA-256: 5d99b0bf97ebebccc88cfc73e657cd82379e9b1495dbf0c75fb5f93fe1dfd16f.
+
+Files and storage:
+- Frozen local directory: data/TinyStoriesSubset/.
+- Each split has JSONL text/provenance, little-endian uint16 token IDs (.u16), and uint64 document offsets (.idx). The manifest records every file's size and hash.
+- Frozen directory size, including manifest: 34,539,076 bytes (approximately 32.94 MiB). Corpus payload excluding manifest: 34,526,296 bytes.
+- The verified preparation source cache was approximately 1.00 GB on disk, read in batches rather than loaded into RAM, and is removed after frozen-output verification. It is not part of benchmark storage.
+- Python dependencies and their separate environment are preparation tools, not corpus bytes; requirements-data.lock.txt records their versions.
+
+Coverage and benchmark use:
+- Before each benchmark, run .venv-data/Scripts/python.exe tools/verify_tinystories.py. It checks hashes, story/token alignment, boundaries, counts, source split assignments and cross-split exact overlap.
+- Do not change the frozen subset or tokenizer between candidates. The preparation script refuses to overwrite an existing frozen output.
+- Corpus cycles depend on actual valid training-target tokens consumed and the final packing/masking policy; token counts alone do not establish a measured cycle count or training requirement.
+- For a future sequential concatenated training stream with only the first stream token excluded, no padding, and tail targets dropped: full windows per epoch = floor((4,401,479 - 1) / context_length); complete updates per epoch = floor(full_windows / batch_size). If boundary masking or another packing policy is used, calculate eligible target counts again rather than assuming this formula applies.
+- Keep final test material out of tokenizer training, model selection and routine benchmark validation. Integrity checks may inspect its structure/hashes without using its loss for selection.
+- At the original subset-preparation milestone, three focused checks and full frozen-output verification passed without LM training. The later one-update Candidate A pilot is recorded in Section 3B; no instruction training or sustained performance benchmark has run.
+

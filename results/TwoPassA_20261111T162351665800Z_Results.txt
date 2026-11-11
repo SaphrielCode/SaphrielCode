@@ -1,0 +1,33 @@
+CONTROLLED TWO-PASS CANDIDATE A LEARNING RUN
+
+Status: STOPPED
+Fresh seed42 weights; batch4/context128/8 CPU threads/1 inter-op; FP32 AdamW unchanged; next-token objective only.
+Same seed43 frozen row permutation reused on each pass; no extra warmup updates. Padding ignored; stories isolated.
+Completed passes: 1/2; updates: 19474; valid targets: 7583866/8,802,958.
+Training time: 3608.189s; validation: 67.931s; checkpoint save/reload: 0.324s.
+Peak process RAM: 595.71 MiB; minimum available RAM: 1.947 GiB.
+Strict stop rules: first sample below1GiB available; three consecutive below2GiB available; three consecutive above4GiB process RSS. Sampling interval1s.
+Final test remains reserved. No instruction training or replacement detection. No DataEval edits.
+Validation initialization: 9.03620041 nats/valid target; sum=1954710.87342167; count=216320.
+Validation pass_1: 3.06520596 nats/valid target; sum=663065.35374788; count=216320.
+Pass work: {"pass_number": 1, "completed_updates": 11301, "valid_targets": 4401479, "loss_sum": 15157693.81948539, "seconds": 2096.7153567999994, "completed": true, "valid_targets_per_second": 2099.2258132346224}
+Pass work: {"pass_number": 2, "completed_updates": 8173, "valid_targets": 3182387, "loss_sum": 9566199.987170879, "seconds": 1511.473917400006, "completed": false}
+
+Pass 1 prompt: Once upon a time, a little girl found a
+Decoding: greedy argmax; max 64 new tokens; EOS=2; rolling context128; BOS=1
+Continuation:  big, shiny ball. She was very happy and wanted to play with it. But then, she saw a big, shiny ball on the ground. It was very big and had a big ball.
+
+The little girl was sad because she didn't know what to do. She asked her mom what happened and said
+
+Third-pass value cannot be assessed without both pass validation losses.
+Stop/error: {'seconds': 3684.152616100004, 'phase': 'training_pass_2', 'available_system_bytes': 2091028480, 'resident_bytes': 600993792, 'peak_resident_bytes': 624644096, 'private_bytes': 922112000, 'cpu_seconds': 29016.656249999996, 'guard_stop': 'available_system_ram_below_2_GiB_three_consecutive_samples'}
+Any exposure shortfall is explained by the recorded interruption; partial runs are not two-pass results.
+Details, source hashes, checkpoint verification and per-step/resource logs are stored beside this file.
+
+POST-RUN ARTIFACT VERIFICATION
+Exact per-update target counts matched frozen row metadata and seed43 order, including the full first pass and partial second pass.
+Step counts, finite recorded losses/gradient norms, checkpoint file hash, source hashes, validation aggregation and first strict-guard stop all verified.
+Pass2 partial throughput: 2105.49 valid targets/s.
+Remaining exposure: 1,219,092 valid targets and 3,128 optimizer updates.
+Only the completed pass1 checkpoint is saved. No resumable checkpoint of the partial second-pass state was written; continuing from pass1 would need to repeat pass2 work.
+No automatic retry or guard relaxation was performed.

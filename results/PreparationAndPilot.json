@@ -1,0 +1,50 @@
+{
+  "status": "PASS",
+  "batch_manifest_sha256": "e30f2aa5f107dd704ff3931187889e82c06e29aa3690bdf122532e9ae72896f9",
+  "tokenizer_sha256": "5d99b0bf97ebebccc88cfc73e657cd82379e9b1495dbf0c75fb5f93fe1dfd16f",
+  "batch_statistics": {
+    "train": {
+      "documents": 19966,
+      "saved_source_tokens_including_eos": 4401479,
+      "windows": 45204,
+      "valid_target_tokens": 4401479,
+      "eos_targets": 19966,
+      "padding_targets": 1384633,
+      "window_file_bytes": 23867712
+    },
+    "validation": {
+      "documents": 1000,
+      "saved_source_tokens_including_eos": 216320,
+      "windows": 2253,
+      "valid_target_tokens": 216320,
+      "eos_targets": 1000,
+      "padding_targets": 72064,
+      "window_file_bytes": 1180572
+    },
+    "test": {
+      "documents": 1000,
+      "saved_source_tokens_including_eos": 213472,
+      "windows": 2215,
+      "valid_target_tokens": 213472,
+      "eos_targets": 1000,
+      "padding_targets": 70048,
+      "window_file_bytes": 1160660
+    }
+  },
+  "batch_directory_bytes": 26216677,
+  "original_subset_bytes": 34539076,
+  "pilot_report": "results\\PilotA_20261111T014144425216Z\\pilot.json",
+  "pilot_report_sha256": "127346a5cad1ea7a8b7094c360ab724e574fa397611ec998a68d4b532ea24bd5",
+  "unit_checks_passed": 7,
+  "batch_integrity_verification": "PASS, including runtime padding-label conversion",
+  "source_snapshot_after_pilot": {
+    "lm\\model.py": "a6844edd876a13fdda517148ad5f013dd9fe494b53a8e398dcf560f62031b66f",
+    "lm\\batches.py": "26d12b36af6e4f147532d0dc698274b9a85fb54be7342d10ccb8227dac95da95",
+    "tools\\prepare_batches.py": "af3ce2afa5468fd80eee5cb2a5e78bfe8f62f580c07891c301013ab9e179beb5",
+    "tools\\pilot_candidate_a.py": "f50bc4ed4e2c0cbe7a7e99c61a7ca41d5601946cc5ed7726c4073c0b99526d4a"
+  },
+  "lm_updates": 1,
+  "sustained_speed_measured": false,
+  "peak_reported_pilot_resident_bytes": 418385920,
+  "minimum_sampled_pilot_available_system_bytes": 2191519744
+}

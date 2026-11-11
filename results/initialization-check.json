@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "threads_compared": [
+    4,
+    8
+  ],
+  "seed": 42,
+  "candidate": "A",
+  "initial_parameter_sha256": "d9eb1198a6f3f166db7de535d96f0fa3b0dd3dcc92c03b1344031c70333027bb",
+  "reference_pilot": "results\\PilotA_20261111T014144425216Z\\pilot.json"
+}

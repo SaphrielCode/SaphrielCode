@@ -1,0 +1,62 @@
+{
+  "status": "PASS",
+  "tokenizer_sha256": "503055ed72622f709a88b62939cef55232ebe011419815ec305ed04429f4c0b8",
+  "vocabulary_size": 4096,
+  "statistics": {
+    "train": {
+      "stories": 19966,
+      "body_tokens": 4563020,
+      "tokens_including_eos": 4582986
+    },
+    "validation": {
+      "stories": 1000,
+      "body_tokens": 224484,
+      "tokens_including_eos": 225484
+    },
+    "test": {
+      "stories": 1000,
+      "body_tokens": 221324,
+      "tokens_including_eos": 222324
+    }
+  },
+  "windows": {
+    "train": {
+      "documents": 19966,
+      "saved_source_tokens_including_eos": 4582986,
+      "windows": 46233,
+      "valid_target_tokens": 4582986,
+      "eos_targets": 19966,
+      "padding_targets": 1334838,
+      "window_file_bytes": 24411024
+    },
+    "validation": {
+      "documents": 1000,
+      "saved_source_tokens_including_eos": 225484,
+      "windows": 2302,
+      "valid_target_tokens": 225484,
+      "eos_targets": 1000,
+      "padding_targets": 69172,
+      "window_file_bytes": 1206248
+    },
+    "test": {
+      "documents": 1000,
+      "saved_source_tokens_including_eos": 222324,
+      "windows": 2271,
+      "valid_target_tokens": 222324,
+      "eos_targets": 1000,
+      "padding_targets": 68364,
+      "window_file_bytes": 1190004
+    }
+  },
+  "identical_document_splits": true,
+  "zero_exact_cross_split_overlap": true,
+  "all_stories_roundtrip": true,
+  "unseen_unicode_checks": true,
+  "all_window_shifts_and_coverage_checked": true,
+  "preparation_seconds": 17.490875200004666,
+  "source_storage_bytes": 34649937,
+  "window_storage_bytes": 26813476,
+  "final_test_quality_evaluated": false,
+  "independent_batch_verification": "PASS: every shifted target, document boundary, padding and permutation verified by tools/verify_batches.py --vocab-size 4096.",
+  "focused_model_and_batch_tests": "4 passed after configurable batch-source support."
+}

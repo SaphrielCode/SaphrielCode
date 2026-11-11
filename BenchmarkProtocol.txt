@@ -1,0 +1,132 @@
+BENCHMARK AND EVALUATION PROTOCOL
+
+Planned procedures only. Store every test result and finding in its own file under results/. DataEval.txt defines working transformer parameters.
+
+4. CONTEXT, BATCH SIZE AND CPU THREADS
+Initial screen:
+  Models: A and B.
+  Context: 128 input tokens, with one next-token target per valid input position.
+  Batch sizes: 1 and 4 sequences.
+  Intra-operation CPU threads: 4 and 8.
+  Inter-operation threads: fixed at 1.
+  Data-loader workers: 0 initially, using pre-tokenized batches.
+
+This gives eight initial configurations. Testing both thread counts on both models avoids assuming the smallest model's thread preference transfers to the larger model.
+Set thread counts before model operations, in a fresh process for each run. Record relevant math-library/environment thread settings to detect oversubscription.
+
+Then screen context 256 on the leading candidate(s), including batch 1 and 4. Recheck both thread counts if rankings are close or change. Context 256 is a measured tradeoff, not an automatic upgrade.
+
+Batch/context changes alter tokens per update. Report valid training tokens/second as the primary throughput metric, together with steps/second and step latency. Do not rank batch 4 as slower merely because one step takes longer.
+
+5. TIMING PROCEDURE
+- Record software versions, operating system, CPU, physical RAM, power mode and whether the laptop is plugged in.
+- Keep other workload as consistent as possible. Do not silently change system power or security settings.
+- Use a fixed initialization seed for performance screening and restart each run from the same initialization for that model.
+- Warm up with at least 10 complete optimizer updates. Optimizer state allocation must occur before timed steady-state measurement.
+- Warmup updates change weights and consume data. Count their tokens, updates and estimated computation separately and include them in total learning-work accounting. Measure fresh-initialization validation before warmup and pre-timed-phase validation after warmup, so the two starting points are not confused.
+- Report startup, warmup time and whole-process peak RAM separately; excluding warmup from speed statistics must not hide its memory peak.
+- Screen each initial configuration for 20 timed seconds after warmup, repeating three times in fresh processes.
+- Rotate configuration order between repetitions to reduce ordering and thermal bias. Allow a short idle recovery interval and record it.
+- Use a monotonic wall clock. Include every operation required for a complete training step.
+- Keep logging and monitoring identical and lightweight. Sample memory/CPU approximately once per second.
+- Select a provisional configuration from repeated measurements, not one unusually fast run.
+- Run that configuration continuously for 15 timed minutes after warmup, unless a safety guard stops it.
+- Record throughput in one-minute windows and compare the beginning and end of the sustained phase. A decline indicates a slowdown; attributing it specifically to thermal throttling requires corresponding evidence.
+- Run validation before and after the timed phase, outside the training timer. Record evaluation time separately.
+- Save the checkpoint after timing; record save time and checkpoint size separately.
+
+First isolate training computation with pre-tokenized batches already in memory. Then measure the same selected configuration with the intended data pipeline and report end-to-end throughput separately. Do not mix those two timings.
+
+Total-duration planning:
+- The initial screen is 8 configurations * 3 fresh-process repetitions = 24 processes.
+- Its scheduled timed training alone is 24 * 20 seconds = 480 seconds (8 minutes), provided all runs complete. The sustained phase adds 900 seconds (15 minutes): 23 minutes of scheduled timed training before any additional work.
+- Every process also incurs startup, model/data loading, at least 10 warmup updates, monitoring setup, teardown and recorded idle recovery. Context-256 screening, corpus/tokenizer preparation, validation, inference, end-to-end pipeline measurement and checkpoint writing add further time.
+- Any 30-45-minute overall estimate is provisional, not a promised duration or experiment-wide time guard. Update it after measuring startup/warmup/step costs in the pilot. Report planned versus actual stage times and any uncompleted stages.
+
+6. REQUIRED MEASUREMENTS
+Configuration and work:
+- Exact unique trainable parameter count and complete configuration.
+- Vocabulary/tokenizer hash, context, batch, effective tokens per update and seed.
+- Completed updates, valid target tokens processed, corpus passes and unique-data coverage.
+
+Speed:
+- Training tokens/second and steps/second.
+- Median, p95 and maximum step wall time.
+- Screening variability across repetitions and sustained throughput by minute.
+- Startup, warmup, evaluation, data preparation/loading and checkpoint-save times.
+- Estimated time to process 1M and 10M tokens, clearly labeled as projections from measured sustained throughput, not quality predictions.
+
+Resources:
+- Peak process resident RAM and private committed bytes, including warmup and the optimizer's first allocation.
+- Minimum available system RAM, system commit and paging/disk-read activity.
+- Process CPU time and CPU usage with the utilization convention stated.
+- Model/checkpoint size and temporary data storage.
+- Resident RAM and private allocation are different measurements; do not add them together.
+
+Learning and correctness:
+- Initial/final training and held-out next-token loss.
+- Finite losses, finite gradients and evidence that optimizer updates change parameters.
+- Gradient norm and clipping frequency where practical without distorting timing.
+- A small qualitative generation example, clearly not a quality benchmark.
+- No claim that a short loss decrease establishes general language understanding.
+
+Inference, measured separately after training:
+- Fixed prompt text, prompt-token count, context, decoding settings and maximum output length.
+- Prompt-processing time, time to first generated token, generation tokens/second and peak RAM.
+- Report fresh-load and already-loaded cases separately. State cache conditions.
+
+6A. COMPUTATION ACCOUNTING (SEPARATE FROM TIME)
+Wall-clock time measures elapsed duration; process CPU-seconds measure CPU occupancy. Neither is an arithmetic-operation count. Tokens and optimizer updates are work counters, not interchangeable compute units across different model sizes or objectives.
+
+Primary arithmetic metric: estimated dense matrix-multiplication FLOPs, with one multiply plus one add counted as two FLOPs. Label this metric explicitly; it is not measured hardware FLOPs or a complete count of every operation.
+- For each executed batched matrix multiplication [m,k] x [k,n], charge 2*m*n*k per batch instance, separately for forward and backward operations.
+- Produce a versioned operation ledger from model dimensions and a representative full training step. Include the vocabulary/output projection, Q/K/V and attention-output projections, both feed-forward matrices, both attention products, and their backward matrix multiplications. Tied weights save parameter storage but do not eliminate output-projection computation.
+- Cross-check the ledger against operator shapes from a separately profiled full step for each distinct model/batch/context/attention implementation. Profiling is outside throughput timing. Profiler FLOP fields may omit operators; report unsupported/unaccounted operations rather than treating a partial total as exact.
+
+Dense-attention analytical cross-check for this model family:
+  B = actual sequence batch size; L = executed sequence length; d = width;
+  K = layers; V = vocabulary size; feed-forward width = 4*d.
+  Estimated forward matrix FLOPs = K * (24*B*L*d^2 + 4*B*L^2*d) + 2*B*L*d*V.
+The terms represent block projections/feed-forward, dense attention products and vocabulary projection respectively. Approximately three times this forward value is an initial forward-plus-backward matrix estimate, not a substitute for verifying the actual backward ledger.
+- The dense formula counts full attention products. Do not halve it just because attention is causal: a dense masked implementation may still execute the full products. If a fused kernel skips masked regions or recomputes work, record that implementation and revise the operation estimate accordingly.
+- Count executed padded positions when estimating matrix arithmetic, even though ignored targets are excluded from loss and valid-token throughput. Use actual batch sizes, not an assumed full final batch.
+- Maintain separate counters for embedding lookup/scatter, normalization, rotary encoding, masking/softmax, GELU, loss, gradient clipping, AdamW element updates and data preparation. These are omitted from the matrix-only FLOP formula. Record the exclusion and do not invent an exact all-operation FLOP total.
+- Estimate aggregate matrix FLOPs by summing the verified per-step ledger over executed steps/shapes, not by multiplying parameter count by tokens alone. Record warmup, timed training, evaluation and inference subtotals. Mark any interrupted/incomplete step's work as partial or unknown rather than assigning it a full-step count.
+- For auxiliary learning, add generator forward/backward work, discriminator-head work and every extra main-model pass to the arithmetic ledger. Also record non-matrix corruption/loss/optimizer work and the generator's parameter updates. Do not compare only the shared backbone's cost.
+
+Later comparisons must distinguish:
+  Equal tokens: same valid training-target-token budget, with actual compute reported.
+  Equal elapsed time: same wall-clock training budget, with work and compute reported.
+  Equal estimated matrix compute: same cumulative matrix-FLOP budget including auxiliary/generator passes, with non-matrix costs disclosed. Report one-step budget overshoot if stopping only at update boundaries.
+Do not call the third comparison "equal total compute" unless a sufficiently complete accounting of the additional operations has also been established. Keep estimated FLOPs, elapsed seconds, CPU-seconds and inference throughput as separate fields.
+
+7. RESOURCE AND INTEGRITY GUARDS
+Initial conservative benchmark guards:
+- Default: stop if available system RAM stays below 2 GiB for three consecutive samples. Document explicitly authorized experiment-specific exceptions separately; they do not change the default for unrelated experiments.
+- Stop immediately if available RAM falls below 1 GiB.
+- Stop if process resident RAM stays above 4 GiB for three consecutive samples.
+- Stop on non-finite loss/gradients, an exception, or the phase time limit.
+- Do not apply a hard resident-memory cap that forces paging and then confuse that paging with intrinsic model computation cost.
+- Record the exact stop reason, partial work and last measurements. Never count an interrupted phase as a successful sustained run.
+- Do not automatically raise guards or overwrite previous results.
+These guards are benchmark stop conditions, not claims about the maximum model the hardware can ever run.
+
+8. SELECTION RULE
+A candidate is eligible only if training updates are valid, losses remain finite and the sustained run respects the resource guards.
+Use sustained tokens/second, RAM headroom and observed stability together. Report tradeoffs rather than inventing a single combined score.
+If candidates are close relative to repetition variability, call the result inconclusive or choose the smaller candidate for headroom. Do not claim a decisive speed win.
+The fastest configuration is a hardware-feasible baseline, not automatically the best language model. Choosing model capacity for useful learning requires longer, controlled held-out-quality experiments.
+
+9. LATER LEARNING COMPARISONS
+After the hardware baseline:
+- Compare learning at equal valid training-token budgets, equal elapsed-time budgets and equal estimated matrix-compute budgets, using Section 6A. Report all three separately; do not use elapsed time as a proxy for compute.
+- Keep validation/test sets fixed and separate from training. Use more than one initialization seed for conclusions about learning improvements.
+- For batch-size comparisons, account for different optimizer-update counts and effective batch sizes; throughput equality is not training-trajectory equality.
+- Perform instruction/response training only after the base pretraining setup is established. Evaluate instruction following, response correctness and response quality using a fixed rubric and held-out prompts.
+- Add causal replacement detection as the auxiliary experiment described in LearningTask.txt. Preserve the baseline model architecture for a fair comparison and document any extra head/generator.
+- Include generator training, corruption construction, additional passes and auxiliary-head work in total training time and peak RAM.
+- Record corruption rate, actual changed-token rate, loss weights and detection precision/recall; raw accuracy alone can reward predicting every token as unchanged.
+- Compare token-weighted held-out generation loss, instruction-response quality, quality at each explicitly defined budget, and estimated matrix compute required to reach comparable quality; report non-matrix exclusions and elapsed time alongside it.
+- Measure inference using the deployed generation model. Remove training-only components if they are not needed for inference and explicitly record that choice.
+
+15 minutes establishes a sustained feasibility measurement. It does not establish that a 5M or 10M model is sufficiently trained, conversationally useful, or superior to another learning objective.

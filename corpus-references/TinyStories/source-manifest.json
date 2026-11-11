@@ -1,0 +1,56 @@
+{
+  "repo": "roneneldan/TinyStories",
+  "revision": "f54c09fd23315a6f9c86f9dc80f725de7d8f9c64",
+  "files": [
+    {
+      "rfilename": "data/train-00000-of-00004-2d5a1467fff1081b.parquet",
+      "blobId": "f457b8ee94363800f857dc473192b278c8450030",
+      "size": 248731111,
+      "lfs": {
+        "sha256": "77cf780cebe52b6e83e3a2ac84bc56d8059363113e41d17a023f1d8b2ed0fc0b",
+        "size": 248731111,
+        "pointerSize": 134
+      }
+    },
+    {
+      "rfilename": "data/train-00001-of-00004-5852b56a2bd28fd9.parquet",
+      "blobId": "8ba50cbe13620913427aa1b9523bea45cfee5e83",
+      "size": 248171980,
+      "lfs": {
+        "sha256": "e2f173a6dcc2b5895183e8ad376e115bd5c06764eb0cfc01ce1add156b2d017f",
+        "size": 248171980,
+        "pointerSize": 134
+      }
+    },
+    {
+      "rfilename": "data/train-00002-of-00004-a26307300439e943.parquet",
+      "blobId": "0cdd3d0f5a02c7908a6dd034a7617ac32d88a75b",
+      "size": 245894874,
+      "lfs": {
+        "sha256": "cac73cd1a0973a7fccde022a5a5c78f8ba58ea6849541835c58e7c5fc747f2ef",
+        "size": 245894874,
+        "pointerSize": 134
+      }
+    },
+    {
+      "rfilename": "data/train-00003-of-00004-d243063613e5a057.parquet",
+      "blobId": "081ccde441777b0b5fd7fc43a1bf481227c8d61a",
+      "size": 247988350,
+      "lfs": {
+        "sha256": "862514ae75723ddd339337f1ef7617b88f82290dcddd57445e1d38d257ca7891",
+        "size": 247988350,
+        "pointerSize": 134
+      }
+    },
+    {
+      "rfilename": "data/validation-00000-of-00001-869c898b519ad725.parquet",
+      "blobId": "ad0d699ddffd61b500898860f73dcc889850bb29",
+      "size": 9989127,
+      "lfs": {
+        "sha256": "33406a6206554cfc279c29c11f4df51528af487aa1a602b075566fc83c49dcab",
+        "size": 9989127,
+        "pointerSize": 132
+      }
+    }
+  ]
+}

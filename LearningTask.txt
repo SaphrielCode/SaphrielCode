@@ -1,0 +1,11 @@
+**ELECTRA’s main learning task was to identify which tokens in a passage had been replaced.**
+
+1. Start with real text: “The cat **sat** on the mat.”
+2. A small generator proposes a substitute: “The cat **ate** on the mat.”
+3. The main model—the **discriminator**—labels every position:
+```go
+The   cat   ate        on    the   mat
+real  real  replaced   real  real  real
+```
+
+It learns to detect plausible substitutions using the surrounding context. **It identifies replacements rather than generating the correct original token.**

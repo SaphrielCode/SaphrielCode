@@ -1,0 +1,69 @@
+UNIGRAM8192 PREPARATION
+
+{
+  "status": "PASS",
+  "tokenizer_sha256": "1e24618cd0587e3ee07a5a2dc7e5673d8b44d30e197ac8050d52dde95ef1b939",
+  "vocabulary_size": 8192,
+  "tokenizer_algorithm": "unigram",
+  "statistics": {
+    "train": {
+      "stories": 19966,
+      "body_tokens": 4368855,
+      "tokens_including_eos": 4388821
+    },
+    "validation": {
+      "stories": 1000,
+      "body_tokens": 215150,
+      "tokens_including_eos": 216150
+    },
+    "test": {
+      "stories": 1000,
+      "body_tokens": 212124,
+      "tokens_including_eos": 213124
+    }
+  },
+  "windows": {
+    "train": {
+      "documents": 19966,
+      "saved_source_tokens_including_eos": 4388821,
+      "windows": 45137,
+      "valid_target_tokens": 4388821,
+      "eos_targets": 19966,
+      "padding_targets": 1388715,
+      "window_file_bytes": 23832336
+    },
+    "validation": {
+      "documents": 1000,
+      "saved_source_tokens_including_eos": 216150,
+      "windows": 2253,
+      "valid_target_tokens": 216150,
+      "eos_targets": 1000,
+      "padding_targets": 72234,
+      "window_file_bytes": 1180572
+    },
+    "test": {
+      "documents": 1000,
+      "saved_source_tokens_including_eos": 213124,
+      "windows": 2213,
+      "valid_target_tokens": 213124,
+      "eos_targets": 1000,
+      "padding_targets": 70140,
+      "window_file_bytes": 1159612
+    }
+  },
+  "identical_document_splits": true,
+  "zero_exact_cross_split_overlap": true,
+  "all_stories_roundtrip": true,
+  "unseen_unicode_checks": true,
+  "all_window_shifts_and_coverage_checked": true,
+  "preparation_seconds": 16.813411199997063,
+  "source_storage_bytes": 34627567,
+  "window_storage_bytes": 26179055,
+  "final_test_quality_evaluated": false,
+  "sentencepiece_version": "0.2.1",
+  "construction_directory": "results\\Unigram8192_TokenizerConstruction",
+  "independent_batch_verification": "PASS: all frozen windows, shifts, padding, split coverage, runtime masking and seed43 permutation.",
+  "focused_checks": "4 model/batch checks plus5 resource-guard checks passed.",
+  "construction_notes": "SentencePiece unigram EM from explicit training-only substrings, followed by deterministic256-byte alphabet reservation within8192 entries; authoritative encoding is tokenizer.json. Failed direct-HF vocabulary/coverage attempts preserved under results; none trained an LM. No validation or test LM loss was used to choose construction settings.",
+  "dependency_lock": "requirements-tokenizer.lock.txt"
+}

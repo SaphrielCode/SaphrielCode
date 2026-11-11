@@ -1,0 +1,47 @@
+3B. TOKENIZER LOCK, PREPARED WINDOWS AND CANDIDATE A PILOT
+Preparation and pilot milestone: November 10, 2026 (America/New_York). Artifact directory timestamps use UTC.
+The original corpus/tokenizer hashes remain unchanged. Existing token IDs were reused; no tokenizer retraining or repeat persistent tokenization was performed.
+
+Encoding lock:
+- data/TinyStoriesBatches128/tokenizer-lock.json records vocabulary size 8,192, special IDs pad=0/bos=1/eos=2/unk=3, tokenizer configuration, backend version and SHA-256 5d99b0bf97ebebccc88cfc73e657cd82379e9b1495dbf0c75fb5f93fe1dfd16f.
+- Its normalization description includes corpus preparation. The tokenizer's actual embedded normalizer is NFC only; corpus-level newline conversion and outer-whitespace stripping occurred before tokenizer training. Raw tokenizer calls do not strip text or rewrite newlines.
+- Encode/decode checks passed for every frozen story under the documented normalization. Extra unseen Unicode/control-character checks passed without unknown IDs. Training, validation and test source assignments and zero exact normalized overlap were rechecked.
+
+Window policy: document-isolated-right-pad-v1.
+- A window has 128 input positions and 128 next-token target positions, and belongs to exactly one story.
+- Treat every body token and EOS as a target exactly once per corpus pass. Use BOS as the first story input; later windows begin with the immediately preceding token from that same story. BOS is never a target.
+- Chunk attention/RoPE positions restart at zero. No cross-story attention is permitted; histories before each new chunk are not cached or carried beyond its preceding input token.
+- Pad short final windows on the right with ID 0. Convert target padding to ignore_index=-100 at load time. Valid causal queries cannot attend later padding; padded query outputs contribute no loss.
+- Training window order is a frozen seed-43 permutation. Batch 1 and batch 4 group the same rows without duplicating them. Emit a smaller final batch rather than dropping targets.
+- The earlier concatenated-stream formula in Section 3A is hypothetical and does NOT describe these windows. Here updates per epoch = ceil(window_count / batch_size), and all saved source tokens are valid targets once per epoch.
+
+Measured split counts and storage:
+  Train: 19,966 stories; 4,401,479 valid targets including 19,966 EOS; 45,204 windows;
+         1,384,633 ignored padding targets; 23,867,712 window-file bytes including the training-order index.
+  Validation: 1,000 stories; 216,320 valid targets including 1,000 EOS; 2,253 windows;
+              72,064 ignored padding targets; 1,180,572 window-file bytes.
+  Final test: 1,000 stories; 213,472 valid targets including 1,000 EOS; 2,215 windows;
+              70,048 ignored padding targets; 1,160,660 window-file bytes.
+- Frozen original text/token corpus remains 34,539,076 bytes. The additional window directory, including tokenizer lock and manifest, is 26,216,677 bytes.
+- x/y files are little-endian uint16. Row metadata stores story ID, target start and valid length. Original document offsets remain available.
+- Count only valid targets in loss/throughput; count padded positions in executed dense-matrix work. Document isolation deliberately incurs padding, whose measured counts must not be hidden in comparisons.
+- Seven focused preparation/model checks passed, covering sampling, deduplication, normalization, future/padding leakage, deterministic initialization, weight sharing, token-weighted loss and window target coverage. Independent full batch verification and runtime padding-mask checks passed.
+- Before a pilot/benchmark, verify both source integrity and batch locks. Tools: tools/verify_tinystories.py and tools/verify_batches.py. Both prepared output directories refuse overwrite.
+
+Candidate A pilot: PASS, exactly one optimizer update, not a speed benchmark.
+- CPU FP32, 4 intra-op threads and 1 inter-op thread; seed 42; exactly 5,115,072 unique parameters; tied embedding/output weights verified.
+- Batch shape [1,128], selected from full training windows in seed-43 order; 128 valid targets. Partial windows were excluded from this pilot only, not from the prepared corpus.
+- AdamW configuration matches Section 2. All parameter gradients were present and finite; loss and updated weights were finite.
+- Initial training-batch loss: 9.03454018 nats/token; same-batch post-update loss: 8.34969711.
+- Gradient norm before clipping: 10.94822693; after clipping: 1.00000072 (floating-point rounding around 1).
+- Changed parameter elements: 5,115,072, across 50 tensors. Maximum absolute change: 0.000302851200.
+- Initial parameter SHA-256: d9eb1198a6f3f166db7de535d96f0fa3b0dd3dcc92c03b1344031c70333027bb.
+- Updated parameter SHA-256: eb6d90a05c94484656227b5a59af5e54ec0d8849378ab961f891f2e95b920ae1.
+- Fresh-process Candidate A initialization hashes matched at 4 and 8 threads. This checks initialization consistency, not training-trajectory equality across thread counts.
+- OS-reported peak pilot resident RAM: 418,385,920 bytes, including diagnostic copies and library overhead. Minimum sampled available system RAM: 2,191,519,744 bytes. These short-run measurements do not establish sustained resource behavior.
+- Pilot JSON: results/PilotA_20261111T014144425216Z/pilot.json.
+- One-update model/optimizer checkpoint: results/PilotA_20261111T014144425216Z/step1.pt (61,429,971 bytes).
+- Summary: results/PreparationAndPilot.json. Runtime dependency versions: requirements-training.lock.txt; CPU-only PyTorch 2.9.1+cpu.
+- Pilot duration includes hashes, checks, file I/O and checkpoint saving; it is not a sustained tokens/second measurement. No held-out loss or final-test quality result was produced, and the same-batch loss decrease is not evidence of general language capability.
+- Future timed runs must start fresh from the recorded initialization, not silently continue the one-update pilot checkpoint. The subsequent 128-token screen and sustained run are now recorded in Section 3C. Profiled full compute accounting, context-256 screening and inference measurements remain pending.
+

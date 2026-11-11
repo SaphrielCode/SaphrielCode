@@ -1,0 +1,21 @@
+3D. CONTROLLED TWO-PASS LEARNING EXPERIMENT - STOPPED IN PREFLIGHT
+Request: fresh Candidate A (5,115,072 parameters), batch 4, context 128, eight CPU threads, one inter-op thread, seed 42, data order 43, unchanged FP32 AdamW settings. Planned next-token exposure: 4,401,479 valid targets per complete pass, 8,802,958 across two passes. There are 45,204 windows, hence 11,301 updates per pass and 22,602 planned updates total. No extra uncounted warmup training may be added to that exposure budget.
+This experiment explicitly restores the strict 2 GiB available-system-RAM reserve, 1 GiB immediate stop and 4 GiB per-process resident limit. The earlier screen's 1.25 GiB exception does not apply. A new run must start fresh; neither the pilot nor the 15-minute checkpoint may silently become its initialization.
+
+Prelaunch audit:
+- Reviewed the previous sustained log around its 1.434 GiB available-RAM minimum, preserving the neighboring samples in prior-memory-audit.json.
+- Verified recorded resident totals/peaks against the per-PID launcher and actual-interpreter entries. The previous log's reserve was explicitly 1.25 GiB, explaining why 1.43 GiB did not cause a stop then.
+- Replaying the new strict policy would first stop that historical run after 3.078 seconds, in validation_fresh_initialization, before reaching its minimum.
+- Five focused resource-policy checks passed: first-sample <1 GiB stop, three consecutive <2 GiB and streak reset, strict threshold equality, real per-process >4 GiB tracking, and no streak transfer across changing PIDs.
+
+Current run status: STOPPED, before model allocation/training launch.
+Available system RAM samples: 1.162357 GiB, 1.184319 GiB, 1.164745 GiB, sampled approximately once per second. All three were below 2 GiB, so the guard stopped on sample 3.
+Reason: available_system_ram_below_2_GiB_three_consecutive_samples.
+Completed passes: 0/2; optimizer updates: 0; valid targets processed: 0/8,802,958. The exposure discrepancy is entirely a resource-preflight stop, not lost targets or a packing error.
+Training, validation and checkpoint times: 0/0/0 seconds. Training throughput and training peak RAM are unavailable. The preflight process's RAM is not a model-training measurement.
+No initialization/after-pass validation losses, checkpoints or fixed-prompt continuations were produced. The final test split remains reserved. No pass-one/pass-two loss comparison exists, so another pass cannot yet be assessed.
+No guard was relaxed, no applications were closed, no prior results/checkpoints were overwritten, and no automatic retry was launched.
+
+Artifacts: results/TwoPassA_20261111T031658248536Z/run.json, prior-memory-audit.json, preflight-memory.jsonl and Results.txt. A separate Results.txt is also saved at the workspace root.
+The authorized two-pass plan remains unexecuted. A future launch needs sufficient free RAM to satisfy these limits during initialization, training and validation; preflight passing alone would not guarantee the full run can finish. Do not infer learning results from this stop.
+

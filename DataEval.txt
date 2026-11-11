@@ -1,0 +1,125 @@
+WORKING TRANSFORMER PARAMETERS
+
+Saphriel laptop language model
+
+SCOPE
+This file defines working model, initialization, optimizer, tokenizer and batch parameters only. Store all test results, preparation measurements, findings and interpretations in their own files under results/. Planned benchmark procedures are in BenchmarkProtocol.txt.
+
+CURRENT WORKING CONFIGURATION
+Candidate A: 8 layers, width 192, 6 attention heads, feed-forward width 768; 5,115,072 unique trainable parameters.
+CPU FP32; batch size 4; context length 128; 8 intra-operation threads; 1 inter-operation thread; data-loader workers 0.
+Initialization seed 42; frozen training-order seed 43. Next-token prediction only.
+Candidate B remains an alternative configuration for explicitly requested comparisons.
+
+1. BENCHMARK MODEL FAMILY
+Use the same implementation and architectural choices across candidates:
+- Decoder-only, causal self-attention; no access to future tokens.
+- Pre-normalization with RMSNorm and rotary positional embeddings.
+- Standard multi-head attention, with 32 dimensions per head.
+- Two-layer feed-forward blocks with GELU and intermediate width 4 times the model width.
+- No linear biases and no dropout for this initial benchmark.
+- Tie the token embedding and output projection weights. Count shared weights once.
+- Vocabulary: exactly 8,192 entries, including special tokens.
+- All trainable parameters, embeddings and normalization weights count toward the reported model size.
+
+Starting candidates (benchmark configurations, not a final production commitment):
+  Candidate A: 8 layers, width 192, 6 attention heads, feed-forward width 768.
+  Candidate B: 10 layers, width 256, 8 attention heads, feed-forward width 1,024.
+
+With one embedding table, two RMSNorm vectors per block, one final RMSNorm vector, and no other learned parameters:
+  Parameter count = vocabulary * width + layers * (12 * width^2 + 2 * width) + width.
+  Candidate A: 5,115,072 parameters, approximately 5.1M.
+  Candidate B: 9,966,848 parameters, approximately 10.0M.
+The implementation must print its actual unique trainable parameter count and reconcile any difference before comparing runs.
+
+Initialization and reproducibility:
+- Initialize from scratch in FP32 on CPU. Do not load pretrained weights.
+- Use a recorded initialization rule rather than framework defaults: token embeddings and attention/feed-forward matrix weights are independent normal samples with mean 0 and standard deviation 0.02, except the two residual-output projections in each block.
+- Initialize each attention output projection and feed-forward second projection with standard deviation 0.02 / sqrt(2 * number_of_layers), to reduce initial residual-branch scale. This is a chosen starting rule, not a guarantee of training stability.
+- Initialize every RMSNorm scale to 1. There are no trainable bias vectors. Rotary position values are deterministic, not randomly initialized; fix RoPE theta at 10,000 for both candidates.
+- The tied output head shares the embedding parameter object and is not initialized independently. Verify both sharing and the unique parameter count.
+- Performance-screening model initialization seed: 42. Training-data order seed: 43, independent of the initialization RNG. Record Python, numerical-library and framework RNG seeds, software versions and initialization implementation/version.
+- Save or hash the initial state for each architecture. Verify that all fresh-process repeats of that architecture begin with identical parameter values, regardless of batch size or thread count. Different-sized models are not expected to have matching tensors.
+- For later learning experiments, predeclare multiple initialization seeds and pair each baseline/auxiliary comparison by seed and initial shared-model weights. Give generator/corruption RNGs separate recorded seeds.
+
+2. INITIAL TRAINING SETTINGS
+- CPU execution, FP32 parameters and arithmetic, without automatic mixed precision.
+- AdamW: learning rate 0.0003, betas (0.9, 0.95), epsilon 1e-8.
+- Weight decay 0.1 on matrix weights; exclude normalization vectors.
+- Global gradient-norm clipping at 1.0.
+- Fixed learning rate for the short performance benchmark. A longer training schedule is a separate decision.
+- Cross-entropy over valid next-token targets, excluding padding.
+- For each training update, sum the unreduced next-token negative log-likelihood over valid targets and divide by that update's valid target-token count. Padding/ignored labels contribute neither loss nor count. An update with zero valid targets is invalid and must not divide by zero.
+- Validation/test loss = total negative log-likelihood over all valid target tokens / total valid target-token count over the entire evaluated split. Do not average batch means, sequence means or per-document means without token weighting.
+- Accumulate detached evaluation loss sums in float64, with an integer valid-token count; evaluate with gradients disabled and the model in evaluation mode. Report the numerator, denominator, natural-log loss in nats/token and the fixed target-selection/masking rule. If reporting perplexity, use exp(aggregate loss) and flag overflow.
+- Keep evaluated documents and target selection fixed across comparisons, and state how context length changes conditioning/packing. If reporting aggregate training loss, use the same token-weighted sum/count rule; keep it separate from the mean used for each optimizer update.
+- Complete step: clear gradients, forward pass, loss, backward pass, gradient clipping, optimizer update.
+- No gradient accumulation initially. Batch size means actual sequences processed in each optimizer update.
+- Use an explicitly recorded AdamW implementation. Start with foreach=False and fused=False to establish a simple baseline.
+- Eager execution initially; compilation and other optimizations require separately measured comparisons.
+
+FP32 parameters, gradients and two Adam moment buffers alone require roughly 16 bytes per parameter: about 82 MB for A and 159 MB for B, in decimal units. This is an estimate of these buffers only, not total process RAM. Activations, logits, optimizer temporaries, framework libraries, data and allocator overhead must be measured separately through actual process memory.
+
+3. DATA AND TOKENIZER
+Use the frozen TinyStories subset configured in Section 3A. Benchmark runs must verify these files rather than resampling or retraining the tokenizer.
+- Use real text for the reported training benchmark. Random token IDs are allowed only for an explicitly labeled implementation smoke check.
+- Separate training, validation and final test documents before tokenizer training or sequence packing.
+- Deduplicate exact normalized documents across splits. Record any remaining near-duplicate checks and limitations.
+- Train one tokenizer on training text only. Freeze its implementation, vocabulary, special-token IDs, normalization and hashes for all comparisons.
+- Use an 8,192-entry vocabulary with byte coverage/fallback so unseen text remains encodable.
+- Pre-tokenize once. Separate tokenizer/preparation time from training time.
+- Use the frozen document-isolated 128-position windows in Section 3B, with BOS/EOS boundaries, correctly shifted targets and right padding. Context-256 windows must be prepared separately under the same policy.
+- Keep all tokens from each document within its assigned split. The selected window policy forbids cross-document attention; no window mixes stories.
+- Use deterministic training batches with recorded seed and order. Cycle only when the selected corpus is exhausted; record repeated passes and unique-data coverage.
+- Do not repeatedly train on one minibatch and describe it as corpus learning.
+
+3A. CORPUS AND TOKENIZER CONFIGURATION
+Dataset: roneneldan/TinyStories.
+Pinned revision: f54c09fd23315a6f9c86f9dc80f725de7d8f9c64.
+Dataset card lists CDLA-Sharing-1.0. Preserve the card, full license text and attribution to Ronen Eldan and Yuanzhi Li in corpus-references/TinyStories/.
+Source: the four supplied data/train-*.parquet files and supplied data/validation-*.parquet file, not the separate GPT4-only V2 text release. Verify full source-file SHA-256 hashes before preparation.
+
+Selection:
+- Uniform row sampling without replacement across the entire supplied train split: 20,000 requested rows, Python Random.sample seed 1729.
+- Independently sample 2,000 rows from the supplied validation split using seed 1730. The first 1,000 sampled indices belong to validation and the next 1,000 to final test.
+- Store selected records in source-row order; the later training batch order remains controlled separately by seed 43.
+- Normalize NFC Unicode, CRLF/CR to LF, and outer whitespace only. Preserve internal whitespace and case.
+- Remove exact normalized duplicates globally, keeping test first, then validation, then training. Do not refill removed rows after selection.
+
+Tokenizer configuration:
+- ByteLevel BPE, trained from scratch only on retained training stories; vocabulary exactly 8,192 including four special entries.
+- Special IDs: pad=0, bos=1, eos=2, unk=3. Byte-level alphabet covers all bytes; verify that prepared stories and Unicode checks encode without unknown IDs.
+- NFC normalization, no automatic prefix space, minimum merge frequency 2, tokenizer parallelism disabled; library versions and the saved tokenizer hash are in the manifest.
+- Saved streams contain text IDs followed by one EOS for each story; add BOS and right padding according to Section 3B. Preserve document offsets.
+- Tokenizer SHA-256: 5d99b0bf97ebebccc88cfc73e657cd82379e9b1495dbf0c75fb5f93fe1dfd16f.
+
+Files and storage:
+- Frozen local directory: data/TinyStoriesSubset/.
+- Each split has JSONL text/provenance, little-endian uint16 token IDs (.u16), and uint64 document offsets (.idx). The manifest records every file's size and hash.
+- Python dependencies and their separate environment are preparation tools, not corpus bytes; requirements-data.lock.txt records their versions.
+
+Coverage and benchmark use:
+- Before each benchmark, run .venv-data/Scripts/python.exe tools/verify_tinystories.py. It checks hashes, story/token alignment, boundaries, counts, source split assignments and cross-split exact overlap.
+- Do not change the frozen subset or tokenizer between candidates. The preparation script refuses to overwrite an existing frozen output.
+- Corpus cycles depend on actual valid training-target tokens consumed and the final packing/masking policy; token counts alone do not establish a measured cycle count or training requirement.
+- Keep final test material out of tokenizer training, model selection and routine benchmark validation. Integrity checks may inspect its structure/hashes without using its loss for selection.
+
+
+3B. WINDOW AND BATCH CONFIGURATION
+- Freeze vocabulary, special IDs, tokenizer configuration, backend version and hash in data/TinyStoriesBatches128/tokenizer-lock.json.
+- Corpus preparation converts newlines and strips outer whitespace before tokenization. The tokenizer itself applies NFC only.
+- Verify encode/decode behavior, unseen Unicode handling, split isolation, future/padding leakage, target coverage, deterministic initialization, weight sharing and token-weighted loss.
+
+Window policy: document-isolated-right-pad-v1.
+- A window has 128 input positions and 128 next-token target positions, and belongs to exactly one story.
+- Treat every body token and EOS as a target exactly once per corpus pass. Use BOS as the first story input; later windows begin with the immediately preceding token from that same story. BOS is never a target.
+- Chunk attention/RoPE positions restart at zero. No cross-story attention is permitted; histories before each new chunk are not cached or carried beyond its preceding input token.
+- Pad short final windows on the right with ID 0. Convert target padding to ignore_index=-100 at load time. Valid causal queries cannot attend later padding; padded query outputs contribute no loss.
+- Training window order is a frozen seed-43 permutation. Batch 1 and batch 4 group the same rows without duplicating them. Emit a smaller final batch rather than dropping targets.
+- Updates per epoch = ceil(window_count / batch_size); all saved source tokens must be valid targets once per epoch.
+
+- Store x/y as little-endian uint16; row metadata records story ID, target start and valid length. Preserve original document offsets.
+- Count valid targets for loss/throughput and padded positions for executed dense-matrix work.
+- Verify source integrity and batch locks with tools/verify_tinystories.py and tools/verify_batches.py before each run. Prepared output directories must refuse overwrite.
+- Future timed runs must start from the declared initialization, without silently continuing pilot weights.
+

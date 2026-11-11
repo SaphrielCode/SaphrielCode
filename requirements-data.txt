@@ -1,0 +1,2 @@
+pyarrow==22.0.0
+tokenizers==0.22.1

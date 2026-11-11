@@ -1,0 +1,29 @@
+CANDIDATE A - CONTROLLED TWO-PASS LEARNING EXPERIMENT
+
+Status: STOPPED
+Prelaunch memory-log audit and guard verification completed.
+The earlier sustained run used an approved 1.25 GiB reserve; this experiment uses the requested 2 GiB reserve.
+Five focused guard checks passed: immediate <1 GiB, three consecutive <2 GiB, streak reset, strict boundary comparisons, and three high readings for the same real process (>4 GiB).
+Historical minimum: 1,539,481,600 bytes (1.434 GiB).
+The old launcher/real-interpreter accounting was checked; replaying the stricter policy would have stopped that prior run earlier.
+
+Current preflight:
+  Sample 1: available RAM 1,248,071,680 bytes (1.162 GiB); consecutive low count 1.
+  Sample 2: available RAM 1,271,652,352 bytes (1.184 GiB); consecutive low count 2.
+  Sample 3: available RAM 1,250,635,776 bytes (1.165 GiB); consecutive low count 3.
+
+Stop reason: available_system_ram_below_2_GiB_three_consecutive_samples
+Model training was not launched. No threshold was lowered and no automatic retry was started.
+Completed passes: 0/2. Optimizer updates: 0. Valid targets processed: 0/8,802,958.
+The target shortfall is entirely due to the prelaunch resource stop, not a token-count or padding discrepancy.
+Training/validation/checkpoint time: 0/0/0 seconds. Throughput: not measured.
+Validation loss at initialization/pass 1/pass 2: unavailable; no model was allocated.
+Training peak process RAM: unavailable. The recorded process RAM is only the lightweight preflight process.
+Minimum sampled system RAM: 1,248,071,680 bytes (1.162 GiB).
+No checkpoints or sample continuations were produced. The frozen final test split remains reserved.
+Whether a third pass is worthwhile cannot be assessed without pass-one and pass-two validation losses.
+
+Artifacts: prior-memory-audit.json, preflight-memory.jsonl, run.json.
+A new launch requires enough free RAM to respect the specified reserve throughout model initialization and training. Do not reuse the old 15-minute weights as the fresh starting point.
+
+Run directory: results\TwoPassA_20261111T031658248536Z

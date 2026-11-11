@@ -1,0 +1,85 @@
+{
+  "status": "PASS",
+  "vocabulary": 4096,
+  "parameters": 4328640,
+  "completed_updates": 23118,
+  "valid_targets": 9165972,
+  "validation": {
+    "initialization": {
+      "loss_sum": 1876695.7975096703,
+      "valid_targets": 225484,
+      "loss_nats_per_target": 8.322966585255141,
+      "seconds": 28.258618400002888,
+      "bits_per_utf8_text_byte_including_eos_cost": 3.0606012913018543
+    },
+    "pass_1": {
+      "loss_sum": 678858.16387433,
+      "valid_targets": 225484,
+      "loss_nats_per_target": 3.0106711069270102,
+      "seconds": 30.668172600002436,
+      "bits_per_utf8_text_byte_including_eos_cost": 1.107112924599531
+    },
+    "pass_2": {
+      "loss_sum": 634498.1814923377,
+      "valid_targets": 225484,
+      "loss_nats_per_target": 2.813938822676277,
+      "seconds": 30.197123799996916,
+      "bits_per_utf8_text_byte_including_eos_cost": 1.0347686376135345
+    }
+  },
+  "passes": [
+    {
+      "pass_number": 1,
+      "completed_updates": 11559,
+      "valid_targets": 4582986,
+      "loss_sum": 15770723.187018845,
+      "seconds": 2183.738520699997,
+      "completed": true,
+      "valid_targets_per_second": 2098.688078520923
+    },
+    {
+      "pass_number": 2,
+      "completed_updates": 11559,
+      "valid_targets": 4582986,
+      "loss_sum": 13358220.756683713,
+      "seconds": 2063.598535900004,
+      "completed": true,
+      "valid_targets_per_second": 2220.870930207947
+    }
+  ],
+  "validation_utf8_text_bytes": 884630,
+  "pass2_loss_reduction_percent": 6.534499361225066,
+  "current_local_session_peak_resident_bytes": 565063680,
+  "current_local_session_minimum_available_bytes": 5009256448,
+  "current_session_wall_seconds": 3402.811739500001,
+  "trajectory_training_seconds": 4247.337056600001,
+  "trajectory_validation_seconds": 89.12391480000224,
+  "checkpoint_seconds": 2.1548485000093933,
+  "guard_policy": {
+    "available_reserve_bytes": 2147483648,
+    "immediate_available_bytes": 1073741824,
+    "process_resident_limit_bytes": 4294967296,
+    "consecutive_samples": 3,
+    "sampling_interval_seconds": 1.0
+  },
+  "guard_tripped": false,
+  "onedrive_seen_in_current_session": false,
+  "restored_updates": 5132,
+  "restored_targets": 2023056,
+  "current_session_updates": 17986,
+  "current_session_targets": 7142916,
+  "recovery_chain": [
+    "results\\TwoPassA_BPE4096_20261111T181258012427Z",
+    "results\\TwoPassA_BPE4096_20261111T183129283248Z",
+    "results\\TwoPassA_BPE4096_20261111T211023300548Z"
+  ],
+  "comparison": {
+    "bpe8192_final_bits_per_byte": 1.0221689180543416,
+    "bpe4096_final_bits_per_byte": 1.0347686376135345,
+    "bpe4096_loss_change_percent": 1.2326455379973789
+  },
+  "validation_checks": "Exact per-step target coverage/order across all recovery segments; finite logged losses/gradient norms; checkpoint hashes and runtime reloads; source snapshots; validation weighting; current-session guard telemetry.",
+  "limits": "This completes one seed42 trajectory, resumed without repeated targets from5132 updates. The earlier prefix used a1GiB reserve inside OneDrive; only this local continuation was tested under2GiB. OneDrive was not running during this session, so directory relocation alone is not isolated as a cause of extra headroom. Background workload and diagnostic monitoring differ across runs. Vocabulary size changes parameter count and text coverage within128 tokens. Compare bits per byte, not raw loss/token; EOS costs included. Periodic recovery save time is included in pass wall times and also disclosed in checkpoint_seconds, so those fields are not disjoint.",
+  "final_test_reserved": true,
+  "run_directory": "results\\TwoPassA_BPE4096_20261111T211023300548Z"
+}

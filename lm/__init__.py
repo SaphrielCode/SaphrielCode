@@ -1,0 +1,1 @@
+"""Laptop language-model implementation."""

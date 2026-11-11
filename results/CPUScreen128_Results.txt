@@ -1,0 +1,33 @@
+3C. COMPLETED 128-TOKEN CPU SCREEN AND 15-MINUTE SUSTAINED RUN
+Scope: both models, batch 1/4, threads 4/8; three successful fresh-process repetitions per configuration. All 24 accepted runs completed exactly 10 warmup updates and at least 20 timed seconds. Initial hashes matched across repetitions/thread counts for each model. Each run restarted weights from seed 42; no learned weights were reused between runs.
+Prepared uint16 token windows stayed in RAM; only the current batch was converted to int64. Gather/conversion/masking cost is included in timing, with no timed disk reads for data. This saved avoidable expanded-buffer memory without changing FP32 model training.
+
+Screen: median valid tokens/s; range across three repeats; maximum process resident RAM; minimum sampled available system RAM.
+Model  Batch  Threads  Median t/s  Range t/s        Peak MiB  Min free GiB
+A          1        4       980.7    833.4- 1138.8     409.4         1.734
+A          1        8       912.9    878.6- 1025.3     419.2         1.755
+A          4        4      1523.7   1414.0- 1646.2     526.4         1.479
+A          4        8      1859.1   1544.5- 1989.5     542.9         1.561
+B          1        4       500.4    477.5-  552.4     501.4         1.588
+B          1        8       609.6    487.7-  641.7     504.8         1.547
+B          4        4       828.8    772.7-  865.3     656.0         1.471
+B          4        8      1085.5   1060.4- 1122.6     665.9         1.632
+
+
+Selected: Candidate A, batch 4, eight threads, using repeated median valid-token throughput and the declared stability/tie rule. This is the hardware-throughput winner, not proof of better language quality than Candidate B.
+Fresh sustained run: 10 warmup updates (3,716 valid targets), then 4,043 timed updates over 900.010786 seconds. Valid timed targets: 1,568,280; sustained throughput: 1742.51 valid tokens/second.
+Peak process resident RAM: 571,039,744 bytes (544.59 MiB); minimum sampled available system RAM: 1,539,481,600 bytes (1.434 GiB). The approved 1.25 GiB reserve, immediate 1 GiB stop and 4 GiB process guard were respected. Whole-process peaks include setup/warmup/evaluation/checkpoint phases.
+Minute throughput ranged from 1486.4 to 1969.1; the last three minutes averaged 1756.2, -8.5% versus the first three. Cause was not established; do not label it thermal throttling without additional measurements.
+
+Conditional training-time estimates from the sustained mean:
+- 6.27 million valid-token presentations per hour; 150.6 million per 24 hours.
+- 1M targets: 9.56 minutes; 10M: 1.59 hours; one frozen corpus pass: approximately 42.10 minutes.
+- These exclude evaluation/checkpoint downtime and do not guarantee day-long speed or a quality level. Repeated corpus passes are repeated exposure, not additional unique training data.
+
+Validation: total negative log-likelihood divided by all 216,320 valid validation targets, without averaging batch means. Fresh loss 9.036200; post-warmup 8.111321; post-sustained 3.388277 nats/token. This supports in-domain learning; instruction following and general response quality were not tested. Final test material was not used for model-quality evaluation.
+Timed work included 2,070,016 executed positions and 501,736 ignored padding targets. The run delivered 16,212 distinct windows and completed no full corpus pass. The checkpoint has 4,053 optimizer steps including warmup, reloads to the recorded final parameter hash, and is 61,440,537 bytes.
+
+Artifact summary: results/CPUScreen128_20261111T021018Z/Findings.txt; raw suite.json, summary.json, screen-summary.csv, minute-throughput.csv, verification.json, per-run training/resource logs and sustained/checkpoint.pt.
+Preserved exceptions: initial launcher-only monitoring was marked invalid; a corrected pre-approval attempt stopped under the old 2 GiB reserve; one Windows phase-file rename failure was preserved and replaced with a fresh run. A continuation reused 13 verified completed measurements plus 11 new successful runs, never their learned weights. Bounded status-file rename retries do not change training-step arithmetic. All 11 focused checks passed.
+Limits: current background workload was not fully controlled; the short-run ranges are important. This experiment did not run context 256, auxiliary replacement detection, instruction training, inference-speed testing, final-test quality evaluation or a profiled full compute ledger. No hardware-FLOP or equal-total-compute claim follows from elapsed time.
+

@@ -1,0 +1,22 @@
+4K RUN WITH APPLICATION RAM TRACKING
+
+Status: STOPPED at the first sampled available RAM below1GiB. Session duration 466.9s.
+Trainer peak resident RAM: 478.71 MiB.
+Available RAM: 1.458 GiB before loading, 0.996 GiB at stop.
+Trainer median resident RAM after initialization: first measured minute 456.2 MiB; final minute 459.4 MiB. These are sampled steady-state medians, not allocation totals.
+Additional completed work: 2129 updates and 838,088 valid targets.
+Cumulative saved progress: 5,132 updates; 2,023,056 valid targets; no target repeats across the recovery boundary.
+The first pass is still incomplete; there is no after-pass validation or tokenizer-quality comparison.
+
+Application resident RAM at session start -> guard stop:
+OneDrive.exe: 4.984 -> 5.197 GiB; change +217.5 MiB; private-allocation change +224.5 MiB (not additional resident RAM).
+Code.exe: 1.795 -> 1.760 GiB; change -35.0 MiB; private-allocation change -60.1 MiB (not additional resident RAM).
+ChatGPT.exe: 1.466 -> 1.555 GiB; change +90.9 MiB; private-allocation change +14.5 MiB (not additional resident RAM).
+
+Loading/running the trainer adds roughly half a GiB to an already memory-constrained machine. OneDrive was already using about5GiB and grew further during the run. Neither current nor historical evidence supports attributing several GiB of RAM directly to the LM trainer.
+Process-group RSS may count shared pages more than once; private committed bytes differ from resident RAM. Kernel/cache/compression counters were not captured. OneDrive growth correlates with training; these measurements do not prove what caused its growth. Application tracking adds diagnostic overhead, so this run is not a clean throughput comparison.
+
+Recovery checkpoint: results\TwoPassA_BPE4096_20261111T183129283248Z\recovery.pt
+Recovery SHA256: ef1ebe42a49c13be40cea4379363aef35560af81faa551ba329b1390cef71f1c
+Detailed trainer telemetry every1s; application groups every5s in telemetry.jsonl and application-memory.jsonl.
+No apps were closed, no system settings changed, no memory guard relaxed, and DataEval.txt was not modified.

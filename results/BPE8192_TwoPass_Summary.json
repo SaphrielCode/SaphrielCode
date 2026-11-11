@@ -1,0 +1,72 @@
+{
+  "status": "PASS",
+  "vocabulary": 8192,
+  "unique_parameters": 5115072,
+  "completed_updates": 22602,
+  "valid_targets": 8802958,
+  "validation": {
+    "initialization": {
+      "loss_sum": 1954710.873421669,
+      "valid_targets": 216320,
+      "loss_nats_per_target": 9.036200413376799,
+      "seconds": 35.2147186000002,
+      "bits_per_utf8_text_byte_including_eos_cost": 3.187831843208094
+    },
+    "pass_1": {
+      "loss_sum": 663065.3537478843,
+      "valid_targets": 216320,
+      "loss_nats_per_target": 3.065205962222098,
+      "seconds": 32.71662059999653,
+      "bits_per_utf8_text_byte_including_eos_cost": 1.0813572879479092
+    },
+    "pass_2": {
+      "loss_sum": 626772.3006944243,
+      "valid_targets": 216320,
+      "loss_nats_per_target": 2.897431123772302,
+      "seconds": 30.737946300003387,
+      "bits_per_utf8_text_byte_including_eos_cost": 1.0221689180543416
+    }
+  },
+  "validation_utf8_text_bytes": 884630,
+  "validation_improvement_pass1_to_pass2_percent": 5.47352577665513,
+  "training_seconds_successful_trajectory": 4163.025199000003,
+  "validation_seconds_successful_trajectory": 98.66928550000011,
+  "checkpoint_seconds": 1.3914424000031431,
+  "session_peak_process_bytes": 551550976,
+  "session_minimum_available_bytes": 1326231552,
+  "passes": [
+    {
+      "pass_number": 1,
+      "completed_updates": 11301,
+      "valid_targets": 4401479,
+      "loss_sum": 15157693.81948539,
+      "seconds": 2096.7153567999994,
+      "completed": true,
+      "valid_targets_per_second": 2099.2258132346224
+    },
+    {
+      "pass_number": 2,
+      "completed_updates": 11301,
+      "valid_targets": 4401479,
+      "loss_sum": 13128819.541348426,
+      "seconds": 2066.309842200004,
+      "completed": true,
+      "valid_targets_per_second": 2130.1156826092147
+    }
+  ],
+  "resume": {
+    "source": "results\\TwoPassA_20261111T162351665800Z\\pass1.pt",
+    "verified_parameter_sha256": "d2f53e1ca3512080de50f42b76efdfd71e31c88ee73edcee85b876940d15210b",
+    "discarded_previous_partial_updates": 8173,
+    "discarded_previous_partial_targets": 3182387,
+    "semantics": "Continue the original fresh-seed42 trajectory from completed pass1, including Adam moments/step. Repeat all of pass2; old unsaved partial pass2 is not counted in this trajectory."
+  },
+  "original_interrupted_run": "results\\TwoPassA_20261111T162351665800Z",
+  "checks": "Counts, finite step losses/gradient norms, checkpoint bytes/hash and runtime reloads verified; current session guard telemetry clean; runtime source archived.",
+  "interpretation": "Pass2 improves validation; another pass is worth testing but is not launched. Proceed to requested 4096 BPE comparison.",
+  "comparison_limits": "Bits/byte includes EOS prediction cost. Fixed 128-token contexts cover different text spans across tokenizers. Changing vocabulary changes total parameter count. Single seed, story-domain results only.",
+  "periodic_recovery_io": "Periodic recovery checkpoint save time is included in pass wall time/throughput and also disclosed in checkpoint_seconds; do not add those fields as disjoint intervals.",
+  "discarded_training_seconds": 1511.473917400006,
+  "final_test_reserved": true,
+  "run_directory": "results\\TwoPassA_20261111T173525520630Z"
+}

@@ -1,0 +1,35 @@
+CONTROLLED TWO-PASS CANDIDATE A LEARNING RUN
+
+Status: PASS
+Fresh seed42 weights; batch4/context128/8 CPU threads/1 inter-op; FP32 AdamW unchanged; next-token objective only.
+Same seed43 frozen row permutation reused on each pass; no extra warmup updates. Padding ignored; stories isolated.
+Completed passes: 2/2; updates: 22602; valid targets: 8802958/8,802,958.
+Training time: 4163.025s; validation: 98.669s; checkpoint save/reload: 1.391s.
+Peak process RAM: 526.00 MiB; minimum available RAM: 1.235 GiB.
+Available-RAM reserve: 1 GiB; first sample below1GiB stops; three consecutive below the reserve stop; three consecutive above4GiB process RSS stop. Sampling interval1s.
+Final test remains reserved. No instruction training or replacement detection. No DataEval edits.
+Validation initialization: 9.03620041 nats/valid target; sum=1954710.87342167; count=216320.
+Validation pass_1: 3.06520596 nats/valid target; sum=663065.35374788; count=216320.
+Validation pass_2: 2.89743112 nats/valid target; sum=626772.30069442; count=216320.
+Resumed from verified pass1 weights AND AdamW state. Prior unsaved partial pass2 work was discarded; this session repeats pass2 from its beginning.
+Reported trajectory training/validation/checkpoint totals include inherited pass1 work. Session wall time is recorded separately in run.json; interrupted discarded work is additional experiment overhead.
+Resume provenance: {"source": "results\\TwoPassA_20261111T162351665800Z\\pass1.pt", "verified_parameter_sha256": "d2f53e1ca3512080de50f42b76efdfd71e31c88ee73edcee85b876940d15210b", "discarded_previous_partial_updates": 8173, "discarded_previous_partial_targets": 3182387, "semantics": "Continue the original fresh-seed42 trajectory from completed pass1, including Adam moments/step. Repeat all of pass2; old unsaved partial pass2 is not counted in this trajectory."}
+Pass work: {"pass_number": 1, "completed_updates": 11301, "valid_targets": 4401479, "loss_sum": 15157693.81948539, "seconds": 2096.7153567999994, "completed": true, "valid_targets_per_second": 2099.2258132346224}
+Pass work: {"pass_number": 2, "completed_updates": 11301, "valid_targets": 4401479, "loss_sum": 13128819.541348426, "seconds": 2066.309842200004, "completed": true, "valid_targets_per_second": 2130.1156826092147}
+
+Pass 1 prompt: Once upon a time, a little girl found a
+Decoding: greedy argmax; max 64 new tokens; EOS=2; rolling context128; BOS=1
+Continuation:  big, shiny ball. She was very happy and wanted to play with it. But then, she saw a big, shiny ball on the ground. It was very big and had a big ball.
+
+The little girl was sad because she didn't know what to do. She asked her mom what happened and said
+
+Pass 2 prompt: Once upon a time, a little girl found a
+Decoding: greedy argmax; max 64 new tokens; EOS=2; rolling context128; BOS=1
+Continuation:  big box. She wanted to take a picture of the box. She asked her mom, "Can I have a picture of the picture?" Her mom said, "Yes, you can make a picture of the picture. It is a beautiful flower."
+
+The little girl was so excited. She wanted to show her
+
+A third pass is worth a bounded test because validation loss improved in pass two; this single seed does not establish an optimum.
+Stop/error: None
+Any exposure shortfall is explained by the recorded interruption; partial runs are not two-pass results.
+Details, source hashes, checkpoint verification and per-step/resource logs are stored beside this file.
