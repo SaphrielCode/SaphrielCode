@@ -1,0 +1,43 @@
+UNIGRAM 8192 TWO-PASS RESULTS
+
+Exact update sequence, every batch valid-target count, finite step losses/norms, checkpoint size/hash and runtime reload, unchanged model source, identical source documents and guard telemetry verified.
+
+Updates: 22570; valid targets: 8777642 (4,388,821/pass); expected exposure exactly met.
+Same 19,966 training stories, same 1,000 validation stories, 8,192 entries and 5,115,072 parameters. Seed42 numerical initialization matches BPE8192; data seed43; batch4/context128/8 threads/1 inter-op; FP32 AdamW unchanged. No extra warmup. Padding excluded; stories isolated.
+
+Validation initialization: 9.042122171 nats/target; sum 1954454.707170010; count 216150; 3.187414076 bits/UTF8 text byte including EOS cost.
+Validation pass_1: 3.037888612 nats/target; sum 656639.623441370; count 216150; 1.070877913 bits/UTF8 text byte including EOS cost.
+Validation pass_2: 2.870765557 nats/target; sum 620515.975065306; count 216150; 1.011965816 bits/UTF8 text byte including EOS cost.
+Pass 1: 11285 updates, 4388821 targets, 2231.374s, 1966.869 valid targets/s.
+Pass 2: 11285 updates, 4388821 targets, 2153.260s, 2038.222 valid targets/s.
+
+Training trajectory: 4384.634s; validation: 93.973s; checkpoint save/reload: 3.691s.
+Whole-trajectory process peak: 614.02 MiB; minimum available RAM: 3.134 GiB. 2GiB reserve, immediate1GiB and process4GiB guards respected.
+
+Final BPE8192: 1.022168918 bits/byte. Unigram change: -0.998% (lower is better).
+Final BPE4096: 1.034768638 bits/byte.
+Pass1-to-pass2 held-out improvement: 5.501%. Another pass is worth a bounded test if improvement remains useful, but none launched.
+
+Tokenizer: SentencePiece unigram EM over training-only ByteLevel chunks with explicit frequency-weighted substring seeds, then deterministic reservation of all256 byte symbols in the fixed8192 vocabulary; final HF tokenizer.json is authoritative. Missing byte symbols replaced the same count of lowest-score non-required multi-character pieces. No sampling during encoding. Earlier preparation diagnostics were not LM runs. See Unigram8192_Preparation.txt and local construction artifacts.
+
+One seed and one explicitly seeded byte-level unigram recipe with mandatory-byte reservation; not an exhaustive algorithm comparison. Fixed token contexts span different text. Background workloads differ. No equal-total-compute claim. Recovery I/O is included in pass times and separately disclosed in checkpoint time; do not add as disjoint intervals. Interrupted unsaved work is discarded experiment overhead.
+
+Previous process ended without final report; checkpoint8000 restored weights/Adam and row32000. Later unsaved work was repeated and is excluded from trajectory exposure. Both pass checkpoints reloaded and hashed successfully. Final test remains reserved.
+
+Pass 1 prompt: Once upon a time, a little girl found a
+greedy argmax; max 64 new tokens; EOS=2; rolling context128; BOS=1
+ big, shiny box. She was very excited and wanted to go on it. She asked her mom, "Can I go to the park?" Her mom said, "Sure, we can go to the park."
+
+The little girl was very excited. She said, "Can I go to the park?"
+
+
+Pass 2 prompt: Once upon a time, a little girl found a
+greedy argmax; max 64 new tokens; EOS=2; rolling context128; BOS=1
+ big, red ball. She was very excited and wanted to play with it. She asked her mom for a new toy. Her mom said, "Let's go to the park and play with the ball."
+
+The girl was so excited! She said, "Can I play with the ball?" Her mom said
+
+Artifacts: results\TwoPassA_Unigram8192_20261111T233317210713Z; source snapshots in runtime-source. No DataEval changes.
+
+Raw runner aggregate omits inherited partial-pass seconds after recovery; verified trajectory time is the sum of complete per-pass wall times.
+Uncorrected runner aggregate: 2780.407s; verified total: 4384.634s.

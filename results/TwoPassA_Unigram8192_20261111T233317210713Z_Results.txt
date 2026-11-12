@@ -1,0 +1,38 @@
+CONTROLLED TWO-PASS CANDIDATE A LEARNING RUN
+
+Status: PASS
+Tokenizer: unigram; vocabulary: 8192.
+Fresh seed42 weights; batch4/context128/8 CPU threads/1 inter-op; FP32 AdamW unchanged; next-token objective only.
+Same seed43 frozen row permutation reused on each pass; no extra warmup updates. Padding ignored; stories isolated.
+Completed passes: 2/2; updates: 22570; valid targets: 8777642/8777642.
+Training time: 4384.634s; validation: 93.973s; checkpoint save/reload: 3.691s.
+Peak process RAM: 614.02 MiB; minimum available RAM: 3.335 GiB.
+Available-RAM reserve: 2 GiB; first sample below1GiB stops; three consecutive below the reserve stop; three consecutive above4GiB process RSS stop. Sampling interval1s.
+Final test remains reserved. No instruction training or replacement detection. No DataEval edits.
+Validation initialization: 9.04212217 nats/valid target; sum=1954454.70717001; count=216150.
+Validation pass_1: 3.03788861 nats/valid target; sum=656639.62344137; count=216150.
+Validation pass_2: 2.87076556 nats/valid target; sum=620515.97506531; count=216150.
+Resumed saved weights, AdamW state and exact data cursor. Prior completed work is included once in trajectory totals.
+Recovery provenance: {"source": "results\\TwoPassA_Unigram8192_20261111T225845533672Z\\recovery.pt", "sha256": "0eb6c3789ff8ff646935535462708ffbf18bccda2ec0ff135b23251099268ac1", "restored_parameter_sha256": "1b47d7799a9d5f13132fa7da87d6979702e34ca5adeff88f046e4af00e977e77", "restored_updates": 8000, "restored_valid_targets": 3114079, "next_row": 32000, "semantics": "Restore weights, AdamW moments/step and exact frozen data cursor; no previous updates or targets repeated."}
+Pass work: {"pass_number": 1, "completed_updates": 11285, "valid_targets": 4388821, "loss_sum": 14953893.915722134, "seconds": 2231.374347200006, "completed": true, "valid_targets_per_second": 1966.8689861507198}
+Pass work: {"pass_number": 2, "completed_updates": 11285, "valid_targets": 4388821, "loss_sum": 12927643.470046958, "seconds": 2153.259511600001, "completed": true, "valid_targets_per_second": 2038.2220426087158}
+
+Pass 1 prompt: Once upon a time, a little girl found a
+Decoding: greedy argmax; max 64 new tokens; EOS=2; rolling context128; BOS=1
+Continuation:  big, shiny box. She was very excited and wanted to go on it. She asked her mom, "Can I go to the park?" Her mom said, "Sure, we can go to the park."
+
+The little girl was very excited. She said, "Can I go to the park?"
+
+
+Pass 2 prompt: Once upon a time, a little girl found a
+Decoding: greedy argmax; max 64 new tokens; EOS=2; rolling context128; BOS=1
+Continuation:  big, red ball. She was very excited and wanted to play with it. She asked her mom for a new toy. Her mom said, "Let's go to the park and play with the ball."
+
+The girl was so excited! She said, "Can I play with the ball?" Her mom said
+
+A third pass is worth a bounded test because validation loss improved in pass two; this single seed does not establish an optimum.
+Stop/error: None
+Any exposure shortfall is explained by the recorded interruption; partial runs are not two-pass results.
+Details, source hashes, checkpoint verification and per-step/resource logs are stored beside this file.
+
+Verified timing correction: Raw runner aggregate omits inherited partial-pass seconds after recovery; verified trajectory time is the sum of complete per-pass wall times. Raw run.json preserved; see VerifiedFindings.txt and Unigram8192_TwoPass_Summary.json.
