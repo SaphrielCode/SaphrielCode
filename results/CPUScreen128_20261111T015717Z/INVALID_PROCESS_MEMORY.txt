@@ -1,0 +1,1 @@
+Superseded: sampler measured the Windows virtual-environment launcher, not the real training descendant. System available-RAM samples remain observations, but process RAM/CPU figures are invalid. Do not use this suite for configuration selection.

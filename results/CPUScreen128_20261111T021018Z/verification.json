@@ -1,0 +1,17 @@
+{
+  "status": "PASS",
+  "successful_runs": 24,
+  "configurations": 8,
+  "repetitions_each": 3,
+  "warmup_updates_each": 10,
+  "same_initial_hash_per_candidate": {
+    "A": "d9eb1198a6f3f166db7de535d96f0fa3b0dd3dcc92c03b1344031c70333027bb",
+    "B": "3eba913c0b78e20f8b1e0c3e845f87df57faf8c3f38329b0e3a81450e4db4ff3"
+  },
+  "sustained_elapsed_seconds": 900.0107861999422,
+  "checkpoint_hash_matches": true,
+  "reloaded_parameter_hash_matches": true,
+  "optimizer_step_count": 4053,
+  "frozen_batch_and_corpus_hashes": "unchanged",
+  "focused_tests_passed": 11
+}

@@ -1,0 +1,94 @@
+{
+  "status": "PASS",
+  "candidate": "A",
+  "batch_size": 4,
+  "threads": 4,
+  "interop_threads": 1,
+  "context": 128,
+  "requested_seconds": 20.0,
+  "seed": 42,
+  "order_seed": 43,
+  "versions": {
+    "torch": "2.9.1+cpu",
+    "numpy": "2.3.4",
+    "python": "3.13.3 (tags/v3.13.3:6280bb5, Apr  8 2025, 14:47:33) [MSC v.1943 64 bit (AMD64)]"
+  },
+  "source_hashes": {
+    "lm\\model.py": "a6844edd876a13fdda517148ad5f013dd9fe494b53a8e398dcf560f62031b66f",
+    "lm\\batches.py": "26d12b36af6e4f147532d0dc698274b9a85fb54be7342d10ccb8227dac95da95",
+    "tools\\cpu_screen_worker.py": "a35924e1a74244925d9e9c0a566a969f5b815f7f753cabb9cef1c3b184b32213"
+  },
+  "validation": {},
+  "final_test_evaluated": false,
+  "batch_manifest_sha256": "e30f2aa5f107dd704ff3931187889e82c06e29aa3690bdf122532e9ae72896f9",
+  "tokenizer_sha256": "5d99b0bf97ebebccc88cfc73e657cd82379e9b1495dbf0c75fb5f93fe1dfd16f",
+  "configuration": {
+    "vocab_size": 8192,
+    "layers": 8,
+    "width": 192,
+    "heads": 6,
+    "ff_width": 768,
+    "max_context": 256,
+    "norm_eps": 1e-05,
+    "rope_theta": 10000.0
+  },
+  "unique_parameters": 5115072,
+  "initial_parameter_sha256": "d9eb1198a6f3f166db7de535d96f0fa3b0dd3dcc92c03b1344031c70333027bb",
+  "data_mode": "All prepared train windows resident as uint16 NumPy buffers; only the current batch is converted to int64. Gather/conversion/masking included in step timing. No disk data reads inside timed training.",
+  "environment": {
+    "OMP_NUM_THREADS": "4",
+    "MKL_NUM_THREADS": "4",
+    "OPENBLAS_NUM_THREADS": "4"
+  },
+  "torch_parallel_info": "ATen/Parallel:\n\tat::get_num_threads() : 4\n\tat::get_num_interop_threads() : 1\nOpenMP 2019\n\tomp_get_max_threads() : 4\nIntel(R) oneAPI Math Kernel Library Version 2025.3-Product Build 20251007 for Intel(R) 64 architecture applications\n\tmkl_get_max_threads() : 4\nIntel(R) MKL-DNN v3.7.1 (Git Hash 8d263e693366ef8db40acc569cc7d8edf644556d)\nstd::thread::hardware_concurrency() : 16\nEnvironment variables:\n\tOMP_NUM_THREADS : 4\n\tMKL_NUM_THREADS : 4\nATen parallel backend: OpenMP\n",
+  "setup_seconds": 1.4822102000471205,
+  "warmup": {
+    "updates": 10,
+    "valid_tokens": 3716,
+    "loss_sum": 31493.14079809189,
+    "seconds": 2.5590054999338463,
+    "last_loss": 8.296529769897461
+  },
+  "first_timed_loss": 8.03303337097168,
+  "timed_training": {
+    "completed_updates": 82,
+    "valid_target_tokens": 33167,
+    "elapsed_seconds": 20.147197199985385,
+    "valid_tokens_per_second": 1646.2339486121703,
+    "steps_per_second": 4.0700450383271916,
+    "step_median_seconds": 0.24440570001024753,
+    "step_p95_seconds": 0.27963467506924644,
+    "step_max_seconds": 0.3073473999975249,
+    "loss_sum": 212667.6210306883,
+    "aggregate_loss_nats_per_token": 6.412024633843528,
+    "last_loss": 5.489809989929199,
+    "executed_positions_including_padding": 41984,
+    "ignored_padding_targets": 8817,
+    "batch_gather_seconds_included": 0.009963600663468242,
+    "gradient_clipping_updates": 82,
+    "first_gradient_norm": 2.411292314529419
+  },
+  "time_windows": [
+    {
+      "valid_tokens": 33167,
+      "updates": 82,
+      "index": 1,
+      "duration_seconds": 20.147197199985385,
+      "valid_tokens_per_second": 1646.2339486121703
+    }
+  ],
+  "window_accounting": "Completed step work attributed to the minute in which that step started; boundary-straddling steps may slightly affect adjacent minute rates.",
+  "coverage": {
+    "warmup_and_timed_windows_delivered": 368,
+    "completed_corpus_passes": 0,
+    "cursor_in_current_pass": 368,
+    "distinct_windows_seen": 368,
+    "total_windows": 45204
+  },
+  "final_parameter_sha256": "90142966a1adab2edcbd9a434972e77570f6eef0d44f5403e3ac59669601b87e",
+  "arithmetic_estimate": {
+    "full_batch_forward_matrix_flops": 5637144576,
+    "scope": "Analytical dense-matmul cross-check only; no profiled backward ledger or total-compute claim in this speed/memory screen."
+  },
+  "worker_wall_seconds_excluding_initial_import": 24.243059400003403
+}

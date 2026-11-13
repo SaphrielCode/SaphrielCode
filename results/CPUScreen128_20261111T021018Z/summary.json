@@ -1,0 +1,211 @@
+{
+  "status": "PASS",
+  "successful_configurations": 8,
+  "successful_screen_runs": 24,
+  "repeats": 3,
+  "selected": {
+    "candidate": "A",
+    "batch": 4,
+    "threads": 8,
+    "median_tokens_per_second": 1859.087017764862,
+    "minimum_tokens_per_second": 1544.4965011321035,
+    "maximum_tokens_per_second": 1989.4982243624736,
+    "relative_median_absolute_deviation": 0.07014798411878649,
+    "peak_resident_bytes": 569278464
+  },
+  "screen_table": [
+    {
+      "model": "A",
+      "batch": 1,
+      "threads": 4,
+      "median_valid_tokens_per_second": 980.7170005904688,
+      "range_valid_tokens_per_second": [
+        833.4252997915883,
+        1138.8412743171023
+      ],
+      "peak_process_MiB": 409.44921875,
+      "minimum_available_system_GiB": 1.7343864440917969
+    },
+    {
+      "model": "A",
+      "batch": 1,
+      "threads": 8,
+      "median_valid_tokens_per_second": 912.914527173023,
+      "range_valid_tokens_per_second": [
+        878.6324228507482,
+        1025.250705002067
+      ],
+      "peak_process_MiB": 419.19140625,
+      "minimum_available_system_GiB": 1.75518798828125
+    },
+    {
+      "model": "A",
+      "batch": 4,
+      "threads": 4,
+      "median_valid_tokens_per_second": 1523.7295654196405,
+      "range_valid_tokens_per_second": [
+        1413.96228499825,
+        1646.2339486121703
+      ],
+      "peak_process_MiB": 526.390625,
+      "minimum_available_system_GiB": 1.4793815612792969
+    },
+    {
+      "model": "A",
+      "batch": 4,
+      "threads": 8,
+      "median_valid_tokens_per_second": 1859.087017764862,
+      "range_valid_tokens_per_second": [
+        1544.4965011321035,
+        1989.4982243624736
+      ],
+      "peak_process_MiB": 542.90625,
+      "minimum_available_system_GiB": 1.5612258911132812
+    },
+    {
+      "model": "B",
+      "batch": 1,
+      "threads": 4,
+      "median_valid_tokens_per_second": 500.3804185016819,
+      "range_valid_tokens_per_second": [
+        477.5484249902732,
+        552.3825456189124
+      ],
+      "peak_process_MiB": 501.4296875,
+      "minimum_available_system_GiB": 1.5883255004882812
+    },
+    {
+      "model": "B",
+      "batch": 1,
+      "threads": 8,
+      "median_valid_tokens_per_second": 609.6194882523073,
+      "range_valid_tokens_per_second": [
+        487.6850501046094,
+        641.7229223500538
+      ],
+      "peak_process_MiB": 504.77734375,
+      "minimum_available_system_GiB": 1.5472335815429688
+    },
+    {
+      "model": "B",
+      "batch": 4,
+      "threads": 4,
+      "median_valid_tokens_per_second": 828.8017683667024,
+      "range_valid_tokens_per_second": [
+        772.6884240275185,
+        865.2707471349078
+      ],
+      "peak_process_MiB": 656.01171875,
+      "minimum_available_system_GiB": 1.4705963134765625
+    },
+    {
+      "model": "B",
+      "batch": 4,
+      "threads": 8,
+      "median_valid_tokens_per_second": 1085.5113455578412,
+      "range_valid_tokens_per_second": [
+        1060.427323978974,
+        1122.5972908311694
+      ],
+      "peak_process_MiB": 665.8515625,
+      "minimum_available_system_GiB": 1.6319236755371094
+    }
+  ],
+  "sustained": {
+    "completed_updates": 4043,
+    "valid_target_tokens": 1568280,
+    "elapsed_seconds": 900.0107861999422,
+    "valid_tokens_per_second": 1742.5124499025706,
+    "steps_per_second": 4.492168385081805,
+    "step_median_seconds": 0.21548470004927367,
+    "step_p95_seconds": 0.2722430200083181,
+    "step_max_seconds": 0.42530090000946075,
+    "loss_sum": 6020784.526904476,
+    "aggregate_loss_nats_per_token": 3.839100496661614,
+    "last_loss": 2.807788133621216,
+    "executed_positions_including_padding": 2070016,
+    "ignored_padding_targets": 501736,
+    "batch_gather_seconds_included": 0.5140279021579772,
+    "gradient_clipping_updates": 4043,
+    "first_gradient_norm": 2.411292314529419
+  },
+  "resources": {
+    "peak_process_resident_bytes": 571039744,
+    "peak_sampled_tree_private_bytes": 865857536,
+    "minimum_sampled_available_system_bytes": 1539481600,
+    "approx_cpu_core_equivalents": 7.6360334482620535
+  },
+  "validation": {
+    "fresh_initialization": {
+      "loss_sum": 1954710.873421669,
+      "valid_tokens": 216320,
+      "loss_nats_per_token": 9.036200413376799,
+      "seconds": 30.912209399975836
+    },
+    "after_warmup": {
+      "loss_sum": 1754640.859700203,
+      "valid_tokens": 216320,
+      "loss_nats_per_token": 8.111320542253157,
+      "seconds": 32.786366900079884
+    },
+    "after_timed_training": {
+      "loss_sum": 732952.0041412663,
+      "valid_tokens": 216320,
+      "loss_nats_per_token": 3.3882766463631024,
+      "seconds": 36.80446939996909
+    }
+  },
+  "warmup": {
+    "updates": 10,
+    "valid_tokens": 3716,
+    "loss_sum": 31493.1408162117,
+    "seconds": 2.2079287000233307,
+    "last_loss": 8.296528816223145
+  },
+  "checkpoint": {
+    "file": "checkpoint.pt",
+    "bytes": 61440537,
+    "save_seconds": 0.10208860004786402,
+    "sha256": "1342b8dd3e999a99fd59b93043f230507001bc1b8734d5c3b6ad7622c874ab6d"
+  },
+  "coverage": {
+    "warmup_and_timed_windows_delivered": 16212,
+    "completed_corpus_passes": 0,
+    "cursor_in_current_pass": 16212,
+    "distinct_windows_seen": 16212,
+    "total_windows": 45204
+  },
+  "projections": {
+    "valid_tokens_per_hour": 6273044.819649254,
+    "valid_tokens_per_day": 150553075.6715821,
+    "hours_per_million_tokens": 0.1594122198629394,
+    "hours_per_ten_million_tokens": 1.594122198629394,
+    "caveat": "Extrapolation from 15 minutes, not a quality prediction or guarantee of unchanged day-long thermals/background load. Excludes evaluation/checkpoint downtime.",
+    "minutes_per_million_valid_tokens": 9.564733191776364,
+    "minutes_per_frozen_corpus_pass": 42.098972284206646,
+    "repeated_frozen_corpus_passes_per_day": 34.20511052570786
+  },
+  "variation": {
+    "first_three_minute_rate": 1918.888888888889,
+    "last_three_minute_rate": 1756.1836525110486,
+    "change_percent": -8.479137969893236,
+    "minimum_minute_rate": 1486.4,
+    "maximum_minute_rate": 1969.0833333333333,
+    "cause": "Not established; no thermal-throttling attribution."
+  },
+  "limits": {
+    "available_reserve_GiB": 1.25,
+    "immediate_stop_GiB": 1,
+    "per_process_limit_GiB": 4,
+    "approval": "User explicitly approved lowering reserve from 2 GiB for this experiment."
+  },
+  "caveats": [
+    "Short screens had background/performance variability; medians and ranges are retained.",
+    "Earlier launcher-only memory measurements excluded.",
+    "A phase-status file rename failure was preserved and its affected run replaced; 13 verified successful runs reused in continuation.",
+    "No 256-token context, instruction training, replacement detection, inference benchmark or final-test quality evaluation.",
+    "Speed screen does not establish which model has better language quality.",
+    "The arithmetic field is an unprofiled dense-matmul estimate, not actual hardware FLOPs or a total-compute comparison.",
+    "Token projections describe presentations/exposures, not additional unique data."
+  ]
+}

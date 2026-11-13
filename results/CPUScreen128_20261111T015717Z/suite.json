@@ -1,0 +1,60 @@
+{
+  "status": "STOPPED",
+  "runs": [
+    {
+      "name": "r1_A_b1_t4",
+      "candidate": "A",
+      "batch": 1,
+      "threads": 4,
+      "status": "PASS",
+      "guard_stop": null,
+      "timed": {
+        "completed_updates": 154,
+        "valid_target_tokens": 15716,
+        "elapsed_seconds": 20.0789937999798,
+        "valid_tokens_per_second": 782.7085438920656,
+        "steps_per_second": 7.669707034829352,
+        "step_median_seconds": 0.12850780005101115,
+        "step_p95_seconds": 0.15139528997824525,
+        "step_max_seconds": 0.17437210003845394,
+        "loss_sum": 98996.98860967159,
+        "aggregate_loss_nats_per_token": 6.299121189213006,
+        "last_loss": 5.510523319244385,
+        "executed_positions_including_padding": 19712,
+        "ignored_padding_targets": 3996,
+        "batch_gather_seconds_included": 0.015102000208571553,
+        "gradient_clipping_updates": 154,
+        "first_gradient_norm": 2.906310796737671
+      },
+      "peak_process_resident_bytes": 4284416,
+      "minimum_sampled_available_system_bytes": 2166886400,
+      "initial_parameter_sha256": "d9eb1198a6f3f166db7de535d96f0fa3b0dd3dcc92c03b1344031c70333027bb",
+      "error": null
+    },
+    {
+      "name": "r1_A_b1_t8",
+      "candidate": "A",
+      "batch": 1,
+      "threads": 8,
+      "status": "STOPPED",
+      "guard_stop": "available_ram_below_2_GiB_three_samples",
+      "timed": null,
+      "peak_process_resident_bytes": 4280320,
+      "minimum_sampled_available_system_bytes": 2033836032,
+      "initial_parameter_sha256": "d9eb1198a6f3f166db7de535d96f0fa3b0dd3dcc92c03b1344031c70333027bb",
+      "error": "RuntimeError('Parent resource/time guard requested stop')"
+    }
+  ],
+  "machine": {
+    "platform": "Windows-11-10.0.26200-SP0",
+    "processor_identifier": "AMD64 Family 25 Model 80 Stepping 0, AuthenticAMD",
+    "logical_cpus": 16,
+    "physical_cpus": 8,
+    "physical_ram_bytes": 14861852672,
+    "plugged_in": true,
+    "power_scheme_read_only": "Power Scheme GUID: 381b4222-f694-41f0-9685-ff5bb260df2e  (Balanced)"
+  },
+  "scope": "128-token speed/memory screen and one 900-second sustained run. No 256-context, auxiliary objective or final-test quality evaluation.",
+  "recovery_seconds": 3,
+  "error": "ResourceStop('Run r1_A_b1_t8 did not pass; no automatic guard increase/retry')"
+}

@@ -1,0 +1,100 @@
+{
+  "status": "STOPPED",
+  "completed_updates": 5132,
+  "valid_targets_processed": 2023056,
+  "completed_passes": 0,
+  "passes": [
+    {
+      "pass_number": 1,
+      "completed_updates": 5132,
+      "valid_targets": 2023056,
+      "loss_sum": 7649713.701107063,
+      "seconds": 917.4132543999949,
+      "completed": false
+    }
+  ],
+  "validation": {
+    "initialization": {
+      "loss_sum": 1876695.7975096703,
+      "valid_targets": 225484,
+      "loss_nats_per_target": 8.322966585255141,
+      "seconds": 28.258618400002888
+    }
+  },
+  "checkpoints": [],
+  "continuations": [],
+  "training_seconds": 917.4132543999949,
+  "validation_seconds": 28.258618400002888,
+  "checkpoint_seconds": 0.4988247999935993,
+  "final_test_evaluated": false,
+  "extra_warmup_updates": 0,
+  "configuration": {
+    "candidate": "A",
+    "batch": 4,
+    "context": 128,
+    "threads": 8,
+    "interop_threads": 1,
+    "initialization_seed": 42,
+    "order_seed": 43,
+    "vocabulary_size": 4096
+  },
+  "expected_targets_per_pass": 4582986,
+  "expected_total_targets": 9165972,
+  "guard_policy": {
+    "available_reserve_bytes": 1073741824,
+    "immediate_available_bytes": 1073741824,
+    "process_resident_limit_bytes": 4294967296,
+    "consecutive_samples": 3,
+    "sampling_interval_seconds": 1.0
+  },
+  "guard_authorization": "User explicitly requested 1 GiB stopping threshold for finishing this experiment; first sample below 1 GiB stops training. Per-process 4 GiB consecutive-sample guard unchanged.",
+  "source_hashes": {
+    "lm/model.py": "a6844edd876a13fdda517148ad5f013dd9fe494b53a8e398dcf560f62031b66f",
+    "lm/batches.py": "0c2a7553dd482a63accf7cafaa846141bca1ef0fad6341a6ccf14456fb70233d",
+    "lm/resource_guard.py": "624042cc6fac92615e2d90a8685ec852908ff9d00f63d6b0f772c44a4a6868f0",
+    "tools/train_two_pass.py": "ee62d4cfb0da2a5492cc298773eaf74a87fec6342c293afc8f8573672bd9acde"
+  },
+  "application_memory_tracking": "Every five seconds: grouped resident/private bytes, CPU time and I/O counters; group RSS can double-count shared pages and must not be summed as machine RAM. Private bytes are committed allocation, not additional resident RAM.",
+  "expected_updates_per_pass": 11559,
+  "batch_directory": "data\\TinyStoriesBatches128_BPE4096",
+  "source_directory": "data\\TinyStoriesSubset_BPE4096",
+  "torch_version": "2.9.1+cpu",
+  "numpy_version": "2.3.4",
+  "python": "3.13.3 (tags/v3.13.3:6280bb5, Apr  8 2025, 14:47:33) [MSC v.1943 64 bit (AMD64)]",
+  "tokenizer_sha256": "503055ed72622f709a88b62939cef55232ebe011419815ec305ed04429f4c0b8",
+  "batch_manifest_sha256": "5702ba1c8a1101e2b383e81e1fbda6a10290ed1a7e8f237a9ac6f16efb8b9a13",
+  "unique_parameters": 4328640,
+  "initial_parameter_sha256": "0d7aeb3b0b025cbd2aeac40730276b087f77cdf4534da00477c1cb9d7fa8d3f3",
+  "recovery_resume": {
+    "source": "results\\TwoPassA_BPE4096_20261111T181258012427Z\\recovery.pt",
+    "sha256": "55ffd4a43d39901f8593d3bd0ac2ac630b9789d27dfe298e03b4b4f3053793f6",
+    "restored_parameter_sha256": "1b806449fefeff81e0dfeecee797696e479312c3670f7ed632b0e690b34ec7ee",
+    "restored_updates": 3003,
+    "restored_valid_targets": 1184968,
+    "next_row": 12012,
+    "semantics": "Restore weights, AdamW moments/step and exact frozen data cursor; no previous updates or targets repeated."
+  },
+  "recovery_checkpoint": {
+    "file": "recovery.pt",
+    "completed_updates": 5132,
+    "valid_targets": 2023056,
+    "seconds": 0.08219510000344599
+  },
+  "guard_stop": {
+    "seconds": 465.18094869999913,
+    "phase": "training_pass_1",
+    "available_system_bytes": 1069506560,
+    "resident_bytes": 485384192,
+    "peak_resident_bytes": 501960704,
+    "private_bytes": 763498496,
+    "cpu_seconds": 3492.03125,
+    "guard_stop": "available_system_ram_below_1_GiB_first_sample"
+  },
+  "stopped_phase": "training_pass_1",
+  "error": "RuntimeError('Resource monitor requested stop')",
+  "traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\leeme\\OneDrive\\Desktop\\Saphriel\\SaphrielComDevice\\tools\\train_two_pass.py\", line 332, in main\n    check()\n    ~~~~~^^\n  File \"C:\\Users\\leeme\\OneDrive\\Desktop\\Saphriel\\SaphrielComDevice\\tools\\train_two_pass.py\", line 115, in check\n    raise RuntimeError('Resource monitor requested stop')\nRuntimeError: Resource monitor requested stop\n",
+  "wall_seconds": 466.90342009999586,
+  "peak_process_resident_bytes": 501960704,
+  "minimum_available_system_bytes": 1069506560,
+  "stop_semantics": "Monitor latches the first guard violation. Training checks it before forward/backward/update and between validation/generation batches; an already executing operator cannot be preempted. No new optimizer update is started after the stop check detects the latch."
+}

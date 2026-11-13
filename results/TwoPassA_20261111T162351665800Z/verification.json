@@ -1,0 +1,29 @@
+{
+  "status": "PASS",
+  "scope": "Artifact and completed-work verification; training itself STOPPED, not a completed two-pass experiment.",
+  "passes": [
+    {
+      "pass": 1,
+      "updates": 11301,
+      "targets": 4401479,
+      "throughput": 2099.2258132346224,
+      "exact_expected_batch_target_counts": true
+    },
+    {
+      "pass": 2,
+      "updates": 8173,
+      "targets": 3182387,
+      "throughput": 2105.4858859054943,
+      "exact_expected_batch_target_counts": true
+    }
+  ],
+  "checkpoint_bytes_and_hash_verified": true,
+  "runtime_checkpoint_reload_previously_verified": true,
+  "source_hashes_unchanged": true,
+  "token_weighted_validation_verified": true,
+  "strict_guard_replay_matches_first_stop": true,
+  "final_test_reserved": true,
+  "remaining_targets": 1219092,
+  "remaining_pass2_updates": 3128,
+  "partial_pass2_checkpoint_exists": false
+}

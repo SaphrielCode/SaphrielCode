@@ -1,0 +1,30 @@
+{
+  "status": "STOPPED",
+  "runs": [
+    {
+      "name": "r1_A_b1_t4",
+      "candidate": "A",
+      "batch": 1,
+      "threads": 4,
+      "status": "STOPPED",
+      "guard_stop": "available_ram_below_2_GiB_three_samples",
+      "timed": null,
+      "peak_process_resident_bytes": 421617664,
+      "minimum_sampled_available_system_bytes": 1920794624,
+      "initial_parameter_sha256": "d9eb1198a6f3f166db7de535d96f0fa3b0dd3dcc92c03b1344031c70333027bb",
+      "error": "RuntimeError('Parent resource/time guard requested stop')"
+    }
+  ],
+  "machine": {
+    "platform": "Windows-11-10.0.26200-SP0",
+    "processor_identifier": "AMD64 Family 25 Model 80 Stepping 0, AuthenticAMD",
+    "logical_cpus": 16,
+    "physical_cpus": 8,
+    "physical_ram_bytes": 14861852672,
+    "plugged_in": true,
+    "power_scheme_read_only": "Power Scheme GUID: 381b4222-f694-41f0-9685-ff5bb260df2e  (Balanced)"
+  },
+  "scope": "128-token speed/memory screen and one 900-second sustained run. No 256-context, auxiliary objective or final-test quality evaluation.",
+  "recovery_seconds": 3,
+  "error": "ResourceStop('Run r1_A_b1_t4 did not pass; no automatic guard increase/retry')"
+}

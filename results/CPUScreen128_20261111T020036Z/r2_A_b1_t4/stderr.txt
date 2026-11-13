@@ -1,0 +1,17 @@
+Traceback (most recent call last):
+  File "C:\Users\leeme\OneDrive\Desktop\Saphriel\SaphrielComDevice\tools\cpu_screen_worker.py", line 262, in <module>
+    sys.exit(main())
+             ~~~~^^
+  File "C:\Users\leeme\OneDrive\Desktop\Saphriel\SaphrielComDevice\tools\cpu_screen_worker.py", line 255, in main
+    set_phase("finished")
+    ~~~~~~~~~^^^^^^^^^^^^
+  File "C:\Users\leeme\OneDrive\Desktop\Saphriel\SaphrielComDevice\tools\cpu_screen_worker.py", line 61, in set_phase
+    save_json(out / "phase.json", {"phase": name, "elapsed_seconds": time.perf_counter() - started})
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\leeme\OneDrive\Desktop\Saphriel\SaphrielComDevice\tools\cpu_screen_worker.py", line 20, in save_json
+    temporary.replace(path)
+    ~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Python313\Lib\pathlib\_local.py", line 780, in replace
+    os.replace(self, target)
+    ~~~~~~~~~~^^^^^^^^^^^^^^
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\leeme\\OneDrive\\Desktop\\Saphriel\\SaphrielComDevice\\results\\CPUScreen128_20261111T020036Z\\r2_A_b1_t4\\phase.json.tmp' -> 'C:\\Users\\leeme\\OneDrive\\Desktop\\Saphriel\\SaphrielComDevice\\results\\CPUScreen128_20261111T020036Z\\r2_A_b1_t4\\phase.json'

@@ -1,0 +1,42 @@
+128-TOKEN CPU SPEED AND MEMORY SCREEN - COMPLETED
+
+Scope: 8 configurations, 3 successful fresh runs each, followed by one fresh 900-second sustained run.
+Model weights/data/tokenizer and precision were unchanged across runs except the declared A/B dimensions.
+Every accepted run used seed 42, data order 43, 128-position windows, 10 warmup updates, FP32 AdamW and the same resident uint16 data buffers. Per-batch int64 conversion/masking is inside the step timer.
+
+Screen: median valid tokens/s; range across three repeats; maximum process resident RAM; minimum sampled available system RAM.
+Model  Batch  Threads  Median t/s  Range t/s        Peak MiB  Min free GiB
+A          1        4       980.7    833.4- 1138.8     409.4         1.734
+A          1        8       912.9    878.6- 1025.3     419.2         1.755
+A          4        4      1523.7   1414.0- 1646.2     526.4         1.479
+A          4        8      1859.1   1544.5- 1989.5     542.9         1.561
+B          1        4       500.4    477.5-  552.4     501.4         1.588
+B          1        8       609.6    487.7-  641.7     504.8         1.547
+B          4        4       828.8    772.7-  865.3     656.0         1.471
+B          4        8      1085.5   1060.4- 1122.6     665.9         1.632
+
+Winner: Candidate A (5,115,072 parameters), batch 4, eight CPU threads. Screening median 1859.1 valid tokens/s.
+Sustained: 1,568,280 valid targets in 900.010786 seconds = 1742.51 valid tokens/s; 4,043 timed updates plus 10 warmup updates.
+Peak process resident RAM: 571,039,744 bytes (544.59 MiB). Minimum sampled available system RAM: 1,539,481,600 bytes (1.434 GiB).
+Peak sampled committed private bytes summed over owned launcher/worker processes: 865,857,536. This is separate from resident RAM and must not be added to it.
+Time-window variation: 1486.4-1969.1 valid tokens/s. Last three minutes averaged 1756.2, -8.5% versus first three; cause unproven.
+Conditional estimates: 6.27 million valid tokens/hour; 150.6 million/day; 9.56 minutes per million; 1.59 hours per ten million.
+One pass over the frozen 4,401,479 valid targets projects to 42.10 minutes. The actual run delivered 16,212/45,204 distinct training windows and completed no full corpus pass.
+These are extrapolations from 15 minutes, not day-long measurements or quality guarantees; evaluation/checkpoint downtime is excluded. Reusing this small corpus gives repeated token exposures, not new independent text.
+Validation loss (216,320 targets, total loss / total valid targets): fresh 9.036200; after warmup 8.111321; after sustained training 3.388277 nats/token.
+Final test loss was not evaluated. This is evidence of learning in the held-out TinyStories domain, not a conversational capability evaluation.
+Checkpoint: sustained/checkpoint.pt, 61,440,537 bytes; verified SHA-256 1342b8dd3e999a99fd59b93043f230507001bc1b8734d5c3b6ad7622c874ab6d. Reloaded weights matched the final recorded parameter hash; optimizer step count 4,053.
+
+Guard exception: user approved 1.25 GiB available-RAM reserve; 1 GiB immediate stop and 4 GiB per-process limit stayed unchanged. No guard triggered in any accepted screening run or sustained run.
+
+Preserved excluded/partial attempts:
+- results/CPUScreen128_20261111T015717Z: launcher-only process memory/CPU sampling; explicitly invalid for selection.
+- results/CPUScreen128_20261111T015943Z: corrected monitor stopped under the original 2 GiB reserve before timing.
+- results/CPUScreen128_20261111T020036Z: 13 accepted successful runs; subsequent run exited on a Windows phase-file rename error after training. The failure remains saved and that run was replaced, not included in the medians.
+- This continuation reused those 13 verified complete runs and completed the remaining 11 fresh runs. Resume did not continue model weights.
+Bounded JSON rename retries were added outside training-step timing. Training model, optimizer, tokenization and timed-step mathematics were unchanged.
+
+The machine was plugged in on Windows Balanced power mode; no power/security settings were changed. Background workload was not fully controlled.
+11 focused tests passed; accepted counts, initialization hashes, checkpoint reload and frozen corpus/batch hashes were independently verified.
+Detailed files: suite.json, summary.json, screen-summary.csv, minute-throughput.csv, verification.json; individual training.json/resources.json/telemetry.jsonl files remain in each referenced run directory.
+No profiled full computation ledger or inference-speed benchmark was run.

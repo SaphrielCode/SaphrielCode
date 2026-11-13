@@ -1,0 +1,798 @@
+{
+  "status": "STOPPED",
+  "reason": "available_system_ram_below_1_GiB_first_sample",
+  "session_seconds": 466.90342009999586,
+  "session_updates": 2129,
+  "session_valid_targets": 838088,
+  "cumulative_updates": 5132,
+  "cumulative_valid_targets": 2023056,
+  "trainer_peak_resident_bytes": 501960704,
+  "minimum_available_bytes": 1069506560,
+  "available_start_bytes": 1565052928,
+  "trainer_steady_first_minute_median_resident_bytes": 478367744,
+  "trainer_last_minute_median_resident_bytes": 481751040,
+  "application_changes": [
+    {
+      "name": "python.exe",
+      "start_resident_bytes": 30699520,
+      "end_resident_bytes": 428658688,
+      "resident_change_bytes": 397959168,
+      "private_change_bytes": 679370752
+    },
+    {
+      "name": "OneDrive.exe",
+      "start_resident_bytes": 5351714816,
+      "end_resident_bytes": 5579730944,
+      "resident_change_bytes": 228016128,
+      "private_change_bytes": 235442176
+    },
+    {
+      "name": "ChatGPT.exe",
+      "start_resident_bytes": 1574432768,
+      "end_resident_bytes": 1669799936,
+      "resident_change_bytes": 95367168,
+      "private_change_bytes": 15200256
+    },
+    {
+      "name": "MoUsoCoreWorker.exe",
+      "start_resident_bytes": 0,
+      "end_resident_bytes": 28909568,
+      "resident_change_bytes": 28909568,
+      "private_change_bytes": 7598080
+    },
+    {
+      "name": "svchost.exe",
+      "start_resident_bytes": 1615171584,
+      "end_resident_bytes": 1642016768,
+      "resident_change_bytes": 26845184,
+      "private_change_bytes": 3747840
+    },
+    {
+      "name": "codex.exe",
+      "start_resident_bytes": 402759680,
+      "end_resident_bytes": 401063936,
+      "resident_change_bytes": -1695744,
+      "private_change_bytes": 3035136
+    },
+    {
+      "name": "explorer.exe",
+      "start_resident_bytes": 341274624,
+      "end_resident_bytes": 341671936,
+      "resident_change_bytes": 397312,
+      "private_change_bytes": 2895872
+    },
+    {
+      "name": "WmiPrvSE.exe",
+      "start_resident_bytes": 48205824,
+      "end_resident_bytes": 49291264,
+      "resident_change_bytes": 1085440,
+      "private_change_bytes": 1425408
+    },
+    {
+      "name": "uihost.exe",
+      "start_resident_bytes": 27836416,
+      "end_resident_bytes": 28184576,
+      "resident_change_bytes": 348160,
+      "private_change_bytes": 491520
+    },
+    {
+      "name": "NisSrv.exe",
+      "start_resident_bytes": 13873152,
+      "end_resident_bytes": 13950976,
+      "resident_change_bytes": 77824,
+      "private_change_bytes": 229376
+    },
+    {
+      "name": "RuntimeBroker.exe",
+      "start_resident_bytes": 123105280,
+      "end_resident_bytes": 123158528,
+      "resident_change_bytes": 53248,
+      "private_change_bytes": 176128
+    },
+    {
+      "name": "RadeonSoftware.exe",
+      "start_resident_bytes": 88514560,
+      "end_resident_bytes": 88076288,
+      "resident_change_bytes": -438272,
+      "private_change_bytes": 126976
+    },
+    {
+      "name": "Lenovo.Modern.ImController.exe",
+      "start_resident_bytes": 43196416,
+      "end_resident_bytes": 43237376,
+      "resident_change_bytes": 40960,
+      "private_change_bytes": 81920
+    },
+    {
+      "name": "Registry",
+      "start_resident_bytes": 59285504,
+      "end_resident_bytes": 57749504,
+      "resident_change_bytes": -1536000,
+      "private_change_bytes": 69632
+    },
+    {
+      "name": "StartMenuExperienceHost.exe",
+      "start_resident_bytes": 128188416,
+      "end_resident_bytes": 127922176,
+      "resident_change_bytes": -266240,
+      "private_change_bytes": 65536
+    },
+    {
+      "name": "backgroundTaskHost.exe",
+      "start_resident_bytes": 4907008,
+      "end_resident_bytes": 4837376,
+      "resident_change_bytes": -69632,
+      "private_change_bytes": 65536
+    },
+    {
+      "name": "SearchHost.exe",
+      "start_resident_bytes": 111206400,
+      "end_resident_bytes": 111210496,
+      "resident_change_bytes": 4096,
+      "private_change_bytes": 65536
+    },
+    {
+      "name": "SecurityHealthService.exe",
+      "start_resident_bytes": 24764416,
+      "end_resident_bytes": 24760320,
+      "resident_change_bytes": -4096,
+      "private_change_bytes": 61440
+    },
+    {
+      "name": "sihost.exe",
+      "start_resident_bytes": 52391936,
+      "end_resident_bytes": 52273152,
+      "resident_change_bytes": -118784,
+      "private_change_bytes": 36864
+    },
+    {
+      "name": "ShellHost.exe",
+      "start_resident_bytes": 47001600,
+      "end_resident_bytes": 47013888,
+      "resident_change_bytes": 12288,
+      "private_change_bytes": 32768
+    },
+    {
+      "name": "AUEPMaster.exe",
+      "start_resident_bytes": 11509760,
+      "end_resident_bytes": 11530240,
+      "resident_change_bytes": 20480,
+      "private_change_bytes": 32768
+    },
+    {
+      "name": "dwm.exe",
+      "start_resident_bytes": 75984896,
+      "end_resident_bytes": 75698176,
+      "resident_change_bytes": -286720,
+      "private_change_bytes": 28672
+    },
+    {
+      "name": "TextInputHost.exe",
+      "start_resident_bytes": 81973248,
+      "end_resident_bytes": 81563648,
+      "resident_change_bytes": -409600,
+      "private_change_bytes": 20480
+    },
+    {
+      "name": "services.exe",
+      "start_resident_bytes": 19263488,
+      "end_resident_bytes": 19259392,
+      "resident_change_bytes": -4096,
+      "private_change_bytes": 12288
+    },
+    {
+      "name": "AppActions.exe",
+      "start_resident_bytes": 42311680,
+      "end_resident_bytes": 42057728,
+      "resident_change_bytes": -253952,
+      "private_change_bytes": 8192
+    },
+    {
+      "name": "CrossDeviceResume.exe",
+      "start_resident_bytes": 43986944,
+      "end_resident_bytes": 43991040,
+      "resident_change_bytes": 4096,
+      "private_change_bytes": 4096
+    },
+    {
+      "name": "node.exe",
+      "start_resident_bytes": 158670848,
+      "end_resident_bytes": 157503488,
+      "resident_change_bytes": -1167360,
+      "private_change_bytes": 4096
+    },
+    {
+      "name": "WidgetService.exe",
+      "start_resident_bytes": 25632768,
+      "end_resident_bytes": 25636864,
+      "resident_change_bytes": 4096,
+      "private_change_bytes": 4096
+    },
+    {
+      "name": "LenovoVantageService.exe",
+      "start_resident_bytes": 48386048,
+      "end_resident_bytes": 48201728,
+      "resident_change_bytes": -184320,
+      "private_change_bytes": 0
+    },
+    {
+      "name": "ShellExperienceHost.exe",
+      "start_resident_bytes": 66138112,
+      "end_resident_bytes": 66138112,
+      "resident_change_bytes": 0,
+      "private_change_bytes": 0
+    },
+    {
+      "name": "AMDRSSrcExt.exe",
+      "start_resident_bytes": 58462208,
+      "end_resident_bytes": 58449920,
+      "resident_change_bytes": -12288,
+      "private_change_bytes": 0
+    },
+    {
+      "name": "fontdrvhost.exe",
+      "start_resident_bytes": 11726848,
+      "end_resident_bytes": 11726848,
+      "resident_change_bytes": 0,
+      "private_change_bytes": 0
+    },
+    {
+      "name": "DefenderSessionHelper.exe",
+      "start_resident_bytes": 5636096,
+      "end_resident_bytes": 5582848,
+      "resident_change_bytes": -53248,
+      "private_change_bytes": 0
+    },
+    {
+      "name": "FnHotkeyUtility.exe",
+      "start_resident_bytes": 27512832,
+      "end_resident_bytes": 27496448,
+      "resident_change_bytes": -16384,
+      "private_change_bytes": 0
+    },
+    {
+      "name": "smss.exe",
+      "start_resident_bytes": 1691648,
+      "end_resident_bytes": 1679360,
+      "resident_change_bytes": -12288,
+      "private_change_bytes": 0
+    },
+    {
+      "name": "RtkBtManServ.exe",
+      "start_resident_bytes": 9170944,
+      "end_resident_bytes": 9170944,
+      "resident_change_bytes": 0,
+      "private_change_bytes": 0
+    },
+    {
+      "name": "MessagingPlugin.exe",
+      "start_resident_bytes": 43950080,
+      "end_resident_bytes": 43937792,
+      "resident_change_bytes": -12288,
+      "private_change_bytes": 0
+    },
+    {
+      "name": "FileCoAuth.exe",
+      "start_resident_bytes": 27426816,
+      "end_resident_bytes": 27406336,
+      "resident_change_bytes": -20480,
+      "private_change_bytes": 0
+    },
+    {
+      "name": "cncmd.exe",
+      "start_resident_bytes": 1499136,
+      "end_resident_bytes": 1470464,
+      "resident_change_bytes": -28672,
+      "private_change_bytes": 0
+    },
+    {
+      "name": "taskhostw.exe",
+      "start_resident_bytes": 21749760,
+      "end_resident_bytes": 21721088,
+      "resident_change_bytes": -28672,
+      "private_change_bytes": 0
+    },
+    {
+      "name": "FnHotkeyCapsLKNumLK.exe",
+      "start_resident_bytes": 16392192,
+      "end_resident_bytes": 16392192,
+      "resident_change_bytes": 0,
+      "private_change_bytes": 0
+    },
+    {
+      "name": "System Idle Process",
+      "start_resident_bytes": 8192,
+      "end_resident_bytes": 8192,
+      "resident_change_bytes": 0,
+      "private_change_bytes": 0
+    },
+    {
+      "name": "NgcIso.exe",
+      "start_resident_bytes": 4419584,
+      "end_resident_bytes": 4423680,
+      "resident_change_bytes": 4096,
+      "private_change_bytes": 0
+    },
+    {
+      "name": "CodeSetup-stable-69047191fc427f2f92828279aae1d90d8eeda7ab.tmp",
+      "start_resident_bytes": 30543872,
+      "end_resident_bytes": 28360704,
+      "resident_change_bytes": -2183168,
+      "private_change_bytes": 0
+    },
+    {
+      "name": "LsaIso.exe",
+      "start_resident_bytes": 3936256,
+      "end_resident_bytes": 3936256,
+      "resident_change_bytes": 0,
+      "private_change_bytes": 0
+    },
+    {
+      "name": "codex-windows-sandbox-service.exe",
+      "start_resident_bytes": 21360640,
+      "end_resident_bytes": 21356544,
+      "resident_change_bytes": -4096,
+      "private_change_bytes": 0
+    },
+    {
+      "name": "atiesrxx.exe",
+      "start_resident_bytes": 8978432,
+      "end_resident_bytes": 8978432,
+      "resident_change_bytes": 0,
+      "private_change_bytes": 0
+    },
+    {
+      "name": "Locator.exe",
+      "start_resident_bytes": 4247552,
+      "end_resident_bytes": 4247552,
+      "resident_change_bytes": 0,
+      "private_change_bytes": 0
+    },
+    {
+      "name": "cmd.exe",
+      "start_resident_bytes": 9740288,
+      "end_resident_bytes": 9728000,
+      "resident_change_bytes": -12288,
+      "private_change_bytes": 0
+    },
+    {
+      "name": "System",
+      "start_resident_bytes": 7421952,
+      "end_resident_bytes": 7446528,
+      "resident_change_bytes": 24576,
+      "private_change_bytes": 0
+    },
+    {
+      "name": "MoNotificationUx.exe",
+      "start_resident_bytes": 13819904,
+      "end_resident_bytes": 13811712,
+      "resident_change_bytes": -8192,
+      "private_change_bytes": 0
+    },
+    {
+      "name": "dllhost.exe",
+      "start_resident_bytes": 23285760,
+      "end_resident_bytes": 23281664,
+      "resident_change_bytes": -4096,
+      "private_change_bytes": 0
+    },
+    {
+      "name": "ctfmon.exe",
+      "start_resident_bytes": 35196928,
+      "end_resident_bytes": 34959360,
+      "resident_change_bytes": -237568,
+      "private_change_bytes": 0
+    },
+    {
+      "name": "ApplicationFrameHost.exe",
+      "start_resident_bytes": 46931968,
+      "end_resident_bytes": 46841856,
+      "resident_change_bytes": -90112,
+      "private_change_bytes": 0
+    },
+    {
+      "name": "UserOOBEBroker.exe",
+      "start_resident_bytes": 11137024,
+      "end_resident_bytes": 11132928,
+      "resident_change_bytes": -4096,
+      "private_change_bytes": 0
+    },
+    {
+      "name": "?",
+      "start_resident_bytes": 66973696,
+      "end_resident_bytes": 66973696,
+      "resident_change_bytes": 0,
+      "private_change_bytes": 0
+    },
+    {
+      "name": "LenovoVantage-(GenericMessagingAddin).exe",
+      "start_resident_bytes": 8622080,
+      "end_resident_bytes": 8388608,
+      "resident_change_bytes": -233472,
+      "private_change_bytes": 0
+    },
+    {
+      "name": "TabTip.exe",
+      "start_resident_bytes": 59629568,
+      "end_resident_bytes": 58974208,
+      "resident_change_bytes": -655360,
+      "private_change_bytes": 0
+    },
+    {
+      "name": "pet.exe",
+      "start_resident_bytes": 6705152,
+      "end_resident_bytes": 6705152,
+      "resident_change_bytes": 0,
+      "private_change_bytes": 0
+    },
+    {
+      "name": "node_repl.exe",
+      "start_resident_bytes": 72896512,
+      "end_resident_bytes": 72368128,
+      "resident_change_bytes": -528384,
+      "private_change_bytes": 0
+    },
+    {
+      "name": "RtkAudUService64.exe",
+      "start_resident_bytes": 60297216,
+      "end_resident_bytes": 60276736,
+      "resident_change_bytes": -20480,
+      "private_change_bytes": 0
+    },
+    {
+      "name": "AMDRSServ.exe",
+      "start_resident_bytes": 87994368,
+      "end_resident_bytes": 87932928,
+      "resident_change_bytes": -61440,
+      "private_change_bytes": 0
+    },
+    {
+      "name": "SystemSettings.exe",
+      "start_resident_bytes": 3289088,
+      "end_resident_bytes": 3289088,
+      "resident_change_bytes": 0,
+      "private_change_bytes": 0
+    },
+    {
+      "name": "SecurityHealthSystray.exe",
+      "start_resident_bytes": 13041664,
+      "end_resident_bytes": 13037568,
+      "resident_change_bytes": -4096,
+      "private_change_bytes": 0
+    },
+    {
+      "name": "UDClientService.exe",
+      "start_resident_bytes": 50618368,
+      "end_resident_bytes": 50413568,
+      "resident_change_bytes": -204800,
+      "private_change_bytes": 0
+    },
+    {
+      "name": "WUDFHost.exe",
+      "start_resident_bytes": 15179776,
+      "end_resident_bytes": 15179776,
+      "resident_change_bytes": 0,
+      "private_change_bytes": 0
+    },
+    {
+      "name": "amdfendrsr.exe",
+      "start_resident_bytes": 9629696,
+      "end_resident_bytes": 9629696,
+      "resident_change_bytes": 0,
+      "private_change_bytes": 0
+    },
+    {
+      "name": "winlogon.exe",
+      "start_resident_bytes": 16375808,
+      "end_resident_bytes": 16326656,
+      "resident_change_bytes": -49152,
+      "private_change_bytes": 0
+    },
+    {
+      "name": "DAX3API.exe",
+      "start_resident_bytes": 36225024,
+      "end_resident_bytes": 36118528,
+      "resident_change_bytes": -106496,
+      "private_change_bytes": 0
+    },
+    {
+      "name": "AutoModeDetect.exe",
+      "start_resident_bytes": 13807616,
+      "end_resident_bytes": 13762560,
+      "resident_change_bytes": -45056,
+      "private_change_bytes": 0
+    },
+    {
+      "name": "CoreTelemetryPlugin.exe",
+      "start_resident_bytes": 33910784,
+      "end_resident_bytes": 33898496,
+      "resident_change_bytes": -12288,
+      "private_change_bytes": 0
+    },
+    {
+      "name": "AUEPDU.exe",
+      "start_resident_bytes": 16642048,
+      "end_resident_bytes": 16642048,
+      "resident_change_bytes": 0,
+      "private_change_bytes": 0
+    },
+    {
+      "name": "CodeSetup-stable-69047191fc427f2f92828279aae1d90d8eeda7ab.exe",
+      "start_resident_bytes": 10051584,
+      "end_resident_bytes": 10051584,
+      "resident_change_bytes": 0,
+      "private_change_bytes": 0
+    },
+    {
+      "name": "wininit.exe",
+      "start_resident_bytes": 9076736,
+      "end_resident_bytes": 9080832,
+      "resident_change_bytes": 4096,
+      "private_change_bytes": 0
+    },
+    {
+      "name": "CrossDeviceService.exe",
+      "start_resident_bytes": 90243072,
+      "end_resident_bytes": 90193920,
+      "resident_change_bytes": -49152,
+      "private_change_bytes": 0
+    },
+    {
+      "name": "WmiApSrv.exe",
+      "start_resident_bytes": 11186176,
+      "end_resident_bytes": 11186176,
+      "resident_change_bytes": 0,
+      "private_change_bytes": 0
+    },
+    {
+      "name": "LenovoUtilityService.exe",
+      "start_resident_bytes": 15593472,
+      "end_resident_bytes": 15593472,
+      "resident_change_bytes": 0,
+      "private_change_bytes": 0
+    },
+    {
+      "name": "codex-computer-use-swift.exe",
+      "start_resident_bytes": 38514688,
+      "end_resident_bytes": 38514688,
+      "resident_change_bytes": 0,
+      "private_change_bytes": 0
+    },
+    {
+      "name": "CPUMetricsServer.exe",
+      "start_resident_bytes": 4988928,
+      "end_resident_bytes": 4984832,
+      "resident_change_bytes": -4096,
+      "private_change_bytes": 0
+    },
+    {
+      "name": "ElevocControlService.exe",
+      "start_resident_bytes": 12042240,
+      "end_resident_bytes": 12042240,
+      "resident_change_bytes": 0,
+      "private_change_bytes": 0
+    },
+    {
+      "name": "AppProvisioningPlugin.exe",
+      "start_resident_bytes": 32432128,
+      "end_resident_bytes": 32419840,
+      "resident_change_bytes": -12288,
+      "private_change_bytes": 0
+    },
+    {
+      "name": "DefenderAiPlatformHost.exe",
+      "start_resident_bytes": 6492160,
+      "end_resident_bytes": 6483968,
+      "resident_change_bytes": -8192,
+      "private_change_bytes": 0
+    },
+    {
+      "name": "copilot-runtime.exe",
+      "start_resident_bytes": 23912448,
+      "end_resident_bytes": 23908352,
+      "resident_change_bytes": -4096,
+      "private_change_bytes": 0
+    },
+    {
+      "name": "csrss.exe",
+      "start_resident_bytes": 14614528,
+      "end_resident_bytes": 14618624,
+      "resident_change_bytes": 4096,
+      "private_change_bytes": -12288
+    },
+    {
+      "name": "dasHost.exe",
+      "start_resident_bytes": 28676096,
+      "end_resident_bytes": 28303360,
+      "resident_change_bytes": -372736,
+      "private_change_bytes": -24576
+    },
+    {
+      "name": "MemCompression",
+      "start_resident_bytes": 194928640,
+      "end_resident_bytes": 236355584,
+      "resident_change_bytes": 41426944,
+      "private_change_bytes": -32768
+    },
+    {
+      "name": "OfficeClickToRun.exe",
+      "start_resident_bytes": 58761216,
+      "end_resident_bytes": 58728448,
+      "resident_change_bytes": -32768,
+      "private_change_bytes": -32768
+    },
+    {
+      "name": "conhost.exe",
+      "start_resident_bytes": 168460288,
+      "end_resident_bytes": 168361984,
+      "resident_change_bytes": -98304,
+      "private_change_bytes": -32768
+    },
+    {
+      "name": "atieclxx.exe",
+      "start_resident_bytes": 19873792,
+      "end_resident_bytes": 19836928,
+      "resident_change_bytes": -36864,
+      "private_change_bytes": -32768
+    },
+    {
+      "name": "WidgetBoard.exe",
+      "start_resident_bytes": 32829440,
+      "end_resident_bytes": 32796672,
+      "resident_change_bytes": -32768,
+      "private_change_bytes": -45056
+    },
+    {
+      "name": "codex-code-mode-host.exe",
+      "start_resident_bytes": 49127424,
+      "end_resident_bytes": 47362048,
+      "resident_change_bytes": -1765376,
+      "private_change_bytes": -53248
+    },
+    {
+      "name": "HPPrintScanDoctorService.exe",
+      "start_resident_bytes": 17412096,
+      "end_resident_bytes": 17375232,
+      "resident_change_bytes": -36864,
+      "private_change_bytes": -61440
+    },
+    {
+      "name": "AggregatorHost.exe",
+      "start_resident_bytes": 16326656,
+      "end_resident_bytes": 16248832,
+      "resident_change_bytes": -77824,
+      "private_change_bytes": -69632
+    },
+    {
+      "name": "LenovoVantage-(VantageCoreAddin).exe",
+      "start_resident_bytes": 17879040,
+      "end_resident_bytes": 18599936,
+      "resident_change_bytes": 720896,
+      "private_change_bytes": -77824
+    },
+    {
+      "name": "ms-teams.exe",
+      "start_resident_bytes": 26542080,
+      "end_resident_bytes": 26501120,
+      "resident_change_bytes": -40960,
+      "private_change_bytes": -86016
+    },
+    {
+      "name": "codex-command-runner-0.164.0-alpha.11.1.exe",
+      "start_resident_bytes": 11427840,
+      "end_resident_bytes": 11460608,
+      "resident_change_bytes": 32768,
+      "private_change_bytes": -102400
+    },
+    {
+      "name": "spoolsv.exe",
+      "start_resident_bytes": 20570112,
+      "end_resident_bytes": 20504576,
+      "resident_change_bytes": -65536,
+      "private_change_bytes": -106496
+    },
+    {
+      "name": "lsass.exe",
+      "start_resident_bytes": 36020224,
+      "end_resident_bytes": 35901440,
+      "resident_change_bytes": -118784,
+      "private_change_bytes": -110592
+    },
+    {
+      "name": "wslservice.exe",
+      "start_resident_bytes": 27721728,
+      "end_resident_bytes": 27635712,
+      "resident_change_bytes": -86016,
+      "private_change_bytes": -163840
+    },
+    {
+      "name": "MicrosoftStartFeedProvider.exe",
+      "start_resident_bytes": 48078848,
+      "end_resident_bytes": 42201088,
+      "resident_change_bytes": -5877760,
+      "private_change_bytes": -225280
+    },
+    {
+      "name": "MpDefenderCoreService.exe",
+      "start_resident_bytes": 23965696,
+      "end_resident_bytes": 23752704,
+      "resident_change_bytes": -212992,
+      "private_change_bytes": -339968
+    },
+    {
+      "name": "msedgewebview2.exe",
+      "start_resident_bytes": 434610176,
+      "end_resident_bytes": 405573632,
+      "resident_change_bytes": -29036544,
+      "private_change_bytes": -356352
+    },
+    {
+      "name": "servicehost.exe",
+      "start_resident_bytes": 46829568,
+      "end_resident_bytes": 46313472,
+      "resident_change_bytes": -516096,
+      "private_change_bytes": -417792
+    },
+    {
+      "name": "SearchProtocolHost.exe",
+      "start_resident_bytes": 23973888,
+      "end_resident_bytes": 19775488,
+      "resident_change_bytes": -4198400,
+      "private_change_bytes": -548864
+    },
+    {
+      "name": "LNBITSSvc.exe",
+      "start_resident_bytes": 21540864,
+      "end_resident_bytes": 20819968,
+      "resident_change_bytes": -720896,
+      "private_change_bytes": -876544
+    },
+    {
+      "name": "powershell.exe",
+      "start_resident_bytes": 68767744,
+      "end_resident_bytes": 68206592,
+      "resident_change_bytes": -561152,
+      "private_change_bytes": -1028096
+    },
+    {
+      "name": "unsecapp.exe",
+      "start_resident_bytes": 34603008,
+      "end_resident_bytes": 31731712,
+      "resident_change_bytes": -2871296,
+      "private_change_bytes": -1425408
+    },
+    {
+      "name": "SearchFilterHost.exe",
+      "start_resident_bytes": 77807616,
+      "end_resident_bytes": 66748416,
+      "resident_change_bytes": -11059200,
+      "private_change_bytes": -1482752
+    },
+    {
+      "name": "MsMpEng.exe",
+      "start_resident_bytes": 423374848,
+      "end_resident_bytes": 399945728,
+      "resident_change_bytes": -23429120,
+      "private_change_bytes": -2297856
+    },
+    {
+      "name": "SearchIndexer.exe",
+      "start_resident_bytes": 84619264,
+      "end_resident_bytes": 62058496,
+      "resident_change_bytes": -22560768,
+      "private_change_bytes": -25550848
+    },
+    {
+      "name": "Code.exe",
+      "start_resident_bytes": 1926963200,
+      "end_resident_bytes": 1890246656,
+      "resident_change_bytes": -36716544,
+      "private_change_bytes": -63062016
+    }
+  ],
+  "recovery_sha256": "ef1ebe42a49c13be40cea4379363aef35560af81faa551ba329b1390cef71f1c",
+  "completed_step_coverage_verified": true,
+  "interpretation": "Loading/running the trainer adds roughly half a GiB to an already memory-constrained machine. OneDrive was already using about5GiB and grew further during the run. Neither current nor historical evidence supports attributing several GiB of RAM directly to the LM trainer.",
+  "limits": "Process-group RSS may count shared pages more than once; private committed bytes differ from resident RAM. Kernel/cache/compression counters were not captured. OneDrive growth correlates with training; these measurements do not prove what caused its growth. Application tracking adds diagnostic overhead, so this run is not a clean throughput comparison.",
+  "run_directory": "results\\TwoPassA_BPE4096_20261111T183129283248Z"
+}

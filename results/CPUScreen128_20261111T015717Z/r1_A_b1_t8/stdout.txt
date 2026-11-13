@@ -1,0 +1,2 @@
+{"phase": "training_progress", "elapsed_seconds": 0.12982649996411055, "updates": 1, "valid_tokens": 53, "last_loss": 8.351222038269043}
+{"status": "STOPPED", "candidate": "A", "batch": 1, "threads": 8, "timed": null, "error": "RuntimeError('Parent resource/time guard requested stop')"}

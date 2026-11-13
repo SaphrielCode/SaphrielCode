@@ -1,0 +1,127 @@
+{
+  "status": "PASS",
+  "scope": "Exactly one optimizer update; no sustained-speed measurement",
+  "configuration": {
+    "vocab_size": 8192,
+    "layers": 8,
+    "width": 192,
+    "heads": 6,
+    "ff_width": 768,
+    "max_context": 256,
+    "norm_eps": 1e-05,
+    "rope_theta": 10000.0
+  },
+  "batch_size": 1,
+  "context": 128,
+  "dtype": "float32",
+  "device": "cpu",
+  "initialization_seed": 42,
+  "training_order_seed": 43,
+  "threads": 4,
+  "interop_threads": 1,
+  "versions": {
+    "python": "3.13.3",
+    "torch": "2.9.1+cpu",
+    "numpy": "2.3.4",
+    "psutil": "7.1.3"
+  },
+  "samples": [
+    {
+      "elapsed_seconds": 0.0002478999085724354,
+      "resident_bytes": 203776000,
+      "peak_resident_bytes": 203776000,
+      "private_bytes": 283750400,
+      "available_system_bytes": 2478624768,
+      "cpu_seconds": 2.328125
+    },
+    {
+      "elapsed_seconds": 1.0162592999404296,
+      "resident_bytes": 273240064,
+      "peak_resident_bytes": 273240064,
+      "private_bytes": 375418880,
+      "available_system_bytes": 2410352640,
+      "cpu_seconds": 3.875
+    },
+    {
+      "elapsed_seconds": 2.023138399934396,
+      "resident_bytes": 297664512,
+      "peak_resident_bytes": 297664512,
+      "private_bytes": 400027648,
+      "available_system_bytes": 2388869120,
+      "cpu_seconds": 4.546875
+    },
+    {
+      "elapsed_seconds": 3.0358159999595955,
+      "resident_bytes": 413630464,
+      "peak_resident_bytes": 418385920,
+      "private_bytes": 524124160,
+      "available_system_bytes": 2191642624,
+      "cpu_seconds": 6.71875
+    },
+    {
+      "elapsed_seconds": 3.075589899905026,
+      "resident_bytes": 413663232,
+      "peak_resident_bytes": 418385920,
+      "private_bytes": 524075008,
+      "available_system_bytes": 2191519744,
+      "cpu_seconds": 6.84375
+    }
+  ],
+  "batch_manifest_sha256": "e30f2aa5f107dd704ff3931187889e82c06e29aa3690bdf122532e9ae72896f9",
+  "tokenizer_sha256": "5d99b0bf97ebebccc88cfc73e657cd82379e9b1495dbf0c75fb5f93fe1dfd16f",
+  "batch_rows": [
+    23533
+  ],
+  "batch_provenance": [
+    [
+      10390,
+      0,
+      128
+    ]
+  ],
+  "input_shape": [
+    1,
+    128
+  ],
+  "selection": "First full windows from fixed seed-43 order; partial windows excluded from this pilot only.",
+  "unique_parameters": 5115072,
+  "initial_parameter_sha256": "d9eb1198a6f3f166db7de535d96f0fa3b0dd3dcc92c03b1344031c70333027bb",
+  "optimizer": {
+    "type": "AdamW",
+    "lr": 0.0003,
+    "betas": [
+      0.9,
+      0.95
+    ],
+    "eps": 1e-08,
+    "matrix_weight_decay": 0.1,
+    "normalization_weight_decay": 0,
+    "foreach": false,
+    "fused": false
+  },
+  "loss_before_update": 9.034540176391602,
+  "token_loss_sum": 1156.4211835861206,
+  "valid_target_tokens": 128,
+  "logits_shape": [
+    1,
+    128,
+    8192
+  ],
+  "all_gradients_present_and_finite": true,
+  "gradient_norm_before_clipping": 10.948226928710938,
+  "gradient_norm_after_clipping": 1.0000007152557373,
+  "changed_parameter_elements": 5115072,
+  "changed_parameter_tensors": 50,
+  "max_absolute_parameter_change": 0.00030285120010375977,
+  "updated_parameter_sha256": "eb6d90a05c94484656227b5a59af5e54ec0d8849378ab961f891f2e95b920ae1",
+  "same_batch_loss_after_update": 8.34969711303711,
+  "loss_caveat": "Same training batch, not held-out loss; one update is not a learning-quality result.",
+  "checkpoint": {
+    "file": "step1.pt",
+    "bytes": 61429971,
+    "sha256": "0facb46a91e3a569120ea23988a9cfd222c543a884ee80dcd3620dd6479a9552"
+  },
+  "completed_optimizer_updates": 1,
+  "diagnostic_wall_seconds": 3.0756029000040144,
+  "timing_caveat": "Includes checks, hashes, imports already completed, file access and checkpoint I/O; not a throughput result."
+}

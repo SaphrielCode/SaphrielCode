@@ -1,0 +1,1 @@
+{"phase": "training_progress", "elapsed_seconds": 0.12383749999571592, "updates": 1, "valid_tokens": 53, "last_loss": 8.351222038269043}

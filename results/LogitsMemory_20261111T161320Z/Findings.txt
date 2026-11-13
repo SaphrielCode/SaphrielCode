@@ -1,0 +1,23 @@
+LOGITS LIFETIME MEMORY COMPARISON
+
+Candidate A, CPU FP32, batch 4, context 128, eight threads, one inter-op thread.
+Three fresh processes per variant, alternating order; 10 warmup updates and 20 timed seconds each.
+Fixed real training rows 0-3 reused for this allocation diagnostic only. This is not corpus learning, the two-pass experiment, or a quality benchmark.
+Full forward/loss/backward/gradient clipping/AdamW update timed. Settings and model weights unchanged.
+Strict guards: first available <1 GiB; three consecutive available <2 GiB; three consecutive process RSS >4 GiB; sampled once per second. No guard tripped.
+
+Baseline retained logits: median 1989.9 valid targets/s (range 1891.7-2238.8); median OS peak RSS 518.91 MiB (range 518.51-519.20).
+Release logits immediately after loss construction: median 2290.6 valid targets/s (range 2003.4-2361.5); median OS peak RSS 502.11 MiB (range 501.21-503.41).
+
+Median peak saving: 16.80 MiB.
+All six parameter hashes after exactly ten updates matched: 8a6d247f9f3f63da57ed9326ab5243ffcc5ae83f01320e75b383d2fbc7b639cd
+Minimum sampled available system RAM: 3.636 GiB.
+Retained change: delete the unnecessary local logits reference after constructing cross-entropy loss in tools/cpu_screen_worker.py. Autograd retains the tensors required by backward.
+No measured throughput penalty in this screen. Short noisy runs and overlapping throughput ranges do not establish a reliable speed improvement or guarantee performance across a full corpus/day.
+Frozen data, tokenizer, model architecture, precision, optimizer and batch size unchanged. Historical results preserved. The controlled two-pass run was not relaunched.
+Potential larger changes (microbatch accumulation, recomputation, quantized optimizer, lower precision, disk streaming) remain untested and were not enabled.
+
+Source hashes:
+tools/check_logits_memory.py 9286ab21c6d63b998dd803702969315c4b05acbddf630a321eb4f86076198311
+tools/cpu_screen_worker.py 2a0e17576f67cbc5a0d766018b91cde24a7da3001f4778398efbacefb3016337
+lm/model.py a6844edd876a13fdda517148ad5f013dd9fe494b53a8e398dcf560f62031b66f

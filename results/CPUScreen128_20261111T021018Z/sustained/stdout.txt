@@ -1,0 +1,16 @@
+{"phase": "training_progress", "elapsed_seconds": 0.18795829999726266, "updates": 1, "valid_tokens": 512, "last_loss": 8.03303337097168}
+{"phase": "training_progress", "elapsed_seconds": 60.32700779999141, "updates": 297, "valid_tokens": 118593, "last_loss": 4.4455885887146}
+{"phase": "training_progress", "elapsed_seconds": 120.28300920000765, "updates": 588, "valid_tokens": 233582, "last_loss": 4.244328022003174}
+{"phase": "training_progress", "elapsed_seconds": 180.29680210002698, "updates": 877, "valid_tokens": 345671, "last_loss": 4.472668170928955}
+{"phase": "training_progress", "elapsed_seconds": 240.40923999994993, "updates": 1137, "valid_tokens": 445314, "last_loss": 3.644195795059204}
+{"phase": "training_progress", "elapsed_seconds": 300.3346653999761, "updates": 1374, "valid_tokens": 537936, "last_loss": 3.7281904220581055}
+{"phase": "training_progress", "elapsed_seconds": 360.36388289998285, "updates": 1607, "valid_tokens": 626911, "last_loss": 3.887735605239868}
+{"phase": "training_progress", "elapsed_seconds": 420.29203460004646, "updates": 1846, "valid_tokens": 721095, "last_loss": 3.5013279914855957}
+{"phase": "training_progress", "elapsed_seconds": 480.27034789999016, "updates": 2121, "valid_tokens": 826665, "last_loss": 3.6429758071899414}
+{"phase": "training_progress", "elapsed_seconds": 540.2304026000202, "updates": 2398, "valid_tokens": 932921, "last_loss": 3.4049129486083984}
+{"phase": "training_progress", "elapsed_seconds": 600.2170267000329, "updates": 2672, "valid_tokens": 1039090, "last_loss": 3.462308883666992}
+{"phase": "training_progress", "elapsed_seconds": 660.2282208999386, "updates": 2943, "valid_tokens": 1146030, "last_loss": 3.958051919937134}
+{"phase": "training_progress", "elapsed_seconds": 720.2888034000061, "updates": 3218, "valid_tokens": 1252538, "last_loss": 3.6697518825531006}
+{"phase": "training_progress", "elapsed_seconds": 780.3264119999949, "updates": 3480, "valid_tokens": 1351959, "last_loss": 3.2945525646209717}
+{"phase": "training_progress", "elapsed_seconds": 840.4247240000404, "updates": 3763, "valid_tokens": 1461091, "last_loss": 3.2331385612487793}
+{"status": "PASS", "candidate": "A", "batch": 4, "threads": 8, "timed": {"completed_updates": 4043, "valid_target_tokens": 1568280, "elapsed_seconds": 900.0107861999422, "valid_tokens_per_second": 1742.5124499025706, "steps_per_second": 4.492168385081805, "step_median_seconds": 0.21548470004927367, "step_p95_seconds": 0.2722430200083181, "step_max_seconds": 0.42530090000946075, "loss_sum": 6020784.526904476, "aggregate_loss_nats_per_token": 3.839100496661614, "last_loss": 2.807788133621216, "executed_positions_including_padding": 2070016, "ignored_padding_targets": 501736, "batch_gather_seconds_included": 0.5140279021579772, "gradient_clipping_updates": 4043, "first_gradient_norm": 2.411292314529419}, "error": null}

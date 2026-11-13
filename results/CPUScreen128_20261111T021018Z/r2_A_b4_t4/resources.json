@@ -1,0 +1,802 @@
+{
+  "preflight_available_bytes": [
+    2672918528,
+    2655481856,
+    2674397184
+  ],
+  "samples": [
+    {
+      "seconds": 0.029586600023321807,
+      "phase": "startup",
+      "processes": [
+        {
+          "pid": 31676,
+          "resident_bytes": 4280320,
+          "peak_resident_bytes": 4280320,
+          "private_bytes": 827392,
+          "cpu_seconds": 0.0,
+          "page_faults": 1083
+        },
+        {
+          "pid": 9860,
+          "resident_bytes": 2424832,
+          "peak_resident_bytes": 2424832,
+          "private_bytes": 434176,
+          "cpu_seconds": 0.0,
+          "page_faults": 625
+        }
+      ],
+      "resident_bytes": 6705152,
+      "max_process_resident_bytes": 4280320,
+      "peak_resident_bytes": 4280320,
+      "private_bytes": 1261568,
+      "cpu_seconds": 0.0,
+      "process_page_faults_soft_and_hard": 1708,
+      "available_system_bytes": 2674384896,
+      "system_disk_read_bytes": 560761052672
+    },
+    {
+      "seconds": 1.0414126999676228,
+      "phase": "startup",
+      "processes": [
+        {
+          "pid": 31676,
+          "resident_bytes": 4280320,
+          "peak_resident_bytes": 4280320,
+          "private_bytes": 827392,
+          "cpu_seconds": 0.0,
+          "page_faults": 1083
+        },
+        {
+          "pid": 9860,
+          "resident_bytes": 170242048,
+          "peak_resident_bytes": 170242048,
+          "private_bytes": 251142144,
+          "cpu_seconds": 0.96875,
+          "page_faults": 42335
+        }
+      ],
+      "resident_bytes": 174522368,
+      "max_process_resident_bytes": 170242048,
+      "peak_resident_bytes": 170242048,
+      "private_bytes": 251969536,
+      "cpu_seconds": 0.96875,
+      "process_page_faults_soft_and_hard": 43418,
+      "available_system_bytes": 2503122944,
+      "system_disk_read_bytes": 560761069568
+    },
+    {
+      "seconds": 2.0532506000017747,
+      "phase": "startup",
+      "processes": [
+        {
+          "pid": 31676,
+          "resident_bytes": 4280320,
+          "peak_resident_bytes": 4280320,
+          "private_bytes": 827392,
+          "cpu_seconds": 0.0,
+          "page_faults": 1083
+        },
+        {
+          "pid": 9860,
+          "resident_bytes": 228139008,
+          "peak_resident_bytes": 228139008,
+          "private_bytes": 318181376,
+          "cpu_seconds": 2.125,
+          "page_faults": 58149
+        }
+      ],
+      "resident_bytes": 232419328,
+      "max_process_resident_bytes": 228139008,
+      "peak_resident_bytes": 228139008,
+      "private_bytes": 319008768,
+      "cpu_seconds": 2.125,
+      "process_page_faults_soft_and_hard": 59232,
+      "available_system_bytes": 2425073664,
+      "system_disk_read_bytes": 560761073664
+    },
+    {
+      "seconds": 3.065807200036943,
+      "phase": "startup",
+      "processes": [
+        {
+          "pid": 31676,
+          "resident_bytes": 4280320,
+          "peak_resident_bytes": 4280320,
+          "private_bytes": 827392,
+          "cpu_seconds": 0.0,
+          "page_faults": 1083
+        },
+        {
+          "pid": 9860,
+          "resident_bytes": 283885568,
+          "peak_resident_bytes": 283885568,
+          "private_bytes": 373407744,
+          "cpu_seconds": 3.703125,
+          "page_faults": 76058
+        }
+      ],
+      "resident_bytes": 288165888,
+      "max_process_resident_bytes": 283885568,
+      "peak_resident_bytes": 283885568,
+      "private_bytes": 374235136,
+      "cpu_seconds": 3.703125,
+      "process_page_faults_soft_and_hard": 77141,
+      "available_system_bytes": 2337075200,
+      "system_disk_read_bytes": 560761139200
+    },
+    {
+      "seconds": 4.101544499979354,
+      "phase": "warmup",
+      "processes": [
+        {
+          "pid": 31676,
+          "resident_bytes": 4280320,
+          "peak_resident_bytes": 4280320,
+          "private_bytes": 827392,
+          "cpu_seconds": 0.0,
+          "page_faults": 1083
+        },
+        {
+          "pid": 9860,
+          "resident_bytes": 546889728,
+          "peak_resident_bytes": 548659200,
+          "private_bytes": 715440128,
+          "cpu_seconds": 7.375,
+          "page_faults": 158470
+        }
+      ],
+      "resident_bytes": 551170048,
+      "max_process_resident_bytes": 546889728,
+      "peak_resident_bytes": 548659200,
+      "private_bytes": 716267520,
+      "cpu_seconds": 7.375,
+      "process_page_faults_soft_and_hard": 159553,
+      "available_system_bytes": 2131668992,
+      "system_disk_read_bytes": 560761147392
+    },
+    {
+      "seconds": 5.125101499957964,
+      "phase": "warmup",
+      "processes": [
+        {
+          "pid": 31676,
+          "resident_bytes": 4280320,
+          "peak_resident_bytes": 4280320,
+          "private_bytes": 827392,
+          "cpu_seconds": 0.0,
+          "page_faults": 1083
+        },
+        {
+          "pid": 9860,
+          "resident_bytes": 548622336,
+          "peak_resident_bytes": 548667392,
+          "private_bytes": 714784768,
+          "cpu_seconds": 11.484375,
+          "page_faults": 187325
+        }
+      ],
+      "resident_bytes": 552902656,
+      "max_process_resident_bytes": 548622336,
+      "peak_resident_bytes": 548667392,
+      "private_bytes": 715612160,
+      "cpu_seconds": 11.484375,
+      "process_page_faults_soft_and_hard": 188408,
+      "available_system_bytes": 2147721216,
+      "system_disk_read_bytes": 560761225216
+    },
+    {
+      "seconds": 6.157315299962647,
+      "phase": "timed_training",
+      "processes": [
+        {
+          "pid": 31676,
+          "resident_bytes": 4280320,
+          "peak_resident_bytes": 4280320,
+          "private_bytes": 827392,
+          "cpu_seconds": 0.0,
+          "page_faults": 1083
+        },
+        {
+          "pid": 9860,
+          "resident_bytes": 540385280,
+          "peak_resident_bytes": 549146624,
+          "private_bytes": 715571200,
+          "cpu_seconds": 15.5625,
+          "page_faults": 218579
+        }
+      ],
+      "resident_bytes": 544665600,
+      "max_process_resident_bytes": 540385280,
+      "peak_resident_bytes": 549146624,
+      "private_bytes": 716398592,
+      "cpu_seconds": 15.5625,
+      "process_page_faults_soft_and_hard": 219662,
+      "available_system_bytes": 2148937728,
+      "system_disk_read_bytes": 560761425920
+    },
+    {
+      "seconds": 7.174269300070591,
+      "phase": "timed_training",
+      "processes": [
+        {
+          "pid": 31676,
+          "resident_bytes": 4280320,
+          "peak_resident_bytes": 4280320,
+          "private_bytes": 827392,
+          "cpu_seconds": 0.0,
+          "page_faults": 1083
+        },
+        {
+          "pid": 9860,
+          "resident_bytes": 543105024,
+          "peak_resident_bytes": 549146624,
+          "private_bytes": 715046912,
+          "cpu_seconds": 19.625,
+          "page_faults": 264343
+        }
+      ],
+      "resident_bytes": 547385344,
+      "max_process_resident_bytes": 543105024,
+      "peak_resident_bytes": 549146624,
+      "private_bytes": 715874304,
+      "cpu_seconds": 19.625,
+      "process_page_faults_soft_and_hard": 265426,
+      "available_system_bytes": 2129174528,
+      "system_disk_read_bytes": 560761425920
+    },
+    {
+      "seconds": 8.191406000056304,
+      "phase": "timed_training",
+      "processes": [
+        {
+          "pid": 31676,
+          "resident_bytes": 4280320,
+          "peak_resident_bytes": 4280320,
+          "private_bytes": 827392,
+          "cpu_seconds": 0.0,
+          "page_faults": 1083
+        },
+        {
+          "pid": 9860,
+          "resident_bytes": 542613504,
+          "peak_resident_bytes": 549146624,
+          "private_bytes": 712097792,
+          "cpu_seconds": 23.640625,
+          "page_faults": 309851
+        }
+      ],
+      "resident_bytes": 546893824,
+      "max_process_resident_bytes": 542613504,
+      "peak_resident_bytes": 549146624,
+      "private_bytes": 712925184,
+      "cpu_seconds": 23.640625,
+      "process_page_faults_soft_and_hard": 310934,
+      "available_system_bytes": 2134335488,
+      "system_disk_read_bytes": 560761438208
+    },
+    {
+      "seconds": 9.216513499966823,
+      "phase": "timed_training",
+      "processes": [
+        {
+          "pid": 31676,
+          "resident_bytes": 4280320,
+          "peak_resident_bytes": 4280320,
+          "private_bytes": 827392,
+          "cpu_seconds": 0.0,
+          "page_faults": 1083
+        },
+        {
+          "pid": 9860,
+          "resident_bytes": 517939200,
+          "peak_resident_bytes": 549146624,
+          "private_bytes": 685514752,
+          "cpu_seconds": 27.640625,
+          "page_faults": 353543
+        }
+      ],
+      "resident_bytes": 522219520,
+      "max_process_resident_bytes": 517939200,
+      "peak_resident_bytes": 549146624,
+      "private_bytes": 686342144,
+      "cpu_seconds": 27.640625,
+      "process_page_faults_soft_and_hard": 354626,
+      "available_system_bytes": 2119053312,
+      "system_disk_read_bytes": 560761438208
+    },
+    {
+      "seconds": 10.238251900067553,
+      "phase": "timed_training",
+      "processes": [
+        {
+          "pid": 31676,
+          "resident_bytes": 4280320,
+          "peak_resident_bytes": 4280320,
+          "private_bytes": 827392,
+          "cpu_seconds": 0.0,
+          "page_faults": 1083
+        },
+        {
+          "pid": 9860,
+          "resident_bytes": 536813568,
+          "peak_resident_bytes": 549146624,
+          "private_bytes": 715309056,
+          "cpu_seconds": 31.765625,
+          "page_faults": 404465
+        }
+      ],
+      "resident_bytes": 541093888,
+      "max_process_resident_bytes": 536813568,
+      "peak_resident_bytes": 549146624,
+      "private_bytes": 716136448,
+      "cpu_seconds": 31.765625,
+      "process_page_faults_soft_and_hard": 405548,
+      "available_system_bytes": 2116075520,
+      "system_disk_read_bytes": 560761438208
+    },
+    {
+      "seconds": 11.2539624000201,
+      "phase": "timed_training",
+      "processes": [
+        {
+          "pid": 31676,
+          "resident_bytes": 4280320,
+          "peak_resident_bytes": 4280320,
+          "private_bytes": 827392,
+          "cpu_seconds": 0.0,
+          "page_faults": 1083
+        },
+        {
+          "pid": 9860,
+          "resident_bytes": 544739328,
+          "peak_resident_bytes": 549146624,
+          "private_bytes": 714850304,
+          "cpu_seconds": 35.796875,
+          "page_faults": 450441
+        }
+      ],
+      "resident_bytes": 549019648,
+      "max_process_resident_bytes": 544739328,
+      "peak_resident_bytes": 549146624,
+      "private_bytes": 715677696,
+      "cpu_seconds": 35.796875,
+      "process_page_faults_soft_and_hard": 451524,
+      "available_system_bytes": 2107760640,
+      "system_disk_read_bytes": 560761438208
+    },
+    {
+      "seconds": 12.276218799990602,
+      "phase": "timed_training",
+      "processes": [
+        {
+          "pid": 31676,
+          "resident_bytes": 4280320,
+          "peak_resident_bytes": 4280320,
+          "private_bytes": 827392,
+          "cpu_seconds": 0.0,
+          "page_faults": 1083
+        },
+        {
+          "pid": 9860,
+          "resident_bytes": 521953280,
+          "peak_resident_bytes": 549146624,
+          "private_bytes": 682090496,
+          "cpu_seconds": 39.84375,
+          "page_faults": 506687
+        }
+      ],
+      "resident_bytes": 526233600,
+      "max_process_resident_bytes": 521953280,
+      "peak_resident_bytes": 549146624,
+      "private_bytes": 682917888,
+      "cpu_seconds": 39.84375,
+      "process_page_faults_soft_and_hard": 507770,
+      "available_system_bytes": 2120019968,
+      "system_disk_read_bytes": 560761455104
+    },
+    {
+      "seconds": 13.294861400034279,
+      "phase": "timed_training",
+      "processes": [
+        {
+          "pid": 31676,
+          "resident_bytes": 4280320,
+          "peak_resident_bytes": 4280320,
+          "private_bytes": 827392,
+          "cpu_seconds": 0.0,
+          "page_faults": 1083
+        },
+        {
+          "pid": 9860,
+          "resident_bytes": 502358016,
+          "peak_resident_bytes": 549146624,
+          "private_bytes": 663973888,
+          "cpu_seconds": 43.875,
+          "page_faults": 571301
+        }
+      ],
+      "resident_bytes": 506638336,
+      "max_process_resident_bytes": 502358016,
+      "peak_resident_bytes": 549146624,
+      "private_bytes": 664801280,
+      "cpu_seconds": 43.875,
+      "process_page_faults_soft_and_hard": 572384,
+      "available_system_bytes": 2137853952,
+      "system_disk_read_bytes": 560761459712
+    },
+    {
+      "seconds": 14.313867400051095,
+      "phase": "timed_training",
+      "processes": [
+        {
+          "pid": 31676,
+          "resident_bytes": 4280320,
+          "peak_resident_bytes": 4280320,
+          "private_bytes": 827392,
+          "cpu_seconds": 0.0,
+          "page_faults": 1083
+        },
+        {
+          "pid": 9860,
+          "resident_bytes": 498667520,
+          "peak_resident_bytes": 549146624,
+          "private_bytes": 657092608,
+          "cpu_seconds": 47.921875,
+          "page_faults": 621268
+        }
+      ],
+      "resident_bytes": 502947840,
+      "max_process_resident_bytes": 498667520,
+      "peak_resident_bytes": 549146624,
+      "private_bytes": 657920000,
+      "cpu_seconds": 47.921875,
+      "process_page_faults_soft_and_hard": 622351,
+      "available_system_bytes": 2130829312,
+      "system_disk_read_bytes": 560761541632
+    },
+    {
+      "seconds": 15.335767999989912,
+      "phase": "timed_training",
+      "processes": [
+        {
+          "pid": 31676,
+          "resident_bytes": 4280320,
+          "peak_resident_bytes": 4280320,
+          "private_bytes": 827392,
+          "cpu_seconds": 0.0,
+          "page_faults": 1083
+        },
+        {
+          "pid": 9860,
+          "resident_bytes": 542756864,
+          "peak_resident_bytes": 549146624,
+          "private_bytes": 712425472,
+          "cpu_seconds": 52.046875,
+          "page_faults": 666201
+        }
+      ],
+      "resident_bytes": 547037184,
+      "max_process_resident_bytes": 542756864,
+      "peak_resident_bytes": 549146624,
+      "private_bytes": 713252864,
+      "cpu_seconds": 52.046875,
+      "process_page_faults_soft_and_hard": 667284,
+      "available_system_bytes": 2078851072,
+      "system_disk_read_bytes": 560761541632
+    },
+    {
+      "seconds": 16.361336800036952,
+      "phase": "timed_training",
+      "processes": [
+        {
+          "pid": 31676,
+          "resident_bytes": 4280320,
+          "peak_resident_bytes": 4280320,
+          "private_bytes": 827392,
+          "cpu_seconds": 0.0,
+          "page_faults": 1083
+        },
+        {
+          "pid": 9860,
+          "resident_bytes": 526700544,
+          "peak_resident_bytes": 549146624,
+          "private_bytes": 687935488,
+          "cpu_seconds": 55.921875,
+          "page_faults": 706882
+        }
+      ],
+      "resident_bytes": 530980864,
+      "max_process_resident_bytes": 526700544,
+      "peak_resident_bytes": 549146624,
+      "private_bytes": 688762880,
+      "cpu_seconds": 55.921875,
+      "process_page_faults_soft_and_hard": 707965,
+      "available_system_bytes": 2106695680,
+      "system_disk_read_bytes": 560767442432
+    },
+    {
+      "seconds": 17.381983899977058,
+      "phase": "timed_training",
+      "processes": [
+        {
+          "pid": 31676,
+          "resident_bytes": 4280320,
+          "peak_resident_bytes": 4280320,
+          "private_bytes": 827392,
+          "cpu_seconds": 0.0,
+          "page_faults": 1083
+        },
+        {
+          "pid": 9860,
+          "resident_bytes": 538533888,
+          "peak_resident_bytes": 549146624,
+          "private_bytes": 713932800,
+          "cpu_seconds": 59.859375,
+          "page_faults": 750245
+        }
+      ],
+      "resident_bytes": 542814208,
+      "max_process_resident_bytes": 538533888,
+      "peak_resident_bytes": 549146624,
+      "private_bytes": 714760192,
+      "cpu_seconds": 59.859375,
+      "process_page_faults_soft_and_hard": 751328,
+      "available_system_bytes": 2061611008,
+      "system_disk_read_bytes": 560767495680
+    },
+    {
+      "seconds": 18.412162799970247,
+      "phase": "timed_training",
+      "processes": [
+        {
+          "pid": 31676,
+          "resident_bytes": 4280320,
+          "peak_resident_bytes": 4280320,
+          "private_bytes": 827392,
+          "cpu_seconds": 0.0,
+          "page_faults": 1083
+        },
+        {
+          "pid": 9860,
+          "resident_bytes": 522870784,
+          "peak_resident_bytes": 549146624,
+          "private_bytes": 681832448,
+          "cpu_seconds": 63.921875,
+          "page_faults": 787997
+        }
+      ],
+      "resident_bytes": 527151104,
+      "max_process_resident_bytes": 522870784,
+      "peak_resident_bytes": 549146624,
+      "private_bytes": 682659840,
+      "cpu_seconds": 63.921875,
+      "process_page_faults_soft_and_hard": 789080,
+      "available_system_bytes": 2063704064,
+      "system_disk_read_bytes": 560767610368
+    },
+    {
+      "seconds": 19.43351939995773,
+      "phase": "timed_training",
+      "processes": [
+        {
+          "pid": 31676,
+          "resident_bytes": 4280320,
+          "peak_resident_bytes": 4280320,
+          "private_bytes": 827392,
+          "cpu_seconds": 0.0,
+          "page_faults": 1083
+        },
+        {
+          "pid": 9860,
+          "resident_bytes": 527065088,
+          "peak_resident_bytes": 549146624,
+          "private_bytes": 715177984,
+          "cpu_seconds": 67.6875,
+          "page_faults": 827509
+        }
+      ],
+      "resident_bytes": 531345408,
+      "max_process_resident_bytes": 527065088,
+      "peak_resident_bytes": 549146624,
+      "private_bytes": 716005376,
+      "cpu_seconds": 67.6875,
+      "process_page_faults_soft_and_hard": 828592,
+      "available_system_bytes": 2050183168,
+      "system_disk_read_bytes": 560767630336
+    },
+    {
+      "seconds": 20.450103800045326,
+      "phase": "timed_training",
+      "processes": [
+        {
+          "pid": 31676,
+          "resident_bytes": 4280320,
+          "peak_resident_bytes": 4280320,
+          "private_bytes": 827392,
+          "cpu_seconds": 0.0,
+          "page_faults": 1083
+        },
+        {
+          "pid": 9860,
+          "resident_bytes": 543457280,
+          "peak_resident_bytes": 549146624,
+          "private_bytes": 714457088,
+          "cpu_seconds": 71.6875,
+          "page_faults": 868250
+        }
+      ],
+      "resident_bytes": 547737600,
+      "max_process_resident_bytes": 543457280,
+      "peak_resident_bytes": 549146624,
+      "private_bytes": 715284480,
+      "cpu_seconds": 71.6875,
+      "process_page_faults_soft_and_hard": 869333,
+      "available_system_bytes": 2010591232,
+      "system_disk_read_bytes": 560767663104
+    },
+    {
+      "seconds": 21.470872599980794,
+      "phase": "timed_training",
+      "processes": [
+        {
+          "pid": 31676,
+          "resident_bytes": 4280320,
+          "peak_resident_bytes": 4280320,
+          "private_bytes": 827392,
+          "cpu_seconds": 0.0,
+          "page_faults": 1083
+        },
+        {
+          "pid": 9860,
+          "resident_bytes": 525090816,
+          "peak_resident_bytes": 549146624,
+          "private_bytes": 682942464,
+          "cpu_seconds": 75.515625,
+          "page_faults": 887262
+        }
+      ],
+      "resident_bytes": 529371136,
+      "max_process_resident_bytes": 525090816,
+      "peak_resident_bytes": 549146624,
+      "private_bytes": 683769856,
+      "cpu_seconds": 75.515625,
+      "process_page_faults_soft_and_hard": 888345,
+      "available_system_bytes": 2042368000,
+      "system_disk_read_bytes": 560767663104
+    },
+    {
+      "seconds": 22.49586789996829,
+      "phase": "timed_training",
+      "processes": [
+        {
+          "pid": 31676,
+          "resident_bytes": 4280320,
+          "peak_resident_bytes": 4280320,
+          "private_bytes": 827392,
+          "cpu_seconds": 0.0,
+          "page_faults": 1083
+        },
+        {
+          "pid": 9860,
+          "resident_bytes": 548028416,
+          "peak_resident_bytes": 549146624,
+          "private_bytes": 715046912,
+          "cpu_seconds": 79.34375,
+          "page_faults": 911183
+        }
+      ],
+      "resident_bytes": 552308736,
+      "max_process_resident_bytes": 548028416,
+      "peak_resident_bytes": 549146624,
+      "private_bytes": 715874304,
+      "cpu_seconds": 79.34375,
+      "process_page_faults_soft_and_hard": 912266,
+      "available_system_bytes": 2024861696,
+      "system_disk_read_bytes": 560767663104
+    },
+    {
+      "seconds": 23.52316250000149,
+      "phase": "timed_training",
+      "processes": [
+        {
+          "pid": 31676,
+          "resident_bytes": 4280320,
+          "peak_resident_bytes": 4280320,
+          "private_bytes": 827392,
+          "cpu_seconds": 0.0,
+          "page_faults": 1083
+        },
+        {
+          "pid": 9860,
+          "resident_bytes": 531103744,
+          "peak_resident_bytes": 549146624,
+          "private_bytes": 689508352,
+          "cpu_seconds": 83.078125,
+          "page_faults": 937949
+        }
+      ],
+      "resident_bytes": 535384064,
+      "max_process_resident_bytes": 531103744,
+      "peak_resident_bytes": 549146624,
+      "private_bytes": 690335744,
+      "cpu_seconds": 83.078125,
+      "process_page_faults_soft_and_hard": 939032,
+      "available_system_bytes": 2041671680,
+      "system_disk_read_bytes": 560767663104
+    },
+    {
+      "seconds": 24.54781440005172,
+      "phase": "timed_training",
+      "processes": [
+        {
+          "pid": 31676,
+          "resident_bytes": 4280320,
+          "peak_resident_bytes": 4280320,
+          "private_bytes": 827392,
+          "cpu_seconds": 0.0,
+          "page_faults": 1083
+        },
+        {
+          "pid": 9860,
+          "resident_bytes": 509857792,
+          "peak_resident_bytes": 549146624,
+          "private_bytes": 667590656,
+          "cpu_seconds": 87.140625,
+          "page_faults": 970853
+        }
+      ],
+      "resident_bytes": 514138112,
+      "max_process_resident_bytes": 509857792,
+      "peak_resident_bytes": 549146624,
+      "private_bytes": 668418048,
+      "cpu_seconds": 87.140625,
+      "process_page_faults_soft_and_hard": 971936,
+      "available_system_bytes": 2060480512,
+      "system_disk_read_bytes": 560768011264
+    },
+    {
+      "seconds": 25.56551790004596,
+      "phase": "timed_training",
+      "processes": [
+        {
+          "pid": 31676,
+          "resident_bytes": 4280320,
+          "peak_resident_bytes": 4280320,
+          "private_bytes": 827392,
+          "cpu_seconds": 0.0,
+          "page_faults": 1083
+        },
+        {
+          "pid": 9860,
+          "resident_bytes": 540872704,
+          "peak_resident_bytes": 549146624,
+          "private_bytes": 714784768,
+          "cpu_seconds": 91.203125,
+          "page_faults": 1014546
+        }
+      ],
+      "resident_bytes": 545153024,
+      "max_process_resident_bytes": 540872704,
+      "peak_resident_bytes": 549146624,
+      "private_bytes": 715612160,
+      "cpu_seconds": 91.203125,
+      "process_page_faults_soft_and_hard": 1015629,
+      "available_system_bytes": 2028494848,
+      "system_disk_read_bytes": 560768076800
+    }
+  ],
+  "guard_stop": null,
+  "cpu_usage_convention": "100% means one fully occupied logical CPU; divide by logical CPU count for machine share.",
+  "sampling_interval_seconds": 1,
+  "free_system_reserve_bytes": 1342177280,
+  "immediate_stop_available_bytes": 1073741824,
+  "process_limit_bytes": 4294967296,
+  "scope": "Owned worker interpreter plus Windows venv launcher descendants. RSS/private/CPU are summed across this tree. Peak process RSS is the maximum OS-reported per-process peak, not a sum of nonconcurrent peaks. The 4 GiB guard checks each process. System RAM/disk counters include unrelated applications.",
+  "worker_exit_code": 0,
+  "parent_observed_wall_seconds": 26.566261100000702,
+  "peak_process_resident_bytes": 549146624,
+  "minimum_sampled_available_system_bytes": 2010591232,
+  "peak_sampled_private_bytes": 716398592,
+  "timed_cpu_percent_one_core": 389.7353431361815
+}

@@ -1,0 +1,120 @@
+{
+  "status": "STOPPED",
+  "phase": "before_training_launch",
+  "policy": {
+    "available_reserve_bytes": 2147483648,
+    "immediate_available_bytes": 1073741824,
+    "process_resident_limit_bytes": 4294967296,
+    "consecutive_samples": 3,
+    "sampling_interval_seconds": 1.0
+  },
+  "stop_reason": "available_system_ram_below_2_GiB_three_consecutive_samples",
+  "preflight_samples": [
+    {
+      "sample": 1,
+      "elapsed_seconds": 0.0007930999854579568,
+      "available_system_bytes": 1248071680,
+      "processes": [
+        {
+          "pid": 33560,
+          "resident_bytes": 27533312
+        }
+      ],
+      "guard_state": {
+        "policy": {
+          "available_reserve_bytes": 2147483648,
+          "immediate_available_bytes": 1073741824,
+          "process_resident_limit_bytes": 4294967296,
+          "consecutive_samples": 3,
+          "sampling_interval_seconds": 1.0
+        },
+        "low_available_count": 1,
+        "high_process_counts": {}
+      },
+      "stop_reason": null
+    },
+    {
+      "sample": 2,
+      "elapsed_seconds": 1.0014492999762297,
+      "available_system_bytes": 1271652352,
+      "processes": [
+        {
+          "pid": 33560,
+          "resident_bytes": 27533312
+        }
+      ],
+      "guard_state": {
+        "policy": {
+          "available_reserve_bytes": 2147483648,
+          "immediate_available_bytes": 1073741824,
+          "process_resident_limit_bytes": 4294967296,
+          "consecutive_samples": 3,
+          "sampling_interval_seconds": 1.0
+        },
+        "low_available_count": 2,
+        "high_process_counts": {}
+      },
+      "stop_reason": null
+    },
+    {
+      "sample": 3,
+      "elapsed_seconds": 2.0027054999955,
+      "available_system_bytes": 1250635776,
+      "processes": [
+        {
+          "pid": 33560,
+          "resident_bytes": 27537408
+        }
+      ],
+      "guard_state": {
+        "policy": {
+          "available_reserve_bytes": 2147483648,
+          "immediate_available_bytes": 1073741824,
+          "process_resident_limit_bytes": 4294967296,
+          "consecutive_samples": 3,
+          "sampling_interval_seconds": 1.0
+        },
+        "low_available_count": 3,
+        "high_process_counts": {}
+      },
+      "stop_reason": "available_system_ram_below_2_GiB_three_consecutive_samples"
+    }
+  ],
+  "minimum_available_system_bytes": 1248071680,
+  "preflight_peak_process_resident_bytes": 27537408,
+  "planned": {
+    "candidate": "A",
+    "parameters": 5115072,
+    "batch": 4,
+    "context": 128,
+    "threads": 8,
+    "interop_threads": 1,
+    "initialization_seed": 42,
+    "data_order_seed": 43,
+    "passes": 2,
+    "valid_targets_per_pass": 4401479,
+    "total_valid_targets": 8802958,
+    "updates_per_pass": 11301,
+    "total_updates": 22602,
+    "warmup": "No extra uncounted warmup exposures before the two passes."
+  },
+  "completed_passes": 0,
+  "completed_optimizer_updates": 0,
+  "valid_targets_processed": 0,
+  "model_initialized": false,
+  "validation": null,
+  "checkpoints": [],
+  "continuations": [],
+  "guard_tests": "Five focused threshold/consecutive-sample/per-process checks passed before preflight.",
+  "initial_validation_loss": null,
+  "pass_throughput": null,
+  "another_pass_assessment": "Not assessable: neither pass was executed.",
+  "training_seconds": 0,
+  "validation_seconds": 0,
+  "checkpoint_seconds": 0,
+  "source_sha256": {
+    "lm\\resource_guard.py": "624042cc6fac92615e2d90a8685ec852908ff9d00f63d6b0f772c44a4a6868f0",
+    "tools\\preflight_two_pass.py": "685f218f29b2c3389291b6dee5acf9d82565aaf9745d1a7cdec855044c9303ba",
+    "tests\\test_resource_guard.py": "8715a9c8ea69c9a277b29c05dea44319ae2b1a15353262f2a289eb6679a6c600"
+  }
+}

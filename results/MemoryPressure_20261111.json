@@ -1,0 +1,345 @@
+{
+  "samples": [
+    {
+      "utc": "2026-11-11T18:29:09.928996+00:00",
+      "available_system_bytes": 865447936,
+      "processes": [
+        {
+          "pid": 1580,
+          "name": "OneDrive.exe",
+          "resident_bytes": 5098541056,
+          "private_bytes": 5271560192
+        },
+        {
+          "pid": 2408,
+          "name": "Code.exe",
+          "resident_bytes": 55894016,
+          "private_bytes": 14413824
+        },
+        {
+          "pid": 10616,
+          "name": "ChatGPT.exe",
+          "resident_bytes": 8974336,
+          "private_bytes": 2482176
+        },
+        {
+          "pid": 13060,
+          "name": "Code.exe",
+          "resident_bytes": 230047744,
+          "private_bytes": 242806784
+        },
+        {
+          "pid": 13716,
+          "name": "ChatGPT.exe",
+          "resident_bytes": 29679616,
+          "private_bytes": 15917056
+        },
+        {
+          "pid": 14048,
+          "name": "Code.exe",
+          "resident_bytes": 39854080,
+          "private_bytes": 10891264
+        },
+        {
+          "pid": 14848,
+          "name": "Code.exe",
+          "resident_bytes": 159809536,
+          "private_bytes": 136613888
+        },
+        {
+          "pid": 15068,
+          "name": "Code.exe",
+          "resident_bytes": 143597568,
+          "private_bytes": 272596992
+        },
+        {
+          "pid": 16560,
+          "name": "ChatGPT.exe",
+          "resident_bytes": 306049024,
+          "private_bytes": 290222080
+        },
+        {
+          "pid": 16620,
+          "name": "Code.exe",
+          "resident_bytes": 117436416,
+          "private_bytes": 188002304
+        },
+        {
+          "pid": 17328,
+          "name": "Code.exe",
+          "resident_bytes": 243793920,
+          "private_bytes": 292634624
+        },
+        {
+          "pid": 17624,
+          "name": "Code.exe",
+          "resident_bytes": 505241600,
+          "private_bytes": 558350336
+        },
+        {
+          "pid": 17716,
+          "name": "Code.exe",
+          "resident_bytes": 132648960,
+          "private_bytes": 112111616
+        },
+        {
+          "pid": 17744,
+          "name": "Code.exe",
+          "resident_bytes": 106516480,
+          "private_bytes": 72613888
+        },
+        {
+          "pid": 18000,
+          "name": "Code.exe",
+          "resident_bytes": 103256064,
+          "private_bytes": 27566080
+        },
+        {
+          "pid": 18044,
+          "name": "ChatGPT.exe",
+          "resident_bytes": 58695680,
+          "private_bytes": 37273600
+        },
+        {
+          "pid": 18244,
+          "name": "Code.exe",
+          "resident_bytes": 106106880,
+          "private_bytes": 30949376
+        },
+        {
+          "pid": 20492,
+          "name": "ChatGPT.exe",
+          "resident_bytes": 102756352,
+          "private_bytes": 120434688
+        },
+        {
+          "pid": 20504,
+          "name": "ChatGPT.exe",
+          "resident_bytes": 49418240,
+          "private_bytes": 30507008
+        },
+        {
+          "pid": 20780,
+          "name": "ChatGPT.exe",
+          "resident_bytes": 21659648,
+          "private_bytes": 28110848
+        },
+        {
+          "pid": 21548,
+          "name": "ChatGPT.exe",
+          "resident_bytes": 73404416,
+          "private_bytes": 117170176
+        },
+        {
+          "pid": 21756,
+          "name": "ChatGPT.exe",
+          "resident_bytes": 385830912,
+          "private_bytes": 474193920
+        },
+        {
+          "pid": 22248,
+          "name": "ChatGPT.exe",
+          "resident_bytes": 21856256,
+          "private_bytes": 9015296
+        },
+        {
+          "pid": 22464,
+          "name": "ChatGPT.exe",
+          "resident_bytes": 258842624,
+          "private_bytes": 266752000
+        },
+        {
+          "pid": 23072,
+          "name": "ChatGPT.exe",
+          "resident_bytes": 66727936,
+          "private_bytes": 73162752
+        },
+        {
+          "pid": 23448,
+          "name": "ChatGPT.exe",
+          "resident_bytes": 118976512,
+          "private_bytes": 253206528
+        },
+        {
+          "pid": 23544,
+          "name": "ChatGPT.exe",
+          "resident_bytes": 62803968,
+          "private_bytes": 25595904
+        }
+      ]
+    },
+    {
+      "utc": "2026-11-11T18:29:20.408617+00:00",
+      "available_system_bytes": 855535616,
+      "processes": [
+        {
+          "pid": 1580,
+          "name": "OneDrive.exe",
+          "resident_bytes": 5099495424,
+          "private_bytes": 5272510464
+        },
+        {
+          "pid": 2408,
+          "name": "Code.exe",
+          "resident_bytes": 55918592,
+          "private_bytes": 14446592
+        },
+        {
+          "pid": 10616,
+          "name": "ChatGPT.exe",
+          "resident_bytes": 8974336,
+          "private_bytes": 2482176
+        },
+        {
+          "pid": 13060,
+          "name": "Code.exe",
+          "resident_bytes": 233291776,
+          "private_bytes": 246493184
+        },
+        {
+          "pid": 13716,
+          "name": "ChatGPT.exe",
+          "resident_bytes": 29679616,
+          "private_bytes": 15917056
+        },
+        {
+          "pid": 14048,
+          "name": "Code.exe",
+          "resident_bytes": 39854080,
+          "private_bytes": 10891264
+        },
+        {
+          "pid": 14848,
+          "name": "Code.exe",
+          "resident_bytes": 159731712,
+          "private_bytes": 136540160
+        },
+        {
+          "pid": 15068,
+          "name": "Code.exe",
+          "resident_bytes": 143507456,
+          "private_bytes": 272494592
+        },
+        {
+          "pid": 16560,
+          "name": "ChatGPT.exe",
+          "resident_bytes": 305561600,
+          "private_bytes": 289685504
+        },
+        {
+          "pid": 16620,
+          "name": "Code.exe",
+          "resident_bytes": 117186560,
+          "private_bytes": 187813888
+        },
+        {
+          "pid": 17328,
+          "name": "Code.exe",
+          "resident_bytes": 243814400,
+          "private_bytes": 292687872
+        },
+        {
+          "pid": 17624,
+          "name": "Code.exe",
+          "resident_bytes": 504573952,
+          "private_bytes": 557748224
+        },
+        {
+          "pid": 17716,
+          "name": "Code.exe",
+          "resident_bytes": 132583424,
+          "private_bytes": 112029696
+        },
+        {
+          "pid": 17744,
+          "name": "Code.exe",
+          "resident_bytes": 106438656,
+          "private_bytes": 72523776
+        },
+        {
+          "pid": 18000,
+          "name": "Code.exe",
+          "resident_bytes": 103256064,
+          "private_bytes": 27566080
+        },
+        {
+          "pid": 18044,
+          "name": "ChatGPT.exe",
+          "resident_bytes": 58695680,
+          "private_bytes": 37273600
+        },
+        {
+          "pid": 18244,
+          "name": "Code.exe",
+          "resident_bytes": 106106880,
+          "private_bytes": 30949376
+        },
+        {
+          "pid": 20492,
+          "name": "ChatGPT.exe",
+          "resident_bytes": 102719488,
+          "private_bytes": 118272000
+        },
+        {
+          "pid": 20504,
+          "name": "ChatGPT.exe",
+          "resident_bytes": 49127424,
+          "private_bytes": 30265344
+        },
+        {
+          "pid": 20780,
+          "name": "ChatGPT.exe",
+          "resident_bytes": 21659648,
+          "private_bytes": 28110848
+        },
+        {
+          "pid": 21548,
+          "name": "ChatGPT.exe",
+          "resident_bytes": 73404416,
+          "private_bytes": 117170176
+        },
+        {
+          "pid": 21756,
+          "name": "ChatGPT.exe",
+          "resident_bytes": 385900544,
+          "private_bytes": 474263552
+        },
+        {
+          "pid": 22248,
+          "name": "ChatGPT.exe",
+          "resident_bytes": 21856256,
+          "private_bytes": 9015296
+        },
+        {
+          "pid": 22464,
+          "name": "ChatGPT.exe",
+          "resident_bytes": 258842624,
+          "private_bytes": 266752000
+        },
+        {
+          "pid": 23072,
+          "name": "ChatGPT.exe",
+          "resident_bytes": 66727936,
+          "private_bytes": 73162752
+        },
+        {
+          "pid": 23448,
+          "name": "ChatGPT.exe",
+          "resident_bytes": 118976512,
+          "private_bytes": 253206528
+        },
+        {
+          "pid": 23544,
+          "name": "ChatGPT.exe",
+          "resident_bytes": 62803968,
+          "private_bytes": 25595904
+        }
+      ]
+    }
+  ],
+  "observation": "OneDrive is the largest currently observed app memory consumer. Current snapshots do not prove which process caused the earlier increase.",
+  "hypothesis": "Workspace is inside OneDrive. Frequent checkpoint and log writes may prompt sync work; historical per-app measurements were not captured, so causality is unconfirmed.",
+  "training_peak_resident_bytes": 504799232,
+  "training_process_has_exited": true,
+  "system_pool_counters": "CIM access denied; no elevation attempted."
+}

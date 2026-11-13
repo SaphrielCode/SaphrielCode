@@ -1,0 +1,94 @@
+{
+  "status": "PASS",
+  "candidate": "B",
+  "batch_size": 1,
+  "threads": 8,
+  "interop_threads": 1,
+  "context": 128,
+  "requested_seconds": 20.0,
+  "seed": 42,
+  "order_seed": 43,
+  "versions": {
+    "torch": "2.9.1+cpu",
+    "numpy": "2.3.4",
+    "python": "3.13.3 (tags/v3.13.3:6280bb5, Apr  8 2025, 14:47:33) [MSC v.1943 64 bit (AMD64)]"
+  },
+  "source_hashes": {
+    "lm\\model.py": "a6844edd876a13fdda517148ad5f013dd9fe494b53a8e398dcf560f62031b66f",
+    "lm\\batches.py": "26d12b36af6e4f147532d0dc698274b9a85fb54be7342d10ccb8227dac95da95",
+    "tools\\cpu_screen_worker.py": "38cb761202bdb4714c6b3c2ca57a858b9fc8b21ff6fc34ad8858ad4e47e26da1"
+  },
+  "validation": {},
+  "final_test_evaluated": false,
+  "batch_manifest_sha256": "e30f2aa5f107dd704ff3931187889e82c06e29aa3690bdf122532e9ae72896f9",
+  "tokenizer_sha256": "5d99b0bf97ebebccc88cfc73e657cd82379e9b1495dbf0c75fb5f93fe1dfd16f",
+  "configuration": {
+    "vocab_size": 8192,
+    "layers": 10,
+    "width": 256,
+    "heads": 8,
+    "ff_width": 1024,
+    "max_context": 256,
+    "norm_eps": 1e-05,
+    "rope_theta": 10000.0
+  },
+  "unique_parameters": 9966848,
+  "initial_parameter_sha256": "3eba913c0b78e20f8b1e0c3e845f87df57faf8c3f38329b0e3a81450e4db4ff3",
+  "data_mode": "All prepared train windows resident as uint16 NumPy buffers; only the current batch is converted to int64. Gather/conversion/masking included in step timing. No disk data reads inside timed training.",
+  "environment": {
+    "OMP_NUM_THREADS": "8",
+    "MKL_NUM_THREADS": "8",
+    "OPENBLAS_NUM_THREADS": "8"
+  },
+  "torch_parallel_info": "ATen/Parallel:\n\tat::get_num_threads() : 8\n\tat::get_num_interop_threads() : 1\nOpenMP 2019\n\tomp_get_max_threads() : 8\nIntel(R) oneAPI Math Kernel Library Version 2025.3-Product Build 20251007 for Intel(R) 64 architecture applications\n\tmkl_get_max_threads() : 8\nIntel(R) MKL-DNN v3.7.1 (Git Hash 8d263e693366ef8db40acc569cc7d8edf644556d)\nstd::thread::hardware_concurrency() : 16\nEnvironment variables:\n\tOMP_NUM_THREADS : 8\n\tMKL_NUM_THREADS : 8\nATen parallel backend: OpenMP\n",
+  "setup_seconds": 1.5671033000107855,
+  "warmup": {
+    "updates": 10,
+    "valid_tokens": 842,
+    "loss_sum": 7030.3772439956665,
+    "seconds": 1.9032444999320433,
+    "last_loss": 7.867697238922119
+  },
+  "first_timed_loss": 8.068170547485352,
+  "timed_training": {
+    "completed_updates": 98,
+    "valid_target_tokens": 9782,
+    "elapsed_seconds": 20.058027199935168,
+    "valid_tokens_per_second": 487.6850501046094,
+    "steps_per_second": 4.885824464347957,
+    "step_median_seconds": 0.20343694993061945,
+    "step_p95_seconds": 0.24017693499336018,
+    "step_max_seconds": 0.26321669993922114,
+    "loss_sum": 62264.42244797945,
+    "aggregate_loss_nats_per_token": 6.365203685133864,
+    "last_loss": 5.486332893371582,
+    "executed_positions_including_padding": 12544,
+    "ignored_padding_targets": 2762,
+    "batch_gather_seconds_included": 0.012584699783474207,
+    "gradient_clipping_updates": 98,
+    "first_gradient_norm": 3.2664968967437744
+  },
+  "time_windows": [
+    {
+      "valid_tokens": 9782,
+      "updates": 98,
+      "index": 1,
+      "duration_seconds": 20.058027199935168,
+      "valid_tokens_per_second": 487.6850501046094
+    }
+  ],
+  "window_accounting": "Completed step work attributed to the minute in which that step started; boundary-straddling steps may slightly affect adjacent minute rates.",
+  "coverage": {
+    "warmup_and_timed_windows_delivered": 108,
+    "completed_corpus_passes": 0,
+    "cursor_in_current_pass": 108,
+    "distinct_windows_seen": 108,
+    "total_windows": 45204
+  },
+  "final_parameter_sha256": "c8d6cc458252a9db36c7a7f7eab54d0ac36ac8361fb8533eca2e21af3e88b803",
+  "arithmetic_estimate": {
+    "full_batch_forward_matrix_flops": 2717908992,
+    "scope": "Analytical dense-matmul cross-check only; no profiled backward ledger or total-compute claim in this speed/memory screen."
+  },
+  "worker_wall_seconds_excluding_initial_import": 23.643466200097464
+}

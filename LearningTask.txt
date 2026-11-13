@@ -1,11 +1,35 @@
-**ELECTRA’s main learning task was to identify which tokens in a passage had been replaced.**
+Train a transformer from scratch using **next-token prediction** as its primary learning objective. Then train it on instruction/response examples to develop useful response behavior.
 
-1. Start with real text: “The cat **sat** on the mat.”
+Experiment with **replacement detection as an auxiliary objective**, measuring whether it improves learning efficiency without reducing generation quality.
+
+Compare against an otherwise identical model trained without replacement detection. Use the same tokenizer, training data, model size, and evaluation sets. Include all auxiliary computation—including the generator—in training time and peak RAM measurements.
+
+Evaluate:
+
+- Held-out next-token prediction loss.
+- Instruction following and response quality.
+- Training time and peak RAM.
+- Inference speed and memory usage.
+- Quality achieved at equal compute.
+- Compute required to reach comparable quality.
+
+**Auxiliary replacement-detection task**
+
+Identify tokens that differ from the original passage.
+
+1. Start with original text: “The cat **sat** on the mat.”
 2. A small generator proposes a substitute: “The cat **ate** on the mat.”
-3. The main model—the **discriminator**—labels every position:
-```go
-The   cat   ate        on    the   mat
-real  real  replaced   real  real  real
+3. A token-classification head predicts whether each token is original or replaced:
+
+```text
+The       cat       ate        on        the       mat
+original  original  replaced   original  original  original
 ```
 
-It learns to detect plausible substitutions using the surrounding context. **It identifies replacements rather than generating the correct original token.**
+Training labels come from comparing the modified passage with the original. If the generator proposes the original token, label that position **original**. These labels describe whether a token changed, not whether its content is factually true.
+
+For the initial experiment, keep the main transformer’s attention **causal**: each position can use its own token and preceding context, but cannot see later tokens. Replacement detection is therefore a causal auxiliary task, rather than a direct reproduction of ELECTRA’s bidirectional setup.
+
+The auxiliary task predicts replacement status; it does not reconstruct the original token. The primary next-token objective continues to teach text generation.
+
+Treat replacement detection as an experimental hypothesis. Retain it only if measured benefits justify its total cost.

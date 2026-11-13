@@ -1,0 +1,18 @@
+CONTROLLED TWO-PASS CANDIDATE A LEARNING RUN
+
+Status: STOPPED
+BPE vocabulary: 4096.
+Fresh seed42 weights; batch4/context128/8 CPU threads/1 inter-op; FP32 AdamW unchanged; next-token objective only.
+Same seed43 frozen row permutation reused on each pass; no extra warmup updates. Padding ignored; stories isolated.
+Completed passes: 0/2; updates: 3003; valid targets: 1184968/9165972.
+Training time: 463.835s; validation: 28.259s; checkpoint save/reload: 0.254s.
+Peak process RAM: 481.41 MiB; minimum available RAM: 0.993 GiB.
+Available-RAM reserve: 1 GiB; first sample below1GiB stops; three consecutive below the reserve stop; three consecutive above4GiB process RSS stop. Sampling interval1s.
+Final test remains reserved. No instruction training or replacement detection. No DataEval edits.
+Validation initialization: 8.32296659 nats/valid target; sum=1876695.79750967; count=225484.
+Pass work: {"pass_number": 1, "completed_updates": 3003, "valid_targets": 1184968, "loss_sum": 4763812.754200526, "seconds": 463.8353547000006, "completed": false}
+
+Third-pass value cannot be assessed without both pass validation losses.
+Stop/error: {'seconds': 498.2830990999937, 'phase': 'training_pass_1', 'available_system_bytes': 1066057728, 'resident_bytes': 485138432, 'peak_resident_bytes': 504799232, 'private_bytes': 760270848, 'cpu_seconds': 3904.78125, 'guard_stop': 'available_system_ram_below_1_GiB_first_sample'}
+Any exposure shortfall is explained by the recorded interruption; partial runs are not two-pass results.
+Details, source hashes, checkpoint verification and per-step/resource logs are stored beside this file.

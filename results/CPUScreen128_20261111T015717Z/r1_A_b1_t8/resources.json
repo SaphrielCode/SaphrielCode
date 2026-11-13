@@ -1,0 +1,131 @@
+{
+  "preflight_available_bytes": [
+    2644824064,
+    2642759680,
+    2642477056
+  ],
+  "samples": [
+    {
+      "seconds": 0.019019800005480647,
+      "phase": "startup",
+      "resident_bytes": 2138112,
+      "peak_resident_bytes": 2138112,
+      "private_bytes": 389120,
+      "available_system_bytes": 2575077376,
+      "cpu_seconds": 0.015625,
+      "process_page_faults_soft_and_hard": 543,
+      "system_disk_read_bytes": 559411257856
+    },
+    {
+      "seconds": 1.0201792999869213,
+      "phase": "startup",
+      "resident_bytes": 4280320,
+      "peak_resident_bytes": 4280320,
+      "private_bytes": 827392,
+      "available_system_bytes": 2408521728,
+      "cpu_seconds": 0.015625,
+      "process_page_faults_soft_and_hard": 1083,
+      "system_disk_read_bytes": 559413338624
+    },
+    {
+      "seconds": 2.0212447999510914,
+      "phase": "startup",
+      "resident_bytes": 4280320,
+      "peak_resident_bytes": 4280320,
+      "private_bytes": 827392,
+      "available_system_bytes": 2316451840,
+      "cpu_seconds": 0.015625,
+      "process_page_faults_soft_and_hard": 1083,
+      "system_disk_read_bytes": 559415373824
+    },
+    {
+      "seconds": 3.022218900034204,
+      "phase": "startup",
+      "resident_bytes": 4280320,
+      "peak_resident_bytes": 4280320,
+      "private_bytes": 827392,
+      "available_system_bytes": 2267435008,
+      "cpu_seconds": 0.015625,
+      "process_page_faults_soft_and_hard": 1083,
+      "system_disk_read_bytes": 559415463936
+    },
+    {
+      "seconds": 4.023129199980758,
+      "phase": "startup",
+      "resident_bytes": 4280320,
+      "peak_resident_bytes": 4280320,
+      "private_bytes": 827392,
+      "available_system_bytes": 2258952192,
+      "cpu_seconds": 0.015625,
+      "process_page_faults_soft_and_hard": 1083,
+      "system_disk_read_bytes": 559415504896
+    },
+    {
+      "seconds": 5.049151199986227,
+      "phase": "warmup",
+      "resident_bytes": 4280320,
+      "peak_resident_bytes": 4280320,
+      "private_bytes": 827392,
+      "available_system_bytes": 2036899840,
+      "cpu_seconds": 0.015625,
+      "process_page_faults_soft_and_hard": 1083,
+      "system_disk_read_bytes": 559415652352
+    },
+    {
+      "seconds": 6.064816099940799,
+      "phase": "timed_training",
+      "resident_bytes": 4280320,
+      "peak_resident_bytes": 4280320,
+      "private_bytes": 827392,
+      "available_system_bytes": 2043121664,
+      "cpu_seconds": 0.015625,
+      "process_page_faults_soft_and_hard": 1083,
+      "system_disk_read_bytes": 559415738368
+    },
+    {
+      "seconds": 7.067377600003965,
+      "phase": "timed_training",
+      "resident_bytes": 4280320,
+      "peak_resident_bytes": 4280320,
+      "private_bytes": 827392,
+      "available_system_bytes": 2033836032,
+      "cpu_seconds": 0.015625,
+      "process_page_faults_soft_and_hard": 1083,
+      "system_disk_read_bytes": 559415787520
+    },
+    {
+      "seconds": 8.08581099996809,
+      "phase": "finished",
+      "resident_bytes": 4280320,
+      "peak_resident_bytes": 4280320,
+      "private_bytes": 827392,
+      "available_system_bytes": 2152914944,
+      "cpu_seconds": 0.015625,
+      "process_page_faults_soft_and_hard": 1083,
+      "system_disk_read_bytes": 559416880640
+    }
+  ],
+  "guard_stop": {
+    "reason": "available_ram_below_2_GiB_three_samples",
+    "sample": {
+      "seconds": 7.067377600003965,
+      "phase": "timed_training",
+      "resident_bytes": 4280320,
+      "peak_resident_bytes": 4280320,
+      "private_bytes": 827392,
+      "available_system_bytes": 2033836032,
+      "cpu_seconds": 0.015625,
+      "process_page_faults_soft_and_hard": 1083,
+      "system_disk_read_bytes": 559415787520
+    }
+  },
+  "cpu_usage_convention": "100% means one fully occupied logical CPU; divide by logical CPU count for machine share.",
+  "sampling_interval_seconds": 1,
+  "scope": "Worker process; CPU math threads share its PID. System RAM/disk counters include unrelated applications.",
+  "worker_exit_code": 1,
+  "parent_observed_wall_seconds": 9.086522400029935,
+  "peak_process_resident_bytes": 4280320,
+  "minimum_sampled_available_system_bytes": 2033836032,
+  "peak_sampled_private_bytes": 827392,
+  "timed_cpu_percent_one_core": 0.0
+}
