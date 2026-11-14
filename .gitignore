@@ -4,3 +4,10 @@
 __pycache__/
 *.pyc
 /results/**/*.pt
+# Raw run artifacts and machine-specific records stay local.
+/results/*/
+/results/Relocation_Receipt.*
+/results/LocalEnvironmentValidation.json
+/results/PreviousWorkspaceConfiguration.json
+/results/MemoryPressure_*
+*.tmp

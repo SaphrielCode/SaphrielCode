@@ -14,9 +14,15 @@ from lm.batches import BATCH_DIR, read_batch, verify_batch_lock
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--vocab-size',type=int,choices=(4096,8192),default=8192)
+    parser.add_argument('--tokenizer-kind',choices=('bpe','unigram'),default='bpe')
     args = parser.parse_args()
+    if args.tokenizer_kind=='unigram' and args.vocab_size!=8192:
+        parser.error('Unigram comparison requires8192 entries')
     batch_dir = BATCH_DIR if args.vocab_size==8192 else ROOT/'data/TinyStoriesBatches128_BPE4096'
     source_dir = ROOT/'data/TinyStoriesSubset' if args.vocab_size==8192 else ROOT/'data/TinyStoriesSubset_BPE4096'
+    if args.tokenizer_kind=='unigram':
+        batch_dir=ROOT/'data/TinyStoriesBatches128_Unigram8192'
+        source_dir=ROOT/'data/TinyStoriesSubset_Unigram8192'
     manifest = verify_batch_lock(batch_dir,source_dir)
     result = {"status": "PASS", "splits": {}}
     for split in ("train", "validation", "test"):

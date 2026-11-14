@@ -26,12 +26,15 @@ def main():
     parser.add_argument('--track-app-memory', action='store_true')
     parser.add_argument('--reserve-gib', type=int, choices=(1, 2), default=2)
     parser.add_argument('--vocab-size', type=int, choices=(4096, 8192), default=8192)
+    parser.add_argument('--tokenizer-kind', choices=('bpe','unigram'), default='bpe')
     args = parser.parse_args()
+    if args.tokenizer_kind=='unigram' and args.vocab_size!=8192:
+        parser.error('The current unigram comparison uses 8192 entries')
     if args.resume_pass_one and args.resume_recovery:
         parser.error('Choose only one resume mode')
     policy = Policy(available_reserve_bytes=args.reserve_gib * 1024**3)
     import psutil
-    prefix = 'TwoPassA_' if args.vocab_size==8192 else 'TwoPassA_BPE4096_'
+    prefix = ('TwoPassA_Unigram8192_' if args.tokenizer_kind=='unigram' else 'TwoPassA_' if args.vocab_size==8192 else 'TwoPassA_BPE4096_')
     out = ROOT / 'results' / (prefix + datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%S%fZ'))
     out.mkdir()
     print(str(out), flush=True)
@@ -43,9 +46,14 @@ def main():
                                      interop_threads=1, initialization_seed=42, order_seed=43,vocabulary_size=args.vocab_size),
                   expected_targets_per_pass=4401479, expected_total_targets=8802958,
                   guard_policy=asdict(policy))
+    report['tokenizer_kind']=args.tokenizer_kind
+    if args.tokenizer_kind=='unigram':
+        report['configuration']['tokenizer_kind']='unigram'
     if args.reserve_gib == 1:
         report['guard_authorization'] = 'User explicitly requested 1 GiB stopping threshold for finishing this experiment; first sample below 1 GiB stops training. Per-process 4 GiB consecutive-sample guard unchanged.'
     planned_batches=ROOT/('data/TinyStoriesBatches128' if args.vocab_size==8192 else 'data/TinyStoriesBatches128_BPE4096')
+    if args.tokenizer_kind=='unigram':
+        planned_batches=ROOT/'data/TinyStoriesBatches128_Unigram8192'
     planned_manifest=json.loads((planned_batches/'manifest.json').read_text(encoding='utf-8'))
     report['expected_targets_per_pass']=planned_manifest['statistics']['train']['valid_target_tokens']
     report['expected_total_targets']=2*report['expected_targets_per_pass']
@@ -156,6 +164,9 @@ def main():
         if args.vocab_size==4096:
             BATCH_DIR = ROOT/'data/TinyStoriesBatches128_BPE4096'
             source_dir = ROOT/'data/TinyStoriesSubset_BPE4096'
+        if args.tokenizer_kind=='unigram':
+            BATCH_DIR=ROOT/'data/TinyStoriesBatches128_Unigram8192'
+            source_dir=ROOT/'data/TinyStoriesSubset_Unigram8192'
         torch.set_num_threads(8)
         torch.set_num_interop_threads(1)
         torch.set_default_dtype(torch.float32)
@@ -165,6 +176,8 @@ def main():
         lock = verify_batch_lock(BATCH_DIR,source_dir)
         token_config = json.loads((BATCH_DIR/'tokenizer-lock.json').read_text(encoding='utf-8'))
         assert token_config['vocabulary_size']==args.vocab_size
+        encoding_config=json.loads((source_dir/'tokenizer.json').read_text(encoding='utf-8'))
+        assert encoding_config['model']['type']==('Unigram' if args.tokenizer_kind=='unigram' else 'BPE')
         assert digest(source_dir/'tokenizer.json')==lock['tokenizer_sha256']
         train_targets = lock['statistics']['train']['valid_target_tokens']
         val_targets = lock['statistics']['validation']['valid_target_tokens']
@@ -424,7 +437,7 @@ def main():
         report['minimum_available_system_bytes']=min((s['available_system_bytes'] for s in samples),default=0)
         report['stop_semantics']='Monitor latches the first guard violation. Training checks it before forward/backward/update and between validation/generation batches; an already executing operator cannot be preempted. No new optimizer update is started after the stop check detects the latch.'
         save_json(out/'run.json',report)
-        lines=['CONTROLLED TWO-PASS CANDIDATE A LEARNING RUN','',f'Status: {report["status"]}',f'BPE vocabulary: {args.vocab_size}.',
+        lines=['CONTROLLED TWO-PASS CANDIDATE A LEARNING RUN','',f'Status: {report["status"]}',f'Tokenizer: {args.tokenizer_kind}; vocabulary: {args.vocab_size}.',
                'Fresh seed42 weights; batch4/context128/8 CPU threads/1 inter-op; FP32 AdamW unchanged; next-token objective only.',
                'Same seed43 frozen row permutation reused on each pass; no extra warmup updates. Padding ignored; stories isolated.',
                f'Completed passes: {report["completed_passes"]}/2; updates: {report["completed_updates"]}; valid targets: {report["valid_targets_processed"]}/{report["expected_total_targets"]}.',

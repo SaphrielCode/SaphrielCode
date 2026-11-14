@@ -23,9 +23,9 @@ class Guard:
             p["pid"]: self.high_process_counts.get(p["pid"], 0) + 1
             for p in processes if p["resident_bytes"] > self.policy.process_resident_limit_bytes}
         if available_bytes < self.policy.immediate_available_bytes:
-            return "available_system_ram_below_1_GiB_first_sample"
+            return f"available_system_ram_below_{self.policy.immediate_available_bytes / 1024**3:g}_GiB_first_sample"
         if self.low_available_count >= self.policy.consecutive_samples:
-            return "available_system_ram_below_2_GiB_three_consecutive_samples"
+            return f"available_system_ram_below_{self.policy.available_reserve_bytes / 1024**3:g}_GiB_three_consecutive_samples"
         if any(count >= self.policy.consecutive_samples for count in self.high_process_counts.values()):
             return "process_resident_ram_above_4_GiB_three_consecutive_samples"
         return None

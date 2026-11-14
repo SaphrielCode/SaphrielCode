@@ -1,0 +1,30 @@
+ARCHITECTURE EXPERIMENT: deep12x160
+PASS: exact update/target coverage; finite step losses and norms; checkpoint hashes and runtime reloads; source snapshots; guard telemetry. Test split reserved.
+
+{"vocab_size": 8192, "layers": 12, "width": 160, "heads": 5, "ff_width": 640, "ff_activation": "gelu", "max_context": 256, "norm_eps": 1e-05, "rope_theta": 10000.0}
+Parameters: 5001120; updates: 22570; valid targets: 8777642; fresh seed42, order43; two complete passes; no extra warmup.
+Training: 4897.460s; validation: 104.458s; checkpoint: 2.251s. Periodic recovery I/O is already included in pass wall times; do not add that I/O again.
+Peak process resident: 597.47 MiB; minimum available: 3.745 GiB.
+
+initialization: 9.015207453 nats/target; 3.177926441 bits/byte; NLL sum 1948637.090904236; count 216150.
+pass_1: 3.070242174 nats/target; 1.082282780 bits/byte; NLL sum 663632.845977091; count 216150.
+pass_2: 2.892596817 nats/target; 1.019661495 bits/byte; NLL sum 625234.802082685; count 216150.
+Pass 1: 2415.784s; 1816.728 valid targets/s.
+Pass 2: 2481.676s; 1768.490 valid targets/s.
+
+Common128 final bits/byte change versus working unigram GELU baseline: +0.760% (lower is better).
+For context256, native256 and common128 predict identical target tokens with different histories/chunk boundaries. Use common128 for matching evaluation conditioning. Training windows/order still differ. Other variants use unchanged128 windows. One seed; background workloads differ; neither elapsed time nor parameter count establishes equal total compute. Shared architectural tensor values are not assumed identical across changed shapes. Baseline working selection is unchanged.
+
+Pass 1 prompt: Once upon a time, a little girl found a
+greedy argmax; max 64 new tokens; EOS=2; rolling context128; BOS=1
+ big, yellow dress. She was very excited and wanted to go on a walk. She went to the park and saw a big, yellow dress. She was so excited and she ran to the park.
+
+The little girl saw a big, yellow dress and she was very excited. She asked her mom if she
+
+Pass 2 prompt: Once upon a time, a little girl found a
+greedy argmax; max 64 new tokens; EOS=2; rolling context128; BOS=1
+ big, red ball. She was very excited and wanted to play with it. She asked her mom, "Can I play with the ball?" Her mom said, "Sure, but be careful and be careful. You can have the ball to the park."
+
+The little girl was very excited. She wanted to
+
+Run artifacts: results\Architecture_deep12x160_20261112T064539824714Z

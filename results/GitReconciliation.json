@@ -1,0 +1,13 @@
+{
+  "previous": "b04e4b44087a7bfb442eb2f75089d4aa9f617d0e",
+  "remote": "39e133df8f7490c2b0d8ee459aec2d36411772b5",
+  "overlapping_semantic_changes": [
+    ".gitignore",
+    "LearningTask.txt",
+    "RunInstructions.txt",
+    "tools/train_two_pass.py",
+    "tools/verify_batches.py"
+  ],
+  "remote_extra_files_preserved": true,
+  "resolution": "Preserve newer remote LearningTask next-token/causal auxiliary specification. Keep local unigram-aware trainers/verifier and approved production RunInstructions rather than older remote copies. Preserve local ignore rules; remote-only raw results remain in base tree."
+}

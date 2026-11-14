@@ -1,0 +1,33 @@
+CONTROLLED TWO-PASS CANDIDATE A LEARNING RUN
+
+Status: PASS
+Tokenizer: unigram; vocabulary: 8192.
+Fresh seed42 weights; variant deep12x160; batch4/context128/8 CPU threads/1 inter-op; FP32 AdamW unchanged; next-token objective only.
+Same seed43 frozen row permutation reused on each pass; no extra warmup updates. Padding ignored; stories isolated.
+Completed passes: 2/2; updates: 22570; valid targets: 8777642/8777642.
+Training time: 4897.460s; validation: 104.458s; checkpoint save/reload: 2.251s.
+Peak process RAM: 597.47 MiB; minimum available RAM: 3.745 GiB.
+Available-RAM reserve: 2 GiB; first sample below1GiB stops; three consecutive below the reserve stop; three consecutive above4GiB process RSS stop. Sampling interval1s.
+Final test remains reserved. No instruction training or replacement detection. No DataEval edits.
+Validation initialization: 9.01520745 nats/valid target; sum=1948637.09090424; count=216150.
+Validation pass_1: 3.07024217 nats/valid target; sum=663632.84597709; count=216150.
+Validation pass_2: 2.89259682 nats/valid target; sum=625234.80208269; count=216150.
+Pass work: {"pass_number": 1, "completed_updates": 11285, "valid_targets": 4388821, "loss_sum": 15200098.761289999, "seconds": 2415.7837309999886, "completed": true, "valid_targets_per_second": 1816.727608387069}
+Pass work: {"pass_number": 2, "completed_updates": 11285, "valid_targets": 4388821, "loss_sum": 13067690.240518885, "seconds": 2481.6763599999977, "completed": true, "valid_targets_per_second": 1768.4904731090737}
+
+Pass 1 prompt: Once upon a time, a little girl found a
+Decoding: greedy argmax; max 64 new tokens; EOS=2; rolling context128; BOS=1
+Continuation:  big, yellow dress. She was very excited and wanted to go on a walk. She went to the park and saw a big, yellow dress. She was so excited and she ran to the park.
+
+The little girl saw a big, yellow dress and she was very excited. She asked her mom if she
+
+Pass 2 prompt: Once upon a time, a little girl found a
+Decoding: greedy argmax; max 64 new tokens; EOS=2; rolling context128; BOS=1
+Continuation:  big, red ball. She was very excited and wanted to play with it. She asked her mom, "Can I play with the ball?" Her mom said, "Sure, but be careful and be careful. You can have the ball to the park."
+
+The little girl was very excited. She wanted to
+
+A third pass is worth a bounded test because validation loss improved in pass two; this single seed does not establish an optimum.
+Stop/error: None
+Any exposure shortfall is explained by the recorded interruption; partial runs are not two-pass results.
+Details, source hashes, checkpoint verification and per-step/resource logs are stored beside this file.

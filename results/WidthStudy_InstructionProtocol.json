@@ -1,0 +1,39 @@
+{
+  "name": "InstructionDiagnostic_v1",
+  "provenance": "Locally authored deterministic synthetic templates; no external dataset. No model responses used during construction.",
+  "selection_seed": 4401,
+  "training_documents": 500,
+  "heldout_documents": 60,
+  "tasks": [
+    "extract",
+    "repeat",
+    "mapping",
+    "context_qa",
+    "yes_no"
+  ],
+  "split_rule": "Distinct subject words and names across train/heldout; shared task templates. Measures template/compositional transfer, not broad instruction generalization.",
+  "prompt_format": "Instruction:\n{instruction}\nResponse:\n",
+  "training_epochs": 5,
+  "batch_size": 4,
+  "order_seed": 44,
+  "optimizer": "Fresh AdamW moments; lr0.0003 betas0.9/0.95 eps1e-8 decay0.1 matrices/0norm; clipping1; FP32; no accumulation",
+  "supervision": "Response tokens and EOS only; prompt, BOS and padding ignored. Reject sequences exceeding128; no truncation.",
+  "decoding": "Greedy argmax; max32 new tokens; EOS2; BOS1; rolling context128; no stop strings",
+  "rubric": {
+    "correctness": "Exact match after NFC and outer whitespace stripping, case/punctuation preserved; report per task and overall.",
+    "instruction_format": "Nonempty single line; repeat exactly3 whitespace words; yes_no exactlyyes/no; other tasks a single alphabetic word. This is format compliance, not semantic correctness.",
+    "coherence": "Qualitative evaluator review:2 clear task-appropriate expression;1 readable but irrelevant/fragmented;0 unintelligible. Identify evaluator; not an independent human study. Report separately from exact correctness; retain all responses.",
+    "repetition": "Report repeated4gram fraction for responses with>=4tokens, and longest identical whitespace-word run. Short outputs have no repeated4grams."
+  },
+  "limits": "Small synthetic diagnostic; one seed; shared templates across splits. Not a general conversation, reasoning, factuality or safety benchmark.",
+  "files": {
+    "heldout.jsonl": {
+      "sha256": "ac17cb06c9c37c8a8160257eb8ade621a9a92b2344c423bbff7f361cd838e65c",
+      "bytes": 10239
+    },
+    "train.jsonl": {
+      "sha256": "8784ef05cf723c66846e9f3723a08429605ca3128bd9e3b42bd2ad7a5e8a6da0",
+      "bytes": 82701
+    }
+  }
+}

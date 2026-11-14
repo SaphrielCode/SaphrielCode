@@ -1,0 +1,30 @@
+ARCHITECTURE EXPERIMENT: swiglu128
+PASS: exact update/target coverage; finite step losses and norms; checkpoint hashes and runtime reloads; source snapshots; guard telemetry. Test split reserved.
+
+{"vocab_size": 8192, "layers": 8, "width": 192, "heads": 6, "ff_width": 512, "ff_activation": "swiglu", "max_context": 256, "norm_eps": 1e-05, "rope_theta": 10000.0}
+Parameters: 5115072; updates: 22570; valid targets: 8777642; fresh seed42, order43; two complete passes; no extra warmup.
+Training: 4178.978s; validation: 85.695s; checkpoint: 2.249s. Periodic recovery I/O is already included in pass wall times; do not add that I/O again.
+Peak process resident: 599.39 MiB; minimum available: 4.284 GiB.
+
+initialization: 9.035929184 nats/target; 3.185231003 bits/byte; NLL sum 1953116.093206406; count 216150.
+pass_1: 2.932775552 nats/target; 1.033824792 bits/byte; NLL sum 633919.435630355; count 216150.
+pass_2: 2.801865034 nats/target; 0.987677879 bits/byte; NLL sum 605623.127138620; count 216150.
+Pass 1: 2097.555s; 2092.351 valid targets/s.
+Pass 2: 2081.423s; 2108.568 valid targets/s.
+
+Common128 final bits/byte change versus working unigram GELU baseline: -2.400% (lower is better).
+For context256, native256 and common128 predict identical target tokens with different histories/chunk boundaries. Use common128 for matching evaluation conditioning. Training windows/order still differ. Other variants use unchanged128 windows. One seed; background workloads differ; neither elapsed time nor parameter count establishes equal total compute. Shared architectural tensor values are not assumed identical across changed shapes. Baseline working selection is unchanged.
+
+Pass 1 prompt: Once upon a time, a little girl found a
+greedy argmax; max 64 new tokens; EOS=2; rolling context128; BOS=1
+ big, scary dog. She was very sad and wanted to play with it. She asked her mom for a new toy. Her mom said they could go to the park.
+
+The girl was very excited and said, "Let's play with the ball together!" Her mom smiled and said, "No, we
+
+Pass 2 prompt: Once upon a time, a little girl found a
+greedy argmax; max 64 new tokens; EOS=2; rolling context128; BOS=1
+ big box. She was very excited to open it. She opened the box and found a big box. She was so happy!
+
+The little girl took the box and opened the box. She was so happy! She was so happy! She hugged the box and said, "Thank you, little girl. You
+
+Run artifacts: results\Architecture_swiglu128_20261112T041314956473Z

@@ -1,0 +1,7 @@
+LOCAL CHAT INTERFACE
+
+Implemented a local-only browser chat interface with verified trained checkpoint loading, model selection, chat/story modes, streamed replies, stop, copy, and generation controls. Default: 5.1M instruction diagnostic checkpoint. Messages are not persisted. No training is started.
+
+Validation: 20 unit tests passed. Real-checkpoint HTTP verification passed, including the recorded greedy answer, context trimming, interruption, and request validation. See Chat_Verification.json. Browser opened to Saphriel Local Chat; visual inspection could not finish because Computer Use app approval timed out. No visual QA claim is made.
+
+Launch: RunChat.cmd, or http://127.0.0.1:8765 while the local server is running. Text input is implemented. These experimental checkpoints have limited instruction and conversation ability.

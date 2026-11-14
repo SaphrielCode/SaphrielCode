@@ -1,0 +1,21 @@
+{
+  "status": "PASS",
+  "entry_point": "lm.production.Decoder",
+  "unique_parameters": 5115072,
+  "fresh_initialization_matches_tested_swiglu": true,
+  "reference_checkpoint_hash_and_reload_verified": true,
+  "tied_embedding_verified": true,
+  "finite_forward": true,
+  "tokenizer_sha256": "1e24618cd0587e3ee07a5a2dc7e5673d8b44d30e197ac8050d52dde95ef1b939",
+  "configuration": {
+    "vocab_size": 8192,
+    "layers": 8,
+    "width": 192,
+    "heads": 6,
+    "ff_width": 512,
+    "ff_activation": "swiglu",
+    "max_context": 256,
+    "norm_eps": 1e-05,
+    "rope_theta": 10000.0
+  }
+}

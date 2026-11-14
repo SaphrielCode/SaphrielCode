@@ -1,0 +1,246 @@
+SOURCE-AWARE LEARNING AND FIVE-HOUR TINYSTORIES TRAINING
+
+Status: COMPLETE
+Approved unchanged model:5,115,072 parameters,8 layers,width192,6heads,SwiGLU512,context128,frozen8192 unigram.
+User-authorized immediate stop below0.5 GiB available system RAM; process4 GiB consecutive guard retained.
+Final TinyStories test split reserved. All numbers below are measured local results, not general conversation claims.
+
+SOURCE-FAMILY EXPERIMENT
+960 examples from64 authored source families, including48 paraphrases each for16 desk families and4 for48 other families.
+Balanced-data control:4 paraphrases per family,256 examples. Heldout64 distinct families, four factual variants each.
+Three training-order seeds44/45/46; same90-minute pretrained checkpoint and2400 updates per arm. Ordinary/family batch-index traces must match.
+Per-example response+EOS mean NLL; family weights N/(G*n_family), fixed batch denominator. Not self-normalized inside batches.
+This tests a deliberately skewed synthetic dependency scenario. Families are provenance groups, not statistically independent observations.
+Arm       Seed  Pair-correct  Overall-EM  Missing  Negated  Story-before  Story-after  Updates   Seconds
+ordinary    44      0.7812      0.6953   1.0000   0.0000     2.754838    13.566488     2400    251.58
+family      44      0.9688      0.4922   0.0000   0.0000     2.754838    12.143254     2400    244.47
+balanced    44      1.0000      0.5000   0.0000   0.0000     2.754838     8.107548     2400    254.45
+ordinary    45      1.0000      0.7500   1.0000   0.0000     2.754838    11.104361     2400    243.88
+family      45      0.7812      0.6641   0.8750   0.0000     2.754838     8.099004     2400    241.29
+balanced    45      0.6406      0.6523   1.0000   0.0000     2.754838     6.565284     2400    249.56
+ordinary    46      1.0000      0.5000   0.0000   0.0000     2.754838    11.740510     2400    244.24
+family      46      0.7812      0.4453   0.0000   0.0000     2.754838    14.587039     2400    243.03
+balanced    46      1.0000      0.7500   1.0000   0.0000     2.754838     8.072350     2400    255.31
+
+Source-method decision: {
+  "selected": "ordinary",
+  "mean_both_answerable_pair_correct": {
+    "ordinary": 0.9270833333333334,
+    "family": 0.84375,
+    "balanced": 0.8802083333333334
+  },
+  "mean_story_loss_increase": {
+    "ordinary": 9.382281519109293,
+    "family": 8.85492746450709,
+    "balanced": 4.826888960015774
+  },
+  "family_nonnegative_seeds": 1,
+  "family_benefit_meets_rule": false,
+  "raw_runs": [
+    {
+      "directory": "source_ordinary_44",
+      "arm": "ordinary",
+      "seed": 44,
+      "status": "PASS"
+    },
+    {
+      "directory": "source_family_44",
+      "arm": "family",
+      "seed": 44,
+      "status": "PASS"
+    },
+    {
+      "directory": "source_balanced_44",
+      "arm": "balanced",
+      "seed": 44,
+      "status": "PASS"
+    },
+    {
+      "directory": "source_family_45",
+      "arm": "family",
+      "seed": 45,
+      "status": "PASS"
+    },
+    {
+      "directory": "source_balanced_45",
+      "arm": "balanced",
+      "seed": 45,
+      "status": "PASS"
+    },
+    {
+      "directory": "source_ordinary_45",
+      "arm": "ordinary",
+      "seed": 45,
+      "status": "PASS"
+    },
+    {
+      "directory": "source_balanced_46",
+      "arm": "balanced",
+      "seed": 46,
+      "status": "PASS"
+    },
+    {
+      "directory": "source_ordinary_46",
+      "arm": "ordinary",
+      "seed": 46,
+      "status": "PASS"
+    },
+    {
+      "directory": "source_family_46",
+      "arm": "family",
+      "seed": 46,
+      "status": "PASS"
+    }
+  ]
+}
+Pure instruction fine-tuning caused major forgetting. These instruction weights were NOT promoted. Any useful weighting/data-selection principle is provisional and is applied to a separate story-rehearsed candidate after pretraining.
+
+FIVE-HOUR PRETRAINING
+Fresh seed42, frozen data order43, CPUFP32 AdamW, batch4,8intra/1inter-op threads.
+Counted200-update LR warmup; cosine3e-4 to3e-5 over18000 active seconds; no extra warmup.
+Checkpoint/evaluation/generation time excluded from active-training budget and reported separately.
+Status:PASS; active seconds:18000.208047; updates:113763; valid targets:44243017; complete corpus passes:10; next frozen row:3652.
+Training targets per complete pass:4388821; repeat exposure is not new unique data.
+Validation seconds:197.978; checkpoint seconds:10.458.
+Validation numerator = float64 sum of per-target NLL; denominator =216150 eligible validation targets; padding excluded.
+initialization: sum1953116.09320641 / 216150 = 9.03592918 nats/target; 3.18523100 bits/UTF-8 text byte including EOS NLL. Active seconds0.000, updates0, targets0.
+minute30: sum636127.32304043 / 216150 = 2.94299016 nats/target; 1.03742552 bits/UTF-8 text byte including EOS NLL. Active seconds1800.058, updates11488, targets4465906.
+minute60: sum603060.65736672 / 216150 = 2.79000998 nats/target; 0.98349889 bits/UTF-8 text byte including EOS NLL. Active seconds3600.150, updates23046, targets8961898.
+minute90: sum590640.74393763 / 216150 = 2.73255028 nats/target; 0.96324392 bits/UTF-8 text byte including EOS NLL. Active seconds5400.126, updates34391, targets13375268.
+minute120: sum582463.92114391 / 216150 = 2.69472089 nats/target; 0.94990879 bits/UTF-8 text byte including EOS NLL. Active seconds7200.058, updates45811, targets17815462.
+minute180: sum568640.28465739 / 216150 = 2.63076699 nats/target; 0.92736457 bits/UTF-8 text byte including EOS NLL. Active seconds10800.093, updates68820, targets26765836.
+minute240: sum560379.22400674 / 216150 = 2.59254788 nats/target; 0.91389205 bits/UTF-8 text byte including EOS NLL. Active seconds14400.017, updates91648, targets35644023.
+minute300: sum560901.38872007 / 216150 = 2.59496363 nats/target; 0.91474362 bits/UTF-8 text byte including EOS NLL. Active seconds18000.208, updates113763, targets44243017.
+Lowest validation loss checkpoint:minute240. Last checkpoint retained separately.
+Learning curve selection uses validation only. No final-test selection or score.
+Fixed continuations atminute30: temperature0.7,top-p0.9,seed45,max64new tokens,rolling128 context; generation seconds2.144.
+PROMPT: Once upon a time, a little girl found a
+CONTINUATION:  big tree. She loved to play with her friends. One day, she saw a big tree in the sky. She wanted to play with it.
+
+The bird said, "Hello, little bird. I am not scared of you. But I have to be careful. It will be nice."
+
+The
+PROMPT: Tom wanted to help his friend because
+CONTINUATION:  he wanted to eat. He asked his mom, "Can I play with my toys?"
+
+His mom said, "No, you can't. We can't find it. It's very big and strong. But we can't find it."
+
+Tom said, "No, it is too hard.
+PROMPT: The little dog looked inside the box and saw
+CONTINUATION:  a big bird. He was very happy and wanted to see what was inside. He looked up and saw a little bird. The bird was scared, but he was scared. He wanted to fly and play with the bird, but he did not see the bird. He did not know what to do.
+
+The
+Fixed continuations atminute60: temperature0.7,top-p0.9,seed45,max64new tokens,rolling128 context; generation seconds2.107.
+PROMPT: Once upon a time, a little girl found a
+CONTINUATION:  big box. She had a big box of children. She wanted to make the box go by. So, she went to the store. She saw a big box. She wanted to open the box, but it was too heavy. She looked everywhere but she couldn't find her. 
+
+She asked her mom for
+PROMPT: Tom wanted to help his friend because
+CONTINUATION:  he was a big house with a big box. He put his hands on the floor and went to the kitchen. He was very happy and thanked his mom for helping him.
+
+"I know, Tom, I can help you!" said his mom.
+
+"Can I see?" dad asked.
+
+
+PROMPT: The little dog looked inside the box and saw
+CONTINUATION:  a big, strong tree. The tree was so tall that the little bird wanted to see what was inside. The bird thought the bird would not see the bird, so it flew away and looked for its way home.
+
+The bird flew around the house, looking for help. She looked around but couldn't find
+Fixed continuations atminute90: temperature0.7,top-p0.9,seed45,max64new tokens,rolling128 context; generation seconds2.207.
+PROMPT: Once upon a time, a little girl found a
+CONTINUATION:  big, strong red truck. She was very happy and she loved to play with it. One day, she was playing with her truck when it started to rain. The truck got very dirty and he started to cry. 
+
+The truck started to cry and said, "I'm sorry, I didn't mean to
+PROMPT: Tom wanted to help his friend because
+CONTINUATION:  he had a big smile on his face. He saw a big, shiny ball and wanted to play with it. He took the ball to the ball and started to play with it.
+
+Tom was very happy and started to play with the ball. He played with his ball, his ball and run with the ball
+PROMPT: The little dog looked inside the box and saw
+CONTINUATION:  a beautiful world. He saw a big, round box and wanted to see what was inside the box. He looked around and saw a big box. He hopped inside and saw a big box of toys. He thought he had a great idea. He wanted to play with the toys, but he didn't know what to
+Fixed continuations atminute120: temperature0.7,top-p0.9,seed45,max64new tokens,rolling128 context; generation seconds2.109.
+PROMPT: Once upon a time, a little girl found a
+CONTINUATION:  big box. She had never seen a box before. She wanted to open it, but her mom said, "No, I want to open it."
+
+The little girl was very sad. She wanted to find a new toy, but it was too heavy. She went to find a toy, but she didn
+PROMPT: Tom wanted to help his friend because
+CONTINUATION:  he could fly in the sky. He looked up and saw the sky, and he felt very happy. He saw a big, yellow plane and decided to fly high in the sky.
+
+Tom and his friend were scared, but they were also excited. They decided to stop and try to find the bright colors.
+PROMPT: The little dog looked inside the box and saw
+CONTINUATION:  a big, old dog. The dog was very hungry and wanted to eat the dog. The dog said, "I need to eat your food, but I have to be careful. The dog is too big for you to eat." The dog thought about it and said, "I am not hungry. I am a
+Fixed continuations atminute180: temperature0.7,top-p0.9,seed45,max64new tokens,rolling128 context; generation seconds2.143.
+PROMPT: Once upon a time, a little girl found a
+CONTINUATION:  castle in the castle. She was very excited to go on a special adventure. She wanted to explore the castle.
+
+The castle was a long and scary man, but the little girl wanted to go. She asked her mom if she could go, and her mom said yes. The little girl was so excited.
+PROMPT: Tom wanted to help his friend because
+CONTINUATION:  he was so excited. He asked his mom if he could help. His mom said yes and they went to the store. 
+
+Tom was very excited. He was so excited to help. He put on his hat and went outside to play. 
+
+When they got to the store, Tom was so excited to
+PROMPT: The little dog looked inside the box and saw
+CONTINUATION:  a beautiful yellow rainbow. He was so excited to see it! He wanted to take it out and take it off and show it off to all the other side. He was so excited that he ran outside and started to run around the room. He was having so much fun! 
+
+When the flower was ready,
+Fixed continuations atminute240: temperature0.7,top-p0.9,seed45,max64new tokens,rolling128 context; generation seconds2.168.
+PROMPT: Once upon a time, a little girl found a
+CONTINUATION:  shiny, greenOnce she had a shiny, round rock. She was so happy and wanted to show it to her friends. So she looked around and found a big, shiny rock.
+
+The girl put the rock on the rock, and she knew she had to show it off to her friends. She ran around
+PROMPT: Tom wanted to help his friend because
+CONTINUATION:  he was so cute. He went to the park and saw his friend, Sam. Sam was a good dog, and he liked to play.
+
+"Look, Sam, I can show you a new ball!" Tom said. "It's very cool and fun. Let's play together!"
+
+Sam was
+PROMPT: The little dog looked inside the box and saw
+CONTINUATION:  a big, colorful, beamed in the higher. He was very excited and wanted to explore the world. He hopped and hopped, and soon he found a big, green tree. He hopped over the tree and looked around. He saw a big, red tree and decided to climb it. He was very careful and soon
+Fixed continuations atminute300: temperature0.7,top-p0.9,seed45,max64new tokens,rolling128 context; generation seconds2.702.
+PROMPT: Once upon a time, a little girl found a
+CONTINUATION:  cozy bed. She wanted to take it all home, but it was too hard for her to get out. So she took a deep breath and tried to reach the top. But the bed was too heavy for her. 
+
+The girl was so sad that she started to cry. Then, a big, scary dog
+PROMPT: Tom wanted to help his friend because
+CONTINUATION:  he was the other. He saw a big, round thing in the park. It was shiny and round. He wanted to get it for his friend's birthday.
+
+He ran to the box and tried to open it. But the box was too hard. He could not open it. He looked around and saw
+PROMPT: The little dog looked inside the box and saw
+CONTINUATION:  a beautiful beautiful green flower. He was so excited, he ran to get it. He ran to it and grabbed it with his flower.
+
+The flower was made from inside the flower. He was so happy and said, "I'm glad I found you!"
+
+The little dog was happy, and he
+Whole-process peak resident:810295296 bytes; minimum available system RAM:1177042944 bytes; stop:None.
+
+STORY-REHEARSED GROUNDED QA
+SQuAD2.0-derived short-prefix diagnostic (NOT official SQuAD evaluation).4000train examples/2994paragraph families;256dev examples/201families; balanced answerability.
+Question-independent complete-sentence prefixes,<=72unigram tokens; answerable gold span must remain. Source train/dev split retained. Corpus sources/hashes/license CC-BY-SA4.0 and attribution preserved.
+Balanced synthetic source examples and40 locally authored greeting/scope examples supplement training; greetings do not count as reading-comprehension evidence. No CoQA or FineWeb-EDU used in this run.
+Status:PASS; updates:6444; training seconds:1331.072; QA targets:127878; replay story targets:628765.
+Per-example response+EOS mean QA loss, with family weights only if qualified, plus3.0 times token-mean TinyStories replay loss. Four QA sequences and one story sequence; two forward/backward branches, one clipped AdamW update. Fresh moments; LR3e-05,100-update linear warmup.
+QA timing limitation: {"maximum_monitor_gap_seconds": 1504.1568004, "preceding_phase": "story_validation", "note": "Long monitoring gap during QA follow-on; stage wall-time training timer may include host inactivity. Do not interpret QA elapsed time as continuous compute or compare its throughput. Five-hour TinyStories audit independently confirms max step0.584s and monitor gap1.031s."}
+Before: {"story": {"nll_sum": 560379.224006741, "valid_targets": 216150, "nats_per_target": 2.5925478788190652}, "qa": {"response_nll_sum": 10210.29742872715, "response_targets": 1280, "response_nats_per_target": 7.976794866193086, "exact_match": 0.0, "f1": 0.002988873106060606, "answerable_exact_match": 0.0, "answerable_f1": 0.005977746212121212, "unanswerable_exact_match": 0.0}, "source": {"exact_match": 0.0, "both_answerable_pair_correct": 0.0, "per_variant": {"original": 0.0, "moved": 0.0, "missing": 0.0, "negated": 0.0}}}
+Epoch: {"epoch": 1, "story": {"nll_sum": 576709.9659286509, "valid_targets": 216150, "nats_per_target": 2.6681006982588524}, "qa": {"response_nll_sum": 3736.314193498052, "response_targets": 1280, "response_nats_per_target": 2.9189954636703535, "exact_match": 0.5, "f1": 0.5, "answerable_exact_match": 0.0, "answerable_f1": 0.0, "unanswerable_exact_match": 1.0}, "checkpoint": {"file": "epoch1.pt", "sha256": "42e085aee986bcf85d67625d440c9a6d0dea4d79784005d3947db6c94719a553", "parameter_sha256": "3f3ff0c6b231804c43fbe3c97c9879cbaaee62814e801db999886b0b9cb48dac"}}
+Epoch: {"epoch": 2, "story": {"nll_sum": 587299.9147283921, "valid_targets": 216150, "nats_per_target": 2.7170942157223785}, "qa": {"response_nll_sum": 3583.2014125499845, "response_targets": 1280, "response_nats_per_target": 2.7993761035546756, "exact_match": 0.5, "f1": 0.5, "answerable_exact_match": 0.0, "answerable_f1": 0.0, "unanswerable_exact_match": 1.0}, "checkpoint": {"file": "epoch2.pt", "sha256": "70b3ad344921beae01385aaa128794e9da110a29dd4b3b39c779a556559ed4f3", "parameter_sha256": "aac4db004ac896460bfba3d400b6938bfe247357161f52aad85f48ad18821fa3"}}
+Epoch: {"epoch": 3, "story": {"nll_sum": 595922.1778554451, "valid_targets": 216150, "nats_per_target": 2.7569843990536436}, "qa": {"response_nll_sum": 3516.0269551504534, "response_targets": 1280, "response_nats_per_target": 2.746896058711292, "exact_match": 0.48828125, "f1": 0.48828125, "answerable_exact_match": 0.0, "answerable_f1": 0.0, "unanswerable_exact_match": 0.9765625}, "checkpoint": {"file": "epoch3.pt", "sha256": "9319c2b6e47026a9bbb5caeecf820a35c54a01bae279647983f70e651afb48ce", "parameter_sha256": "7000f09af247dd3ad4ae761a597d08b3c09bc76c5347d431a10ccd366401d9b6"}}
+Epoch: {"epoch": 4, "story": {"nll_sum": 603303.289412252, "valid_targets": 216150, "nats_per_target": 2.791132497859135}, "qa": {"response_nll_sum": 3486.477779725683, "response_targets": 1280, "response_nats_per_target": 2.72381076541069, "exact_match": 0.484375, "f1": 0.484375, "answerable_exact_match": 0.0, "answerable_f1": 0.0, "unanswerable_exact_match": 0.96875}, "checkpoint": {"file": "epoch4.pt", "sha256": "7ad76edea8334c1c8c5d110bd84f8e5d1e4c619eb546db16c3da3571ee0fb64f", "parameter_sha256": "c799b15db735c1d4ad6170efb41cb16c4a475b49372fb127578b3e9e31d79697"}}
+Epoch: {"epoch": 5, "story": {"nll_sum": 608308.9053646397, "valid_targets": 216150, "nats_per_target": 2.8142905637966216}, "qa": {"response_nll_sum": 3472.4613595682786, "response_targets": 1280, "response_nats_per_target": 2.7128604371627176, "exact_match": 0.49609375, "f1": 0.49609375, "answerable_exact_match": 0.0, "answerable_f1": 0.0, "unanswerable_exact_match": 0.9921875}, "checkpoint": {"file": "epoch5.pt", "sha256": "91c34a67703997843e644fdac9a3338f9d2424da4c9ad2dac61955014d12c17d", "parameter_sha256": "a2415e47534320e97485fae539d6e2cc137f24a0bfe9f2bbc948604993e9af0f"}}
+Epoch: {"epoch": 6, "story": {"nll_sum": 604622.7648851234, "valid_targets": 216150, "nats_per_target": 2.7972369414070015}, "qa": {"response_nll_sum": 3495.075866254996, "response_targets": 1280, "response_nats_per_target": 2.7305280205117155, "exact_match": 0.484375, "f1": 0.484375, "answerable_exact_match": 0.0, "answerable_f1": 0.0, "unanswerable_exact_match": 0.96875}, "checkpoint": {"file": "epoch6.pt", "sha256": "a02224f722e04812e177acfe384863d2d1ce0e0b3caa01e8ab20fa6d51e7a88b", "parameter_sha256": "ee61497485e90e7182d45f2681115e997c46ddca9ce0e5179043616b5394f872"}}
+Selected epoch: None
+Answerable EM>=25%, balanced-dev EM>=60%; story loss increase<=0.15nats; balanced-dev exact match improves>=5pp; answerable EM>=+5pp or answerable F1>=+10pp. Highest eligible exact match. Unknown-only model cannot qualify.
+After source diagnostic:{"exact_match": 0.3359375, "both_answerable_pair_correct": 0.40625, "per_variant": {"original": 0.640625, "moved": 0.703125, "missing": 0.0, "negated": 0.0}}
+No QA candidate qualified for deployment. Preserve the best TinyStories model and the QA diagnostic artifacts.
+
+Provenance and outcome records are not calibrated confidence and do not establish weight-level evidence independence.
+Source prep was run while early source workers were active; their wall time is not a controlled speed comparison. Primary comparison controls optimizer updates, batch traces, starting weights and targets.
+
+INDEPENDENT AUDIT AND DEPLOYMENT
+All23 checkpoints loaded with finite weights, matching parameter hashes and exactly5,115,072 parameters. AdamW step counts verified where present. Every training row/target/update replayed from the frozen permutation. Maximum training-step wall time0.584s; maximum resource-monitor gap1.031s confirms the five-hour budget was continuous training. No resource guard tripped.
+Best story checkpoint minute240 is deployed; minute300 and all QA/source candidates remain preserved. QA checkpoints failed the predeclared gates and were not deployed.
+28 unit checks and actual HTTP chat streaming/regression checks passed. The new default emits a verified story continuation; it is not an instruction assistant.
+Training throughput:2457.916979902066 valid targets/s, excluding evaluation/checkpoint/generation.
+
+PUBLICATION SCOPE
+All reports/logs and checkpoint hash inventories are published. Selected minute240 and final minute300 full optimizer checkpoints and the deployed model/tokenizer are published byte-exact. Intermediate source/QA/training and prior efficiency checkpoints remain local; hashes identify them.

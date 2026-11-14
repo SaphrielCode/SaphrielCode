@@ -1,0 +1,23 @@
+APPROVED ARCHITECTURE EXPERIMENTS - COMPLETED
+
+Three fresh processes/variant; each10 complete warmup updates then >=20 seconds complete training steps. Screen weights discarded; two-pass runs start fresh seed42. Screen work is separate experiment overhead, not extra learning exposure.
+Each variant trained exactly2 complete passes over4388821 valid targets/pass; same frozen8192 unigram; CPU FP32; AdamW unchanged; batch4; eight threads; one inter-op; order43.
+
+Variant | Parameters | Common128 bits/byte | Native bits/byte | Training min | Peak MiB | Min free GiB
+Working GELU128 baseline | 5115072 | 1.011965816 | 1.011965816 | 73.08 | 614.02 | 3.134
+swiglu128 | 5115072 | 0.987677879 | 0.987677879 | 69.65 | 599.39 | 4.284
+context256 | 5115072 | 0.986693731 | 0.950734474 | 74.59 | 755.09 | 4.330
+deep12x160 | 5001120 | 1.019661495 | 1.019661495 | 81.62 | 597.47 | 3.745
+
+Lower bits/byte is better. Denominator884630 UTF8 validation text bytes; NLL includes EOS cost. Same216150 validation targets under both contexts.
+SwiGLU128 is the most attractive next working candidate for quality versus measured training cost. Context256 improves native-context prediction and nearly ties SwiGLU on common128, at higher RAM/time; the ~0.10% common128 gap is too small for a decisive ranking with one seed. Deep12x160 did not improve validation and was slower. No working configuration was changed.
+
+Single initialization seed, different background workload times, no equal-time or equal-estimated-compute control. Depth/width changes parameter count. Context256 changes window grouping, conditioning and optimizer updates. Common128 evaluation fixes evaluation conditioning but does not equalize training trajectory. No claim about instruction following, reasoning or general-domain ability.
+
+All3 experiments: exact optimizer-update and batch valid-target counts, finite step losses/norms, parameter counts, deterministic initialization across screens and learning run, unchanged tokenizer, checkpoint byte/hash checks and runtime reloads verified. Every run respected2GiB reserve/3 samples, immediate1GiB stop and4GiB process guard/3 samples. Test split was never evaluated for quality.
+Native256 and common128 values are distinct evaluations; native256 gains include longer conditioning. Context256 trained12178 updates; both128 variants22570 updates; all8777642 valid targets. SwiGLU uses512-wide gated FFN; baseline uses768-wide GELU. Deep model12layers/width160/5heads/FF640.
+Periodic recovery checkpoint I/O is included in pass wall times and also disclosed in checkpoint times. Do not add those intervals twice. Context256 validation time includes the additional common128 evaluations. Baseline timings include resumed prefix, as documented in its report.
+
+New experiment total training minutes: 225.86
+Completed checkpoints and fixed greedy64-token prompt continuations are preserved in each run directory. Per-experiment findings: Architecture_swiglu128_Results.txt, Architecture_context256_Results.txt, Architecture_deep12x160_Results.txt. Raw suite and screens: ArchitectureSuite_20261112_Approved/.
+DataEval.txt and WorkingSelection.json were not changed by these experiments. No OneDrive process appeared in the new training app-memory samples; all experiment data paths were local.

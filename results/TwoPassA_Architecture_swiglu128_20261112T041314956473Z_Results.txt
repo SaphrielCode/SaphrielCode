@@ -1,0 +1,33 @@
+CONTROLLED TWO-PASS CANDIDATE A LEARNING RUN
+
+Status: PASS
+Tokenizer: unigram; vocabulary: 8192.
+Fresh seed42 weights; variant swiglu128; batch4/context128/8 CPU threads/1 inter-op; FP32 AdamW unchanged; next-token objective only.
+Same seed43 frozen row permutation reused on each pass; no extra warmup updates. Padding ignored; stories isolated.
+Completed passes: 2/2; updates: 22570; valid targets: 8777642/8777642.
+Training time: 4178.978s; validation: 85.695s; checkpoint save/reload: 2.249s.
+Peak process RAM: 599.39 MiB; minimum available RAM: 4.284 GiB.
+Available-RAM reserve: 2 GiB; first sample below1GiB stops; three consecutive below the reserve stop; three consecutive above4GiB process RSS stop. Sampling interval1s.
+Final test remains reserved. No instruction training or replacement detection. No DataEval edits.
+Validation initialization: 9.03592918 nats/valid target; sum=1953116.09320641; count=216150.
+Validation pass_1: 2.93277555 nats/valid target; sum=633919.43563035; count=216150.
+Validation pass_2: 2.80186503 nats/valid target; sum=605623.12713862; count=216150.
+Pass work: {"pass_number": 1, "completed_updates": 11285, "valid_targets": 4388821, "loss_sum": 14466176.029251458, "seconds": 2097.5551799999957, "completed": true, "valid_targets_per_second": 2092.35067656242}
+Pass work: {"pass_number": 2, "completed_updates": 11285, "valid_targets": 4388821, "loss_sum": 12564827.615704179, "seconds": 2081.422639899989, "completed": true, "valid_targets_per_second": 2108.567916898838}
+
+Pass 1 prompt: Once upon a time, a little girl found a
+Decoding: greedy argmax; max 64 new tokens; EOS=2; rolling context128; BOS=1
+Continuation:  big, scary dog. She was very sad and wanted to play with it. She asked her mom for a new toy. Her mom said they could go to the park.
+
+The girl was very excited and said, "Let's play with the ball together!" Her mom smiled and said, "No, we
+
+Pass 2 prompt: Once upon a time, a little girl found a
+Decoding: greedy argmax; max 64 new tokens; EOS=2; rolling context128; BOS=1
+Continuation:  big box. She was very excited to open it. She opened the box and found a big box. She was so happy!
+
+The little girl took the box and opened the box. She was so happy! She was so happy! She hugged the box and said, "Thank you, little girl. You
+
+A third pass is worth a bounded test because validation loss improved in pass two; this single seed does not establish an optimum.
+Stop/error: None
+Any exposure shortfall is explained by the recorded interruption; partial runs are not two-pass results.
+Details, source hashes, checkpoint verification and per-step/resource logs are stored beside this file.

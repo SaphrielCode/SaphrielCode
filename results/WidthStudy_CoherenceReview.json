@@ -1,0 +1,2571 @@
+{
+  "evaluator": "Codex assistant qualitative review; unblinded, not independent human assessment",
+  "rubric": "Predeclared0 unintelligible,1 readable but irrelevant/fragmented,2 clear task-appropriate expression. Lexical/semantic correctness is separate; a clear but wrong single-word answer may score2. No use of this score as proof of general language quality.",
+  "annotations": [
+    {
+      "width": 192,
+      "phase": "before",
+      "id": "heldout_extract_001",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 192,
+      "phase": "before",
+      "id": "heldout_extract_002",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 192,
+      "phase": "before",
+      "id": "heldout_extract_003",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 192,
+      "phase": "before",
+      "id": "heldout_extract_004",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 192,
+      "phase": "before",
+      "id": "heldout_extract_005",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 192,
+      "phase": "before",
+      "id": "heldout_extract_006",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 192,
+      "phase": "before",
+      "id": "heldout_extract_007",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 192,
+      "phase": "before",
+      "id": "heldout_extract_008",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 192,
+      "phase": "before",
+      "id": "heldout_extract_009",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 192,
+      "phase": "before",
+      "id": "heldout_extract_010",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 192,
+      "phase": "before",
+      "id": "heldout_extract_011",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 192,
+      "phase": "before",
+      "id": "heldout_extract_012",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 192,
+      "phase": "before",
+      "id": "heldout_repeat_001",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 192,
+      "phase": "before",
+      "id": "heldout_repeat_002",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 192,
+      "phase": "before",
+      "id": "heldout_repeat_003",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 192,
+      "phase": "before",
+      "id": "heldout_repeat_004",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 192,
+      "phase": "before",
+      "id": "heldout_repeat_005",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 192,
+      "phase": "before",
+      "id": "heldout_repeat_006",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 192,
+      "phase": "before",
+      "id": "heldout_repeat_007",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 192,
+      "phase": "before",
+      "id": "heldout_repeat_008",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 192,
+      "phase": "before",
+      "id": "heldout_repeat_009",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 192,
+      "phase": "before",
+      "id": "heldout_repeat_010",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 192,
+      "phase": "before",
+      "id": "heldout_repeat_011",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 192,
+      "phase": "before",
+      "id": "heldout_repeat_012",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 192,
+      "phase": "before",
+      "id": "heldout_mapping_001",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 192,
+      "phase": "before",
+      "id": "heldout_mapping_002",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 192,
+      "phase": "before",
+      "id": "heldout_mapping_003",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 192,
+      "phase": "before",
+      "id": "heldout_mapping_004",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 192,
+      "phase": "before",
+      "id": "heldout_mapping_005",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 192,
+      "phase": "before",
+      "id": "heldout_mapping_006",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 192,
+      "phase": "before",
+      "id": "heldout_mapping_007",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 192,
+      "phase": "before",
+      "id": "heldout_mapping_008",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 192,
+      "phase": "before",
+      "id": "heldout_mapping_009",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 192,
+      "phase": "before",
+      "id": "heldout_mapping_010",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 192,
+      "phase": "before",
+      "id": "heldout_mapping_011",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 192,
+      "phase": "before",
+      "id": "heldout_mapping_012",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 192,
+      "phase": "before",
+      "id": "heldout_context_qa_001",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 192,
+      "phase": "before",
+      "id": "heldout_context_qa_002",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 192,
+      "phase": "before",
+      "id": "heldout_context_qa_003",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 192,
+      "phase": "before",
+      "id": "heldout_context_qa_004",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 192,
+      "phase": "before",
+      "id": "heldout_context_qa_005",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 192,
+      "phase": "before",
+      "id": "heldout_context_qa_006",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 192,
+      "phase": "before",
+      "id": "heldout_context_qa_007",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 192,
+      "phase": "before",
+      "id": "heldout_context_qa_008",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 192,
+      "phase": "before",
+      "id": "heldout_context_qa_009",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 192,
+      "phase": "before",
+      "id": "heldout_context_qa_010",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 192,
+      "phase": "before",
+      "id": "heldout_context_qa_011",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 192,
+      "phase": "before",
+      "id": "heldout_context_qa_012",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 192,
+      "phase": "before",
+      "id": "heldout_yes_no_001",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 192,
+      "phase": "before",
+      "id": "heldout_yes_no_002",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 192,
+      "phase": "before",
+      "id": "heldout_yes_no_003",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 192,
+      "phase": "before",
+      "id": "heldout_yes_no_004",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 192,
+      "phase": "before",
+      "id": "heldout_yes_no_005",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 192,
+      "phase": "before",
+      "id": "heldout_yes_no_006",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 192,
+      "phase": "before",
+      "id": "heldout_yes_no_007",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 192,
+      "phase": "before",
+      "id": "heldout_yes_no_008",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 192,
+      "phase": "before",
+      "id": "heldout_yes_no_009",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 192,
+      "phase": "before",
+      "id": "heldout_yes_no_010",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 192,
+      "phase": "before",
+      "id": "heldout_yes_no_011",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 192,
+      "phase": "before",
+      "id": "heldout_yes_no_012",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 192,
+      "phase": "after",
+      "id": "heldout_extract_001",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 192,
+      "phase": "after",
+      "id": "heldout_extract_002",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 192,
+      "phase": "after",
+      "id": "heldout_extract_003",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 192,
+      "phase": "after",
+      "id": "heldout_extract_004",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 192,
+      "phase": "after",
+      "id": "heldout_extract_005",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 192,
+      "phase": "after",
+      "id": "heldout_extract_006",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 192,
+      "phase": "after",
+      "id": "heldout_extract_007",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 192,
+      "phase": "after",
+      "id": "heldout_extract_008",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 192,
+      "phase": "after",
+      "id": "heldout_extract_009",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 192,
+      "phase": "after",
+      "id": "heldout_extract_010",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 192,
+      "phase": "after",
+      "id": "heldout_extract_011",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 192,
+      "phase": "after",
+      "id": "heldout_extract_012",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 192,
+      "phase": "after",
+      "id": "heldout_repeat_001",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 192,
+      "phase": "after",
+      "id": "heldout_repeat_002",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 192,
+      "phase": "after",
+      "id": "heldout_repeat_003",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 192,
+      "phase": "after",
+      "id": "heldout_repeat_004",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 192,
+      "phase": "after",
+      "id": "heldout_repeat_005",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 192,
+      "phase": "after",
+      "id": "heldout_repeat_006",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 192,
+      "phase": "after",
+      "id": "heldout_repeat_007",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 192,
+      "phase": "after",
+      "id": "heldout_repeat_008",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 192,
+      "phase": "after",
+      "id": "heldout_repeat_009",
+      "coherence_score": 1,
+      "reason": "Readable malformed/non-word fragment (shoem)."
+    },
+    {
+      "width": 192,
+      "phase": "after",
+      "id": "heldout_repeat_010",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 192,
+      "phase": "after",
+      "id": "heldout_repeat_011",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 192,
+      "phase": "after",
+      "id": "heldout_repeat_012",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 192,
+      "phase": "after",
+      "id": "heldout_mapping_001",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 192,
+      "phase": "after",
+      "id": "heldout_mapping_002",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 192,
+      "phase": "after",
+      "id": "heldout_mapping_003",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 192,
+      "phase": "after",
+      "id": "heldout_mapping_004",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 192,
+      "phase": "after",
+      "id": "heldout_mapping_005",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 192,
+      "phase": "after",
+      "id": "heldout_mapping_006",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 192,
+      "phase": "after",
+      "id": "heldout_mapping_007",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 192,
+      "phase": "after",
+      "id": "heldout_mapping_008",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 192,
+      "phase": "after",
+      "id": "heldout_mapping_009",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 192,
+      "phase": "after",
+      "id": "heldout_mapping_010",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 192,
+      "phase": "after",
+      "id": "heldout_mapping_011",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 192,
+      "phase": "after",
+      "id": "heldout_mapping_012",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 192,
+      "phase": "after",
+      "id": "heldout_context_qa_001",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 192,
+      "phase": "after",
+      "id": "heldout_context_qa_002",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 192,
+      "phase": "after",
+      "id": "heldout_context_qa_003",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 192,
+      "phase": "after",
+      "id": "heldout_context_qa_004",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 192,
+      "phase": "after",
+      "id": "heldout_context_qa_005",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 192,
+      "phase": "after",
+      "id": "heldout_context_qa_006",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 192,
+      "phase": "after",
+      "id": "heldout_context_qa_007",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 192,
+      "phase": "after",
+      "id": "heldout_context_qa_008",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 192,
+      "phase": "after",
+      "id": "heldout_context_qa_009",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 192,
+      "phase": "after",
+      "id": "heldout_context_qa_010",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 192,
+      "phase": "after",
+      "id": "heldout_context_qa_011",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 192,
+      "phase": "after",
+      "id": "heldout_context_qa_012",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 192,
+      "phase": "after",
+      "id": "heldout_yes_no_001",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 192,
+      "phase": "after",
+      "id": "heldout_yes_no_002",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 192,
+      "phase": "after",
+      "id": "heldout_yes_no_003",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 192,
+      "phase": "after",
+      "id": "heldout_yes_no_004",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 192,
+      "phase": "after",
+      "id": "heldout_yes_no_005",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 192,
+      "phase": "after",
+      "id": "heldout_yes_no_006",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 192,
+      "phase": "after",
+      "id": "heldout_yes_no_007",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 192,
+      "phase": "after",
+      "id": "heldout_yes_no_008",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 192,
+      "phase": "after",
+      "id": "heldout_yes_no_009",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 192,
+      "phase": "after",
+      "id": "heldout_yes_no_010",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 192,
+      "phase": "after",
+      "id": "heldout_yes_no_011",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 192,
+      "phase": "after",
+      "id": "heldout_yes_no_012",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 288,
+      "phase": "before",
+      "id": "heldout_extract_001",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 288,
+      "phase": "before",
+      "id": "heldout_extract_002",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 288,
+      "phase": "before",
+      "id": "heldout_extract_003",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 288,
+      "phase": "before",
+      "id": "heldout_extract_004",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 288,
+      "phase": "before",
+      "id": "heldout_extract_005",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 288,
+      "phase": "before",
+      "id": "heldout_extract_006",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 288,
+      "phase": "before",
+      "id": "heldout_extract_007",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 288,
+      "phase": "before",
+      "id": "heldout_extract_008",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 288,
+      "phase": "before",
+      "id": "heldout_extract_009",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 288,
+      "phase": "before",
+      "id": "heldout_extract_010",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 288,
+      "phase": "before",
+      "id": "heldout_extract_011",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 288,
+      "phase": "before",
+      "id": "heldout_extract_012",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 288,
+      "phase": "before",
+      "id": "heldout_repeat_001",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 288,
+      "phase": "before",
+      "id": "heldout_repeat_002",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 288,
+      "phase": "before",
+      "id": "heldout_repeat_003",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 288,
+      "phase": "before",
+      "id": "heldout_repeat_004",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 288,
+      "phase": "before",
+      "id": "heldout_repeat_005",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 288,
+      "phase": "before",
+      "id": "heldout_repeat_006",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 288,
+      "phase": "before",
+      "id": "heldout_repeat_007",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 288,
+      "phase": "before",
+      "id": "heldout_repeat_008",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 288,
+      "phase": "before",
+      "id": "heldout_repeat_009",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 288,
+      "phase": "before",
+      "id": "heldout_repeat_010",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 288,
+      "phase": "before",
+      "id": "heldout_repeat_011",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 288,
+      "phase": "before",
+      "id": "heldout_repeat_012",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 288,
+      "phase": "before",
+      "id": "heldout_mapping_001",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 288,
+      "phase": "before",
+      "id": "heldout_mapping_002",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 288,
+      "phase": "before",
+      "id": "heldout_mapping_003",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 288,
+      "phase": "before",
+      "id": "heldout_mapping_004",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 288,
+      "phase": "before",
+      "id": "heldout_mapping_005",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 288,
+      "phase": "before",
+      "id": "heldout_mapping_006",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 288,
+      "phase": "before",
+      "id": "heldout_mapping_007",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 288,
+      "phase": "before",
+      "id": "heldout_mapping_008",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 288,
+      "phase": "before",
+      "id": "heldout_mapping_009",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 288,
+      "phase": "before",
+      "id": "heldout_mapping_010",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 288,
+      "phase": "before",
+      "id": "heldout_mapping_011",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 288,
+      "phase": "before",
+      "id": "heldout_mapping_012",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 288,
+      "phase": "before",
+      "id": "heldout_context_qa_001",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 288,
+      "phase": "before",
+      "id": "heldout_context_qa_002",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 288,
+      "phase": "before",
+      "id": "heldout_context_qa_003",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 288,
+      "phase": "before",
+      "id": "heldout_context_qa_004",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 288,
+      "phase": "before",
+      "id": "heldout_context_qa_005",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 288,
+      "phase": "before",
+      "id": "heldout_context_qa_006",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 288,
+      "phase": "before",
+      "id": "heldout_context_qa_007",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 288,
+      "phase": "before",
+      "id": "heldout_context_qa_008",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 288,
+      "phase": "before",
+      "id": "heldout_context_qa_009",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 288,
+      "phase": "before",
+      "id": "heldout_context_qa_010",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 288,
+      "phase": "before",
+      "id": "heldout_context_qa_011",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 288,
+      "phase": "before",
+      "id": "heldout_context_qa_012",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 288,
+      "phase": "before",
+      "id": "heldout_yes_no_001",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 288,
+      "phase": "before",
+      "id": "heldout_yes_no_002",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 288,
+      "phase": "before",
+      "id": "heldout_yes_no_003",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 288,
+      "phase": "before",
+      "id": "heldout_yes_no_004",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 288,
+      "phase": "before",
+      "id": "heldout_yes_no_005",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 288,
+      "phase": "before",
+      "id": "heldout_yes_no_006",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 288,
+      "phase": "before",
+      "id": "heldout_yes_no_007",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 288,
+      "phase": "before",
+      "id": "heldout_yes_no_008",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 288,
+      "phase": "before",
+      "id": "heldout_yes_no_009",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 288,
+      "phase": "before",
+      "id": "heldout_yes_no_010",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 288,
+      "phase": "before",
+      "id": "heldout_yes_no_011",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 288,
+      "phase": "before",
+      "id": "heldout_yes_no_012",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 288,
+      "phase": "after",
+      "id": "heldout_extract_001",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 288,
+      "phase": "after",
+      "id": "heldout_extract_002",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 288,
+      "phase": "after",
+      "id": "heldout_extract_003",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 288,
+      "phase": "after",
+      "id": "heldout_extract_004",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 288,
+      "phase": "after",
+      "id": "heldout_extract_005",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 288,
+      "phase": "after",
+      "id": "heldout_extract_006",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 288,
+      "phase": "after",
+      "id": "heldout_extract_007",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 288,
+      "phase": "after",
+      "id": "heldout_extract_008",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 288,
+      "phase": "after",
+      "id": "heldout_extract_009",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 288,
+      "phase": "after",
+      "id": "heldout_extract_010",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 288,
+      "phase": "after",
+      "id": "heldout_extract_011",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 288,
+      "phase": "after",
+      "id": "heldout_extract_012",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 288,
+      "phase": "after",
+      "id": "heldout_repeat_001",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 288,
+      "phase": "after",
+      "id": "heldout_repeat_002",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 288,
+      "phase": "after",
+      "id": "heldout_repeat_003",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 288,
+      "phase": "after",
+      "id": "heldout_repeat_004",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 288,
+      "phase": "after",
+      "id": "heldout_repeat_005",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 288,
+      "phase": "after",
+      "id": "heldout_repeat_006",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 288,
+      "phase": "after",
+      "id": "heldout_repeat_007",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 288,
+      "phase": "after",
+      "id": "heldout_repeat_008",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 288,
+      "phase": "after",
+      "id": "heldout_repeat_009",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 288,
+      "phase": "after",
+      "id": "heldout_repeat_010",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 288,
+      "phase": "after",
+      "id": "heldout_repeat_011",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 288,
+      "phase": "after",
+      "id": "heldout_repeat_012",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 288,
+      "phase": "after",
+      "id": "heldout_mapping_001",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 288,
+      "phase": "after",
+      "id": "heldout_mapping_002",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 288,
+      "phase": "after",
+      "id": "heldout_mapping_003",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 288,
+      "phase": "after",
+      "id": "heldout_mapping_004",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 288,
+      "phase": "after",
+      "id": "heldout_mapping_005",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 288,
+      "phase": "after",
+      "id": "heldout_mapping_006",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 288,
+      "phase": "after",
+      "id": "heldout_mapping_007",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 288,
+      "phase": "after",
+      "id": "heldout_mapping_008",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 288,
+      "phase": "after",
+      "id": "heldout_mapping_009",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 288,
+      "phase": "after",
+      "id": "heldout_mapping_010",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 288,
+      "phase": "after",
+      "id": "heldout_mapping_011",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 288,
+      "phase": "after",
+      "id": "heldout_mapping_012",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 288,
+      "phase": "after",
+      "id": "heldout_context_qa_001",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 288,
+      "phase": "after",
+      "id": "heldout_context_qa_002",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 288,
+      "phase": "after",
+      "id": "heldout_context_qa_003",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 288,
+      "phase": "after",
+      "id": "heldout_context_qa_004",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 288,
+      "phase": "after",
+      "id": "heldout_context_qa_005",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 288,
+      "phase": "after",
+      "id": "heldout_context_qa_006",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 288,
+      "phase": "after",
+      "id": "heldout_context_qa_007",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 288,
+      "phase": "after",
+      "id": "heldout_context_qa_008",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 288,
+      "phase": "after",
+      "id": "heldout_context_qa_009",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 288,
+      "phase": "after",
+      "id": "heldout_context_qa_010",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 288,
+      "phase": "after",
+      "id": "heldout_context_qa_011",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 288,
+      "phase": "after",
+      "id": "heldout_context_qa_012",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 288,
+      "phase": "after",
+      "id": "heldout_yes_no_001",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 288,
+      "phase": "after",
+      "id": "heldout_yes_no_002",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 288,
+      "phase": "after",
+      "id": "heldout_yes_no_003",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 288,
+      "phase": "after",
+      "id": "heldout_yes_no_004",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 288,
+      "phase": "after",
+      "id": "heldout_yes_no_005",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 288,
+      "phase": "after",
+      "id": "heldout_yes_no_006",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 288,
+      "phase": "after",
+      "id": "heldout_yes_no_007",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 288,
+      "phase": "after",
+      "id": "heldout_yes_no_008",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 288,
+      "phase": "after",
+      "id": "heldout_yes_no_009",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 288,
+      "phase": "after",
+      "id": "heldout_yes_no_010",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 288,
+      "phase": "after",
+      "id": "heldout_yes_no_011",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 288,
+      "phase": "after",
+      "id": "heldout_yes_no_012",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 384,
+      "phase": "before",
+      "id": "heldout_extract_001",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 384,
+      "phase": "before",
+      "id": "heldout_extract_002",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 384,
+      "phase": "before",
+      "id": "heldout_extract_003",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 384,
+      "phase": "before",
+      "id": "heldout_extract_004",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 384,
+      "phase": "before",
+      "id": "heldout_extract_005",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 384,
+      "phase": "before",
+      "id": "heldout_extract_006",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 384,
+      "phase": "before",
+      "id": "heldout_extract_007",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 384,
+      "phase": "before",
+      "id": "heldout_extract_008",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 384,
+      "phase": "before",
+      "id": "heldout_extract_009",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 384,
+      "phase": "before",
+      "id": "heldout_extract_010",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 384,
+      "phase": "before",
+      "id": "heldout_extract_011",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 384,
+      "phase": "before",
+      "id": "heldout_extract_012",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 384,
+      "phase": "before",
+      "id": "heldout_repeat_001",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 384,
+      "phase": "before",
+      "id": "heldout_repeat_002",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 384,
+      "phase": "before",
+      "id": "heldout_repeat_003",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 384,
+      "phase": "before",
+      "id": "heldout_repeat_004",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 384,
+      "phase": "before",
+      "id": "heldout_repeat_005",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 384,
+      "phase": "before",
+      "id": "heldout_repeat_006",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 384,
+      "phase": "before",
+      "id": "heldout_repeat_007",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 384,
+      "phase": "before",
+      "id": "heldout_repeat_008",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 384,
+      "phase": "before",
+      "id": "heldout_repeat_009",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 384,
+      "phase": "before",
+      "id": "heldout_repeat_010",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 384,
+      "phase": "before",
+      "id": "heldout_repeat_011",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 384,
+      "phase": "before",
+      "id": "heldout_repeat_012",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 384,
+      "phase": "before",
+      "id": "heldout_mapping_001",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 384,
+      "phase": "before",
+      "id": "heldout_mapping_002",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 384,
+      "phase": "before",
+      "id": "heldout_mapping_003",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 384,
+      "phase": "before",
+      "id": "heldout_mapping_004",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 384,
+      "phase": "before",
+      "id": "heldout_mapping_005",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 384,
+      "phase": "before",
+      "id": "heldout_mapping_006",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 384,
+      "phase": "before",
+      "id": "heldout_mapping_007",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 384,
+      "phase": "before",
+      "id": "heldout_mapping_008",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 384,
+      "phase": "before",
+      "id": "heldout_mapping_009",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 384,
+      "phase": "before",
+      "id": "heldout_mapping_010",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 384,
+      "phase": "before",
+      "id": "heldout_mapping_011",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 384,
+      "phase": "before",
+      "id": "heldout_mapping_012",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 384,
+      "phase": "before",
+      "id": "heldout_context_qa_001",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 384,
+      "phase": "before",
+      "id": "heldout_context_qa_002",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 384,
+      "phase": "before",
+      "id": "heldout_context_qa_003",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 384,
+      "phase": "before",
+      "id": "heldout_context_qa_004",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 384,
+      "phase": "before",
+      "id": "heldout_context_qa_005",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 384,
+      "phase": "before",
+      "id": "heldout_context_qa_006",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 384,
+      "phase": "before",
+      "id": "heldout_context_qa_007",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 384,
+      "phase": "before",
+      "id": "heldout_context_qa_008",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 384,
+      "phase": "before",
+      "id": "heldout_context_qa_009",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 384,
+      "phase": "before",
+      "id": "heldout_context_qa_010",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 384,
+      "phase": "before",
+      "id": "heldout_context_qa_011",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 384,
+      "phase": "before",
+      "id": "heldout_context_qa_012",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 384,
+      "phase": "before",
+      "id": "heldout_yes_no_001",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 384,
+      "phase": "before",
+      "id": "heldout_yes_no_002",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 384,
+      "phase": "before",
+      "id": "heldout_yes_no_003",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 384,
+      "phase": "before",
+      "id": "heldout_yes_no_004",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 384,
+      "phase": "before",
+      "id": "heldout_yes_no_005",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 384,
+      "phase": "before",
+      "id": "heldout_yes_no_006",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 384,
+      "phase": "before",
+      "id": "heldout_yes_no_007",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 384,
+      "phase": "before",
+      "id": "heldout_yes_no_008",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 384,
+      "phase": "before",
+      "id": "heldout_yes_no_009",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 384,
+      "phase": "before",
+      "id": "heldout_yes_no_010",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 384,
+      "phase": "before",
+      "id": "heldout_yes_no_011",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 384,
+      "phase": "before",
+      "id": "heldout_yes_no_012",
+      "coherence_score": 1,
+      "reason": "Readable but irrelevant narrative/fragment; does not answer the task."
+    },
+    {
+      "width": 384,
+      "phase": "after",
+      "id": "heldout_extract_001",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 384,
+      "phase": "after",
+      "id": "heldout_extract_002",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 384,
+      "phase": "after",
+      "id": "heldout_extract_003",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 384,
+      "phase": "after",
+      "id": "heldout_extract_004",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 384,
+      "phase": "after",
+      "id": "heldout_extract_005",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 384,
+      "phase": "after",
+      "id": "heldout_extract_006",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 384,
+      "phase": "after",
+      "id": "heldout_extract_007",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 384,
+      "phase": "after",
+      "id": "heldout_extract_008",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 384,
+      "phase": "after",
+      "id": "heldout_extract_009",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 384,
+      "phase": "after",
+      "id": "heldout_extract_010",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 384,
+      "phase": "after",
+      "id": "heldout_extract_011",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 384,
+      "phase": "after",
+      "id": "heldout_extract_012",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 384,
+      "phase": "after",
+      "id": "heldout_repeat_001",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 384,
+      "phase": "after",
+      "id": "heldout_repeat_002",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 384,
+      "phase": "after",
+      "id": "heldout_repeat_003",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 384,
+      "phase": "after",
+      "id": "heldout_repeat_004",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 384,
+      "phase": "after",
+      "id": "heldout_repeat_005",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 384,
+      "phase": "after",
+      "id": "heldout_repeat_006",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 384,
+      "phase": "after",
+      "id": "heldout_repeat_007",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 384,
+      "phase": "after",
+      "id": "heldout_repeat_008",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 384,
+      "phase": "after",
+      "id": "heldout_repeat_009",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 384,
+      "phase": "after",
+      "id": "heldout_repeat_010",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 384,
+      "phase": "after",
+      "id": "heldout_repeat_011",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 384,
+      "phase": "after",
+      "id": "heldout_repeat_012",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 384,
+      "phase": "after",
+      "id": "heldout_mapping_001",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 384,
+      "phase": "after",
+      "id": "heldout_mapping_002",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 384,
+      "phase": "after",
+      "id": "heldout_mapping_003",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 384,
+      "phase": "after",
+      "id": "heldout_mapping_004",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 384,
+      "phase": "after",
+      "id": "heldout_mapping_005",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 384,
+      "phase": "after",
+      "id": "heldout_mapping_006",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 384,
+      "phase": "after",
+      "id": "heldout_mapping_007",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 384,
+      "phase": "after",
+      "id": "heldout_mapping_008",
+      "coherence_score": 1,
+      "reason": "Malformed/non-word answer (frower)."
+    },
+    {
+      "width": 384,
+      "phase": "after",
+      "id": "heldout_mapping_009",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 384,
+      "phase": "after",
+      "id": "heldout_mapping_010",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 384,
+      "phase": "after",
+      "id": "heldout_mapping_011",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 384,
+      "phase": "after",
+      "id": "heldout_mapping_012",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 384,
+      "phase": "after",
+      "id": "heldout_context_qa_001",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 384,
+      "phase": "after",
+      "id": "heldout_context_qa_002",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 384,
+      "phase": "after",
+      "id": "heldout_context_qa_003",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 384,
+      "phase": "after",
+      "id": "heldout_context_qa_004",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 384,
+      "phase": "after",
+      "id": "heldout_context_qa_005",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 384,
+      "phase": "after",
+      "id": "heldout_context_qa_006",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 384,
+      "phase": "after",
+      "id": "heldout_context_qa_007",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 384,
+      "phase": "after",
+      "id": "heldout_context_qa_008",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 384,
+      "phase": "after",
+      "id": "heldout_context_qa_009",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 384,
+      "phase": "after",
+      "id": "heldout_context_qa_010",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 384,
+      "phase": "after",
+      "id": "heldout_context_qa_011",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 384,
+      "phase": "after",
+      "id": "heldout_context_qa_012",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 384,
+      "phase": "after",
+      "id": "heldout_yes_no_001",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 384,
+      "phase": "after",
+      "id": "heldout_yes_no_002",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 384,
+      "phase": "after",
+      "id": "heldout_yes_no_003",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 384,
+      "phase": "after",
+      "id": "heldout_yes_no_004",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 384,
+      "phase": "after",
+      "id": "heldout_yes_no_005",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 384,
+      "phase": "after",
+      "id": "heldout_yes_no_006",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 384,
+      "phase": "after",
+      "id": "heldout_yes_no_007",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 384,
+      "phase": "after",
+      "id": "heldout_yes_no_008",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 384,
+      "phase": "after",
+      "id": "heldout_yes_no_009",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 384,
+      "phase": "after",
+      "id": "heldout_yes_no_010",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 384,
+      "phase": "after",
+      "id": "heldout_yes_no_011",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    },
+    {
+      "width": 384,
+      "phase": "after",
+      "id": "heldout_yes_no_012",
+      "coherence_score": 2,
+      "reason": "Clear short answer/phrase; semantic correctness is scored separately."
+    }
+  ],
+  "summary": {
+    "192": {
+      "before": {
+        "mean_coherence": 1.0,
+        "mean_repeated_fourgram_fraction": 0.08849099692577952,
+        "max_identical_word_run": 2,
+        "examples": 60
+      },
+      "after": {
+        "mean_coherence": 1.9833333333333334,
+        "mean_repeated_fourgram_fraction": 0.0,
+        "max_identical_word_run": 2,
+        "examples": 60
+      }
+    },
+    "288": {
+      "before": {
+        "mean_coherence": 1.0,
+        "mean_repeated_fourgram_fraction": 0.046362020003896436,
+        "max_identical_word_run": 1,
+        "examples": 60
+      },
+      "after": {
+        "mean_coherence": 2.0,
+        "mean_repeated_fourgram_fraction": 0.0,
+        "max_identical_word_run": 2,
+        "examples": 60
+      }
+    },
+    "384": {
+      "before": {
+        "mean_coherence": 1.0,
+        "mean_repeated_fourgram_fraction": 0.12276138839374133,
+        "max_identical_word_run": 1,
+        "examples": 60
+      },
+      "after": {
+        "mean_coherence": 1.9833333333333334,
+        "mean_repeated_fourgram_fraction": 0.0,
+        "max_identical_word_run": 1,
+        "examples": 60
+      }
+    }
+  },
+  "interpretation": "Post-instruction outputs are usually clear short phrases but often wrong. High coherence/format scores do not establish correctness. Fourgram repetition disappears mainly because answers are shorter than4words; within-answer repeated words still occur. Review is unblinded assistant judgment, not independent human evaluation."
+}

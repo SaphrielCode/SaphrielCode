@@ -1,0 +1,441 @@
+{
+  "status": "PASS",
+  "learning_curves": [
+    {
+      "width": 192,
+      "parameters": 5115072,
+      "label": "initialization",
+      "training_minutes": 0.0,
+      "bits_per_byte": 3.1852310027348243,
+      "valid_targets": 0,
+      "updates": 0,
+      "passes": 0
+    },
+    {
+      "width": 192,
+      "parameters": 5115072,
+      "label": "minute15",
+      "training_minutes": 15.001360681666604,
+      "bits_per_byte": 1.0929262809830618,
+      "valid_targets": 2337886,
+      "updates": 5990,
+      "passes": 0
+    },
+    {
+      "width": 192,
+      "parameters": 5115072,
+      "label": "minute30",
+      "training_minutes": 30.00236250999951,
+      "bits_per_byte": 1.0301525142656036,
+      "valid_targets": 4627736,
+      "updates": 11900,
+      "passes": 1
+    },
+    {
+      "width": 192,
+      "parameters": 5115072,
+      "label": "minute60",
+      "training_minutes": 60.000935188333095,
+      "bits_per_byte": 0.9856664217954719,
+      "valid_targets": 9207119,
+      "updates": 23671,
+      "passes": 2
+    },
+    {
+      "width": 192,
+      "parameters": 5115072,
+      "label": "minute90",
+      "training_minutes": 90.00170689333342,
+      "bits_per_byte": 0.9711006083822331,
+      "valid_targets": 13704714,
+      "updates": 35235,
+      "passes": 3
+    },
+    {
+      "width": 288,
+      "parameters": 10326816,
+      "label": "initialization",
+      "training_minutes": 0.0,
+      "bits_per_byte": 3.1832643570217356,
+      "valid_targets": 0,
+      "updates": 0,
+      "passes": 0
+    },
+    {
+      "width": 288,
+      "parameters": 10326816,
+      "label": "minute15",
+      "training_minutes": 15.001494891666516,
+      "bits_per_byte": 1.130217268848769,
+      "valid_targets": 1420480,
+      "updates": 3654,
+      "passes": 0
+    },
+    {
+      "width": 288,
+      "parameters": 10326816,
+      "label": "minute30",
+      "training_minutes": 30.000945240000146,
+      "bits_per_byte": 1.0585564200392785,
+      "valid_targets": 2812209,
+      "updates": 7220,
+      "passes": 0
+    },
+    {
+      "width": 288,
+      "parameters": 10326816,
+      "label": "minute60",
+      "training_minutes": 60.000735156666636,
+      "bits_per_byte": 0.9931155145706317,
+      "valid_targets": 5550827,
+      "updates": 14283,
+      "passes": 1
+    },
+    {
+      "width": 288,
+      "parameters": 10326816,
+      "label": "minute90",
+      "training_minutes": 90.00266141833369,
+      "bits_per_byte": 0.9650709127637234,
+      "valid_targets": 8334169,
+      "updates": 21423,
+      "passes": 1
+    },
+    {
+      "width": 384,
+      "parameters": 17308032,
+      "label": "initialization",
+      "training_minutes": 0.0,
+      "bits_per_byte": 3.1933854397763173,
+      "valid_targets": 0,
+      "updates": 0,
+      "passes": 0
+    },
+    {
+      "width": 384,
+      "parameters": 17308032,
+      "label": "minute15",
+      "training_minutes": 15.001716318333154,
+      "bits_per_byte": 1.163204587986597,
+      "valid_targets": 950640,
+      "updates": 2443,
+      "passes": 0
+    },
+    {
+      "width": 384,
+      "parameters": 17308032,
+      "label": "minute30",
+      "training_minutes": 30.00225637166659,
+      "bits_per_byte": 1.0866117830716377,
+      "valid_targets": 1902667,
+      "updates": 4883,
+      "passes": 0
+    },
+    {
+      "width": 384,
+      "parameters": 17308032,
+      "label": "minute60",
+      "training_minutes": 60.00564359499985,
+      "bits_per_byte": 1.022939536395656,
+      "valid_targets": 3796917,
+      "updates": 9759,
+      "passes": 0
+    },
+    {
+      "width": 384,
+      "parameters": 17308032,
+      "label": "minute90",
+      "training_minutes": 90.00569550666623,
+      "bits_per_byte": 0.9828506448759946,
+      "valid_targets": 5708623,
+      "updates": 14684,
+      "passes": 1
+    }
+  ],
+  "screening": {
+    "288": [
+      {
+        "status": "PASS",
+        "width": 288,
+        "policy": {
+          "available_reserve_bytes": 2147483648,
+          "immediate_available_bytes": 1073741824,
+          "process_resident_limit_bytes": 4294967296,
+          "consecutive_samples": 3,
+          "sampling_interval_seconds": 1.0
+        },
+        "model_config": {
+          "vocab_size": 8192,
+          "layers": 8,
+          "width": 288,
+          "heads": 9,
+          "ff_width": 768,
+          "ff_activation": "swiglu",
+          "max_context": 256,
+          "norm_eps": 1e-05,
+          "rope_theta": 10000.0
+        },
+        "unique_parameters": 10326816,
+        "initial_parameter_sha256": "7674b6d59743339abd4020fb8557cf27f72c1c452184f9e28d58c7d672dea1bc",
+        "tokenizer_sha256": "1e24618cd0587e3ee07a5a2dc7e5673d8b44d30e197ac8050d52dde95ef1b939",
+        "context": 128,
+        "batch": 4,
+        "threads": 8,
+        "warmup_updates": 10,
+        "warmup_valid_targets": 3889,
+        "warmup_seconds": 2.493049600001541,
+        "timed_updates": 80,
+        "timed_seconds": 20.145895499998005,
+        "valid_targets": 30672,
+        "valid_targets_per_second": 1522.4937506502522,
+        "final_parameter_sha256": "7661999ab79c7ec7f26d1d4642e9c2370b0afcd68ad6549e7417586c39bbddda",
+        "weights_changed": true,
+        "finite_losses_and_gradient_norms": true,
+        "peak_process_resident_bytes": 665169920,
+        "minimum_available_system_bytes": 4785348608
+      },
+      {
+        "status": "PASS",
+        "width": 288,
+        "policy": {
+          "available_reserve_bytes": 2147483648,
+          "immediate_available_bytes": 1073741824,
+          "process_resident_limit_bytes": 4294967296,
+          "consecutive_samples": 3,
+          "sampling_interval_seconds": 1.0
+        },
+        "model_config": {
+          "vocab_size": 8192,
+          "layers": 8,
+          "width": 288,
+          "heads": 9,
+          "ff_width": 768,
+          "ff_activation": "swiglu",
+          "max_context": 256,
+          "norm_eps": 1e-05,
+          "rope_theta": 10000.0
+        },
+        "unique_parameters": 10326816,
+        "initial_parameter_sha256": "7674b6d59743339abd4020fb8557cf27f72c1c452184f9e28d58c7d672dea1bc",
+        "tokenizer_sha256": "1e24618cd0587e3ee07a5a2dc7e5673d8b44d30e197ac8050d52dde95ef1b939",
+        "context": 128,
+        "batch": 4,
+        "threads": 8,
+        "warmup_updates": 10,
+        "warmup_valid_targets": 3889,
+        "warmup_seconds": 2.5930214999971213,
+        "timed_updates": 79,
+        "timed_seconds": 20.058686699994723,
+        "valid_targets": 30160,
+        "valid_targets_per_second": 1503.5879691968037,
+        "final_parameter_sha256": "176a461843238bdde2473a40d5607a0b3bb9633ec178fe7ce1a396e4348c3ec1",
+        "weights_changed": true,
+        "finite_losses_and_gradient_norms": true,
+        "peak_process_resident_bytes": 665010176,
+        "minimum_available_system_bytes": 4782723072
+      },
+      {
+        "status": "PASS",
+        "width": 288,
+        "policy": {
+          "available_reserve_bytes": 2147483648,
+          "immediate_available_bytes": 1073741824,
+          "process_resident_limit_bytes": 4294967296,
+          "consecutive_samples": 3,
+          "sampling_interval_seconds": 1.0
+        },
+        "model_config": {
+          "vocab_size": 8192,
+          "layers": 8,
+          "width": 288,
+          "heads": 9,
+          "ff_width": 768,
+          "ff_activation": "swiglu",
+          "max_context": 256,
+          "norm_eps": 1e-05,
+          "rope_theta": 10000.0
+        },
+        "unique_parameters": 10326816,
+        "initial_parameter_sha256": "7674b6d59743339abd4020fb8557cf27f72c1c452184f9e28d58c7d672dea1bc",
+        "tokenizer_sha256": "1e24618cd0587e3ee07a5a2dc7e5673d8b44d30e197ac8050d52dde95ef1b939",
+        "context": 128,
+        "batch": 4,
+        "threads": 8,
+        "warmup_updates": 10,
+        "warmup_valid_targets": 3889,
+        "warmup_seconds": 2.6030848999944283,
+        "timed_updates": 78,
+        "timed_seconds": 20.096825100001297,
+        "valid_targets": 29840,
+        "valid_targets_per_second": 1484.8116481840743,
+        "final_parameter_sha256": "31a07a7282e773ac7e5d701600f6f800fedff52919cf93b6921806a5e1ae8652",
+        "weights_changed": true,
+        "finite_losses_and_gradient_norms": true,
+        "peak_process_resident_bytes": 664805376,
+        "minimum_available_system_bytes": 4788609024
+      }
+    ],
+    "384": [
+      {
+        "status": "PASS",
+        "width": 384,
+        "policy": {
+          "available_reserve_bytes": 2147483648,
+          "immediate_available_bytes": 1073741824,
+          "process_resident_limit_bytes": 4294967296,
+          "consecutive_samples": 3,
+          "sampling_interval_seconds": 1.0
+        },
+        "model_config": {
+          "vocab_size": 8192,
+          "layers": 8,
+          "width": 384,
+          "heads": 12,
+          "ff_width": 1024,
+          "ff_activation": "swiglu",
+          "max_context": 256,
+          "norm_eps": 1e-05,
+          "rope_theta": 10000.0
+        },
+        "unique_parameters": 17308032,
+        "initial_parameter_sha256": "310605ce370962d0d836fb94bd5bae238a157c96800fa705f86664d9addaf03d",
+        "tokenizer_sha256": "1e24618cd0587e3ee07a5a2dc7e5673d8b44d30e197ac8050d52dde95ef1b939",
+        "context": 128,
+        "batch": 4,
+        "threads": 8,
+        "warmup_updates": 10,
+        "warmup_valid_targets": 3889,
+        "warmup_seconds": 4.018461500003468,
+        "timed_updates": 56,
+        "timed_seconds": 20.039706199997454,
+        "valid_targets": 21461,
+        "valid_targets_per_second": 1070.9238841037863,
+        "final_parameter_sha256": "a33296c4dba8671bb4d5c2d769e2dea05575d56a69178612e13312409e66bb59",
+        "weights_changed": true,
+        "finite_losses_and_gradient_norms": true,
+        "peak_process_resident_bytes": 797757440,
+        "minimum_available_system_bytes": 4795609088
+      },
+      {
+        "status": "PASS",
+        "width": 384,
+        "policy": {
+          "available_reserve_bytes": 2147483648,
+          "immediate_available_bytes": 1073741824,
+          "process_resident_limit_bytes": 4294967296,
+          "consecutive_samples": 3,
+          "sampling_interval_seconds": 1.0
+        },
+        "model_config": {
+          "vocab_size": 8192,
+          "layers": 8,
+          "width": 384,
+          "heads": 12,
+          "ff_width": 1024,
+          "ff_activation": "swiglu",
+          "max_context": 256,
+          "norm_eps": 1e-05,
+          "rope_theta": 10000.0
+        },
+        "unique_parameters": 17308032,
+        "initial_parameter_sha256": "310605ce370962d0d836fb94bd5bae238a157c96800fa705f86664d9addaf03d",
+        "tokenizer_sha256": "1e24618cd0587e3ee07a5a2dc7e5673d8b44d30e197ac8050d52dde95ef1b939",
+        "context": 128,
+        "batch": 4,
+        "threads": 8,
+        "warmup_updates": 10,
+        "warmup_valid_targets": 3889,
+        "warmup_seconds": 3.6878222999948775,
+        "timed_updates": 55,
+        "timed_seconds": 20.036760000002687,
+        "valid_targets": 21034,
+        "valid_targets_per_second": 1049.770521780826,
+        "final_parameter_sha256": "a62d20857c1d1cbd1eb3e1d4355936a888874ad1918b6d5a8f1c6725fc23e9d0",
+        "weights_changed": true,
+        "finite_losses_and_gradient_norms": true,
+        "peak_process_resident_bytes": 797450240,
+        "minimum_available_system_bytes": 4756443136
+      },
+      {
+        "status": "PASS",
+        "width": 384,
+        "policy": {
+          "available_reserve_bytes": 2147483648,
+          "immediate_available_bytes": 1073741824,
+          "process_resident_limit_bytes": 4294967296,
+          "consecutive_samples": 3,
+          "sampling_interval_seconds": 1.0
+        },
+        "model_config": {
+          "vocab_size": 8192,
+          "layers": 8,
+          "width": 384,
+          "heads": 12,
+          "ff_width": 1024,
+          "ff_activation": "swiglu",
+          "max_context": 256,
+          "norm_eps": 1e-05,
+          "rope_theta": 10000.0
+        },
+        "unique_parameters": 17308032,
+        "initial_parameter_sha256": "310605ce370962d0d836fb94bd5bae238a157c96800fa705f86664d9addaf03d",
+        "tokenizer_sha256": "1e24618cd0587e3ee07a5a2dc7e5673d8b44d30e197ac8050d52dde95ef1b939",
+        "context": 128,
+        "batch": 4,
+        "threads": 8,
+        "warmup_updates": 10,
+        "warmup_valid_targets": 3889,
+        "warmup_seconds": 3.7025434999959543,
+        "timed_updates": 55,
+        "timed_seconds": 20.061414799987688,
+        "valid_targets": 21034,
+        "valid_targets_per_second": 1048.4803893299145,
+        "final_parameter_sha256": "a62d20857c1d1cbd1eb3e1d4355936a888874ad1918b6d5a8f1c6725fc23e9d0",
+        "weights_changed": true,
+        "finite_losses_and_gradient_norms": true,
+        "peak_process_resident_bytes": 798285824,
+        "minimum_available_system_bytes": 4754997248
+      }
+    ]
+  },
+  "training": [
+    {
+      "width": 192,
+      "budget_minutes": 90,
+      "directory": "train192",
+      "status": "PASS"
+    },
+    {
+      "width": 288,
+      "budget_minutes": 90,
+      "directory": "train288",
+      "status": "PASS"
+    },
+    {
+      "width": 384,
+      "budget_minutes": 90,
+      "directory": "train384",
+      "status": "PASS"
+    }
+  ],
+  "instruction": [
+    {
+      "width": 192,
+      "directory": "instruction192",
+      "status": "PASS"
+    },
+    {
+      "width": 288,
+      "directory": "instruction288",
+      "status": "PASS"
+    },
+    {
+      "width": 384,
+      "directory": "instruction384",
+      "status": "PASS"
+    }
+  ],
+  "final_test_reserved": true,
+  "production_baseline_unchanged": true,
+  "limits": "One initialization seed. Equal active training time is not equal arithmetic compute. Fixed corpus repetitions are not extra unique data. Evaluation and checkpoint time excluded from training clock and reported separately. Sequential order/background workloads may influence speed. Instruction diagnostic is synthetic with shared templates and disjoint subject words/names, not general conversational evaluation."
+}

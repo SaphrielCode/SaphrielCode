@@ -1,0 +1,16 @@
+{
+  "status": "COMPLETE",
+  "architecture": "Retain approved unfactorized8192-token, width192, eight-layer SwiGLU Candidate A",
+  "training_implementation": "baseline",
+  "training_reason": "Combined path3.14% faster but84.17 MiB higher peak RSS; baseline chosen under predeclared5% closeness/headroom rule.",
+  "quality_scope": "Three paired seeds42/44/46,600 active-training seconds each; architecture winner at this budget only.",
+  "quality_mean_bits_per_byte": {
+    "valid": 1.140375204524164,
+    "factor96": 1.1584668035204515,
+    "factor96wide288": 1.1950325252090115
+  },
+  "inference": "Adopt newest-position scoring plus prefix KV cache; recompute rolling128 window after overflow.",
+  "production_architecture_changed": false,
+  "chat_backend_updated": true,
+  "final_test_evaluated": false
+}

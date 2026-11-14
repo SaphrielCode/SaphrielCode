@@ -1,0 +1,45 @@
+﻿Saphriel Local Chat
+
+Double-click RunChat.cmd in C:\Users\leeme\SaphrielComDevice.
+It opens http://127.0.0.1:8765 and loads the verified latest eligible model.
+The current default and its training provenance are in model_assets/deployment.json.
+Keep the launcher console open while using chat. Close it or press Ctrl+C to stop the server.
+If the app is already running, the launcher opens the existing app.
+
+Everything stays local. The server listens only on 127.0.0.1, uses local assets and
+verified checkpoints, and does not store your messages. It does not start training.
+Published model weights are stored as hash-verified binary parts. RunChat.cmd
+restores the selected weights and frozen tokenizer automatically. To restore every
+published checkpoint and raw results archive, run:
+  python tools/restore_published_artifacts.py --all
+Never substitute a BPE tokenizer for these checkpoints.
+
+The model picker includes the recent 5.1M/10.3M/17.3M instruction and story models,
+when available, plus the approved reference checkpoint. Model loads verify both the
+checkpoint file and the parameter/tokenizer hashes recorded by the training reports.
+Only inference weights are used; optimizer checkpoint storage is memory-mapped.
+
+Chat mode wraps messages using the instruction-test prompt format. It includes recent
+conversation text, cropped to 128 tokens. These models were not trained for sustained
+multi-turn conversation; older text will be forgotten quickly.
+Continue text mode feeds only the latest text and is useful for the story-trained models.
+
+Enter sends; Shift+Enter inserts a newline. Use the square stop button to interrupt
+generation between tokens. New conversation clears the in-memory history.
+Temperature 0 is greedy/repeatable. Other temperatures sample with top-p 0.9 and a
+per-reply seed 45. Reply length is a maximum; generation stops on EOS when predicted.
+PAD/BOS/UNK are excluded from generated tokens. CPU FP32, 8 threads / 1 inter-op thread.
+Generation scores only the newest position. A KV cache reuses the prefix while it fits
+within 128 tokens. Once the rolling window shifts, the model recomputes its 128-token
+context, preserving the original reset positions and conditioning. Displayed timings are
+interactive diagnostics, not a controlled inference benchmark.
+
+Python entry point:
+  .venv-data\Scripts\python.exe tools\chat_server.py --open-browser
+To use another port, add --port 8766.
+
+The current checkpoints are small experiments. They often produce repetitive stories,
+incorrect answers, or memorized answer formats; a chat interface does not add new
+language abilities. The original instruction test achieved only 15/60 held-out exact answers. New
+QA results and deployment gates are recorded in results/SourceAndFiveHour_Results.txt.
+Choose a model and experiment; avoid treating its answers as reliable facts.

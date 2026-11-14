@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "checks": [
+    "Default verified checkpoint loads",
+    "Known trained checkpoints listed",
+    "New deployed checkpoint streaming matches its independently recorded greedy continuation",
+    "Streamed greedy answer exactly matches recorded checkpoint response",
+    "Long context cropped and stop generation honored",
+    "Invalid checkpoint selection and cross-origin requests rejected"
+  ],
+  "default_model": "latest-story",
+  "reference_response": "garden",
+  "messages_persisted": false
+}

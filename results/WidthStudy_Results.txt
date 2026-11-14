@@ -1,0 +1,45 @@
+WIDTH SCALING STUDY - VERIFIED RESULTS
+
+All three candidates: frozen8192 unigram,8layers,SwiGLU intermediate8/3width,head dimension32,context128,batch4,CPU FP32,8threads/1inter-op,seed42,order43,unchanged AdamW. Fresh weights; no uncounted warmup. All validation uses216150 targets and884630 UTF8 text bytes; bits/byte includesEOS cost.
+Equal ACTIVE training time excludes evaluation, checkpointing and startup. Complete updates stop at budget boundaries, with actual overshoot recorded. This is not equal arithmetic compute.
+
+Validation bits per byte (lower is better)
+Width | Parameters | Initialization |15min |30min |60min |90min
+192 |5115072 |3.185231003 |1.092926281 |1.030152514 |0.985666422 |0.971100608
+288 |10326816 |3.183264357 |1.130217269 |1.058556420 |0.993115515 |0.965070913
+384 |17308032 |3.193385440 |1.163204588 |1.086611783 |1.022939536 |0.982850645
+
+90-minute resources and exposure
+Width |Targets |Updates |Full passes |Training sec |Eval sec |Checkpoint sec |Peak MiB |Min free GiB
+192 |13704714 |35235 |3 |5400.102 |119.733 |3.519 |643.76 |4.675
+288 |8334169 |21423 |1 |5400.160 |199.847 |4.469 |770.63 |4.322
+384 |5708623 |14684 |1 |5400.342 |285.409 |5.492 |1223.57 |3.806
+
+Instruction diagnostic: same500 synthetic examples x5epochs,625updates; fresh AdamW moments; response+EOS loss only;60heldout prompts; identical greedy32-token decoding. Distinct subject words/names across splits, shared templates. Not a broad instruction or conversation benchmark.
+Width |Before exact |After exact |After format |Before response NLL |After response NLL |Instruction train sec |Evaluation sec |Generation sec
+192 |0/60 |15/60 |59/60 |8.257970 |4.301840 |94.338 |1.250 |23.573
+288 |0/60 |18/60 |60/60 |7.420896 |4.700620 |159.088 |2.223 |32.775
+384 |0/60 |19/60 |60/60 |7.175251 |4.730995 |231.207 |3.410 |46.823
+
+Instruction exact matches by task (each12 cases):
+192: extract=0/12, repeat=0/12, mapping=0/12, context_qa=8/12, yes_no=7/12
+288: extract=0/12, repeat=0/12, mapping=0/12, context_qa=12/12, yes_no=6/12
+384: extract=0/12, repeat=0/12, mapping=0/12, context_qa=12/12, yes_no=7/12
+
+Interpretation:5.1M led at15/30/60min;10.3M caught up and led by0.621% at90min on heldout story prediction.17.3M remained behind at90min. This is a narrow single-seed result and does not establish a universal width optimum.
+The shared instruction diagnostic tests a separate, limited behavior. Per-task failures and subjective coherence review must be considered alongside the aggregate. No automatic production-baseline change.
+All pretraining checkpoints hash/reload and exact step/target coverage checks passed. All instruction checkpoints reloaded and step counts/loss finiteness/guard logs passed independent checks. Guard reserve2GiB/3samples, immediate1GiB and process4GiB/3samples unchanged. Final TinyStories test split never evaluated for quality.
+Screening and smoke-test updates were independent diagnostic trajectories; their learned weights were discarded. Failed initial timer smoke is retained as engineering diagnostic overhead. No screening/smoke updates are included in90min trajectories.
+Limits: one seed; sequential runs with differing background loads; fixed learning rate was not tuned by width; no equal-token or equal-compute control; repeated corpus exposure is not more unique data; syntheticinstruction test is small and shares templates between splits. Story-loss advantage is not proof of reasoning or general conversation.
+Production selection and DataEval were not changed. Full run logs, curves, source hashes, data locks and checkpoints are in results\WidthStudy_20261112T133901595745Z.
+
+COHERENCE AND REPETITION REVIEW
+Codex assistant qualitative review; unblinded, not independent human assessment
+Post-instruction outputs are usually clear short phrases but often wrong. High coherence/format scores do not establish correctness. Fourgram repetition disappears mainly because answers are shorter than4words; within-answer repeated words still occur. Review is unblinded assistant judgment, not independent human evaluation.
+192: {"before": {"mean_coherence": 1.0, "mean_repeated_fourgram_fraction": 0.08849099692577952, "max_identical_word_run": 2, "examples": 60}, "after": {"mean_coherence": 1.9833333333333334, "mean_repeated_fourgram_fraction": 0.0, "max_identical_word_run": 2, "examples": 60}}
+288: {"before": {"mean_coherence": 1.0, "mean_repeated_fourgram_fraction": 0.046362020003896436, "max_identical_word_run": 1, "examples": 60}, "after": {"mean_coherence": 2.0, "mean_repeated_fourgram_fraction": 0.0, "max_identical_word_run": 2, "examples": 60}}
+384: {"before": {"mean_coherence": 1.0, "mean_repeated_fourgram_fraction": 0.12276138839374133, "max_identical_word_run": 1, "examples": 60}, "after": {"mean_coherence": 1.9833333333333334, "mean_repeated_fourgram_fraction": 0.0, "max_identical_word_run": 1, "examples": 60}}
+
+CONCLUSION
+Retain the approved 5.1M production baseline for now. The 10.3M model is a promising research candidate, with a narrow 90-minute story-prediction advantage after trailing at shorter budgets. The 17.3M model requires more RAM and remains behind at 90 minutes. Instruction differences are only 3-4 answers out of 60; copying, extraction and mapping all failed. Confirm with another initialization seed before promotion. No further run was launched.
+All 360 pre/post responses: WidthStudy_InstructionResponses.json. Per-example qualitative ratings: WidthStudy_CoherenceReview.json.

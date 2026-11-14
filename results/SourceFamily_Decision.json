@@ -1,0 +1,71 @@
+{
+  "selected": "ordinary",
+  "mean_both_answerable_pair_correct": {
+    "ordinary": 0.9270833333333334,
+    "family": 0.84375,
+    "balanced": 0.8802083333333334
+  },
+  "mean_story_loss_increase": {
+    "ordinary": 9.382281519109293,
+    "family": 8.85492746450709,
+    "balanced": 4.826888960015774
+  },
+  "family_nonnegative_seeds": 1,
+  "family_benefit_meets_rule": false,
+  "raw_runs": [
+    {
+      "directory": "source_ordinary_44",
+      "arm": "ordinary",
+      "seed": 44,
+      "status": "PASS"
+    },
+    {
+      "directory": "source_family_44",
+      "arm": "family",
+      "seed": 44,
+      "status": "PASS"
+    },
+    {
+      "directory": "source_balanced_44",
+      "arm": "balanced",
+      "seed": 44,
+      "status": "PASS"
+    },
+    {
+      "directory": "source_family_45",
+      "arm": "family",
+      "seed": 45,
+      "status": "PASS"
+    },
+    {
+      "directory": "source_balanced_45",
+      "arm": "balanced",
+      "seed": 45,
+      "status": "PASS"
+    },
+    {
+      "directory": "source_ordinary_45",
+      "arm": "ordinary",
+      "seed": 45,
+      "status": "PASS"
+    },
+    {
+      "directory": "source_balanced_46",
+      "arm": "balanced",
+      "seed": 46,
+      "status": "PASS"
+    },
+    {
+      "directory": "source_ordinary_46",
+      "arm": "ordinary",
+      "seed": 46,
+      "status": "PASS"
+    },
+    {
+      "directory": "source_family_46",
+      "arm": "family",
+      "seed": 46,
+      "status": "PASS"
+    }
+  ]
+}

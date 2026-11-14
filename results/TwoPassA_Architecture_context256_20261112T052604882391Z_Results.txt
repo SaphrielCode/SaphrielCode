@@ -1,0 +1,34 @@
+CONTROLLED TWO-PASS CANDIDATE A LEARNING RUN
+
+Status: PASS
+Tokenizer: unigram; vocabulary: 8192.
+Fresh seed42 weights; variant context256; batch4/context256/8 CPU threads/1 inter-op; FP32 AdamW unchanged; next-token objective only.
+Same seed43 frozen row permutation reused on each pass; no extra warmup updates. Padding ignored; stories isolated.
+Completed passes: 2/2; updates: 12178; valid targets: 8777642/8777642.
+Training time: 4475.117s; validation: 198.311s; checkpoint save/reload: 1.350s.
+Peak process RAM: 755.09 MiB; minimum available RAM: 4.330 GiB.
+Available-RAM reserve: 2 GiB; first sample below1GiB stops; three consecutive below the reserve stop; three consecutive above4GiB process RSS stop. Sampling interval1s.
+Final test remains reserved. No instruction training or replacement detection. No DataEval edits.
+Validation initialization: 9.04416753 nats/valid target; sum=1954896.81144857; count=216150.
+Validation common128_initialization: 9.04212217 nats/valid target; sum=1954454.70717001; count=216150.
+Validation pass_1: 2.91848270 nats/valid target; sum=630830.03558957; count=216150.
+Validation common128_pass_1: 2.99760088 nats/valid target; sum=647931.43003247; count=216150.
+Validation pass_2: 2.69706322 nats/valid target; sum=582970.21447492; count=216150.
+Validation common128_pass_2: 2.79907318 nats/valid target; sum=605019.66855582; count=216150.
+Pass work: {"pass_number": 1, "completed_updates": 6089, "valid_targets": 4388821, "loss_sum": 14879250.214814685, "seconds": 2230.0296403999964, "completed": true, "valid_targets_per_second": 1968.0550072028573}
+Pass work: {"pass_number": 2, "completed_updates": 6089, "valid_targets": 4388821, "loss_sum": 12323405.87163022, "seconds": 2245.0876298999938, "completed": true, "valid_targets_per_second": 1954.8550985493148}
+
+Pass 1 prompt: Once upon a time, a little girl found a
+Decoding: greedy argmax; max 64 new tokens; EOS=2; rolling context256; BOS=1
+Continuation:  big, red ball. She was very happy and loved to play with it. One day, she saw a big red ball in the sky. She wanted to play with it, but it was too late.
+
+The little girl asked her mom, "Can I play with it?" Her mom replied, "Yes
+
+Pass 2 prompt: Once upon a time, a little girl found a
+Decoding: greedy argmax; max 64 new tokens; EOS=2; rolling context256; BOS=1
+Continuation:  big box. She was very excited to see what it was. She opened the box and saw a big box. She was so excited! She ran to the box and opened the box. She opened the box and found a big box. She was so excited! She opened the box and opened the box. Inside was
+
+A third pass is worth a bounded test because validation loss improved in pass two; this single seed does not establish an optimum.
+Stop/error: None
+Any exposure shortfall is explained by the recorded interruption; partial runs are not two-pass results.
+Details, source hashes, checkpoint verification and per-step/resource logs are stored beside this file.

@@ -1,3 +1,17 @@
+APPROVED PRODUCTION BASELINE
+Use WorkingSelection.json and DataEval.txt for the current parameter selection.
+Architecture: lm.production.Decoder(seed=42), 8layers/width192/6heads,
+SwiGLU intermediate512, tied output embedding, 5,115,072 parameters.
+Tokenizer: frozen8,192-entry unigram; context128, batch4, 8CPU threads/1inter-op, FP32.
+Verify windows: .venv-data\Scripts\python.exe tools/verify_batches.py --tokenizer-kind unigram --vocab-size 8192
+A fresh two-pass run of this exact architecture, only when requested:
+  .venv-data\Scripts\python.exe tools/train_architecture.py --variant swiglu128 --reserve-gib 2 --tokenizer-kind unigram --vocab-size 8192 --track-app-memory
+The reference two-pass checkpoint and hashes are recorded in WorkingSelection.json.
+Loading it requires the approved8k unigram tokenizer; do not combine it with BPE token IDs.
+Fresh training does not implicitly resume that checkpoint.
+
+HISTORICAL BENCHMARK NOTES (legacy GELU/BPE commands below are not production defaults)
+
 Candidate A and frozen training batches
 
 Environment: .venv-data (Python 3.13, CPU-only PyTorch).
@@ -34,3 +48,9 @@ The current screen runner records the explicitly approved 1.25 GiB reserve, imme
 Successful measurements can be reused after an interruption via --resume <suite-directory>; learned model weights are never continued by that option.
 The Windows monitor follows the real worker interpreter beneath the venv launcher.
 No training process is left running after completion.
+
+LOCAL WORKSPACE
+The active project is C:\Users\leeme\SaphrielComDevice, outside OneDrive. Use its .venv-data\Scripts\python.exe and relative data/results paths.
+Open SaphrielComDevice.code-workspace in this local folder before further work.
+Historical reports may contain original OneDrive paths as provenance; do not use those paths to launch new work.
+No experiment was restarted during relocation.

@@ -1,0 +1,939 @@
+{
+  "status": "PASS",
+  "pretraining": {
+    "192": {
+      "status": "PASS",
+      "width": 192,
+      "budget_minutes": 90.0,
+      "training_seconds": 5400.102413600005,
+      "validation_seconds": 119.73292880001827,
+      "checkpoint_seconds": 3.5194216000381857,
+      "completed_updates": 35235,
+      "valid_targets": 13704714,
+      "completed_passes": 3,
+      "next_row": 5520,
+      "validation": {
+        "initialization": {
+          "loss_sum": 1953116.0932064056,
+          "valid_targets": 216150,
+          "loss_nats_per_target": 9.035929184392346,
+          "bits_per_utf8_text_byte_including_eos_cost": 3.1852310027348243,
+          "seconds": 23.974015400002827,
+          "requested_training_minutes": 0,
+          "actual_training_seconds": 0.0,
+          "completed_updates": 0,
+          "valid_targets_processed": 0,
+          "completed_passes": 0,
+          "next_row": 0
+        },
+        "minute15": {
+          "loss_sum": 670159.2149026166,
+          "valid_targets": 216150,
+          "loss_nats_per_target": 3.100435877412059,
+          "bits_per_utf8_text_byte_including_eos_cost": 1.0929262809830618,
+          "seconds": 23.766232100009802,
+          "requested_training_minutes": 15.0,
+          "actual_training_seconds": 900.0816408999963,
+          "completed_updates": 5990,
+          "valid_targets_processed": 2337886,
+          "completed_passes": 0,
+          "next_row": 23960
+        },
+        "minute30": {
+          "loss_sum": 631667.672561799,
+          "valid_targets": 216150,
+          "loss_nats_per_target": 2.922357957722873,
+          "bits_per_utf8_text_byte_including_eos_cost": 1.0301525142656036,
+          "seconds": 23.55114909999247,
+          "requested_training_minutes": 30.0,
+          "actual_training_seconds": 1800.1417505999707,
+          "completed_updates": 11900,
+          "valid_targets_processed": 4627736,
+          "completed_passes": 1,
+          "next_row": 2460
+        },
+        "minute60": {
+          "loss_sum": 604389.7441940662,
+          "valid_targets": 216150,
+          "loss_nats_per_target": 2.7961588905577894,
+          "bits_per_utf8_text_byte_including_eos_cost": 0.9856664217954719,
+          "seconds": 23.850931900000433,
+          "requested_training_minutes": 60.0,
+          "actual_training_seconds": 3600.056111299986,
+          "completed_updates": 23671,
+          "valid_targets_processed": 9207119,
+          "completed_passes": 2,
+          "next_row": 4404
+        },
+        "minute90": {
+          "loss_sum": 595458.2963450365,
+          "valid_targets": 216150,
+          "loss_nats_per_target": 2.7548382898220516,
+          "bits_per_utf8_text_byte_including_eos_cost": 0.9711006083822331,
+          "seconds": 24.59060030001274,
+          "requested_training_minutes": 90.0,
+          "actual_training_seconds": 5400.102413600005,
+          "completed_updates": 35235,
+          "valid_targets_processed": 13704714,
+          "completed_passes": 3,
+          "next_row": 5520
+        }
+      },
+      "checkpoints": [
+        {
+          "file": "minute15.pt",
+          "bytes": 61452455,
+          "sha256": "4336101ce7474a4abe8431b8760f922f4bce849411bb34f1e190ee74bcaf4c32",
+          "parameter_sha256": "ef7550f374bf3dd6669f876318ac19f38d591048e45807d88f37b5433b3e0895",
+          "training_seconds": 900.0816408999963,
+          "completed_updates": 5990,
+          "valid_targets": 2337886,
+          "seconds": 0.21501469999202527,
+          "reload_verified": true
+        },
+        {
+          "file": "minute30.pt",
+          "bytes": 61452839,
+          "sha256": "33e5505593e17648faa39fd370c120d27e2fbeca619d48c13e22a4fcae636a1d",
+          "parameter_sha256": "3b85ce9cc0bf2a1350e3c49cec8ef2a54e72e177edca453c5da91564b13384f9",
+          "training_seconds": 1800.1417505999707,
+          "completed_updates": 11900,
+          "valid_targets": 4627736,
+          "seconds": 0.20364720000361558,
+          "reload_verified": true
+        },
+        {
+          "file": "minute60.pt",
+          "bytes": 61453287,
+          "sha256": "c65e53b139e251be39b07aa1fc24402015fadfe2c3ff8b5b16f793959708e675",
+          "parameter_sha256": "de496e2555a6c8deae52015a749204f07811f59960ff298b3e1f8ea08f467be0",
+          "training_seconds": 3600.056111299986,
+          "completed_updates": 23671,
+          "valid_targets": 9207119,
+          "seconds": 0.20610000001033768,
+          "reload_verified": true
+        },
+        {
+          "file": "minute90.pt",
+          "bytes": 61453671,
+          "sha256": "1bcc403374cc5045f66fe99dce31f6030829df127a2ab63210a5d18a0774ad09",
+          "parameter_sha256": "b66471241add7f7a494ec0e389679448a52899b1e703b644afbd5d49141a1580",
+          "training_seconds": 5400.102413600005,
+          "completed_updates": 35235,
+          "valid_targets": 13704714,
+          "seconds": 0.2053578000050038,
+          "reload_verified": true
+        }
+      ],
+      "extra_warmup_updates": 0,
+      "final_test_evaluated": false,
+      "initialization_seed": 42,
+      "order_seed": 43,
+      "batch": 4,
+      "context": 128,
+      "threads": 8,
+      "interop_threads": 1,
+      "source_hashes": {
+        "lm/width_model.py": "b9a1b2dc498e6df91fcab5a7216da48e29035989d4f80456c4befa9054991ec4",
+        "lm/experimental_model.py": "191f67939bad4a7ff0d3bf0fbc601cc0dc1b4148f055e447b08ddfbf25d7de5c",
+        "lm/monitor.py": "29261febe6c572f359cbcfff135df78fd95cf5cdbc4fb9ced858501e0fd939c9",
+        "lm/resource_guard.py": "624042cc6fac92615e2d90a8685ec852908ff9d00f63d6b0f772c44a4a6868f0",
+        "tools/train_width.py": "09be5b1c168a0dae499a86549b4ef3ec042b6642c79fe7e958837f5bd4a3c602"
+      },
+      "tokenizer_sha256": "1e24618cd0587e3ee07a5a2dc7e5673d8b44d30e197ac8050d52dde95ef1b939",
+      "batch_manifest_sha256": "0fea6794c65a9fc5ad6c40bfeb270bb41cf416bc1e373ce315836f738116eeb1",
+      "targets_per_pass": 4388821,
+      "validation_text_bytes": 884630,
+      "config": {
+        "vocab_size": 8192,
+        "layers": 8,
+        "width": 192,
+        "heads": 6,
+        "ff_width": 512,
+        "ff_activation": "swiglu",
+        "max_context": 256,
+        "norm_eps": 1e-05,
+        "rope_theta": 10000.0
+      },
+      "unique_parameters": 5115072,
+      "initial_parameter_sha256": "e47a0df16830486cd4f72e06989c685978e785c2e6c9a6baa8ff272c6b06d945",
+      "recovery_checkpoint": {
+        "file": "recovery.pt",
+        "bytes": 61453543,
+        "sha256": "8fb0f5ce38391524d8385388a1b8776aae109437981ec0afc5df892e98c85af3",
+        "parameter_sha256": "83a136ef58724839305185d0bec980fb335f5166fed93f2cacee178e5538be51",
+        "training_seconds": 5363.855531699999,
+        "completed_updates": 35000,
+        "valid_targets": 13613418,
+        "seconds": 0.08531270000094082,
+        "reload_verified": false
+      },
+      "guard_policy": {
+        "available_reserve_bytes": 2147483648,
+        "immediate_available_bytes": 1073741824,
+        "process_resident_limit_bytes": 4294967296,
+        "consecutive_samples": 3,
+        "sampling_interval_seconds": 1.0
+      },
+      "peak_process_resident_bytes": 675033088,
+      "minimum_available_system_bytes": 5019500544,
+      "guard_stop": null,
+      "monitor_error": null,
+      "wall_seconds": 5530.543186099996
+    },
+    "288": {
+      "status": "PASS",
+      "width": 288,
+      "budget_minutes": 90.0,
+      "training_seconds": 5400.159685100021,
+      "validation_seconds": 199.84738200002175,
+      "checkpoint_seconds": 4.4693304000393255,
+      "completed_updates": 21423,
+      "valid_targets": 8334169,
+      "completed_passes": 1,
+      "next_row": 40552,
+      "validation": {
+        "initialization": {
+          "loss_sum": 1951910.1877670288,
+          "valid_targets": 216150,
+          "loss_nats_per_target": 9.030350163159977,
+          "bits_per_utf8_text_byte_including_eos_cost": 3.1832643570217356,
+          "seconds": 41.35446670000965,
+          "requested_training_minutes": 0,
+          "actual_training_seconds": 0.0,
+          "completed_updates": 0,
+          "valid_targets_processed": 0,
+          "completed_passes": 0,
+          "next_row": 0
+        },
+        "minute15": {
+          "loss_sum": 693025.2577326477,
+          "valid_targets": 216150,
+          "loss_nats_per_target": 3.206223723028673,
+          "bits_per_utf8_text_byte_including_eos_cost": 1.130217268848769,
+          "seconds": 37.79031520000717,
+          "requested_training_minutes": 15.0,
+          "actual_training_seconds": 900.089693499991,
+          "completed_updates": 3654,
+          "valid_targets_processed": 1420480,
+          "completed_passes": 0,
+          "next_row": 14616
+        },
+        "minute30": {
+          "loss_sum": 649084.3451449965,
+          "valid_targets": 216150,
+          "loss_nats_per_target": 3.002934745061284,
+          "bits_per_utf8_text_byte_including_eos_cost": 1.0585564200392785,
+          "seconds": 40.8761441000097,
+          "requested_training_minutes": 30.0,
+          "actual_training_seconds": 1800.0567144000088,
+          "completed_updates": 7220,
+          "valid_targets_processed": 2812209,
+          "completed_passes": 0,
+          "next_row": 28880
+        },
+        "minute60": {
+          "loss_sum": 608957.3698910597,
+          "valid_targets": 216150,
+          "loss_nats_per_target": 2.8172906310018955,
+          "bits_per_utf8_text_byte_including_eos_cost": 0.9931155145706317,
+          "seconds": 40.03389449999668,
+          "requested_training_minutes": 60.0,
+          "actual_training_seconds": 3600.044109399998,
+          "completed_updates": 14283,
+          "valid_targets_processed": 5550827,
+          "completed_passes": 1,
+          "next_row": 11992
+        },
+        "minute90": {
+          "loss_sum": 591761.0148795678,
+          "valid_targets": 216150,
+          "loss_nats_per_target": 2.7377331245874057,
+          "bits_per_utf8_text_byte_including_eos_cost": 0.9650709127637234,
+          "seconds": 39.792561499998556,
+          "requested_training_minutes": 90.0,
+          "actual_training_seconds": 5400.159685100021,
+          "completed_updates": 21423,
+          "valid_targets_processed": 8334169,
+          "completed_passes": 1,
+          "next_row": 40552
+        }
+      },
+      "checkpoints": [
+        {
+          "file": "minute15.pt",
+          "bytes": 123993767,
+          "sha256": "fc6e268592015dc92ba8d2e819f56182db09829397d7550a9b58b0f95e44855f",
+          "parameter_sha256": "23018aad318e45f07b896538671e387248b01cc9d960bfd18e9512ff6552b95e",
+          "training_seconds": 900.089693499991,
+          "completed_updates": 3654,
+          "valid_targets": 1420480,
+          "seconds": 0.36050840000098106,
+          "reload_verified": true
+        },
+        {
+          "file": "minute30.pt",
+          "bytes": 123994215,
+          "sha256": "0a8914471604c0750f50a19058441b7d2e385a51add507cd2ec049785c27e343",
+          "parameter_sha256": "a27a88faa593871995170501dd86c49e6a0f825ee0a5db0f5dbaf9fb7d9ba54b",
+          "training_seconds": 1800.0567144000088,
+          "completed_updates": 7220,
+          "valid_targets": 2812209,
+          "seconds": 0.3557682999962708,
+          "reload_verified": true
+        },
+        {
+          "file": "minute60.pt",
+          "bytes": 123994599,
+          "sha256": "6abd6860f940dd10a578f46ce7f84a95f2861e711912f2cab5854ab4ee36e7d3",
+          "parameter_sha256": "66c0b27b543c3bad903fde647c763210dfe9d5a5d66647bda33a9a525ba0657d",
+          "training_seconds": 3600.044109399998,
+          "completed_updates": 14283,
+          "valid_targets": 5550827,
+          "seconds": 0.3700847000000067,
+          "reload_verified": true
+        },
+        {
+          "file": "minute90.pt",
+          "bytes": 123994983,
+          "sha256": "c8493576be1fb3c1dbff1a8dfd7ad0df1db1d3c497c133f1366f8dec8e7e64e5",
+          "parameter_sha256": "ab09b101aa05bf5b4210c83e5b6615a05d2c90d2813a8d8d722ed832117675e8",
+          "training_seconds": 5400.159685100021,
+          "completed_updates": 21423,
+          "valid_targets": 8334169,
+          "seconds": 0.35210790000564884,
+          "reload_verified": true
+        }
+      ],
+      "extra_warmup_updates": 0,
+      "final_test_evaluated": false,
+      "initialization_seed": 42,
+      "order_seed": 43,
+      "batch": 4,
+      "context": 128,
+      "threads": 8,
+      "interop_threads": 1,
+      "source_hashes": {
+        "lm/width_model.py": "b9a1b2dc498e6df91fcab5a7216da48e29035989d4f80456c4befa9054991ec4",
+        "lm/experimental_model.py": "191f67939bad4a7ff0d3bf0fbc601cc0dc1b4148f055e447b08ddfbf25d7de5c",
+        "lm/monitor.py": "29261febe6c572f359cbcfff135df78fd95cf5cdbc4fb9ced858501e0fd939c9",
+        "lm/resource_guard.py": "624042cc6fac92615e2d90a8685ec852908ff9d00f63d6b0f772c44a4a6868f0",
+        "tools/train_width.py": "09be5b1c168a0dae499a86549b4ef3ec042b6642c79fe7e958837f5bd4a3c602"
+      },
+      "tokenizer_sha256": "1e24618cd0587e3ee07a5a2dc7e5673d8b44d30e197ac8050d52dde95ef1b939",
+      "batch_manifest_sha256": "0fea6794c65a9fc5ad6c40bfeb270bb41cf416bc1e373ce315836f738116eeb1",
+      "targets_per_pass": 4388821,
+      "validation_text_bytes": 884630,
+      "config": {
+        "vocab_size": 8192,
+        "layers": 8,
+        "width": 288,
+        "heads": 9,
+        "ff_width": 768,
+        "ff_activation": "swiglu",
+        "max_context": 256,
+        "norm_eps": 1e-05,
+        "rope_theta": 10000.0
+      },
+      "unique_parameters": 10326816,
+      "initial_parameter_sha256": "7674b6d59743339abd4020fb8557cf27f72c1c452184f9e28d58c7d672dea1bc",
+      "recovery_checkpoint": {
+        "file": "recovery.pt",
+        "bytes": 123994855,
+        "sha256": "000df495b7e8ed7fde8da31288013fe6e81a6af0da9ecd9a68956b29e590d4db",
+        "parameter_sha256": "699da6250d95552eac50a08663bd8fb2af8b212b05c1ee8574c657d9642766d3",
+        "training_seconds": 5293.09914250001,
+        "completed_updates": 21000,
+        "valid_targets": 8169485,
+        "seconds": 0.15047180000692606,
+        "reload_verified": false
+      },
+      "guard_policy": {
+        "available_reserve_bytes": 2147483648,
+        "immediate_available_bytes": 1073741824,
+        "process_resident_limit_bytes": 4294967296,
+        "consecutive_samples": 3,
+        "sampling_interval_seconds": 1.0
+      },
+      "peak_process_resident_bytes": 808067072,
+      "minimum_available_system_bytes": 4640301056,
+      "guard_stop": null,
+      "monitor_error": null,
+      "wall_seconds": 5612.169202699995
+    },
+    "384": {
+      "status": "PASS",
+      "width": 384,
+      "budget_minutes": 90.0,
+      "training_seconds": 5400.341730399974,
+      "validation_seconds": 285.40878809998685,
+      "checkpoint_seconds": 5.492317099997308,
+      "completed_updates": 14684,
+      "valid_targets": 5708623,
+      "completed_passes": 1,
+      "next_row": 13596,
+      "validation": {
+        "initialization": {
+          "loss_sum": 1958116.2210474014,
+          "valid_targets": 216150,
+          "loss_nats_per_target": 9.059061860038868,
+          "bits_per_utf8_text_byte_including_eos_cost": 3.1933854397763173,
+          "seconds": 56.47786359999736,
+          "requested_training_minutes": 0,
+          "actual_training_seconds": 0.0,
+          "completed_updates": 0,
+          "valid_targets_processed": 0,
+          "completed_passes": 0,
+          "next_row": 0
+        },
+        "minute15": {
+          "loss_sum": 713252.3821780992,
+          "valid_targets": 216150,
+          "loss_nats_per_target": 3.2998028321910677,
+          "bits_per_utf8_text_byte_including_eos_cost": 1.163204587986597,
+          "seconds": 57.46025649999501,
+          "requested_training_minutes": 15.0,
+          "actual_training_seconds": 900.1029790999892,
+          "completed_updates": 2443,
+          "valid_targets_processed": 950640,
+          "completed_passes": 0,
+          "next_row": 9772
+        },
+        "minute30": {
+          "loss_sum": 666287.298711693,
+          "valid_targets": 216150,
+          "loss_nats_per_target": 3.0825227791426926,
+          "bits_per_utf8_text_byte_including_eos_cost": 1.0866117830716377,
+          "seconds": 55.90146939999249,
+          "requested_training_minutes": 30.0,
+          "actual_training_seconds": 1800.1353822999954,
+          "completed_updates": 4883,
+          "valid_targets_processed": 1902667,
+          "completed_passes": 0,
+          "next_row": 19532
+        },
+        "minute60": {
+          "loss_sum": 627244.8275167644,
+          "valid_targets": 216150,
+          "loss_nats_per_target": 2.901896032925119,
+          "bits_per_utf8_text_byte_including_eos_cost": 1.022939536395656,
+          "seconds": 57.455294100000174,
+          "requested_training_minutes": 60.0,
+          "actual_training_seconds": 3600.3386156999914,
+          "completed_updates": 9759,
+          "valid_targets_processed": 3796917,
+          "completed_passes": 0,
+          "next_row": 39036
+        },
+        "minute90": {
+          "loss_sum": 602663.1695087173,
+          "valid_targets": 216150,
+          "loss_nats_per_target": 2.788171036357702,
+          "bits_per_utf8_text_byte_including_eos_cost": 0.9828506448759946,
+          "seconds": 58.11390450000181,
+          "requested_training_minutes": 90.0,
+          "actual_training_seconds": 5400.341730399974,
+          "completed_updates": 14684,
+          "valid_targets_processed": 5708623,
+          "completed_passes": 1,
+          "next_row": 13596
+        }
+      },
+      "checkpoints": [
+        {
+          "file": "minute15.pt",
+          "bytes": 207768359,
+          "sha256": "05cb26a1f477ac35d49f5e047b48716fbe7a1e66cdbd75bcdc5d6a61b1206dc8",
+          "parameter_sha256": "7b48fc05c84a9edfb7694b801573f00d78fb546e60bab0c6055a77431a73e0a7",
+          "training_seconds": 900.1029790999892,
+          "completed_updates": 2443,
+          "valid_targets": 950640,
+          "seconds": 0.543640999996569,
+          "reload_verified": true
+        },
+        {
+          "file": "minute30.pt",
+          "bytes": 207768807,
+          "sha256": "c4d3966b328d470fb6fa8cc6030be1700aa6d74e4fc94119b903592b53a025ff",
+          "parameter_sha256": "95726778ac280287e29c0c969b72c1e61461dadec2b06f315969332ff1359ed9",
+          "training_seconds": 1800.1353822999954,
+          "completed_updates": 4883,
+          "valid_targets": 1902667,
+          "seconds": 0.5254707999993116,
+          "reload_verified": true
+        },
+        {
+          "file": "minute60.pt",
+          "bytes": 207769191,
+          "sha256": "73d2145d28ea110841c16fff773ed81f85a98272ee60493899dca0ca76bbcfb1",
+          "parameter_sha256": "9929d622e289358982d1208826a3cf1b9139e75ff7affb5a3615ec60f36b48dd",
+          "training_seconds": 3600.3386156999914,
+          "completed_updates": 9759,
+          "valid_targets": 3796917,
+          "seconds": 0.5210968000028515,
+          "reload_verified": true
+        },
+        {
+          "file": "minute90.pt",
+          "bytes": 207769575,
+          "sha256": "ed19aad9f40238426b2146477dc74601fcf05e8fcb7fae79e07c032c717d9690",
+          "parameter_sha256": "b26fd8e458d34a87fbaf5fc6068350bc2bfd57539d9407d9e00aaeea4fe5fba2",
+          "training_seconds": 5400.341730399974,
+          "completed_updates": 14684,
+          "valid_targets": 5708623,
+          "seconds": 0.5489654999983031,
+          "reload_verified": true
+        }
+      ],
+      "extra_warmup_updates": 0,
+      "final_test_evaluated": false,
+      "initialization_seed": 42,
+      "order_seed": 43,
+      "batch": 4,
+      "context": 128,
+      "threads": 8,
+      "interop_threads": 1,
+      "source_hashes": {
+        "lm/width_model.py": "b9a1b2dc498e6df91fcab5a7216da48e29035989d4f80456c4befa9054991ec4",
+        "lm/experimental_model.py": "191f67939bad4a7ff0d3bf0fbc601cc0dc1b4148f055e447b08ddfbf25d7de5c",
+        "lm/monitor.py": "29261febe6c572f359cbcfff135df78fd95cf5cdbc4fb9ced858501e0fd939c9",
+        "lm/resource_guard.py": "624042cc6fac92615e2d90a8685ec852908ff9d00f63d6b0f772c44a4a6868f0",
+        "tools/train_width.py": "09be5b1c168a0dae499a86549b4ef3ec042b6642c79fe7e958837f5bd4a3c602"
+      },
+      "tokenizer_sha256": "1e24618cd0587e3ee07a5a2dc7e5673d8b44d30e197ac8050d52dde95ef1b939",
+      "batch_manifest_sha256": "0fea6794c65a9fc5ad6c40bfeb270bb41cf416bc1e373ce315836f738116eeb1",
+      "targets_per_pass": 4388821,
+      "validation_text_bytes": 884630,
+      "config": {
+        "vocab_size": 8192,
+        "layers": 8,
+        "width": 384,
+        "heads": 12,
+        "ff_width": 1024,
+        "ff_activation": "swiglu",
+        "max_context": 256,
+        "norm_eps": 1e-05,
+        "rope_theta": 10000.0
+      },
+      "unique_parameters": 17308032,
+      "initial_parameter_sha256": "310605ce370962d0d836fb94bd5bae238a157c96800fa705f86664d9addaf03d",
+      "recovery_checkpoint": {
+        "file": "recovery.pt",
+        "bytes": 207769447,
+        "sha256": "2f81351ec9d41f8a690f778ff8f603e7da2a76298cb87d8e126f22631d0a79c7",
+        "parameter_sha256": "8e0e9e7e2202ab5b13c12b74a336eff5fe517dfa4bc8577ed56f670665b56811",
+        "training_seconds": 5151.3363541999715,
+        "completed_updates": 14000,
+        "valid_targets": 5441532,
+        "seconds": 0.22537539999757428,
+        "reload_verified": false
+      },
+      "guard_policy": {
+        "available_reserve_bytes": 2147483648,
+        "immediate_available_bytes": 1073741824,
+        "process_resident_limit_bytes": 4294967296,
+        "consecutive_samples": 3,
+        "sampling_interval_seconds": 1.0
+      },
+      "peak_process_resident_bytes": 1283010560,
+      "minimum_available_system_bytes": 4086538240,
+      "guard_stop": null,
+      "monitor_error": null,
+      "wall_seconds": 5698.9547908000095
+    }
+  },
+  "instruction": {
+    "192": {
+      "status": "PASS",
+      "width": 192,
+      "training_seconds": 94.3377107999986,
+      "evaluation_seconds": 1.250302099986584,
+      "generation_seconds": 23.57326849999663,
+      "checkpoint_seconds": 0.13308559999859426,
+      "updates": 625,
+      "valid_response_targets": 9910,
+      "epochs": 5,
+      "final_test_evaluated": false,
+      "pretraining_checkpoint": "C:\\Users\\leeme\\SaphrielComDevice\\results\\WidthStudy_20261112T133901595745Z\\train192\\minute90.pt",
+      "metrics": {
+        "before": {
+          "response_loss_sum": 2213.1358513832092,
+          "valid_response_targets": 268,
+          "response_nats_per_target": 8.257969594713467,
+          "seconds": 0.625950899993768,
+          "exact_match": 0.0,
+          "instruction_format": 0.0,
+          "mean_repeated_fourgram_fraction": 0.08849099692577952,
+          "per_task": {
+            "extract": {
+              "exact_match": 0.0,
+              "instruction_format": 0.0,
+              "examples": 12
+            },
+            "repeat": {
+              "exact_match": 0.0,
+              "instruction_format": 0.0,
+              "examples": 12
+            },
+            "mapping": {
+              "exact_match": 0.0,
+              "instruction_format": 0.0,
+              "examples": 12
+            },
+            "context_qa": {
+              "exact_match": 0.0,
+              "instruction_format": 0.0,
+              "examples": 12
+            },
+            "yes_no": {
+              "exact_match": 0.0,
+              "instruction_format": 0.0,
+              "examples": 12
+            }
+          }
+        },
+        "after": {
+          "response_loss_sum": 1152.8930907366293,
+          "valid_response_targets": 268,
+          "response_nats_per_target": 4.301839890808319,
+          "seconds": 0.624351199992816,
+          "exact_match": 0.25,
+          "instruction_format": 0.9833333333333333,
+          "mean_repeated_fourgram_fraction": 0.0,
+          "per_task": {
+            "extract": {
+              "exact_match": 0.0,
+              "instruction_format": 1.0,
+              "examples": 12
+            },
+            "repeat": {
+              "exact_match": 0.0,
+              "instruction_format": 0.9166666666666666,
+              "examples": 12
+            },
+            "mapping": {
+              "exact_match": 0.0,
+              "instruction_format": 1.0,
+              "examples": 12
+            },
+            "context_qa": {
+              "exact_match": 0.6666666666666666,
+              "instruction_format": 1.0,
+              "examples": 12
+            },
+            "yes_no": {
+              "exact_match": 0.5833333333333334,
+              "instruction_format": 1.0,
+              "examples": 12
+            }
+          }
+        }
+      },
+      "instruction_manifest_sha256": "157f8f6f2411734c6ff28cb58ad3a9c7ad8facbdec9d9bd14b736d189643cd15",
+      "rubric": {
+        "correctness": "Exact match after NFC and outer whitespace stripping, case/punctuation preserved; report per task and overall.",
+        "instruction_format": "Nonempty single line; repeat exactly3 whitespace words; yes_no exactlyyes/no; other tasks a single alphabetic word. This is format compliance, not semantic correctness.",
+        "coherence": "Qualitative evaluator review:2 clear task-appropriate expression;1 readable but irrelevant/fragmented;0 unintelligible. Identify evaluator; not an independent human study. Report separately from exact correctness; retain all responses.",
+        "repetition": "Report repeated4gram fraction for responses with>=4tokens, and longest identical whitespace-word run. Short outputs have no repeated4grams."
+      },
+      "tokenizer_sha256": "1e24618cd0587e3ee07a5a2dc7e5673d8b44d30e197ac8050d52dde95ef1b939",
+      "targets_per_epoch": 1982,
+      "heldout_targets": 268,
+      "pretraining_parameter_sha256": "b66471241add7f7a494ec0e389679448a52899b1e703b644afbd5d49141a1580",
+      "pretraining_checkpoint_sha256": "1bcc403374cc5045f66fe99dce31f6030829df127a2ab63210a5d18a0774ad09",
+      "checkpoint_sha256": "9dc2050b93ade2afd6ecb3c21c8dcfff58eb28d4aaada1980ea3fbb7385e9272",
+      "checkpoint_reload_verified": true,
+      "final_parameter_sha256": "c946f96658d820d068f16ebf86b47afa757b15379610f1627a3df5c4343d801f",
+      "guard_policy": {
+        "available_reserve_bytes": 2147483648,
+        "immediate_available_bytes": 1073741824,
+        "process_resident_limit_bytes": 4294967296,
+        "consecutive_samples": 3,
+        "sampling_interval_seconds": 1.0
+      },
+      "peak_process_resident_bytes": 536506368,
+      "minimum_available_system_bytes": 5045440512,
+      "guard_stop": null,
+      "monitor_error": null,
+      "wall_seconds": 124.4984095999971
+    },
+    "288": {
+      "status": "PASS",
+      "width": 288,
+      "training_seconds": 159.08751189999748,
+      "evaluation_seconds": 2.223476800005301,
+      "generation_seconds": 32.77479249998578,
+      "checkpoint_seconds": 0.24706270000024233,
+      "updates": 625,
+      "valid_response_targets": 9910,
+      "epochs": 5,
+      "final_test_evaluated": false,
+      "pretraining_checkpoint": "C:\\Users\\leeme\\SaphrielComDevice\\results\\WidthStudy_20261112T133901595745Z\\train288\\minute90.pt",
+      "metrics": {
+        "before": {
+          "response_loss_sum": 1988.8001906871796,
+          "valid_response_targets": 268,
+          "response_nats_per_target": 7.420896233907387,
+          "seconds": 1.1155255000048783,
+          "exact_match": 0.0,
+          "instruction_format": 0.0,
+          "mean_repeated_fourgram_fraction": 0.046362020003896436,
+          "per_task": {
+            "extract": {
+              "exact_match": 0.0,
+              "instruction_format": 0.0,
+              "examples": 12
+            },
+            "repeat": {
+              "exact_match": 0.0,
+              "instruction_format": 0.0,
+              "examples": 12
+            },
+            "mapping": {
+              "exact_match": 0.0,
+              "instruction_format": 0.0,
+              "examples": 12
+            },
+            "context_qa": {
+              "exact_match": 0.0,
+              "instruction_format": 0.0,
+              "examples": 12
+            },
+            "yes_no": {
+              "exact_match": 0.0,
+              "instruction_format": 0.0,
+              "examples": 12
+            }
+          }
+        },
+        "after": {
+          "response_loss_sum": 1259.7660519490696,
+          "valid_response_targets": 268,
+          "response_nats_per_target": 4.700619596824887,
+          "seconds": 1.1079513000004226,
+          "exact_match": 0.3,
+          "instruction_format": 1.0,
+          "mean_repeated_fourgram_fraction": 0.0,
+          "per_task": {
+            "extract": {
+              "exact_match": 0.0,
+              "instruction_format": 1.0,
+              "examples": 12
+            },
+            "repeat": {
+              "exact_match": 0.0,
+              "instruction_format": 1.0,
+              "examples": 12
+            },
+            "mapping": {
+              "exact_match": 0.0,
+              "instruction_format": 1.0,
+              "examples": 12
+            },
+            "context_qa": {
+              "exact_match": 1.0,
+              "instruction_format": 1.0,
+              "examples": 12
+            },
+            "yes_no": {
+              "exact_match": 0.5,
+              "instruction_format": 1.0,
+              "examples": 12
+            }
+          }
+        }
+      },
+      "instruction_manifest_sha256": "157f8f6f2411734c6ff28cb58ad3a9c7ad8facbdec9d9bd14b736d189643cd15",
+      "rubric": {
+        "correctness": "Exact match after NFC and outer whitespace stripping, case/punctuation preserved; report per task and overall.",
+        "instruction_format": "Nonempty single line; repeat exactly3 whitespace words; yes_no exactlyyes/no; other tasks a single alphabetic word. This is format compliance, not semantic correctness.",
+        "coherence": "Qualitative evaluator review:2 clear task-appropriate expression;1 readable but irrelevant/fragmented;0 unintelligible. Identify evaluator; not an independent human study. Report separately from exact correctness; retain all responses.",
+        "repetition": "Report repeated4gram fraction for responses with>=4tokens, and longest identical whitespace-word run. Short outputs have no repeated4grams."
+      },
+      "tokenizer_sha256": "1e24618cd0587e3ee07a5a2dc7e5673d8b44d30e197ac8050d52dde95ef1b939",
+      "targets_per_epoch": 1982,
+      "heldout_targets": 268,
+      "pretraining_parameter_sha256": "ab09b101aa05bf5b4210c83e5b6615a05d2c90d2813a8d8d722ed832117675e8",
+      "pretraining_checkpoint_sha256": "c8493576be1fb3c1dbff1a8dfd7ad0df1db1d3c497c133f1366f8dec8e7e64e5",
+      "checkpoint_sha256": "d5523338b2c21c910d5139032f5a7cea79c4526d18d5ec8fd7f68fcabfeb4e5a",
+      "checkpoint_reload_verified": true,
+      "final_parameter_sha256": "6b8724f2abc357c67319de3946e795c2da7d949284eff2ad360052e38cd1006b",
+      "guard_policy": {
+        "available_reserve_bytes": 2147483648,
+        "immediate_available_bytes": 1073741824,
+        "process_resident_limit_bytes": 4294967296,
+        "consecutive_samples": 3,
+        "sampling_interval_seconds": 1.0
+      },
+      "peak_process_resident_bytes": 652869632,
+      "minimum_available_system_bytes": 4953722880,
+      "guard_stop": null,
+      "monitor_error": null,
+      "wall_seconds": 199.67766119999578
+    },
+    "384": {
+      "status": "PASS",
+      "width": 384,
+      "training_seconds": 231.20723340001132,
+      "evaluation_seconds": 3.4095404999970924,
+      "generation_seconds": 46.822867299983045,
+      "checkpoint_seconds": 0.4009432000020752,
+      "updates": 625,
+      "valid_response_targets": 9910,
+      "epochs": 5,
+      "final_test_evaluated": false,
+      "pretraining_checkpoint": "C:\\Users\\leeme\\SaphrielComDevice\\results\\WidthStudy_20261112T133901595745Z\\train384\\minute90.pt",
+      "metrics": {
+        "before": {
+          "response_loss_sum": 1922.9673495292664,
+          "valid_response_targets": 268,
+          "response_nats_per_target": 7.17525130421368,
+          "seconds": 1.658898699999554,
+          "exact_match": 0.0,
+          "instruction_format": 0.0,
+          "mean_repeated_fourgram_fraction": 0.12276138839374133,
+          "per_task": {
+            "extract": {
+              "exact_match": 0.0,
+              "instruction_format": 0.0,
+              "examples": 12
+            },
+            "repeat": {
+              "exact_match": 0.0,
+              "instruction_format": 0.0,
+              "examples": 12
+            },
+            "mapping": {
+              "exact_match": 0.0,
+              "instruction_format": 0.0,
+              "examples": 12
+            },
+            "context_qa": {
+              "exact_match": 0.0,
+              "instruction_format": 0.0,
+              "examples": 12
+            },
+            "yes_no": {
+              "exact_match": 0.0,
+              "instruction_format": 0.0,
+              "examples": 12
+            }
+          }
+        },
+        "after": {
+          "response_loss_sum": 1267.9067786518513,
+          "valid_response_targets": 268,
+          "response_nats_per_target": 4.730995442730788,
+          "seconds": 1.7506417999975383,
+          "exact_match": 0.31666666666666665,
+          "instruction_format": 1.0,
+          "mean_repeated_fourgram_fraction": 0.0,
+          "per_task": {
+            "extract": {
+              "exact_match": 0.0,
+              "instruction_format": 1.0,
+              "examples": 12
+            },
+            "repeat": {
+              "exact_match": 0.0,
+              "instruction_format": 1.0,
+              "examples": 12
+            },
+            "mapping": {
+              "exact_match": 0.0,
+              "instruction_format": 1.0,
+              "examples": 12
+            },
+            "context_qa": {
+              "exact_match": 1.0,
+              "instruction_format": 1.0,
+              "examples": 12
+            },
+            "yes_no": {
+              "exact_match": 0.5833333333333334,
+              "instruction_format": 1.0,
+              "examples": 12
+            }
+          }
+        }
+      },
+      "instruction_manifest_sha256": "157f8f6f2411734c6ff28cb58ad3a9c7ad8facbdec9d9bd14b736d189643cd15",
+      "rubric": {
+        "correctness": "Exact match after NFC and outer whitespace stripping, case/punctuation preserved; report per task and overall.",
+        "instruction_format": "Nonempty single line; repeat exactly3 whitespace words; yes_no exactlyyes/no; other tasks a single alphabetic word. This is format compliance, not semantic correctness.",
+        "coherence": "Qualitative evaluator review:2 clear task-appropriate expression;1 readable but irrelevant/fragmented;0 unintelligible. Identify evaluator; not an independent human study. Report separately from exact correctness; retain all responses.",
+        "repetition": "Report repeated4gram fraction for responses with>=4tokens, and longest identical whitespace-word run. Short outputs have no repeated4grams."
+      },
+      "tokenizer_sha256": "1e24618cd0587e3ee07a5a2dc7e5673d8b44d30e197ac8050d52dde95ef1b939",
+      "targets_per_epoch": 1982,
+      "heldout_targets": 268,
+      "pretraining_parameter_sha256": "b26fd8e458d34a87fbaf5fc6068350bc2bfd57539d9407d9e00aaeea4fe5fba2",
+      "pretraining_checkpoint_sha256": "ed19aad9f40238426b2146477dc74601fcf05e8fcb7fae79e07c032c717d9690",
+      "checkpoint_sha256": "87ef7212712589db27fc4d4a558421e5f56245d442b37269953db243a14dab4f",
+      "checkpoint_reload_verified": true,
+      "final_parameter_sha256": "b74544d1fd8685020a3c5f5d75b803051db92f3c75de9c66308db17cf44b90a8",
+      "guard_policy": {
+        "available_reserve_bytes": 2147483648,
+        "immediate_available_bytes": 1073741824,
+        "process_resident_limit_bytes": 4294967296,
+        "consecutive_samples": 3,
+        "sampling_interval_seconds": 1.0
+      },
+      "peak_process_resident_bytes": 791900160,
+      "minimum_available_system_bytes": 4790059008,
+      "guard_stop": null,
+      "monitor_error": null,
+      "wall_seconds": 287.4165647000045
+    }
+  },
+  "story_90min_advantage_288_vs192_percent": 0.6209135867554116,
+  "production_baseline_unchanged": true,
+  "final_test_reserved": true,
+  "artifacts": "results\\WidthStudy_20261112T133901595745Z",
+  "coherence_review": {
+    "192": {
+      "before": {
+        "mean_coherence": 1.0,
+        "mean_repeated_fourgram_fraction": 0.08849099692577952,
+        "max_identical_word_run": 2,
+        "examples": 60
+      },
+      "after": {
+        "mean_coherence": 1.9833333333333334,
+        "mean_repeated_fourgram_fraction": 0.0,
+        "max_identical_word_run": 2,
+        "examples": 60
+      }
+    },
+    "288": {
+      "before": {
+        "mean_coherence": 1.0,
+        "mean_repeated_fourgram_fraction": 0.046362020003896436,
+        "max_identical_word_run": 1,
+        "examples": 60
+      },
+      "after": {
+        "mean_coherence": 2.0,
+        "mean_repeated_fourgram_fraction": 0.0,
+        "max_identical_word_run": 2,
+        "examples": 60
+      }
+    },
+    "384": {
+      "before": {
+        "mean_coherence": 1.0,
+        "mean_repeated_fourgram_fraction": 0.12276138839374133,
+        "max_identical_word_run": 1,
+        "examples": 60
+      },
+      "after": {
+        "mean_coherence": 1.9833333333333334,
+        "mean_repeated_fourgram_fraction": 0.0,
+        "max_identical_word_run": 1,
+        "examples": 60
+      }
+    }
+  },
+  "qualitative_evaluator": "Codex assistant qualitative review; unblinded, not independent human assessment",
+  "qualitative_limits": "Post-instruction outputs are usually clear short phrases but often wrong. High coherence/format scores do not establish correctness. Fourgram repetition disappears mainly because answers are shorter than4words; within-answer repeated words still occur. Review is unblinded assistant judgment, not independent human evaluation."
+}

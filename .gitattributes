@@ -1,0 +1,3 @@
+artifacts/checkpoint-parts/** -text -diff
+artifacts/log-parts/** -text -diff
+model_assets/tokenizer.json -text

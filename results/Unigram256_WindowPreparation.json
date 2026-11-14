@@ -1,0 +1,33 @@
+{
+  "status": "PASS",
+  "statistics": {
+    "train": {
+      "documents": 19966,
+      "saved_source_tokens_including_eos": 4388821,
+      "windows": 24356,
+      "valid_target_tokens": 4388821,
+      "eos_targets": 19966,
+      "padding_targets": 1846315,
+      "window_file_bytes": 25330240
+    },
+    "validation": {
+      "documents": 1000,
+      "saved_source_tokens_including_eos": 216150,
+      "windows": 1215,
+      "valid_target_tokens": 216150,
+      "eos_targets": 1000,
+      "padding_targets": 94890,
+      "window_file_bytes": 1258740
+    },
+    "test": {
+      "documents": 1000,
+      "saved_source_tokens_including_eos": 213124,
+      "windows": 1190,
+      "valid_target_tokens": 213124,
+      "eos_targets": 1000,
+      "padding_targets": 91516,
+      "window_file_bytes": 1232840
+    }
+  },
+  "context": 256
+}

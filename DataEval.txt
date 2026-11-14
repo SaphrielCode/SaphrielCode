@@ -6,28 +6,33 @@ SCOPE
 This file defines working model, initialization, optimizer, tokenizer and batch parameters only. Store all test results, preparation measurements, findings and interpretations in their own files under results/. Planned benchmark procedures are in BenchmarkProtocol.txt.
 
 CURRENT WORKING CONFIGURATION
-Candidate A: 8 layers, width 192, 6 attention heads, feed-forward width 768; 5,115,072 unique trainable parameters.
+Production baseline Candidate A: 8 layers, width 192, 6 attention heads (32 dimensions/head), SwiGLU feed-forward intermediate width 512; 5,115,072 unique trainable parameters.
+Production entry point: lm.production.Decoder; locked selection: WorkingSelection.json. Historical GELU implementations/runners remain available only as explicitly selected comparison tools.
 CPU FP32; batch size 4; context length 128; 8 intra-operation threads; 1 inter-operation thread; data-loader workers 0.
 Initialization seed 42; frozen training-order seed 43. Next-token prediction only.
-Candidate B remains an alternative configuration for explicitly requested comparisons.
+Working tokenizer: approved 8,192-entry byte-level Unigram; exact frozen encoding is specified in Section 3A.
+Candidate B and BPE tokenizers remain alternatives for explicitly requested comparisons.
 
 1. BENCHMARK MODEL FAMILY
 Use the same implementation and architectural choices across candidates:
 - Decoder-only, causal self-attention; no access to future tokens.
 - Pre-normalization with RMSNorm and rotary positional embeddings.
 - Standard multi-head attention, with 32 dimensions per head.
-- Two-layer feed-forward blocks with GELU and intermediate width 4 times the model width.
+- Production feed-forward: SwiGLU with separate input and gate projections (192 to512), SiLU on the gate, elementwise multiplication, and output projection (512 to192). No biases.
+- Historical comparison models may explicitly use two-matrix GELU feed-forward blocks; do not infer the production architecture from those legacy defaults.
 - No linear biases and no dropout for this initial benchmark.
 - Tie the token embedding and output projection weights. Count shared weights once.
 - Vocabulary: exactly 8,192 entries, including special tokens.
 - All trainable parameters, embeddings and normalization weights count toward the reported model size.
 
 Starting candidates (benchmark configurations, not a final production commitment):
-  Candidate A: 8 layers, width 192, 6 attention heads, feed-forward width 768.
-  Candidate B: 10 layers, width 256, 8 attention heads, feed-forward width 1,024.
+  Candidate A (production): 8 layers, width 192, 6 attention heads, SwiGLU intermediate width 512.
+  Candidate B (historical alternative): 10 layers, width 256, 8 attention heads, GELU intermediate width 1,024.
 
 With one embedding table, two RMSNorm vectors per block, one final RMSNorm vector, and no other learned parameters:
-  Parameter count = vocabulary * width + layers * (12 * width^2 + 2 * width) + width.
+  SwiGLU parameter count = vocabulary * width + layers * (4 * width^2 + 3 * width * ff_width + 2 * width) + width.
+  GELU comparison count = vocabulary * width + layers * (4 * width^2 + 2 * width * ff_width + 2 * width) + width.
+  For production ff_width=512 at width192, the block matrix term remains12 * width^2, matching the former GELU width768 count.
   Candidate A: 5,115,072 parameters, approximately 5.1M.
   Candidate B: 9,966,848 parameters, approximately 10.0M.
 The implementation must print its actual unique trainable parameter count and reconcile any difference before comparing runs.
@@ -35,7 +40,7 @@ The implementation must print its actual unique trainable parameter count and re
 Initialization and reproducibility:
 - Initialize from scratch in FP32 on CPU. Do not load pretrained weights.
 - Use a recorded initialization rule rather than framework defaults: token embeddings and attention/feed-forward matrix weights are independent normal samples with mean 0 and standard deviation 0.02, except the two residual-output projections in each block.
-- Initialize each attention output projection and feed-forward second projection with standard deviation 0.02 / sqrt(2 * number_of_layers), to reduce initial residual-branch scale. This is a chosen starting rule, not a guarantee of training stability.
+- Initialize each attention output projection and feed-forward output projection with standard deviation 0.02 / sqrt(2 * number_of_layers). SwiGLU input and gate projections each use standard deviation0.02. Preserve the tested initialization order: qkv, attention output, FF input, FF output, then FF gate per block. This is a chosen starting rule, not a guarantee of training stability.
 - Initialize every RMSNorm scale to 1. There are no trainable bias vectors. Rotary position values are deterministic, not randomly initialized; fix RoPE theta at 10,000 for both candidates.
 - The tied output head shares the embedding parameter object and is not initialized independently. Verify both sharing and the unique parameter count.
 - Performance-screening model initialization seed: 42. Training-data order seed: 43, independent of the initialization RNG. Record Python, numerical-library and framework RNG seeds, software versions and initialization implementation/version.
@@ -87,26 +92,30 @@ Selection:
 - Remove exact normalized duplicates globally, keeping test first, then validation, then training. Do not refill removed rows after selection.
 
 Tokenizer configuration:
-- ByteLevel BPE, trained from scratch only on retained training stories; vocabulary exactly 8,192 including four special entries.
+- Approved working selection: byte-level Unigram, trained from scratch only on retained training stories; vocabulary exactly 8,192 including four special entries.
+- SentencePiece unigram EM over frequency-weighted ByteLevel chunks with explicit training-only substring seeds (maximum piece length 16). Reserve all 256 byte symbols by replacing the same count of lowest-score non-required multi-character pieces. The final saved Hugging Face tokenizer.json is authoritative.
+- Deterministic Viterbi encoding; no subword sampling or regularization. Preserve this frozen tokenizer for working runs; do not retrain it implicitly.
 - Special IDs: pad=0, bos=1, eos=2, unk=3. Byte-level alphabet covers all bytes; verify that prepared stories and Unicode checks encode without unknown IDs.
-- NFC normalization, no automatic prefix space, minimum merge frequency 2, tokenizer parallelism disabled; library versions and the saved tokenizer hash are in the manifest.
+- NFC normalization; ByteLevel pre-tokenization with add_prefix_space=false and use_regex=true; ByteLevel decoding. No automatic tokenizer padding, truncation or BOS/EOS insertion. Tokenizer parallelism disabled. Backend: tokenizers 0.22.1; construction: sentencepiece 0.2.1.
+- Complete encoding configuration is locked in data/TinyStoriesBatches128_Unigram8192/tokenizer-lock.json; construction and mandatory-byte reservation are preserved beside the tokenizer. The model uses the explicit byte-symbol alphabet, not the backend byte_fallback option.
 - Saved streams contain text IDs followed by one EOS for each story; add BOS and right padding according to Section 3B. Preserve document offsets.
-- Tokenizer SHA-256: 5d99b0bf97ebebccc88cfc73e657cd82379e9b1495dbf0c75fb5f93fe1dfd16f.
+- Tokenizer SHA-256: 1e24618cd0587e3ee07a5a2dc7e5673d8b44d30e197ac8050d52dde95ef1b939.
 
 Files and storage:
-- Frozen local directory: data/TinyStoriesSubset/.
+- Frozen local directory: data/TinyStoriesSubset_Unigram8192/.
 - Each split has JSONL text/provenance, little-endian uint16 token IDs (.u16), and uint64 document offsets (.idx). The manifest records every file's size and hash.
 - Python dependencies and their separate environment are preparation tools, not corpus bytes; requirements-data.lock.txt records their versions.
 
 Coverage and benchmark use:
-- Before each benchmark, run .venv-data/Scripts/python.exe tools/verify_tinystories.py. It checks hashes, story/token alignment, boundaries, counts, source split assignments and cross-split exact overlap.
+- Before each working run, verify the selected locks and windows with .venv-data/Scripts/python.exe tools/verify_batches.py --tokenizer-kind unigram --vocab-size 8192. Preserve the original source document split assignments and cross-split exact deduplication.
+- Existing generic tools retain historical BPE defaults. Select --tokenizer-kind unigram --vocab-size 8192 explicitly when using train_two_pass.py or verify_batches.py; do not infer the working selection from a legacy command default.
 - Do not change the frozen subset or tokenizer between candidates. The preparation script refuses to overwrite an existing frozen output.
 - Corpus cycles depend on actual valid training-target tokens consumed and the final packing/masking policy; token counts alone do not establish a measured cycle count or training requirement.
 - Keep final test material out of tokenizer training, model selection and routine benchmark validation. Integrity checks may inspect its structure/hashes without using its loss for selection.
 
 
 3B. WINDOW AND BATCH CONFIGURATION
-- Freeze vocabulary, special IDs, tokenizer configuration, backend version and hash in data/TinyStoriesBatches128/tokenizer-lock.json.
+- Freeze vocabulary, special IDs, tokenizer configuration, backend version and hash in data/TinyStoriesBatches128_Unigram8192/tokenizer-lock.json.
 - Corpus preparation converts newlines and strips outer whitespace before tokenization. The tokenizer itself applies NFC only.
 - Verify encode/decode behavior, unseen Unicode handling, split isolation, future/padding leakage, target coverage, deterministic initialization, weight sharing and token-weighted loss.
 
@@ -120,6 +129,6 @@ Window policy: document-isolated-right-pad-v1.
 
 - Store x/y as little-endian uint16; row metadata records story ID, target start and valid length. Preserve original document offsets.
 - Count valid targets for loss/throughput and padded positions for executed dense-matrix work.
-- Verify source integrity and batch locks with tools/verify_tinystories.py and tools/verify_batches.py before each run. Prepared output directories must refuse overwrite.
+- Verify selected source integrity and batch locks with tools/verify_batches.py --tokenizer-kind unigram --vocab-size 8192 before each run. Prepared output directories must refuse overwrite.
 - Future timed runs must start from the declared initialization, without silently continuing pilot weights.
 

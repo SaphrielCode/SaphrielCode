@@ -1,0 +1,31 @@
+ARCHITECTURE EXPERIMENT: context256
+PASS: exact update/target coverage; finite step losses and norms; checkpoint hashes and runtime reloads; source snapshots; guard telemetry. Test split reserved.
+
+{"vocab_size": 8192, "layers": 8, "width": 192, "heads": 6, "ff_width": 768, "ff_activation": "gelu", "max_context": 256, "norm_eps": 1e-05, "rope_theta": 10000.0}
+Parameters: 5115072; updates: 12178; valid targets: 8777642; fresh seed42, order43; two complete passes; no extra warmup.
+Training: 4475.117s; validation: 198.311s; checkpoint: 1.350s. Periodic recovery I/O is already included in pass wall times; do not add that I/O again.
+Peak process resident: 755.09 MiB; minimum available: 4.330 GiB.
+
+initialization: 9.044167529 nats/target; 3.188135079 bits/byte; NLL sum 1954896.811448574; count 216150.
+common128_initialization: 9.042122171 nats/target; 3.187414076 bits/byte; NLL sum 1954454.707170010; count 216150.
+pass_1: 2.918482700 nats/target; 1.028786458 bits/byte; NLL sum 630830.035589570; count 216150.
+common128_pass_1: 2.997600879 nats/target; 1.056676193 bits/byte; NLL sum 647931.430032467; count 216150.
+pass_2: 2.697063218 nats/target; 0.950734474 bits/byte; NLL sum 582970.214474922; count 216150.
+common128_pass_2: 2.799073183 nats/target; 0.986693731 bits/byte; NLL sum 605019.668555818; count 216150.
+Pass 1: 2230.030s; 1968.055 valid targets/s.
+Pass 2: 2245.088s; 1954.855 valid targets/s.
+
+Common128 final bits/byte change versus working unigram GELU baseline: -2.497% (lower is better).
+For context256, native256 and common128 predict identical target tokens with different histories/chunk boundaries. Use common128 for matching evaluation conditioning. Training windows/order still differ. Other variants use unchanged128 windows. One seed; background workloads differ; neither elapsed time nor parameter count establishes equal total compute. Shared architectural tensor values are not assumed identical across changed shapes. Baseline working selection is unchanged.
+
+Pass 1 prompt: Once upon a time, a little girl found a
+greedy argmax; max 64 new tokens; EOS=2; rolling context256; BOS=1
+ big, red ball. She was very happy and loved to play with it. One day, she saw a big red ball in the sky. She wanted to play with it, but it was too late.
+
+The little girl asked her mom, "Can I play with it?" Her mom replied, "Yes
+
+Pass 2 prompt: Once upon a time, a little girl found a
+greedy argmax; max 64 new tokens; EOS=2; rolling context256; BOS=1
+ big box. She was very excited to see what it was. She opened the box and saw a big box. She was so excited! She ran to the box and opened the box. She opened the box and found a big box. She was so excited! She opened the box and opened the box. Inside was
+
+Run artifacts: results\Architecture_context256_20261112T052604882391Z

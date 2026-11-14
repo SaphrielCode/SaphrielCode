@@ -1,0 +1,48 @@
+{
+  "status": "PASS",
+  "profiles": [
+    {
+      "id": "latest-story",
+      "name": "5.1M - five-hour story model",
+      "detail": "TinyStories continuation; experimental limited model.",
+      "checkpoint": "model_assets/story.pt",
+      "file_hash": "9c02755466dae0038462bead952a404840cd0d369c3eec9e469752db3b0f4428",
+      "parameter_hash": "b34e56c5e2069b48427115d917226607e86eb6fefed4e0a4cd8a3d958e77b8df",
+      "parameters": 5115072,
+      "style": "story",
+      "regression": {
+        "prompt": "Once upon a time, a little girl found a",
+        "mode": "story",
+        "temperature": 0,
+        "max_tokens": 16,
+        "expected_text": " shiny rock. She was so happy and wanted to show it to her friends.",
+        "expected_ids": [
+          285,
+          428,
+          4,
+          14,
+          11,
+          30,
+          43,
+          5,
+          59,
+          9,
+          320,
+          12,
+          9,
+          13,
+          74,
+          4
+        ]
+      },
+      "training_checkpoint": "results/SourceAndFiveHour_20261113T162718Z/five_hours/minute240.pt",
+      "training_checkpoint_sha256": "295aaa9bef98614e1d0d4d5d2f35af44e6cc4d46539a971e761c3dcb4dc75c12"
+    }
+  ],
+  "default": "latest-story",
+  "tokenizer_file": "model_assets/tokenizer.json",
+  "tokenizer_sha256": "1e24618cd0587e3ee07a5a2dc7e5673d8b44d30e197ac8050d52dde95ef1b939",
+  "best_story_validation_label": "minute240",
+  "study_directory": "results/SourceAndFiveHour_20261113T162718Z",
+  "model_quality_limits": "Tiny story model and bounded passage QA, not a general conversational benchmark."
+}

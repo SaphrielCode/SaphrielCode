@@ -1,0 +1,22 @@
+﻿<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Saphriel · Local Chat</title><link rel="stylesheet" href="/style.css"><script src="/app.js" defer></script></head>
+<body><div class="app">
+<aside id="sidebar" class="sidebar">
+ <a class="brand" href="/" aria-label="Saphriel home"><span class="mark">S</span><span>Saphriel<small>COM DEVICE</small></span></a>
+ <button id="new-chat" class="new-chat"><span>＋</span> New conversation</button>
+ <section class="model-section"><label for="model-select" class="eyebrow">YOUR MODEL</label><select id="model-select" aria-describedby="model-detail"><option>Finding checkpoints…</option></select><p id="model-detail" class="muted">Verified local checkpoints</p><p id="parameters" class="mini"></p></section>
+ <section><div class="eyebrow">WORKSPACE</div><div class="mode-switch" aria-label="Conversation mode"><button id="chat-mode" class="mode active" aria-pressed="true">Chat</button><button id="story-mode" class="mode" aria-pressed="false">Continue text</button></div><p id="mode-detail" class="muted">Uses a short recent conversation.</p></section>
+ <details class="settings"><summary>Generation settings <span>⌄</span></summary><label for="temperature">Temperature <output id="temperature-value">0.7</output></label><input id="temperature" type="range" min="0" max="1.5" value="0.7" step="0.1"><div class="range-labels"><span>Focused</span><span>Varied</span></div><label for="max-tokens">Reply length</label><select id="max-tokens"><option value="32">Short · 32 tokens</option><option value="64" selected>Standard · 64 tokens</option><option value="128">Long · 128 tokens</option></select><p class="muted">Set temperature to 0 for repeatable, greedy replies.</p></details>
+ <div class="sidebar-foot"><span class="local-indicator"></span><div>Running on your laptop<small>No cloud model. No saved messages.</small></div></div>
+</aside>
+<main>
+ <header class="topbar"><button id="menu" class="icon-button mobile-only" aria-label="Toggle sidebar" aria-expanded="false">☰</button><div><span class="workspace-name">Local chat</span><span class="tag">EXPERIMENTAL</span></div><div id="connection" class="connection"><span class="status-dot loading"></span><span id="status-text" role="status">Connecting</span></div></header>
+ <div id="thread" class="thread" aria-label="Conversation" tabindex="0">
+  <section id="welcome" class="welcome"><div class="welcome-mark">S</div><p class="eyebrow">A LITTLE LANGUAGE MODEL, CLOSE TO HOME</p><h1>Say hello to Saphriel.</h1><p class="intro">Your trained model, running right here on your laptop.<br>Ask something simple, or give a story its next sentence.</p>
+   <div class="suggestions"><button class="suggestion" data-example="question"><span class="suggestion-symbol">↗</span><strong>Ask a simple question</strong><span>Try a short reading task</span></button><button class="suggestion" data-example="instruction"><span class="suggestion-symbol">≡</span><strong>Try an instruction</strong><span>See how the model follows directions</span></button><button class="suggestion" data-example="story"><span class="suggestion-symbol">✧</span><strong>Continue a story</strong><span>Start with “Once upon a time…”</span></button></div>
+   <div class="model-note"><span>◈</span> These small experimental models can be repetitive or incorrect.</div>
+  </section>
+  <div id="messages" class="messages" aria-live="polite" aria-relevant="additions"></div>
+ </div>
+ <footer class="composer-wrap"><div id="error" class="error" role="alert" hidden></div><form id="composer" class="composer"><label class="sr-only" for="prompt">Message Saphriel</label><textarea id="prompt" rows="2" maxlength="6000" placeholder="Message Saphriel…" spellcheck="true"></textarea><div class="composer-actions"><span id="composer-hint">Enter to send · Shift+Enter for a new line</span><button id="send" type="submit" class="send" disabled><span id="send-symbol">↑</span><span id="send-label" class="sr-only">Send message</span></button></div></form><div class="footer-note"><span>Only a short recent context fits in the model’s 128-token window.</span><span id="generation-stats"></span></div></footer>
+</main></div></body></html>
