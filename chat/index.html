@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Saphriel · Local Chat</title><link rel="stylesheet" href="/style.css"><script src="/app.js" defer></script></head>
 <body><div class="app">
 <aside id="sidebar" class="sidebar">
@@ -6,7 +6,7 @@
  <button id="new-chat" class="new-chat"><span>＋</span> New conversation</button>
  <section class="model-section"><label for="model-select" class="eyebrow">YOUR MODEL</label><select id="model-select" aria-describedby="model-detail"><option>Finding checkpoints…</option></select><p id="model-detail" class="muted">Verified local checkpoints</p><p id="parameters" class="mini"></p></section>
  <section><div class="eyebrow">WORKSPACE</div><div class="mode-switch" aria-label="Conversation mode"><button id="chat-mode" class="mode active" aria-pressed="true">Chat</button><button id="story-mode" class="mode" aria-pressed="false">Continue text</button></div><p id="mode-detail" class="muted">Uses a short recent conversation.</p></section>
- <details class="settings"><summary>Generation settings <span>⌄</span></summary><label for="temperature">Temperature <output id="temperature-value">0.7</output></label><input id="temperature" type="range" min="0" max="1.5" value="0.7" step="0.1"><div class="range-labels"><span>Focused</span><span>Varied</span></div><label for="max-tokens">Reply length</label><select id="max-tokens"><option value="32">Short · 32 tokens</option><option value="64" selected>Standard · 64 tokens</option><option value="128">Long · 128 tokens</option></select><p class="muted">Set temperature to 0 for repeatable, greedy replies.</p></details>
+ <details class="settings"><summary>Generation settings <span>⌄</span></summary><label for="temperature">Temperature <output id="temperature-value">0.7</output></label><input id="temperature" type="range" min="0" max="1.5" value="0.7" step="0.1"><div class="range-labels"><span>Focused</span><span>Varied</span></div><label for="max-tokens">Reply length</label><select id="max-tokens"><option value="32">Short · 32 tokens</option><option value="48">Stage 1 ? 48 tokens</option><option value="64" selected>Standard · 64 tokens</option><option value="128">Long · 128 tokens</option></select><p class="muted">Set temperature to 0 for repeatable, greedy replies.</p></details>
  <div class="sidebar-foot"><span class="local-indicator"></span><div>Running on your laptop<small>No cloud model. No saved messages.</small></div></div>
 </aside>
 <main>

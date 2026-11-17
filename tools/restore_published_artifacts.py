@@ -28,7 +28,6 @@ def restore(entry):
   raise
 def main():
  p=argparse.ArgumentParser();p.add_argument('--all',action='store_true');a=p.parse_args()
- if any(x.lower()=='onedrive' for x in ROOT.parts):raise SystemExit('Restore in a local project outside OneDrive')
  manifest=ROOT/'artifacts/ArtifactManifest.json'
  if not manifest.exists():
   deployment=ROOT/'model_assets/deployment.json'

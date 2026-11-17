@@ -1,3 +1,15 @@
+STAGE 1 CONTINUATION ADAPTATION
+Current run uses the compatible TinyStories checkpoint, 128-token context, batch4, eight threads, continuation-and-EOS-only loss, and a 0.5 GiB immediate available-system-RAM guard.
+Preparation is outside the four-hour phase. The phase includes periodic validation/checkpoint saves and stops after the last completed optimizer update.
+Prepare once after restoring the tokenizer and existing TinyStories text splits:
+  .venv-data\Scripts\python.exe tools/prepare_stage_one.py
+Start a new four-hour adaptation run:
+  .venv-data\Scripts\python.exe tools/train_stage_one.py --seconds 14400 --reserve-gib .5
+Resume an interrupted run from its latest optimizer checkpoint:
+  .venv-data\Scripts\python.exe tools/train_stage_one.py --resume results/<run>/latest.pt --seconds 14400 --reserve-gib .5
+Resume preserves the completed phase time, optimizer, and example order.
+Selected weights are exposed as the Stage 1 profile in the existing local chat after final validation and checkpoint reload verification.
+
 SHORT STORY REDESIGN, 2026-11-16
 Read StoryModelDesign.txt and LearningTask.txt for the current requirements and staged learning goals.
 The redesign selects SwiGLU with intermediate width 512 in all eight layers and separate FFN weights per layer. Width 384 is a candidate for reducing compute.

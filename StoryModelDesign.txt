@@ -139,7 +139,7 @@ Token embeddings
 Keep 192-dimensional token embeddings. Share the input embedding weights with the output prediction layer.
 
 Input format
-Use short, consistent text labels for the scene, the user's turn, and the start of the model's reply. Use the same format during training and generation. End the generation prompt at Reply:. The exact scene and user-turn label strings remain to be selected.
+Use short, consistent text labels for the scene, the user's turn, and the start of the model's reply. Use the same format during training and generation. End the generation prompt at Reply:. Stage 1 uses Scene: {scene} followed by a newline, User: {user} followed by a newline, and Reply:.
 
 Training target
 For the next-sentence exercise, provide the full prompt as conditioning context. Calculate next-token loss only on the demonstrated continuation and its end-of-reply token. Exclude prompt tokens and padding from the loss. Causal visibility still applies throughout the example.
@@ -160,20 +160,20 @@ When predicting later reply tokens during training, provide the demonstrated pre
 Generation
 Provide the scene and user's contribution in the same labeled format used during training, ending at Reply:.
 Use greedy decoding initially for repeatable results. Select the highest-scoring next token, append it, and repeat using the model's own output.
-Stop when EOS is emitted or the reply token limit is reached. The numerical reply limit remains to be selected.
+Stop when EOS is emitted or the reply token limit is reached. The Stage 1 reply limit is 48 new tokens, including EOS. Reject a prompt that leaves insufficient context space instead of discarding its facts.
 
 Brass-key example
 Given the established scene and "George reached into his pocket", the demonstrated continuation is "His fingers closed around the brass key", followed by EOS.
 During generation, the model produces that next beat itself. The key's earlier placement must remain visible in context.
 
 Four-hour run starting point
-The initialization choice and exact four-hour timing boundary remain open.
+Selected run: adapt the compatible TinyStories checkpoint named in WorkingSelection.json with fresh optimizer state. Count 14,400 seconds from the first training-step start, including periodic validation and checkpoint saves. Preparation and initial/final evaluation are outside that interval. Complete the last optimizer update before stopping.
 To measure the strongest continuation achievable within four hours of task adaptation, start from a compatible TinyStories checkpoint and update its weights on Stage 1. Record the checkpoint and account separately for its prior training.
 To measure learning from random weights within four hours, initialize from scratch.
 The output, supervised continuation exercise, and generation rules above apply to either choice. Specify which setup is used and what the timed interval includes before the run.
 
 9. DESIGN STATUS
-This document records the redesign supplied so far, including the Stage 1 output, continuation-and-EOS loss, and greedy generation rules. Remaining architecture choices, exact scene and user-turn labels, reply limit, initialization choice, four-hour timing boundary, optimizer settings, remaining stage budgets, and numerical pass thresholds remain open.
+This document records the redesign supplied so far, including the Stage 1 output, continuation-and-EOS loss, and greedy generation rules. Stage 1 uses batch 4, eight CPU threads, FP32, fresh AdamW moments, 100-update warmup to learning rate 0.0001 and elapsed-phase cosine decay to 0.00001. Preserve existing betas, weight decay and clipping. The user-selected immediate available-RAM guard is 0.5 GiB, with the existing 4 GiB process guard. Remaining stage budgets and numerical behavioral pass thresholds remain open.
 LearningTask.txt describes the staged curriculum. DataEval.txt and BenchmarkProtocol.txt retain the previous implementation and benchmark settings for reference.
 Existing next-token and auxiliary replacement-detection plans are earlier experimental proposals. Their role in this redesign remains to be decided.
 

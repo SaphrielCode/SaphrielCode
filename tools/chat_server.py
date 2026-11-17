@@ -28,7 +28,7 @@ class Profile:
  def public(self):return dict(id=self.id,name=self.name,detail=self.detail,parameters=self.parameters,style=self.style)
 
 def default_profile(profiles):
- return next((p for p in ('latest-instruction','latest-story','instruction-192') if p in profiles),next(iter(profiles),None))
+ return next((p for p in ('stage-one','latest-instruction','latest-story','instruction-192') if p in profiles),next(iter(profiles),None))
 
 def discover(root=ROOT):
  selection=read(root/'WorkingSelection.json');profiles=[]
@@ -80,6 +80,16 @@ def settings(body):
  if type(temperature) not in (int,float) or not math.isfinite(temperature) or not 0<=temperature<=1.5:raise ValueError('Temperature must be0 to1.5')
  return maximum,float(temperature)
 
+def stage_one_prompt(messages):
+ # Apply the same request validation as the existing chat entry point.
+ prompt_text(messages,'chat')
+ from lm.stage_one import prompt_text as format_prompt
+ latest=messages[-1]['content'].strip()
+ scene='\n'.join(message['content'].strip() for message in messages[:-1])
+ if latest.startswith('Scene: ') and '\nUser: ' in latest:
+  scene,latest=latest[7:].rsplit('\nUser: ',1)
+ return format_prompt(scene,latest)
+
 class Engine:
  def __init__(self):
   self.selection,self.profiles=discover();self.lock=threading.Lock();self.stop=threading.Event();self.state='empty';self.error=None;self.selected=None;self.model=None;self.tokenizer=None;self.torch=None;self.context=128;self.load_seconds=None
@@ -114,8 +124,9 @@ class Engine:
     if parameter_hash(model)!=profile.parameter_hash or saved.get('parameter_sha256')!=profile.parameter_hash:raise ValueError('Loaded weights do not match the recorded parameter hash')
     if sum(p.numel() for p in model.parameters())!=profile.parameters:raise ValueError('Unexpected parameter count')
     if saved.get('tokenizer_sha256',saved.get('report',{}).get('tokenizer_sha256'))!=self.selection['tokenizer_sha256']:raise ValueError('Checkpoint/tokenizer mismatch')
+    context=saved.get('context',128) if profile.style=='stage-one' else 128
     model.eval();model.requires_grad_(False);tokenizer=Tokenizer.from_file(str(tokenizer_path));del saved
-    with self.lock:self.model=model;self.tokenizer=tokenizer;self.selected=identifier;self.state='ready';self.load_seconds=time.perf_counter()-at
+    with self.lock:self.model=model;self.tokenizer=tokenizer;self.selected=identifier;self.context=context;self.state='ready';self.load_seconds=time.perf_counter()-at
    except Exception as e:
     self.model=None;gc.collect()
     with self.lock:self.state='error';self.error=str(e);self.selected=None
@@ -124,6 +135,9 @@ class Engine:
   text=prompt_text(body.get('messages'),body.get('mode','chat'));maximum,temperature=settings(body)
   with self.lock:
    if self.state!='ready':raise RuntimeError('Wait until a model is ready')
+   if self.profiles[self.selected].style=='stage-one':
+    text=stage_one_prompt(body['messages']);maximum=min(maximum,48);temperature=0.
+    if 1+len(self.tokenizer.encode(text,add_special_tokens=False).ids)+maximum>self.context:raise ValueError('Please shorten the scene or start a new chat so the full prompt and reply fit the context window')
    self.state='generating';self.error=None;self.stop.clear()
   return text,maximum,temperature
  def generate(self,text,maximum,temperature):
@@ -137,7 +151,8 @@ class Engine:
     for i in range(maximum):
      if self.stop.is_set():break
      input_ids=torch.tensor([ids],dtype=torch.long)
-     logits=(cache(input_ids)[0] if len(ids)<=self.context else self.model(input_ids[:,-self.context:],last_only=True)[0]).clone();logits[[0,1,3]]=float('-inf')
+     logits=(cache(input_ids)[0] if len(ids)<=self.context else self.model(input_ids[:,-self.context:],last_only=True)[0]).clone()
+     if self.profiles[self.selected].style!='stage-one':logits[[0,1,3]]=float('-inf')
      if not torch.isfinite(logits[4:]).all() or not torch.isfinite(logits[2]):raise RuntimeError('Model produced non-finite scores')
      if temperature==0:n=int(logits.argmax())
      else:
@@ -196,7 +211,6 @@ class Handler(BaseHTTPRequestHandler):
 
 def main():
  p=argparse.ArgumentParser(description=__doc__);p.add_argument('--port',type=int,default=8765);p.add_argument('--open-browser',action='store_true');p.add_argument('--no-autoload',action='store_true');args=p.parse_args()
- if 'onedrive' in [x.lower() for x in ROOT.parts]:raise SystemExit('Run the local project outside OneDrive')
  engine=Engine()
  if not engine.profiles:raise SystemExit('No verified trained checkpoints were found in the local results folder')
  try:server=ThreadingHTTPServer(('127.0.0.1',args.port),Handler)

@@ -1,0 +1,55 @@
+{
+  "status": "TRAINING",
+  "directory": "results/StageOne_20261117T033002Z",
+  "dataset": {
+    "format": "stage-one-v1",
+    "tokenizer_sha256": "1e24618cd0587e3ee07a5a2dc7e5673d8b44d30e197ac8050d52dde95ef1b939",
+    "context": 128,
+    "fraction_training_candidates_over128": 0.0006666666666666666,
+    "counts": {
+      "test": {
+        "total": 299,
+        "by_source": {
+          "TinyStories": 199,
+          "authored": 100
+        }
+      },
+      "validation": {
+        "total": 998,
+        "by_source": {
+          "TinyStories": 698,
+          "authored": 300
+        }
+      },
+      "train": {
+        "total": 35942,
+        "by_source": {
+          "TinyStories": 23942,
+          "authored": 12000
+        }
+      }
+    },
+    "dropped": {
+      "test": 1,
+      "validation": 2,
+      "train": 58
+    },
+    "files": {
+      "test.jsonl": "76e4f77092d738b19b1c29bdda531a7fee8979d1ecc981fac066b165de64b140",
+      "validation.jsonl": "4ef859c1c9f9415d14ab7208a0d60c21798fc3327ff6446a43d545cfe102e153",
+      "train.jsonl": "4602721f8c132471e9eff5a3b82b14f93b29a8e6374ef5c7c59a81e4b5af6c93"
+    },
+    "prompt_format": "Scene: {scene}\nUser: {user}\nReply:",
+    "target": "Leading space, one demonstrated continuation sentence, EOS2; prompt/BOS/padding ignored",
+    "packing": "One independent example per right-padded row; continuous positions; no cross-example attention",
+    "provenance": "TinyStories sentences from existing frozen document splits plus locally authored deterministic templates. Natural training prose was seen during checkpoint pretraining. Synthetic evaluation names are disjoint, templates shared.",
+    "limitations": "Template transfer and short TinyStories continuation do not establish broad co-writing quality. Test is reserved until final evaluation.",
+    "seed": 5101
+  },
+  "starting_checkpoint": "model_assets/story.pt",
+  "source_checkpoint_sha256": "9c02755466dae0038462bead952a404840cd0d369c3eec9e469752db3b0f4428",
+  "seconds": 14400,
+  "reserve_gib": 0.5,
+  "initial_validation_nats_per_target": 4.461606338702017,
+  "choices": "Authored fact-sensitive templates plus natural TinyStories continuations, Scene/User/Reply labels, lr1e-4 to1e-5, warmup100, reply48, fresh optimizer, best-validation deployment. Timing starts at first training step and includes periodic validation/saves."
+}

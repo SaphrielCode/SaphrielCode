@@ -1,4 +1,4 @@
-﻿Saphriel Local Chat
+Saphriel Local Chat
 
 Double-click RunChat.cmd in C:\Users\leeme\SaphrielComDevice.
 It opens http://127.0.0.1:8765 and loads the verified latest eligible model.
@@ -43,3 +43,11 @@ incorrect answers, or memorized answer formats; a chat interface does not add ne
 language abilities. The original instruction test achieved only 15/60 held-out exact answers. New
 QA results and deployment gates are recorded in results/SourceAndFiveHour_Results.txt.
 Choose a model and experiment; avoid treating its answers as reliable facts.
+
+STAGE 1 CONTINUATION MODEL
+Select the Stage 1 model to write one next sentence. Earlier chat turns supply the scene and your latest message supplies the user contribution. New chat clears the scene.
+For an explicit scene in one message, enter:
+Scene: Molly put the brass key in George's coat pocket.
+User: George reached into his pocket.
+The server appends Reply: using the exact training format. Stage 1 uses greedy decoding and stops at EOS or 48 new tokens. Shorten the scene if the complete prompt plus reserved reply would exceed the context window.
+The model is a small experimental continuation model. Stage 1 practices prose continuation. Later curriculum stages cover idea requests, clarification, and story control.

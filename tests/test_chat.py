@@ -5,6 +5,7 @@ ROOT=Path(__file__).resolve().parents[1]
 spec=importlib.util.spec_from_file_location('saphriel_chat',ROOT/'tools/chat_server.py');chat=importlib.util.module_from_spec(spec);sys.modules[spec.name]=chat;spec.loader.exec_module(chat)
 class ChatChecks(unittest.TestCase):
  def test_current_model_default_priority(self):
+  self.assertEqual(chat.default_profile({'latest-story':1,'stage-one':1}),'stage-one')
   self.assertEqual(chat.default_profile({'instruction-192':1,'latest-story':1}),'latest-story')
   self.assertEqual(chat.default_profile({'latest-story':1,'latest-instruction':1}),'latest-instruction')
   self.assertIsNone(chat.default_profile({}))
@@ -17,6 +18,10 @@ class ChatChecks(unittest.TestCase):
    with self.assertRaises(ValueError):chat.prompt_text(messages,'chat')
   for value in ({'temperature':float('nan')},{'max_tokens':True},{'max_tokens':129},{'temperature':-1}):
    with self.assertRaises(ValueError):chat.settings(value)
+ def test_stage_one_format(self):
+  messages=[dict(role='user',content='Molly put a key in his coat.'),dict(role='assistant',content='George watched her.'),dict(role='user',content='George reached inside.')]
+  self.assertEqual(chat.stage_one_prompt(messages),'Scene: Molly put a key in his coat.\nGeorge watched her.\nUser: George reached inside.\nReply:')
+  self.assertEqual(chat.stage_one_prompt([dict(role='user',content='Scene: A red car waited.\nUser: Molly opened its door.')]),'Scene: A red car waited.\nUser: Molly opened its door.\nReply:')
  def test_paths_must_remain_local(self):
   with tempfile.TemporaryDirectory() as folder:
    root=Path(folder)
