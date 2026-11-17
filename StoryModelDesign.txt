@@ -86,11 +86,23 @@ Pass when a fresh-session "U" can prompt clarification, while "U" in a scene abo
 
 6. TRANSFORMER DESIGN
 Attention
-Use standard causal self-attention. Each token can attend to itself and all earlier tokens in the context window.
-Start at 128 tokens if the scene, user contribution, and target continuation fit. Use 256 if 128 would routinely cut out story details needed for learning.
-Keep six attention heads per layer, all with access to the full causal window.
-Keep rotary position embeddings (RoPE).
-Use no added distance penalty, allowing every head to use earlier details throughout the window.
+Position
+Keep rotary position embeddings (RoPE). Number the scene, the user's contribution, and the target continuation in one continuous sequence within an example. A change of speaker does not reset positions.
+
+Visibility
+Use standard causal masking in all six attention heads. Each token can attend to itself and all earlier tokens in the same example. Mask later tokens and padding. If multiple independent examples share a training sequence, mask attention across their boundaries.
+
+Context window
+Use 128 tokens when the complete training example fits, including the target continuation. Use 256 if 128 would regularly cut out facts the continuation depends on.
+
+Distance bias
+Use no added distance penalty. Every head can use a relevant earlier token anywhere in the window.
+
+Training and generation
+During training, the whole prompt is available when predicting the first reply token. Later reply tokens can also use the preceding reply tokens supplied by the training example. During generation, preceding reply tokens come from the model's own output. Causal masking hides future reply tokens in both cases.
+
+Fact visibility example
+In the brass-key scene, when the model reaches "George pulled out...", the earlier line about Molly putting the key in his coat must be inside the window and visible to attention. RoPE supplies position information. Training examples teach the model when that earlier fact matters.
 
 Feed Forward Network
 Use SwiGLU with intermediate width 512 as the starting configuration for the four-hour run. Width 384 is a candidate if compute needs to be reduced.
