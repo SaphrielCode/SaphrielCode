@@ -139,17 +139,41 @@ Token embeddings
 Keep 192-dimensional token embeddings. Share the input embedding weights with the output prediction layer.
 
 Input format
-Use short, consistent text labels for the scene, the user's turn, and the start of the model's reply. Use the same format during training and generation. The exact label strings remain to be selected.
+Use short, consistent text labels for the scene, the user's turn, and the start of the model's reply. Use the same format during training and generation. End the generation prompt at Reply:. The exact scene and user-turn label strings remain to be selected.
 
 Training target
 For the next-sentence exercise, provide the full prompt as conditioning context. Calculate next-token loss only on the demonstrated continuation and its end-of-reply token. Exclude prompt tokens and padding from the loss. Causal visibility still applies throughout the example.
-The exact end-of-reply token convention remains to be selected with the reused tokenizer.
+Use the existing tokenizer's EOS token to end the reply. EOS ends the model's turn. Later stages can continue the story on the next turn.
 
 Context budget
 Count labels, scene, user turn, target sentence, and the end-of-reply token together. Use 128 tokens when the complete example fits. Use 256 when the shorter window would regularly remove relevant facts.
 
-8. DESIGN STATUS
-This document records the redesign supplied so far, including input representations and continuation-only next-token loss for the next-sentence exercise. Remaining architecture choices, exact label strings and end-of-reply convention, other objective details, optimizer settings, stage budgets, and numerical pass thresholds remain open.
+8. STAGE 1 OUTPUT, LEARNING, AND GENERATION
+Output
+After the final RMSNorm, use the same weight matrix as the input embeddings to score all 8,192 vocabulary tokens. Each step produces next-token scores.
+
+Supervised learning
+Show the scene, the user's contribution, and a demonstrated one-sentence continuation followed by EOS.
+Use next-token cross-entropy with loss only on the continuation and EOS. Scene, user-turn, and label tokens condition the reply and are excluded from loss, along with padding.
+When predicting later reply tokens during training, provide the demonstrated preceding reply tokens under causal masking.
+
+Generation
+Provide the scene and user's contribution in the same labeled format used during training, ending at Reply:.
+Use greedy decoding initially for repeatable results. Select the highest-scoring next token, append it, and repeat using the model's own output.
+Stop when EOS is emitted or the reply token limit is reached. The numerical reply limit remains to be selected.
+
+Brass-key example
+Given the established scene and "George reached into his pocket", the demonstrated continuation is "His fingers closed around the brass key", followed by EOS.
+During generation, the model produces that next beat itself. The key's earlier placement must remain visible in context.
+
+Four-hour run starting point
+The initialization choice and exact four-hour timing boundary remain open.
+To measure the strongest continuation achievable within four hours of task adaptation, start from a compatible TinyStories checkpoint and update its weights on Stage 1. Record the checkpoint and account separately for its prior training.
+To measure learning from random weights within four hours, initialize from scratch.
+The output, supervised continuation exercise, and generation rules above apply to either choice. Specify which setup is used and what the timed interval includes before the run.
+
+9. DESIGN STATUS
+This document records the redesign supplied so far, including the Stage 1 output, continuation-and-EOS loss, and greedy generation rules. Remaining architecture choices, exact scene and user-turn labels, reply limit, initialization choice, four-hour timing boundary, optimizer settings, remaining stage budgets, and numerical pass thresholds remain open.
 LearningTask.txt describes the staged curriculum. DataEval.txt and BenchmarkProtocol.txt retain the previous implementation and benchmark settings for reference.
 Existing next-token and auxiliary replacement-detection plans are earlier experimental proposals. Their role in this redesign remains to be decided.
 

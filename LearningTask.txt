@@ -11,7 +11,8 @@ Use StoryModelDesign.txt Sections 3 and 5 for the current behavioral requirement
 
 Each response should finish the requested sentence or beat within its generation budget. Evaluate on unseen scenes, including cases where a consequential fact changes. Exact example wording is flexible.
 For the next-sentence exercise, use the full labeled prompt as context and calculate next-token loss only on the demonstrated continuation and its end-of-reply token. Prompt tokens and padding are excluded from loss. See StoryModelDesign.txt Section 7 for the input representation decisions.
-The training implementation, exact labels and end-of-reply convention, remaining objective details, stage budgets, and numerical pass thresholds remain open.
+Stage 1 uses next-token cross-entropy on the demonstrated sentence and EOS. EOS ends the reply. Generation starts after Reply:, uses greedy decoding, and stops at EOS or the reply limit. The output layer shares the input embeddings and scores all 8,192 tokens after final RMSNorm.
+The training implementation, scene and user-turn labels, reply limit, checkpoint-versus-scratch initialization, four-hour timing boundary, optimizer settings, remaining stage budgets, and numerical pass thresholds remain open. See StoryModelDesign.txt Section 8.
 
 EARLIER EXPERIMENT PROPOSAL
 The proposal below is retained for reference. Its role in the redesign remains to be decided.
