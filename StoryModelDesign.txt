@@ -85,6 +85,15 @@ Ask a brief, specific question when the message and recent context give too litt
 Pass when a fresh-session "U" can prompt clarification, while "U" in a scene about a door marked U can advance the story. Include sessions that brainstorm, co-write, and finish.
 
 6. TRANSFORMER DESIGN
+Decoder
+Use the existing eight-block decoder to read the prompt and generate the continuation one token at a time. The same structure can later handle brainstorming, clarification, and story endings.
+
+Separate encoder
+Omit a separate encoder for this run. The decoder can see the entire prompt when it starts generating the reply. A separate bidirectional prompt representation remains optional for this task.
+
+Cross-attention
+Omit cross-attention for this run. The decoder reads the scene and user turn directly through causal self-attention.
+
 Attention
 Position
 Keep rotary position embeddings (RoPE). Number the scene, the user's contribution, and the target continuation in one continuous sequence within an example. A change of speaker does not reset positions.
