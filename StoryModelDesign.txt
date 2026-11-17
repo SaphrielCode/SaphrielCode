@@ -111,8 +111,25 @@ Keep separate FFN weights for each layer and the existing SwiGLU structure. Comp
 The supplied recommendation reports that the earlier 128-token comparison achieved better TinyStories validation loss and a shorter training run with SwiGLU than with equal-parameter GELU. This rationale refers to that earlier comparison.
 Project evidence has yet to establish where varying width by layer would help. Additional internal layers, cross-layer FFN weight sharing, and token routing remain outside the selected structure.
 
-7. DESIGN STATUS
-This document records the redesign supplied so far. The remaining architecture choices, training data format, objective details, optimizer settings, stage budgets, and numerical pass thresholds remain open.
+7. INPUT REPRESENTATIONS
+Tokenizer
+Reuse the existing tokenizer, vocabulary, and tokenization rules, including when initializing model weights from scratch.
+
+Token embeddings
+Keep 192-dimensional token embeddings. Share the input embedding weights with the output prediction layer.
+
+Input format
+Use short, consistent text labels for the scene, the user's turn, and the start of the model's reply. Use the same format during training and generation. The exact label strings remain to be selected.
+
+Training target
+For the next-sentence exercise, provide the full prompt as conditioning context. Calculate next-token loss only on the demonstrated continuation and its end-of-reply token. Exclude prompt tokens and padding from the loss. Causal visibility still applies throughout the example.
+The exact end-of-reply token convention remains to be selected with the reused tokenizer.
+
+Context budget
+Count labels, scene, user turn, target sentence, and the end-of-reply token together. Use 128 tokens when the complete example fits. Use 256 when the shorter window would regularly remove relevant facts.
+
+8. DESIGN STATUS
+This document records the redesign supplied so far, including input representations and continuation-only next-token loss for the next-sentence exercise. Remaining architecture choices, exact label strings and end-of-reply convention, other objective details, optimizer settings, stage budgets, and numerical pass thresholds remain open.
 LearningTask.txt describes the staged curriculum. DataEval.txt and BenchmarkProtocol.txt retain the previous implementation and benchmark settings for reference.
 Existing next-token and auxiliary replacement-detection plans are earlier experimental proposals. Their role in this redesign remains to be decided.
 

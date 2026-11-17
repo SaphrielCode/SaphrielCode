@@ -10,7 +10,8 @@ Use StoryModelDesign.txt Sections 3 and 5 for the current behavioral requirement
 5. Clarify input when context gives too little direction, interpret usable fragments, and handle mixed sessions.
 
 Each response should finish the requested sentence or beat within its generation budget. Evaluate on unseen scenes, including cases where a consequential fact changes. Exact example wording is flexible.
-The training implementation, objectives, data format, stage budgets, and numerical pass thresholds for this curriculum remain open.
+For the next-sentence exercise, use the full labeled prompt as context and calculate next-token loss only on the demonstrated continuation and its end-of-reply token. Prompt tokens and padding are excluded from loss. See StoryModelDesign.txt Section 7 for the input representation decisions.
+The training implementation, exact labels and end-of-reply convention, remaining objective details, stage budgets, and numerical pass thresholds remain open.
 
 EARLIER EXPERIMENT PROPOSAL
 The proposal below is retained for reference. Its role in the redesign remains to be decided.
