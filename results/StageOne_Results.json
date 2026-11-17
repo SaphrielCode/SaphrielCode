@@ -1,0 +1,269 @@
+{
+  "status": "PASS",
+  "run_directory": "results\\StageOne_20261117T033002Z",
+  "started_utc": "2026-11-17T03:30:02.462314+00:00",
+  "target_phase_seconds": 14400.0,
+  "phase_seconds": 14408.276254599998,
+  "optimizer_seconds": 14237.534096999643,
+  "updates": 108794,
+  "valid_targets": 5491771,
+  "epochs": 12.1070613766624,
+  "validation": [
+    {
+      "label": "before",
+      "split": "validation",
+      "nll_sum": 57104.09952904712,
+      "valid_targets": 12799,
+      "nats_per_target": 4.461606338702017,
+      "updates": 0,
+      "phase_seconds": 0.0
+    },
+    {
+      "label": "minute15",
+      "split": "validation",
+      "nll_sum": 36210.660477226345,
+      "valid_targets": 12799,
+      "nats_per_target": 2.82917887938326,
+      "updates": 6737,
+      "phase_seconds": 900.0616471000003
+    },
+    {
+      "label": "minute30",
+      "split": "validation",
+      "nll_sum": 35631.01974529444,
+      "valid_targets": 12799,
+      "nats_per_target": 2.7838909090784,
+      "updates": 13698,
+      "phase_seconds": 1800.019491
+    },
+    {
+      "label": "minute45",
+      "split": "validation",
+      "nll_sum": 36205.55038656671,
+      "valid_targets": 12799,
+      "nats_per_target": 2.828779622358521,
+      "updates": 20608,
+      "phase_seconds": 2700.1549131
+    },
+    {
+      "label": "minute60",
+      "split": "validation",
+      "nll_sum": 36651.46641610214,
+      "valid_targets": 12799,
+      "nats_per_target": 2.8636195340340764,
+      "updates": 27162,
+      "phase_seconds": 3600.0199564000004
+    },
+    {
+      "label": "minute75",
+      "split": "validation",
+      "nll_sum": 36496.405875382115,
+      "valid_targets": 12799,
+      "nats_per_target": 2.8515044828019467,
+      "updates": 34090,
+      "phase_seconds": 4500.0503696000005
+    },
+    {
+      "label": "minute90",
+      "split": "validation",
+      "nll_sum": 37219.57237434922,
+      "valid_targets": 12799,
+      "nats_per_target": 2.9080062797366373,
+      "updates": 41023,
+      "phase_seconds": 5400.0789486
+    },
+    {
+      "label": "minute105",
+      "split": "validation",
+      "nll_sum": 37599.1525245385,
+      "valid_targets": 12799,
+      "nats_per_target": 2.937663295924564,
+      "updates": 47690,
+      "phase_seconds": 6300.109318600001
+    },
+    {
+      "label": "minute120",
+      "split": "validation",
+      "nll_sum": 38241.75800752361,
+      "valid_targets": 12799,
+      "nats_per_target": 2.9878707717418242,
+      "updates": 54327,
+      "phase_seconds": 7200.0209441
+    },
+    {
+      "label": "minute135",
+      "split": "validation",
+      "nll_sum": 38455.273825779936,
+      "valid_targets": 12799,
+      "nats_per_target": 3.004552998342053,
+      "updates": 61256,
+      "phase_seconds": 8100.026868800001
+    },
+    {
+      "label": "minute150",
+      "split": "validation",
+      "nll_sum": 39293.113477088766,
+      "valid_targets": 12799,
+      "nats_per_target": 3.0700143352675027,
+      "updates": 68164,
+      "phase_seconds": 9000.025548000001
+    },
+    {
+      "label": "minute165",
+      "split": "validation",
+      "nll_sum": 40152.702560560705,
+      "valid_targets": 12799,
+      "nats_per_target": 3.1371749793390658,
+      "updates": 74784,
+      "phase_seconds": 9900.0284722
+    },
+    {
+      "label": "minute180",
+      "split": "validation",
+      "nll_sum": 41067.477599522164,
+      "valid_targets": 12799,
+      "nats_per_target": 3.2086473630379064,
+      "updates": 81528,
+      "phase_seconds": 10800.025684799999
+    },
+    {
+      "label": "minute195",
+      "split": "validation",
+      "nll_sum": 42095.552267801715,
+      "valid_targets": 12799,
+      "nats_per_target": 3.2889719718573103,
+      "updates": 88411,
+      "phase_seconds": 11700.1091404
+    },
+    {
+      "label": "minute210",
+      "split": "validation",
+      "nll_sum": 44844.60290465412,
+      "valid_targets": 12799,
+      "nats_per_target": 3.5037583330458726,
+      "updates": 95417,
+      "phase_seconds": 12600.107117699998
+    },
+    {
+      "label": "minute225",
+      "split": "validation",
+      "nll_sum": 45817.397691968254,
+      "valid_targets": 12799,
+      "nats_per_target": 3.5797638637368743,
+      "updates": 102019,
+      "phase_seconds": 13500.0194012
+    },
+    {
+      "label": "minute240",
+      "split": "validation",
+      "nll_sum": 46457.42187925919,
+      "valid_targets": 12799,
+      "nats_per_target": 3.6297696600718177,
+      "updates": 108794,
+      "phase_seconds": 14400.0225456
+    },
+    {
+      "label": "final",
+      "split": "validation",
+      "nll_sum": 46457.42187925919,
+      "valid_targets": 12799,
+      "nats_per_target": 3.6297696600718177,
+      "updates": 108794,
+      "phase_seconds": 14408.276254599998
+    },
+    {
+      "label": "selected_best_test",
+      "split": "test",
+      "nll_sum": 11061.348382553257,
+      "valid_targets": 3814,
+      "nats_per_target": 2.900196219861892,
+      "updates": 108794,
+      "phase_seconds": 14408.276254599998
+    }
+  ],
+  "timing": "Four hours from first training-step start, including periodic validation and checkpoint saves. Preparation and initial/final evaluation excluded. Stop at an update boundary.",
+  "hyperparameters": {
+    "batch": 4,
+    "threads": 8,
+    "learning_rate": 0.0001,
+    "minimum_learning_rate": 1e-05,
+    "warmup_updates": 100,
+    "schedule": "100-update warmup then elapsed-phase cosine",
+    "optimizer": "Fresh AdamW moments; betas .9/.95, eps1e-8, matrix decay .1, norm decay0, clip1",
+    "seed": 42,
+    "order_seed": 5301
+  },
+  "guard_authorization": "User requested .5 GiB available RAM guard; immediate stop below .5 GiB. Existing 4 GiB process guard retained.",
+  "source_checkpoint": "model_assets/story.pt",
+  "source_checkpoint_sha256": "9c02755466dae0038462bead952a404840cd0d369c3eec9e469752db3b0f4428",
+  "source_parameter_sha256": "b34e56c5e2069b48427115d917226607e86eb6fefed4e0a4cd8a3d958e77b8df",
+  "tokenizer_sha256": "1e24618cd0587e3ee07a5a2dc7e5673d8b44d30e197ac8050d52dde95ef1b939",
+  "dataset_manifest_sha256": "5ad1fe9b372ea363282962a817ab6111d45a4db9b43b44398fe68f1db68418ce",
+  "dataset": {
+    "format": "stage-one-v1",
+    "tokenizer_sha256": "1e24618cd0587e3ee07a5a2dc7e5673d8b44d30e197ac8050d52dde95ef1b939",
+    "context": 128,
+    "fraction_training_candidates_over128": 0.0006666666666666666,
+    "counts": {
+      "test": {
+        "total": 299,
+        "by_source": {
+          "TinyStories": 199,
+          "authored": 100
+        }
+      },
+      "validation": {
+        "total": 998,
+        "by_source": {
+          "TinyStories": 698,
+          "authored": 300
+        }
+      },
+      "train": {
+        "total": 35942,
+        "by_source": {
+          "TinyStories": 23942,
+          "authored": 12000
+        }
+      }
+    },
+    "dropped": {
+      "test": 1,
+      "validation": 2,
+      "train": 58
+    },
+    "files": {
+      "test.jsonl": "76e4f77092d738b19b1c29bdda531a7fee8979d1ecc981fac066b165de64b140",
+      "validation.jsonl": "4ef859c1c9f9415d14ab7208a0d60c21798fc3327ff6446a43d545cfe102e153",
+      "train.jsonl": "4602721f8c132471e9eff5a3b82b14f93b29a8e6374ef5c7c59a81e4b5af6c93"
+    },
+    "prompt_format": "Scene: {scene}\nUser: {user}\nReply:",
+    "target": "Leading space, one demonstrated continuation sentence, EOS2; prompt/BOS/padding ignored",
+    "packing": "One independent example per right-padded row; continuous positions; no cross-example attention",
+    "provenance": "TinyStories sentences from existing frozen document splits plus locally authored deterministic templates. Natural training prose was seen during checkpoint pretraining. Synthetic evaluation names are disjoint, templates shared.",
+    "limitations": "Template transfer and short TinyStories continuation do not establish broad co-writing quality. Test is reserved until final evaluation.",
+    "seed": 5101
+  },
+  "context": 128,
+  "parameters": 5115072,
+  "best_update": 13698,
+  "training_started_utc": "2026-11-17T03:30:40.535656+00:00",
+  "best_validation_loss": 2.7838909090784,
+  "best_checkpoint_sha256": "86119fdb30963664db4517a48a3f117d05cbca9f9aaad0333a7a14791c921726",
+  "best_parameter_sha256": "bfeb9d2b4f2b5b97cfe0f1b32f869e727f6eab87eba3b5006810cfe90e448a64",
+  "checkpoint_reload_verified": true,
+  "finished_utc": "2026-11-17T07:31:01.407802+00:00",
+  "guard_policy": {
+    "available_reserve_bytes": 536870912,
+    "immediate_available_bytes": 536870912,
+    "process_resident_limit_bytes": 4294967296,
+    "consecutive_samples": 3,
+    "sampling_interval_seconds": 1.0
+  },
+  "peak_process_resident_bytes": 661884928,
+  "minimum_available_system_bytes": 543449088,
+  "guard_stop": null,
+  "monitor_error": null,
+  "validation_loss_relative_reduction": 0.37603394433756854,
+  "publication": "Selected updated inference weights, final recovery checkpoint, and frozen data/run-evidence archive; binary parts verified by SHA-256."
+}

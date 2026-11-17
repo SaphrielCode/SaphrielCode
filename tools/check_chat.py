@@ -35,10 +35,16 @@ def main():
    payload=dict(messages=[dict(role='user',content=example['instruction'])],mode='chat',temperature=0,max_tokens=16)
    with request('/api/generate',payload) as response:events=[json.loads(line) for line in response if line.strip()]
    assert events[0]['type']=='start' and events[-1]['type']=='done';assert events[-1]['text']==example['generated_text'] and events[-1]['text']=='garden';checks.append('Streamed greedy answer exactly matches recorded checkpoint response')
-  with request('/api/generate',dict(messages=[dict(role='user',content='Once upon a time. '*100)],mode='story',temperature=0,max_tokens=128)) as response:
-   first=json.loads(response.readline());assert first['context_trimmed'] and first['used_prompt_tokens']==128
-   json.load(request('/api/stop',{}));rest=[json.loads(line) for line in response if line.strip()]
-  assert rest[-1]['type']=='done' and rest[-1]['stopped'] and rest[-1]['tokens']<128;checks.append('Long context cropped and stop generation honored')
+  if default_id=='stage-one' and status['selected']=='stage-one':
+   try:request('/api/generate',dict(messages=[dict(role='user',content='Once upon a time. '*100)],mode='chat',temperature=0,max_tokens=48))
+   except urllib.error.HTTPError as e:assert e.code==400
+   else:raise AssertionError('Oversized Stage 1 prompt accepted')
+   checks.append('Stage 1 rejects oversized prompts without dropping scene facts')
+  else:
+   with request('/api/generate',dict(messages=[dict(role='user',content='Once upon a time. '*100)],mode='story',temperature=0,max_tokens=128)) as response:
+    first=json.loads(response.readline());assert first['context_trimmed'] and first['used_prompt_tokens']==128
+    json.load(request('/api/stop',{}));rest=[json.loads(line) for line in response if line.strip()]
+   assert rest[-1]['type']=='done' and rest[-1]['stopped'] and rest[-1]['tokens']<128;checks.append('Long context cropped and stop generation honored')
   try:request('/api/load',dict(model='../../outside.pt'))
   except urllib.error.HTTPError as e:assert e.code==400
   else:raise AssertionError('Invalid checkpoint accepted')

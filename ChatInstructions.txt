@@ -1,6 +1,6 @@
 Saphriel Local Chat
 
-Double-click RunChat.cmd in C:\Users\leeme\SaphrielComDevice.
+Double-click RunChat.cmd in the StoryModel project folder.
 It opens http://127.0.0.1:8765 and loads the verified latest eligible model.
 The current default and its training provenance are in model_assets/deployment.json.
 Keep the launcher console open while using chat. Close it or press Ctrl+C to stop the server.
@@ -51,3 +51,5 @@ Scene: Molly put the brass key in George's coat pocket.
 User: George reached into his pocket.
 The server appends Reply: using the exact training format. Stage 1 uses greedy decoding and stops at EOS or 48 new tokens. Shorten the scene if the complete prompt plus reserved reply would exceed the context window.
 The model is a small experimental continuation model. Stage 1 practices prose continuation. Later curriculum stages cover idea requests, clarification, and story control.
+
+The current Stage 1 profile uses the minute30 checkpoint selected by validation loss from the completed four-hour run. Greedy replies can still be irrelevant or change established facts. The final four-hour recovery weights are retained in the published run artifacts.

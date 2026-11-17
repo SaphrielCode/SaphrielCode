@@ -67,7 +67,7 @@ The Windows monitor follows the real worker interpreter beneath the venv launche
 No training process is left running after completion.
 
 LOCAL WORKSPACE
-The active project is C:\Users\leeme\SaphrielComDevice, outside OneDrive. Use its .venv-data\Scripts\python.exe and relative data/results paths.
-Open SaphrielComDevice.code-workspace in this local folder before further work.
-Historical reports may contain original OneDrive paths as provenance; do not use those paths to launch new work.
+The active project folder is StoryModel. Run commands from that folder using .venv-data\Scripts\python.exe and relative data/results paths.
+The parent SaphrielSandbox.code-workspace opens this folder.
+Historical absolute paths are provenance. Use the current project-relative paths to launch training and chat.
 No experiment was restarted during relocation.

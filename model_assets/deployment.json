@@ -2,6 +2,34 @@
   "status": "PASS",
   "profiles": [
     {
+      "id": "stage-one",
+      "name": "5.1M - Stage 1 story continuation",
+      "detail": "Four-hour continuation adaptation. Write the next sentence using the scene.",
+      "checkpoint": "model_assets/stage-one.pt",
+      "file_hash": "86119fdb30963664db4517a48a3f117d05cbca9f9aaad0333a7a14791c921726",
+      "parameter_hash": "bfeb9d2b4f2b5b97cfe0f1b32f869e727f6eab87eba3b5006810cfe90e448a64",
+      "parameters": 5115072,
+      "style": "stage-one",
+      "context": 128,
+      "reply_limit": 48,
+      "training_directory": "results/StageOne_20261117T033002Z",
+      "regression": {
+        "prompt": "Scene: Molly put the brass key in George's coat pocket.\nUser: George reached into his pocket.",
+        "mode": "chat",
+        "temperature": 0,
+        "max_tokens": 48,
+        "expected_text": " He was very happy.",
+        "expected_ids": [
+          15,
+          11,
+          38,
+          43,
+          4,
+          2
+        ]
+      }
+    },
+    {
       "id": "latest-story",
       "name": "5.1M - five-hour story model",
       "detail": "TinyStories continuation; experimental limited model.",
@@ -39,7 +67,7 @@
       "training_checkpoint_sha256": "295aaa9bef98614e1d0d4d5d2f35af44e6cc4d46539a971e761c3dcb4dc75c12"
     }
   ],
-  "default": "latest-story",
+  "default": "stage-one",
   "tokenizer_file": "model_assets/tokenizer.json",
   "tokenizer_sha256": "1e24618cd0587e3ee07a5a2dc7e5673d8b44d30e197ac8050d52dde95ef1b939",
   "best_story_validation_label": "minute240",

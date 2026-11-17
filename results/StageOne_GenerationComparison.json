@@ -1,0 +1,3214 @@
+{
+  "best": {
+    "examples": 60,
+    "exact_matches": 0,
+    "eos": 60,
+    "brass_key": {
+      "text": "He was very happy.",
+      "ids": [
+        15,
+        11,
+        38,
+        43,
+        4,
+        2
+      ],
+      "eos": true
+    },
+    "answers": [
+      {
+        "scene": "Earlier, Nora had seen a gold ring near the drawer. Nora put the silver coin in the basket. Iris watched carefully.",
+        "user": "Iris opened the basket.",
+        "response": "Iris found the silver coin inside.",
+        "source": "authored",
+        "family": 0,
+        "split": "validation",
+        "generated": {
+          "text": "The silver coin is gone because it is now in the basket.",
+          "ids": [
+            34,
+            2610,
+            1031,
+            46,
+            569,
+            209,
+            12,
+            46,
+            309,
+            20,
+            8,
+            917,
+            4,
+            2
+          ],
+          "eos": true
+        },
+        "exact": false
+      },
+      {
+        "scene": "Earlier, Owen had seen a silver coin near the wooden box. Owen had a yellow car parked outside the shop.",
+        "user": "Owen finished the lemonade and went outside.",
+        "response": "Owen climbed into the yellow car.",
+        "source": "authored",
+        "family": 5,
+        "split": "validation",
+        "generated": {
+          "text": "George climbed into the yellow car.",
+          "ids": [
+            2139,
+            648,
+            179,
+            8,
+            499,
+            174,
+            4,
+            2
+          ],
+          "eos": true
+        },
+        "exact": false
+      },
+      {
+        "scene": "Earlier, Theo had seen a blue marble near the drawer. Theo put the brass key in the wooden box. Nora watched carefully.",
+        "user": "Nora opened the wooden box.",
+        "response": "Nora found the brass key inside.",
+        "source": "authored",
+        "family": 0,
+        "split": "validation",
+        "generated": {
+          "text": "George found the brass key inside.",
+          "ids": [
+            2139,
+            122,
+            8,
+            3956,
+            845,
+            3352,
+            134,
+            868,
+            187,
+            4,
+            2
+          ],
+          "eos": true
+        },
+        "exact": false
+      },
+      {
+        "scene": "Earlier, Owen had seen a silver coin near the drawer. Owen had a blue car parked outside the shop.",
+        "user": "Owen finished the lemonade and went outside.",
+        "response": "Owen climbed into the blue car.",
+        "source": "authored",
+        "family": 5,
+        "split": "validation",
+        "generated": {
+          "text": "George climbed into the blue car.",
+          "ids": [
+            2139,
+            648,
+            179,
+            8,
+            359,
+            174,
+            4,
+            2
+          ],
+          "eos": true
+        },
+        "exact": false
+      },
+      {
+        "scene": "Earlier, Nora had seen a gold ring near the drawer. Nora put the brass key in the coat pocket. Theo watched carefully.",
+        "user": "Theo opened the coat pocket.",
+        "response": "Theo found the brass key inside.",
+        "source": "authored",
+        "family": 0,
+        "split": "validation",
+        "generated": {
+          "text": "The brass key was gone because it was now in the coat pocket.",
+          "ids": [
+            34,
+            3956,
+            845,
+            3352,
+            134,
+            868,
+            11,
+            569,
+            209,
+            12,
+            11,
+            309,
+            20,
+            8,
+            1067,
+            884,
+            4,
+            2
+          ],
+          "eos": true
+        },
+        "exact": false
+      },
+      {
+        "scene": "Earlier, Nora had seen a paper flower near the wooden box. Nora had a white car parked outside the shop.",
+        "user": "Nora finished the lemonade and went outside.",
+        "response": "Nora climbed into the white car.",
+        "source": "authored",
+        "family": 5,
+        "split": "validation",
+        "generated": {
+          "text": "George climbed into the white car.",
+          "ids": [
+            2139,
+            648,
+            179,
+            8,
+            636,
+            174,
+            4,
+            2
+          ],
+          "eos": true
+        },
+        "exact": false
+      },
+      {
+        "scene": "Earlier, Nora had seen a small stone near the coat pocket. Nora put the paper flower in the drawer. Owen watched carefully.",
+        "user": "Owen opened the drawer.",
+        "response": "Owen found the paper flower inside.",
+        "source": "authored",
+        "family": 0,
+        "split": "validation",
+        "generated": {
+          "text": "George found the paper flower inside.",
+          "ids": [
+            2139,
+            122,
+            8,
+            507,
+            497,
+            187,
+            4,
+            2
+          ],
+          "eos": true
+        },
+        "exact": false
+      },
+      {
+        "scene": "Earlier, Nora had seen a brass key near the wooden box. Nora had a yellow car parked outside the shop.",
+        "user": "Nora finished the lemonade and went outside.",
+        "response": "Nora climbed into the yellow car.",
+        "source": "authored",
+        "family": 5,
+        "split": "validation",
+        "generated": {
+          "text": "George climbed into the yellow car.",
+          "ids": [
+            2139,
+            648,
+            179,
+            8,
+            499,
+            174,
+            4,
+            2
+          ],
+          "eos": true
+        },
+        "exact": false
+      },
+      {
+        "scene": "Earlier, Iris had seen a red ribbon near the coat pocket. Iris put the wooden whistle in the wooden box. Theo watched carefully.",
+        "user": "Theo opened the wooden box.",
+        "response": "Theo found the wooden whistle inside.",
+        "source": "authored",
+        "family": 0,
+        "split": "validation",
+        "generated": {
+          "text": "The wooden whistle found the wooden whistle inside.",
+          "ids": [
+            34,
+            3409,
+            1247,
+            122,
+            8,
+            3409,
+            1247,
+            187,
+            4,
+            2
+          ],
+          "eos": true
+        },
+        "exact": false
+      },
+      {
+        "scene": "Earlier, Nora had seen a brass key near the bag. Nora had a blue car parked outside the shop.",
+        "user": "Nora finished the lemonade and went outside.",
+        "response": "Nora climbed into the blue car.",
+        "source": "authored",
+        "family": 5,
+        "split": "validation",
+        "generated": {
+          "text": "George climbed into the blue car.",
+          "ids": [
+            2139,
+            648,
+            179,
+            8,
+            359,
+            174,
+            4,
+            2
+          ],
+          "eos": true
+        },
+        "exact": false
+      },
+      {
+        "scene": "Earlier, Nora had seen a small stone near the bag. Nora put the blue marble in the wooden box. Iris watched carefully.",
+        "user": "Iris opened the wooden box.",
+        "response": "Iris found the blue marble inside.",
+        "source": "authored",
+        "family": 0,
+        "split": "validation",
+        "generated": {
+          "text": "The blue marble was very happy.",
+          "ids": [
+            34,
+            359,
+            3217,
+            11,
+            38,
+            43,
+            4,
+            2
+          ],
+          "eos": true
+        },
+        "exact": false
+      },
+      {
+        "scene": "Earlier, Iris had seen a brass key near the drawer. Iris had a yellow car parked outside the shop.",
+        "user": "Iris finished the lemonade and went outside.",
+        "response": "Iris climbed into the yellow car.",
+        "source": "authored",
+        "family": 5,
+        "split": "validation",
+        "generated": {
+          "text": "Lily climbed into the yellow car.",
+          "ids": [
+            31,
+            648,
+            179,
+            8,
+            499,
+            174,
+            4,
+            2
+          ],
+          "eos": true
+        },
+        "exact": false
+      },
+      {
+        "scene": "Earlier, Nora had seen a red ribbon near the cupboard. Nora put the wooden whistle in the basket. Owen watched carefully.",
+        "user": "Owen opened the basket.",
+        "response": "Owen found the wooden whistle inside.",
+        "source": "authored",
+        "family": 0,
+        "split": "validation",
+        "generated": {
+          "text": "George found the wooden whistle inside.",
+          "ids": [
+            2139,
+            122,
+            8,
+            3409,
+            1247,
+            187,
+            4,
+            2
+          ],
+          "eos": true
+        },
+        "exact": false
+      },
+      {
+        "scene": "Earlier, Iris had seen a red ribbon near the bag. Iris had a green car parked outside the shop.",
+        "user": "Iris finished the lemonade and went outside.",
+        "response": "Iris climbed into the green car.",
+        "source": "authored",
+        "family": 5,
+        "split": "validation",
+        "generated": {
+          "text": "Lily climbed into the green car.",
+          "ids": [
+            31,
+            648,
+            179,
+            8,
+            440,
+            174,
+            4,
+            2
+          ],
+          "eos": true
+        },
+        "exact": false
+      },
+      {
+        "scene": "Earlier, Theo had seen a brass key near the coat pocket. Theo put the gold ring in the bag. Iris watched carefully.",
+        "user": "Iris opened the bag.",
+        "response": "Iris found the gold ring inside.",
+        "source": "authored",
+        "family": 0,
+        "split": "validation",
+        "generated": {
+          "text": "The gold ring was very happy.",
+          "ids": [
+            34,
+            1431,
+            1214,
+            11,
+            38,
+            43,
+            4,
+            2
+          ],
+          "eos": true
+        },
+        "exact": false
+      },
+      {
+        "scene": "Earlier, Iris had seen a paper flower near the basket. Iris had a red car parked outside the shop.",
+        "user": "Iris finished the lemonade and went outside.",
+        "response": "Iris climbed into the red car.",
+        "source": "authored",
+        "family": 5,
+        "split": "validation",
+        "generated": {
+          "text": "Lily climbed into the red car.",
+          "ids": [
+            31,
+            648,
+            179,
+            8,
+            281,
+            174,
+            4,
+            2
+          ],
+          "eos": true
+        },
+        "exact": false
+      },
+      {
+        "scene": "Earlier, Theo had seen a gold ring near the cupboard. Theo put the paper flower in the bag. Iris watched carefully.",
+        "user": "Iris opened the bag.",
+        "response": "Iris found the paper flower inside.",
+        "source": "authored",
+        "family": 0,
+        "split": "validation",
+        "generated": {
+          "text": "The paper flower was very happy.",
+          "ids": [
+            34,
+            507,
+            497,
+            11,
+            38,
+            43,
+            4,
+            2
+          ],
+          "eos": true
+        },
+        "exact": false
+      },
+      {
+        "scene": "Earlier, Theo had seen a red ribbon near the basket. Theo had a green car parked outside the shop.",
+        "user": "Theo finished the lemonade and went outside.",
+        "response": "Theo climbed into the green car.",
+        "source": "authored",
+        "family": 5,
+        "split": "validation",
+        "generated": {
+          "text": "The green car was so happy to have a new one.",
+          "ids": [
+            34,
+            440,
+            174,
+            11,
+            30,
+            43,
+            9,
+            68,
+            10,
+            119,
+            144,
+            4,
+            2
+          ],
+          "eos": true
+        },
+        "exact": false
+      },
+      {
+        "scene": "Earlier, Theo had seen a silver coin near the coat pocket. Theo put the gold ring in the drawer. Owen watched carefully.",
+        "user": "Owen opened the drawer.",
+        "response": "Owen found the gold ring inside.",
+        "source": "authored",
+        "family": 0,
+        "split": "validation",
+        "generated": {
+          "text": "George found the gold ring inside.",
+          "ids": [
+            2139,
+            122,
+            8,
+            1431,
+            1214,
+            187,
+            4,
+            2
+          ],
+          "eos": true
+        },
+        "exact": false
+      },
+      {
+        "scene": "Earlier, Nora had seen a wooden whistle near the coat pocket. Nora had a black car parked outside the shop.",
+        "user": "Nora finished the lemonade and went outside.",
+        "response": "Nora climbed into the black car.",
+        "source": "authored",
+        "family": 5,
+        "split": "validation",
+        "generated": {
+          "text": "George climbed into the black car.",
+          "ids": [
+            2139,
+            648,
+            179,
+            8,
+            786,
+            174,
+            4,
+            2
+          ],
+          "eos": true
+        },
+        "exact": false
+      },
+      {
+        "scene": "Earlier, Iris had seen a gold ring near the bag. Iris put the brass key in the coat pocket. Nora watched carefully.",
+        "user": "Nora opened the coat pocket.",
+        "response": "Nora found the brass key inside.",
+        "source": "authored",
+        "family": 0,
+        "split": "validation",
+        "generated": {
+          "text": "George found the brass key inside.",
+          "ids": [
+            2139,
+            122,
+            8,
+            3956,
+            845,
+            3352,
+            134,
+            868,
+            187,
+            4,
+            2
+          ],
+          "eos": true
+        },
+        "exact": false
+      },
+      {
+        "scene": "Earlier, Owen had seen a wooden whistle near the bag. Owen had a white car parked outside the shop.",
+        "user": "Owen finished the lemonade and went outside.",
+        "response": "Owen climbed into the white car.",
+        "source": "authored",
+        "family": 5,
+        "split": "validation",
+        "generated": {
+          "text": "George climbed into the white car.",
+          "ids": [
+            2139,
+            648,
+            179,
+            8,
+            636,
+            174,
+            4,
+            2
+          ],
+          "eos": true
+        },
+        "exact": false
+      },
+      {
+        "scene": "Earlier, Theo had seen a brass key near the basket. Theo put the blue marble in the wooden box. Owen watched carefully.",
+        "user": "Owen opened the wooden box.",
+        "response": "Owen found the blue marble inside.",
+        "source": "authored",
+        "family": 0,
+        "split": "validation",
+        "generated": {
+          "text": "George found the blue marble inside.",
+          "ids": [
+            2139,
+            122,
+            8,
+            359,
+            3217,
+            187,
+            4,
+            2
+          ],
+          "eos": true
+        },
+        "exact": false
+      },
+      {
+        "scene": "Earlier, Nora had seen a silver coin near the basket. Nora had a white car parked outside the shop.",
+        "user": "Nora finished the lemonade and went outside.",
+        "response": "Nora climbed into the white car.",
+        "source": "authored",
+        "family": 5,
+        "split": "validation",
+        "generated": {
+          "text": "George climbed into the white car.",
+          "ids": [
+            2139,
+            648,
+            179,
+            8,
+            636,
+            174,
+            4,
+            2
+          ],
+          "eos": true
+        },
+        "exact": false
+      },
+      {
+        "scene": "Earlier, Nora had seen a paper flower near the bag. Nora put the gold ring in the wooden box. Theo watched carefully.",
+        "user": "Theo opened the wooden box.",
+        "response": "Theo found the gold ring inside.",
+        "source": "authored",
+        "family": 0,
+        "split": "validation",
+        "generated": {
+          "text": "The gold ring was gone because it was now in the wooden box.",
+          "ids": [
+            34,
+            1431,
+            1214,
+            11,
+            569,
+            209,
+            12,
+            11,
+            309,
+            20,
+            8,
+            3409,
+            217,
+            4,
+            2
+          ],
+          "eos": true
+        },
+        "exact": false
+      },
+      {
+        "scene": "Earlier, Iris had seen a red ribbon near the coat pocket. Iris had a black car parked outside the shop.",
+        "user": "Iris finished the lemonade and went outside.",
+        "response": "Iris climbed into the black car.",
+        "source": "authored",
+        "family": 5,
+        "split": "validation",
+        "generated": {
+          "text": "Lily climbed into the black car.",
+          "ids": [
+            31,
+            648,
+            179,
+            8,
+            786,
+            174,
+            4,
+            2
+          ],
+          "eos": true
+        },
+        "exact": false
+      },
+      {
+        "scene": "Earlier, Iris had seen a wooden whistle near the cupboard. Iris put the brass key in the drawer. Owen watched carefully.",
+        "user": "Owen opened the drawer.",
+        "response": "Owen found the brass key inside.",
+        "source": "authored",
+        "family": 0,
+        "split": "validation",
+        "generated": {
+          "text": "George found the brass key inside.",
+          "ids": [
+            2139,
+            122,
+            8,
+            3956,
+            845,
+            3352,
+            134,
+            868,
+            187,
+            4,
+            2
+          ],
+          "eos": true
+        },
+        "exact": false
+      },
+      {
+        "scene": "Earlier, Nora had seen a red ribbon near the coat pocket. Nora had a red car parked outside the shop.",
+        "user": "Nora finished the lemonade and went outside.",
+        "response": "Nora climbed into the red car.",
+        "source": "authored",
+        "family": 5,
+        "split": "validation",
+        "generated": {
+          "text": "George climbed into the red car.",
+          "ids": [
+            2139,
+            648,
+            179,
+            8,
+            281,
+            174,
+            4,
+            2
+          ],
+          "eos": true
+        },
+        "exact": false
+      },
+      {
+        "scene": "Earlier, Theo had seen a silver coin near the wooden box. Theo put the gold ring in the cupboard. Iris watched carefully.",
+        "user": "Iris opened the cupboard.",
+        "response": "Iris found the gold ring inside.",
+        "source": "authored",
+        "family": 0,
+        "split": "validation",
+        "generated": {
+          "text": "The gold ring was very happy.",
+          "ids": [
+            34,
+            1431,
+            1214,
+            11,
+            38,
+            43,
+            4,
+            2
+          ],
+          "eos": true
+        },
+        "exact": false
+      },
+      {
+        "scene": "Earlier, Theo had seen a small stone near the coat pocket. Theo had a blue car parked outside the shop.",
+        "user": "Theo finished the lemonade and went outside.",
+        "response": "Theo climbed into the blue car.",
+        "source": "authored",
+        "family": 5,
+        "split": "validation",
+        "generated": {
+          "text": "The blue car was so happy to have a new one.",
+          "ids": [
+            34,
+            359,
+            174,
+            11,
+            30,
+            43,
+            9,
+            68,
+            10,
+            119,
+            144,
+            4,
+            2
+          ],
+          "eos": true
+        },
+        "exact": false
+      },
+      {
+        "scene": "Earlier, Theo had seen a gold ring near the basket. Theo put the brass key in the bag. Owen watched carefully.",
+        "user": "Owen opened the bag.",
+        "response": "Owen found the brass key inside.",
+        "source": "authored",
+        "family": 0,
+        "split": "validation",
+        "generated": {
+          "text": "George found the brass key inside.",
+          "ids": [
+            2139,
+            122,
+            8,
+            3956,
+            845,
+            3352,
+            134,
+            868,
+            187,
+            4,
+            2
+          ],
+          "eos": true
+        },
+        "exact": false
+      },
+      {
+        "scene": "Earlier, Owen had seen a red ribbon near the drawer. Owen had a yellow car parked outside the shop.",
+        "user": "Owen finished the lemonade and went outside.",
+        "response": "Owen climbed into the yellow car.",
+        "source": "authored",
+        "family": 5,
+        "split": "validation",
+        "generated": {
+          "text": "George climbed into the yellow car.",
+          "ids": [
+            2139,
+            648,
+            179,
+            8,
+            499,
+            174,
+            4,
+            2
+          ],
+          "eos": true
+        },
+        "exact": false
+      },
+      {
+        "scene": "Earlier, Theo had seen a blue marble near the coat pocket. Theo put the silver coin in the basket. Nora watched carefully.",
+        "user": "Nora opened the basket.",
+        "response": "Nora found the silver coin inside.",
+        "source": "authored",
+        "family": 0,
+        "split": "validation",
+        "generated": {
+          "text": "George found the silver coin inside.",
+          "ids": [
+            2139,
+            122,
+            8,
+            2610,
+            1031,
+            187,
+            4,
+            2
+          ],
+          "eos": true
+        },
+        "exact": false
+      },
+      {
+        "scene": "Earlier, Nora had seen a brass key near the drawer. Nora had a white car parked outside the shop.",
+        "user": "Nora finished the lemonade and went outside.",
+        "response": "Nora climbed into the white car.",
+        "source": "authored",
+        "family": 5,
+        "split": "validation",
+        "generated": {
+          "text": "George climbed into the white car.",
+          "ids": [
+            2139,
+            648,
+            179,
+            8,
+            636,
+            174,
+            4,
+            2
+          ],
+          "eos": true
+        },
+        "exact": false
+      },
+      {
+        "scene": "Earlier, Owen had seen a paper flower near the basket. Owen put the wooden whistle in the wooden box. Nora watched carefully.",
+        "user": "Nora opened the wooden box.",
+        "response": "Nora found the wooden whistle inside.",
+        "source": "authored",
+        "family": 0,
+        "split": "validation",
+        "generated": {
+          "text": "George found the wooden whistle inside.",
+          "ids": [
+            2139,
+            122,
+            8,
+            3409,
+            1247,
+            187,
+            4,
+            2
+          ],
+          "eos": true
+        },
+        "exact": false
+      },
+      {
+        "scene": "Earlier, Owen had seen a blue marble near the cupboard. Owen had a green car parked outside the shop.",
+        "user": "Owen finished the lemonade and went outside.",
+        "response": "Owen climbed into the green car.",
+        "source": "authored",
+        "family": 5,
+        "split": "validation",
+        "generated": {
+          "text": "George climbed into the green car.",
+          "ids": [
+            2139,
+            648,
+            179,
+            8,
+            440,
+            174,
+            4,
+            2
+          ],
+          "eos": true
+        },
+        "exact": false
+      },
+      {
+        "scene": "Earlier, Nora had seen a red ribbon near the wooden box. Nora put the blue marble in the coat pocket. Theo watched carefully.",
+        "user": "Theo opened the coat pocket.",
+        "response": "Theo found the blue marble inside.",
+        "source": "authored",
+        "family": 0,
+        "split": "validation",
+        "generated": {
+          "text": "The blue marble was so happy.",
+          "ids": [
+            34,
+            359,
+            3217,
+            11,
+            30,
+            43,
+            4,
+            2
+          ],
+          "eos": true
+        },
+        "exact": false
+      },
+      {
+        "scene": "Earlier, Nora had seen a blue marble near the coat pocket. Nora had a blue car parked outside the shop.",
+        "user": "Nora finished the lemonade and went outside.",
+        "response": "Nora climbed into the blue car.",
+        "source": "authored",
+        "family": 5,
+        "split": "validation",
+        "generated": {
+          "text": "George climbed into the blue car.",
+          "ids": [
+            2139,
+            648,
+            179,
+            8,
+            359,
+            174,
+            4,
+            2
+          ],
+          "eos": true
+        },
+        "exact": false
+      },
+      {
+        "scene": "Earlier, Nora had seen a silver coin near the drawer. Nora put the blue marble in the coat pocket. Owen watched carefully.",
+        "user": "Owen opened the coat pocket.",
+        "response": "Owen found the blue marble inside.",
+        "source": "authored",
+        "family": 0,
+        "split": "validation",
+        "generated": {
+          "text": "George found the blue marble inside.",
+          "ids": [
+            2139,
+            122,
+            8,
+            359,
+            3217,
+            187,
+            4,
+            2
+          ],
+          "eos": true
+        },
+        "exact": false
+      },
+      {
+        "scene": "Earlier, Owen had seen a small stone near the drawer. Owen had a white car parked outside the shop.",
+        "user": "Owen finished the lemonade and went outside.",
+        "response": "Owen climbed into the white car.",
+        "source": "authored",
+        "family": 5,
+        "split": "validation",
+        "generated": {
+          "text": "George climbed into the white car.",
+          "ids": [
+            2139,
+            648,
+            179,
+            8,
+            636,
+            174,
+            4,
+            2
+          ],
+          "eos": true
+        },
+        "exact": false
+      },
+      {
+        "scene": "Earlier, Nora had seen a red ribbon near the bag. Nora put the brass key in the wooden box. Owen watched carefully.",
+        "user": "Owen opened the wooden box.",
+        "response": "Owen found the brass key inside.",
+        "source": "authored",
+        "family": 0,
+        "split": "validation",
+        "generated": {
+          "text": "George found the brass key inside.",
+          "ids": [
+            2139,
+            122,
+            8,
+            3956,
+            845,
+            3352,
+            134,
+            868,
+            187,
+            4,
+            2
+          ],
+          "eos": true
+        },
+        "exact": false
+      },
+      {
+        "scene": "Earlier, Theo had seen a red ribbon near the basket. Theo had a white car parked outside the shop.",
+        "user": "Theo finished the lemonade and went outside.",
+        "response": "Theo climbed into the white car.",
+        "source": "authored",
+        "family": 5,
+        "split": "validation",
+        "generated": {
+          "text": "The white car was so happy to have a new one.",
+          "ids": [
+            34,
+            636,
+            174,
+            11,
+            30,
+            43,
+            9,
+            68,
+            10,
+            119,
+            144,
+            4,
+            2
+          ],
+          "eos": true
+        },
+        "exact": false
+      },
+      {
+        "scene": "Earlier, Theo had seen a wooden whistle near the cupboard. Theo put the blue marble in the basket. Nora watched carefully.",
+        "user": "Nora opened the basket.",
+        "response": "Nora found the blue marble inside.",
+        "source": "authored",
+        "family": 0,
+        "split": "validation",
+        "generated": {
+          "text": "George found the blue marble inside.",
+          "ids": [
+            2139,
+            122,
+            8,
+            359,
+            3217,
+            187,
+            4,
+            2
+          ],
+          "eos": true
+        },
+        "exact": false
+      },
+      {
+        "scene": "Earlier, Nora had seen a paper flower near the drawer. Nora had a red car parked outside the shop.",
+        "user": "Nora finished the lemonade and went outside.",
+        "response": "Nora climbed into the red car.",
+        "source": "authored",
+        "family": 5,
+        "split": "validation",
+        "generated": {
+          "text": "George climbed into the red car.",
+          "ids": [
+            2139,
+            648,
+            179,
+            8,
+            281,
+            174,
+            4,
+            2
+          ],
+          "eos": true
+        },
+        "exact": false
+      },
+      {
+        "scene": "Earlier, Theo had seen a red ribbon near the bag. Theo put the brass key in the coat pocket. Owen watched carefully.",
+        "user": "Owen opened the coat pocket.",
+        "response": "Owen found the brass key inside.",
+        "source": "authored",
+        "family": 0,
+        "split": "validation",
+        "generated": {
+          "text": "George found the brass key inside.",
+          "ids": [
+            2139,
+            122,
+            8,
+            3956,
+            845,
+            3352,
+            134,
+            868,
+            187,
+            4,
+            2
+          ],
+          "eos": true
+        },
+        "exact": false
+      },
+      {
+        "scene": "Earlier, Iris had seen a blue marble near the basket. Iris had a red car parked outside the shop.",
+        "user": "Iris finished the lemonade and went outside.",
+        "response": "Iris climbed into the red car.",
+        "source": "authored",
+        "family": 5,
+        "split": "validation",
+        "generated": {
+          "text": "Lily climbed into the red car.",
+          "ids": [
+            31,
+            648,
+            179,
+            8,
+            281,
+            174,
+            4,
+            2
+          ],
+          "eos": true
+        },
+        "exact": false
+      },
+      {
+        "scene": "Earlier, Theo had seen a gold ring near the coat pocket. Theo put the blue marble in the basket. Owen watched carefully.",
+        "user": "Owen opened the basket.",
+        "response": "Owen found the blue marble inside.",
+        "source": "authored",
+        "family": 0,
+        "split": "validation",
+        "generated": {
+          "text": "George found the blue marble inside.",
+          "ids": [
+            2139,
+            122,
+            8,
+            359,
+            3217,
+            187,
+            4,
+            2
+          ],
+          "eos": true
+        },
+        "exact": false
+      },
+      {
+        "scene": "Earlier, Theo had seen a blue marble near the wooden box. Theo had a black car parked outside the shop.",
+        "user": "Theo finished the lemonade and went outside.",
+        "response": "Theo climbed into the black car.",
+        "source": "authored",
+        "family": 5,
+        "split": "validation",
+        "generated": {
+          "text": "The car was so happy to have a new one.",
+          "ids": [
+            34,
+            174,
+            11,
+            30,
+            43,
+            9,
+            68,
+            10,
+            119,
+            144,
+            4,
+            2
+          ],
+          "eos": true
+        },
+        "exact": false
+      },
+      {
+        "scene": "Earlier, Owen had seen a small stone near the drawer. Owen put the blue marble in the cupboard. Nora watched carefully.",
+        "user": "Nora opened the cupboard.",
+        "response": "Nora found the blue marble inside.",
+        "source": "authored",
+        "family": 0,
+        "split": "validation",
+        "generated": {
+          "text": "George found the blue marble inside.",
+          "ids": [
+            2139,
+            122,
+            8,
+            359,
+            3217,
+            187,
+            4,
+            2
+          ],
+          "eos": true
+        },
+        "exact": false
+      },
+      {
+        "scene": "Earlier, Nora had seen a brass key near the bag. Nora had a yellow car parked outside the shop.",
+        "user": "Nora finished the lemonade and went outside.",
+        "response": "Nora climbed into the yellow car.",
+        "source": "authored",
+        "family": 5,
+        "split": "validation",
+        "generated": {
+          "text": "George climbed into the yellow car.",
+          "ids": [
+            2139,
+            648,
+            179,
+            8,
+            499,
+            174,
+            4,
+            2
+          ],
+          "eos": true
+        },
+        "exact": false
+      },
+      {
+        "scene": "Earlier, Theo had seen a paper flower near the wooden box. Theo put the red ribbon in the bag. Nora watched carefully.",
+        "user": "Nora opened the bag.",
+        "response": "Nora found the red ribbon inside.",
+        "source": "authored",
+        "family": 0,
+        "split": "validation",
+        "generated": {
+          "text": "George found the red ribbon inside.",
+          "ids": [
+            2139,
+            122,
+            8,
+            281,
+            2672,
+            187,
+            4,
+            2
+          ],
+          "eos": true
+        },
+        "exact": false
+      },
+      {
+        "scene": "Earlier, Theo had seen a blue marble near the cupboard. Theo had a green car parked outside the shop.",
+        "user": "Theo finished the lemonade and went outside.",
+        "response": "Theo climbed into the green car.",
+        "source": "authored",
+        "family": 5,
+        "split": "validation",
+        "generated": {
+          "text": "The green car was so happy to have a new one.",
+          "ids": [
+            34,
+            440,
+            174,
+            11,
+            30,
+            43,
+            9,
+            68,
+            10,
+            119,
+            144,
+            4,
+            2
+          ],
+          "eos": true
+        },
+        "exact": false
+      },
+      {
+        "scene": "Earlier, Nora had seen a wooden whistle near the drawer. Nora put the brass key in the wooden box. Theo watched carefully.",
+        "user": "Theo opened the wooden box.",
+        "response": "Theo found the brass key inside.",
+        "source": "authored",
+        "family": 0,
+        "split": "validation",
+        "generated": {
+          "text": "The brass key was gone because it was now in the wooden box.",
+          "ids": [
+            34,
+            3956,
+            845,
+            3352,
+            134,
+            868,
+            11,
+            569,
+            209,
+            12,
+            11,
+            309,
+            20,
+            8,
+            3409,
+            217,
+            4,
+            2
+          ],
+          "eos": true
+        },
+        "exact": false
+      },
+      {
+        "scene": "Earlier, Owen had seen a red ribbon near the coat pocket. Owen had a red car parked outside the shop.",
+        "user": "Owen finished the lemonade and went outside.",
+        "response": "Owen climbed into the red car.",
+        "source": "authored",
+        "family": 5,
+        "split": "validation",
+        "generated": {
+          "text": "George climbed into the red car.",
+          "ids": [
+            2139,
+            648,
+            179,
+            8,
+            281,
+            174,
+            4,
+            2
+          ],
+          "eos": true
+        },
+        "exact": false
+      },
+      {
+        "scene": "Earlier, Owen had seen a brass key near the basket. Owen put the red ribbon in the coat pocket. Iris watched carefully.",
+        "user": "Iris opened the coat pocket.",
+        "response": "Iris found the red ribbon inside.",
+        "source": "authored",
+        "family": 0,
+        "split": "validation",
+        "generated": {
+          "text": "The red ribbon was gone because it was now in the coat pocket.",
+          "ids": [
+            34,
+            281,
+            2672,
+            11,
+            569,
+            209,
+            12,
+            11,
+            309,
+            20,
+            8,
+            1067,
+            884,
+            4,
+            2
+          ],
+          "eos": true
+        },
+        "exact": false
+      },
+      {
+        "scene": "Earlier, Theo had seen a silver coin near the drawer. Theo had a blue car parked outside the shop.",
+        "user": "Theo finished the lemonade and went outside.",
+        "response": "Theo climbed into the blue car.",
+        "source": "authored",
+        "family": 5,
+        "split": "validation",
+        "generated": {
+          "text": "The blue car was so happy to have a new one.",
+          "ids": [
+            34,
+            359,
+            174,
+            11,
+            30,
+            43,
+            9,
+            68,
+            10,
+            119,
+            144,
+            4,
+            2
+          ],
+          "eos": true
+        },
+        "exact": false
+      },
+      {
+        "scene": "Earlier, Nora had seen a silver coin near the drawer. Nora put the small stone in the cupboard. Owen watched carefully.",
+        "user": "Owen opened the cupboard.",
+        "response": "Owen found the small stone inside.",
+        "source": "authored",
+        "family": 0,
+        "split": "validation",
+        "generated": {
+          "text": "George found the small stone inside.",
+          "ids": [
+            2139,
+            122,
+            8,
+            212,
+            1143,
+            187,
+            4,
+            2
+          ],
+          "eos": true
+        },
+        "exact": false
+      },
+      {
+        "scene": "Earlier, Nora had seen a small stone near the coat pocket. Nora had a red car parked outside the shop.",
+        "user": "Nora finished the lemonade and went outside.",
+        "response": "Nora climbed into the red car.",
+        "source": "authored",
+        "family": 5,
+        "split": "validation",
+        "generated": {
+          "text": "George climbed into the red car.",
+          "ids": [
+            2139,
+            648,
+            179,
+            8,
+            281,
+            174,
+            4,
+            2
+          ],
+          "eos": true
+        },
+        "exact": false
+      },
+      {
+        "scene": "Earlier, Owen had seen a red ribbon near the drawer. Owen put the brass key in the bag. Iris watched carefully.",
+        "user": "Iris opened the bag.",
+        "response": "Iris found the brass key inside.",
+        "source": "authored",
+        "family": 0,
+        "split": "validation",
+        "generated": {
+          "text": "The brass key was gone because it was now in the bag.",
+          "ids": [
+            34,
+            3956,
+            845,
+            3352,
+            134,
+            868,
+            11,
+            569,
+            209,
+            12,
+            11,
+            309,
+            20,
+            8,
+            598,
+            4,
+            2
+          ],
+          "eos": true
+        },
+        "exact": false
+      },
+      {
+        "scene": "Earlier, Owen had seen a wooden whistle near the cupboard. Owen had a red car parked outside the shop.",
+        "user": "Owen finished the lemonade and went outside.",
+        "response": "Owen climbed into the red car.",
+        "source": "authored",
+        "family": 5,
+        "split": "validation",
+        "generated": {
+          "text": "George climbed into the red car.",
+          "ids": [
+            2139,
+            648,
+            179,
+            8,
+            281,
+            174,
+            4,
+            2
+          ],
+          "eos": true
+        },
+        "exact": false
+      }
+    ]
+  },
+  "final": {
+    "examples": 60,
+    "exact_matches": 0,
+    "eos": 60,
+    "brass_key": {
+      "text": "He was about to give up.",
+      "ids": [
+        15,
+        11,
+        158,
+        9,
+        323,
+        67,
+        4,
+        2
+      ],
+      "eos": true
+    },
+    "answers": [
+      {
+        "scene": "Earlier, Nora had seen a gold ring near the drawer. Nora put the silver coin in the basket. Iris watched carefully.",
+        "user": "Iris opened the basket.",
+        "response": "Iris found the silver coin inside.",
+        "source": "authored",
+        "family": 0,
+        "split": "validation",
+        "generated": {
+          "text": "The silver coin was gone because it was now in the basket.",
+          "ids": [
+            34,
+            2610,
+            1031,
+            11,
+            569,
+            209,
+            12,
+            11,
+            309,
+            20,
+            8,
+            917,
+            4,
+            2
+          ],
+          "eos": true
+        },
+        "exact": false
+      },
+      {
+        "scene": "Earlier, Owen had seen a silver coin near the wooden box. Owen had a yellow car parked outside the shop.",
+        "user": "Owen finished the lemonade and went outside.",
+        "response": "Owen climbed into the yellow car.",
+        "source": "authored",
+        "family": 5,
+        "split": "validation",
+        "generated": {
+          "text": "Urass key was gone because it was now in the cupboard.",
+          "ids": [
+            4665,
+            845,
+            3352,
+            134,
+            868,
+            11,
+            569,
+            209,
+            12,
+            11,
+            309,
+            20,
+            8,
+            1935,
+            4,
+            2
+          ],
+          "eos": true
+        },
+        "exact": false
+      },
+      {
+        "scene": "Earlier, Theo had seen a blue marble near the drawer. Theo put the brass key in the wooden box. Nora watched carefully.",
+        "user": "Nora opened the wooden box.",
+        "response": "Nora found the brass key inside.",
+        "source": "authored",
+        "family": 0,
+        "split": "validation",
+        "generated": {
+          "text": "George found the brass key inside.",
+          "ids": [
+            2139,
+            122,
+            8,
+            3956,
+            845,
+            3352,
+            134,
+            868,
+            187,
+            4,
+            2
+          ],
+          "eos": true
+        },
+        "exact": false
+      },
+      {
+        "scene": "Earlier, Owen had seen a silver coin near the drawer. Owen had a blue car parked outside the shop.",
+        "user": "Owen finished the lemonade and went outside.",
+        "response": "Owen climbed into the blue car.",
+        "source": "authored",
+        "family": 5,
+        "split": "validation",
+        "generated": {
+          "text": "Urass key was gone because it was now in the cupboard.",
+          "ids": [
+            4665,
+            845,
+            3352,
+            134,
+            868,
+            11,
+            569,
+            209,
+            12,
+            11,
+            309,
+            20,
+            8,
+            1935,
+            4,
+            2
+          ],
+          "eos": true
+        },
+        "exact": false
+      },
+      {
+        "scene": "Earlier, Nora had seen a gold ring near the drawer. Nora put the brass key in the coat pocket. Theo watched carefully.",
+        "user": "Theo opened the coat pocket.",
+        "response": "Theo found the brass key inside.",
+        "source": "authored",
+        "family": 0,
+        "split": "validation",
+        "generated": {
+          "text": "The brass key was gone because it was now in the coat pocket.",
+          "ids": [
+            34,
+            3956,
+            845,
+            3352,
+            134,
+            868,
+            11,
+            569,
+            209,
+            12,
+            11,
+            309,
+            20,
+            8,
+            1067,
+            884,
+            4,
+            2
+          ],
+          "eos": true
+        },
+        "exact": false
+      },
+      {
+        "scene": "Earlier, Nora had seen a paper flower near the wooden box. Nora had a white car parked outside the shop.",
+        "user": "Nora finished the lemonade and went outside.",
+        "response": "Nora climbed into the white car.",
+        "source": "authored",
+        "family": 5,
+        "split": "validation",
+        "generated": {
+          "text": "Urass key was very happy.",
+          "ids": [
+            4665,
+            845,
+            3352,
+            134,
+            868,
+            11,
+            38,
+            43,
+            4,
+            2
+          ],
+          "eos": true
+        },
+        "exact": false
+      },
+      {
+        "scene": "Earlier, Nora had seen a small stone near the coat pocket. Nora put the paper flower in the drawer. Owen watched carefully.",
+        "user": "Owen opened the drawer.",
+        "response": "Owen found the paper flower inside.",
+        "source": "authored",
+        "family": 0,
+        "split": "validation",
+        "generated": {
+          "text": "drawer found the paper flower inside.",
+          "ids": [
+            1960,
+            122,
+            8,
+            507,
+            497,
+            187,
+            4,
+            2
+          ],
+          "eos": true
+        },
+        "exact": false
+      },
+      {
+        "scene": "Earlier, Nora had seen a brass key near the wooden box. Nora had a yellow car parked outside the shop.",
+        "user": "Nora finished the lemonade and went outside.",
+        "response": "Nora climbed into the yellow car.",
+        "source": "authored",
+        "family": 5,
+        "split": "validation",
+        "generated": {
+          "text": "Urass key was gone because it was now in the cupboard.",
+          "ids": [
+            4665,
+            845,
+            3352,
+            134,
+            868,
+            11,
+            569,
+            209,
+            12,
+            11,
+            309,
+            20,
+            8,
+            1935,
+            4,
+            2
+          ],
+          "eos": true
+        },
+        "exact": false
+      },
+      {
+        "scene": "Earlier, Iris had seen a red ribbon near the coat pocket. Iris put the wooden whistle in the wooden box. Theo watched carefully.",
+        "user": "Theo opened the wooden box.",
+        "response": "Theo found the wooden whistle inside.",
+        "source": "authored",
+        "family": 0,
+        "split": "validation",
+        "generated": {
+          "text": "The wooden whistle was gone because it was now in the wooden box.",
+          "ids": [
+            34,
+            3409,
+            1247,
+            11,
+            569,
+            209,
+            12,
+            11,
+            309,
+            20,
+            8,
+            3409,
+            217,
+            4,
+            2
+          ],
+          "eos": true
+        },
+        "exact": false
+      },
+      {
+        "scene": "Earlier, Nora had seen a brass key near the bag. Nora had a blue car parked outside the shop.",
+        "user": "Nora finished the lemonade and went outside.",
+        "response": "Nora climbed into the blue car.",
+        "source": "authored",
+        "family": 5,
+        "split": "validation",
+        "generated": {
+          "text": "Urass key was gone because it was now in the bag.",
+          "ids": [
+            4665,
+            845,
+            3352,
+            134,
+            868,
+            11,
+            569,
+            209,
+            12,
+            11,
+            309,
+            20,
+            8,
+            598,
+            4,
+            2
+          ],
+          "eos": true
+        },
+        "exact": false
+      },
+      {
+        "scene": "Earlier, Nora had seen a small stone near the bag. Nora put the blue marble in the wooden box. Iris watched carefully.",
+        "user": "Iris opened the wooden box.",
+        "response": "Iris found the blue marble inside.",
+        "source": "authored",
+        "family": 0,
+        "split": "validation",
+        "generated": {
+          "text": "The blue marble was gone because it was now in the wooden box.",
+          "ids": [
+            34,
+            359,
+            3217,
+            11,
+            569,
+            209,
+            12,
+            11,
+            309,
+            20,
+            8,
+            3409,
+            217,
+            4,
+            2
+          ],
+          "eos": true
+        },
+        "exact": false
+      },
+      {
+        "scene": "Earlier, Iris had seen a brass key near the drawer. Iris had a yellow car parked outside the shop.",
+        "user": "Iris finished the lemonade and went outside.",
+        "response": "Iris climbed into the yellow car.",
+        "source": "authored",
+        "family": 5,
+        "split": "validation",
+        "generated": {
+          "text": "The yellow car was gone because it was now in the drawer.",
+          "ids": [
+            34,
+            499,
+            174,
+            11,
+            569,
+            209,
+            12,
+            11,
+            309,
+            20,
+            8,
+            1960,
+            4,
+            2
+          ],
+          "eos": true
+        },
+        "exact": false
+      },
+      {
+        "scene": "Earlier, Nora had seen a red ribbon near the cupboard. Nora put the wooden whistle in the basket. Owen watched carefully.",
+        "user": "Owen opened the basket.",
+        "response": "Owen found the wooden whistle inside.",
+        "source": "authored",
+        "family": 0,
+        "split": "validation",
+        "generated": {
+          "text": "George found the wooden whistle inside.",
+          "ids": [
+            2139,
+            122,
+            8,
+            3409,
+            1247,
+            187,
+            4,
+            2
+          ],
+          "eos": true
+        },
+        "exact": false
+      },
+      {
+        "scene": "Earlier, Iris had seen a red ribbon near the bag. Iris had a green car parked outside the shop.",
+        "user": "Iris finished the lemonade and went outside.",
+        "response": "Iris climbed into the green car.",
+        "source": "authored",
+        "family": 5,
+        "split": "validation",
+        "generated": {
+          "text": "The green car was gone because it was now in the cupboard.",
+          "ids": [
+            34,
+            440,
+            174,
+            11,
+            569,
+            209,
+            12,
+            11,
+            309,
+            20,
+            8,
+            1935,
+            4,
+            2
+          ],
+          "eos": true
+        },
+        "exact": false
+      },
+      {
+        "scene": "Earlier, Theo had seen a brass key near the coat pocket. Theo put the gold ring in the bag. Iris watched carefully.",
+        "user": "Iris opened the bag.",
+        "response": "Iris found the gold ring inside.",
+        "source": "authored",
+        "family": 0,
+        "split": "validation",
+        "generated": {
+          "text": "The gold ring was gone because it was now in the bag.",
+          "ids": [
+            34,
+            1431,
+            1214,
+            11,
+            569,
+            209,
+            12,
+            11,
+            309,
+            20,
+            8,
+            598,
+            4,
+            2
+          ],
+          "eos": true
+        },
+        "exact": false
+      },
+      {
+        "scene": "Earlier, Iris had seen a paper flower near the basket. Iris had a red car parked outside the shop.",
+        "user": "Iris finished the lemonade and went outside.",
+        "response": "Iris climbed into the red car.",
+        "source": "authored",
+        "family": 5,
+        "split": "validation",
+        "generated": {
+          "text": "The red car was gone because it was now in the cupboard.",
+          "ids": [
+            34,
+            281,
+            174,
+            11,
+            569,
+            209,
+            12,
+            11,
+            309,
+            20,
+            8,
+            1935,
+            4,
+            2
+          ],
+          "eos": true
+        },
+        "exact": false
+      },
+      {
+        "scene": "Earlier, Theo had seen a gold ring near the cupboard. Theo put the paper flower in the bag. Iris watched carefully.",
+        "user": "Iris opened the bag.",
+        "response": "Iris found the paper flower inside.",
+        "source": "authored",
+        "family": 0,
+        "split": "validation",
+        "generated": {
+          "text": "The brass key was gone because it was now in the cupboard.",
+          "ids": [
+            34,
+            3956,
+            845,
+            3352,
+            134,
+            868,
+            11,
+            569,
+            209,
+            12,
+            11,
+            309,
+            20,
+            8,
+            1935,
+            4,
+            2
+          ],
+          "eos": true
+        },
+        "exact": false
+      },
+      {
+        "scene": "Earlier, Theo had seen a red ribbon near the basket. Theo had a green car parked outside the shop.",
+        "user": "Theo finished the lemonade and went outside.",
+        "response": "Theo climbed into the green car.",
+        "source": "authored",
+        "family": 5,
+        "split": "validation",
+        "generated": {
+          "text": "The black car was very the green car in the cupboard.",
+          "ids": [
+            34,
+            786,
+            174,
+            11,
+            38,
+            8,
+            440,
+            174,
+            20,
+            8,
+            1935,
+            4,
+            2
+          ],
+          "eos": true
+        },
+        "exact": false
+      },
+      {
+        "scene": "Earlier, Theo had seen a silver coin near the coat pocket. Theo put the gold ring in the drawer. Owen watched carefully.",
+        "user": "Owen opened the drawer.",
+        "response": "Owen found the gold ring inside.",
+        "source": "authored",
+        "family": 0,
+        "split": "validation",
+        "generated": {
+          "text": "The gold ring was gone because it was now in the drawer.",
+          "ids": [
+            34,
+            1431,
+            1214,
+            11,
+            569,
+            209,
+            12,
+            11,
+            309,
+            20,
+            8,
+            1960,
+            4,
+            2
+          ],
+          "eos": true
+        },
+        "exact": false
+      },
+      {
+        "scene": "Earlier, Nora had seen a wooden whistle near the coat pocket. Nora had a black car parked outside the shop.",
+        "user": "Nora finished the lemonade and went outside.",
+        "response": "Nora climbed into the black car.",
+        "source": "authored",
+        "family": 5,
+        "split": "validation",
+        "generated": {
+          "text": "Urass key was gone because it was now in the drawer.",
+          "ids": [
+            4665,
+            845,
+            3352,
+            134,
+            868,
+            11,
+            569,
+            209,
+            12,
+            11,
+            309,
+            20,
+            8,
+            1960,
+            4,
+            2
+          ],
+          "eos": true
+        },
+        "exact": false
+      },
+      {
+        "scene": "Earlier, Iris had seen a gold ring near the bag. Iris put the brass key in the coat pocket. Nora watched carefully.",
+        "user": "Nora opened the coat pocket.",
+        "response": "Nora found the brass key inside.",
+        "source": "authored",
+        "family": 0,
+        "split": "validation",
+        "generated": {
+          "text": "George found the brass key inside.",
+          "ids": [
+            2139,
+            122,
+            8,
+            3956,
+            845,
+            3352,
+            134,
+            868,
+            187,
+            4,
+            2
+          ],
+          "eos": true
+        },
+        "exact": false
+      },
+      {
+        "scene": "Earlier, Owen had seen a wooden whistle near the bag. Owen had a white car parked outside the shop.",
+        "user": "Owen finished the lemonade and went outside.",
+        "response": "Owen climbed into the white car.",
+        "source": "authored",
+        "family": 5,
+        "split": "validation",
+        "generated": {
+          "text": "George climbed into the white car.",
+          "ids": [
+            2139,
+            648,
+            179,
+            8,
+            636,
+            174,
+            4,
+            2
+          ],
+          "eos": true
+        },
+        "exact": false
+      },
+      {
+        "scene": "Earlier, Theo had seen a brass key near the basket. Theo put the blue marble in the wooden box. Owen watched carefully.",
+        "user": "Owen opened the wooden box.",
+        "response": "Owen found the blue marble inside.",
+        "source": "authored",
+        "family": 0,
+        "split": "validation",
+        "generated": {
+          "text": "George found the blue marble inside.",
+          "ids": [
+            2139,
+            122,
+            8,
+            359,
+            3217,
+            187,
+            4,
+            2
+          ],
+          "eos": true
+        },
+        "exact": false
+      },
+      {
+        "scene": "Earlier, Nora had seen a silver coin near the basket. Nora had a white car parked outside the shop.",
+        "user": "Nora finished the lemonade and went outside.",
+        "response": "Nora climbed into the white car.",
+        "source": "authored",
+        "family": 5,
+        "split": "validation",
+        "generated": {
+          "text": "cupboard climbed into the white car.",
+          "ids": [
+            1935,
+            648,
+            179,
+            8,
+            636,
+            174,
+            4,
+            2
+          ],
+          "eos": true
+        },
+        "exact": false
+      },
+      {
+        "scene": "Earlier, Nora had seen a paper flower near the bag. Nora put the gold ring in the wooden box. Theo watched carefully.",
+        "user": "Theo opened the wooden box.",
+        "response": "Theo found the gold ring inside.",
+        "source": "authored",
+        "family": 0,
+        "split": "validation",
+        "generated": {
+          "text": "The gold ring was gone because it was now in the wooden box.",
+          "ids": [
+            34,
+            1431,
+            1214,
+            11,
+            569,
+            209,
+            12,
+            11,
+            309,
+            20,
+            8,
+            3409,
+            217,
+            4,
+            2
+          ],
+          "eos": true
+        },
+        "exact": false
+      },
+      {
+        "scene": "Earlier, Iris had seen a red ribbon near the coat pocket. Iris had a black car parked outside the shop.",
+        "user": "Iris finished the lemonade and went outside.",
+        "response": "Iris climbed into the black car.",
+        "source": "authored",
+        "family": 5,
+        "split": "validation",
+        "generated": {
+          "text": "The black car was gone because it was now in the cupboard.",
+          "ids": [
+            34,
+            786,
+            174,
+            11,
+            569,
+            209,
+            12,
+            11,
+            309,
+            20,
+            8,
+            1935,
+            4,
+            2
+          ],
+          "eos": true
+        },
+        "exact": false
+      },
+      {
+        "scene": "Earlier, Iris had seen a wooden whistle near the cupboard. Iris put the brass key in the drawer. Owen watched carefully.",
+        "user": "Owen opened the drawer.",
+        "response": "Owen found the brass key inside.",
+        "source": "authored",
+        "family": 0,
+        "split": "validation",
+        "generated": {
+          "text": "The brass key was gone because it was now in the wooden box.",
+          "ids": [
+            34,
+            3956,
+            845,
+            3352,
+            134,
+            868,
+            11,
+            569,
+            209,
+            12,
+            11,
+            309,
+            20,
+            8,
+            3409,
+            217,
+            4,
+            2
+          ],
+          "eos": true
+        },
+        "exact": false
+      },
+      {
+        "scene": "Earlier, Nora had seen a red ribbon near the coat pocket. Nora had a red car parked outside the shop.",
+        "user": "Nora finished the lemonade and went outside.",
+        "response": "Nora climbed into the red car.",
+        "source": "authored",
+        "family": 5,
+        "split": "validation",
+        "generated": {
+          "text": "Urass key was gone because it was now in the cupboard.",
+          "ids": [
+            4665,
+            845,
+            3352,
+            134,
+            868,
+            11,
+            569,
+            209,
+            12,
+            11,
+            309,
+            20,
+            8,
+            1935,
+            4,
+            2
+          ],
+          "eos": true
+        },
+        "exact": false
+      },
+      {
+        "scene": "Earlier, Theo had seen a silver coin near the wooden box. Theo put the gold ring in the cupboard. Iris watched carefully.",
+        "user": "Iris opened the cupboard.",
+        "response": "Iris found the gold ring inside.",
+        "source": "authored",
+        "family": 0,
+        "split": "validation",
+        "generated": {
+          "text": "The gold ring was gone because it was now in the cupboard.",
+          "ids": [
+            34,
+            1431,
+            1214,
+            11,
+            569,
+            209,
+            12,
+            11,
+            309,
+            20,
+            8,
+            1935,
+            4,
+            2
+          ],
+          "eos": true
+        },
+        "exact": false
+      },
+      {
+        "scene": "Earlier, Theo had seen a small stone near the coat pocket. Theo had a blue car parked outside the shop.",
+        "user": "Theo finished the lemonade and went outside.",
+        "response": "Theo climbed into the blue car.",
+        "source": "authored",
+        "family": 5,
+        "split": "validation",
+        "generated": {
+          "text": "The blue car was very the blue car in the cupboard.",
+          "ids": [
+            34,
+            359,
+            174,
+            11,
+            38,
+            8,
+            359,
+            174,
+            20,
+            8,
+            1935,
+            4,
+            2
+          ],
+          "eos": true
+        },
+        "exact": false
+      },
+      {
+        "scene": "Earlier, Theo had seen a gold ring near the basket. Theo put the brass key in the bag. Owen watched carefully.",
+        "user": "Owen opened the bag.",
+        "response": "Owen found the brass key inside.",
+        "source": "authored",
+        "family": 0,
+        "split": "validation",
+        "generated": {
+          "text": "George found the brass key inside.",
+          "ids": [
+            2139,
+            122,
+            8,
+            3956,
+            845,
+            3352,
+            134,
+            868,
+            187,
+            4,
+            2
+          ],
+          "eos": true
+        },
+        "exact": false
+      },
+      {
+        "scene": "Earlier, Owen had seen a red ribbon near the drawer. Owen had a yellow car parked outside the shop.",
+        "user": "Owen finished the lemonade and went outside.",
+        "response": "Owen climbed into the yellow car.",
+        "source": "authored",
+        "family": 5,
+        "split": "validation",
+        "generated": {
+          "text": "Urass key was gone because it was now in the cupboard.",
+          "ids": [
+            4665,
+            845,
+            3352,
+            134,
+            868,
+            11,
+            569,
+            209,
+            12,
+            11,
+            309,
+            20,
+            8,
+            1935,
+            4,
+            2
+          ],
+          "eos": true
+        },
+        "exact": false
+      },
+      {
+        "scene": "Earlier, Theo had seen a blue marble near the coat pocket. Theo put the silver coin in the basket. Nora watched carefully.",
+        "user": "Nora opened the basket.",
+        "response": "Nora found the silver coin inside.",
+        "source": "authored",
+        "family": 0,
+        "split": "validation",
+        "generated": {
+          "text": "brass key was gone because it was now in the basket.",
+          "ids": [
+            3956,
+            845,
+            3352,
+            134,
+            868,
+            11,
+            569,
+            209,
+            12,
+            11,
+            309,
+            20,
+            8,
+            917,
+            4,
+            2
+          ],
+          "eos": true
+        },
+        "exact": false
+      },
+      {
+        "scene": "Earlier, Nora had seen a brass key near the drawer. Nora had a white car parked outside the shop.",
+        "user": "Nora finished the lemonade and went outside.",
+        "response": "Nora climbed into the white car.",
+        "source": "authored",
+        "family": 5,
+        "split": "validation",
+        "generated": {
+          "text": "Urass key was gone because it was now in the drawer.",
+          "ids": [
+            4665,
+            845,
+            3352,
+            134,
+            868,
+            11,
+            569,
+            209,
+            12,
+            11,
+            309,
+            20,
+            8,
+            1960,
+            4,
+            2
+          ],
+          "eos": true
+        },
+        "exact": false
+      },
+      {
+        "scene": "Earlier, Owen had seen a paper flower near the basket. Owen put the wooden whistle in the wooden box. Nora watched carefully.",
+        "user": "Nora opened the wooden box.",
+        "response": "Nora found the wooden whistle inside.",
+        "source": "authored",
+        "family": 0,
+        "split": "validation",
+        "generated": {
+          "text": "George found the wooden whistle inside.",
+          "ids": [
+            2139,
+            122,
+            8,
+            3409,
+            1247,
+            187,
+            4,
+            2
+          ],
+          "eos": true
+        },
+        "exact": false
+      },
+      {
+        "scene": "Earlier, Owen had seen a blue marble near the cupboard. Owen had a green car parked outside the shop.",
+        "user": "Owen finished the lemonade and went outside.",
+        "response": "Owen climbed into the green car.",
+        "source": "authored",
+        "family": 5,
+        "split": "validation",
+        "generated": {
+          "text": "Urass key was gone because it was now in the cupboard.",
+          "ids": [
+            4665,
+            845,
+            3352,
+            134,
+            868,
+            11,
+            569,
+            209,
+            12,
+            11,
+            309,
+            20,
+            8,
+            1935,
+            4,
+            2
+          ],
+          "eos": true
+        },
+        "exact": false
+      },
+      {
+        "scene": "Earlier, Nora had seen a red ribbon near the wooden box. Nora put the blue marble in the coat pocket. Theo watched carefully.",
+        "user": "Theo opened the coat pocket.",
+        "response": "Theo found the blue marble inside.",
+        "source": "authored",
+        "family": 0,
+        "split": "validation",
+        "generated": {
+          "text": "The blue marble was gone because it was now in the coat pocket.",
+          "ids": [
+            34,
+            359,
+            3217,
+            11,
+            569,
+            209,
+            12,
+            11,
+            309,
+            20,
+            8,
+            1067,
+            884,
+            4,
+            2
+          ],
+          "eos": true
+        },
+        "exact": false
+      },
+      {
+        "scene": "Earlier, Nora had seen a blue marble near the coat pocket. Nora had a blue car parked outside the shop.",
+        "user": "Nora finished the lemonade and went outside.",
+        "response": "Nora climbed into the blue car.",
+        "source": "authored",
+        "family": 5,
+        "split": "validation",
+        "generated": {
+          "text": "Urass key was gone because it was now in the cupboard.",
+          "ids": [
+            4665,
+            845,
+            3352,
+            134,
+            868,
+            11,
+            569,
+            209,
+            12,
+            11,
+            309,
+            20,
+            8,
+            1935,
+            4,
+            2
+          ],
+          "eos": true
+        },
+        "exact": false
+      },
+      {
+        "scene": "Earlier, Nora had seen a silver coin near the drawer. Nora put the blue marble in the coat pocket. Owen watched carefully.",
+        "user": "Owen opened the coat pocket.",
+        "response": "Owen found the blue marble inside.",
+        "source": "authored",
+        "family": 0,
+        "split": "validation",
+        "generated": {
+          "text": "George found the blue marble inside.",
+          "ids": [
+            2139,
+            122,
+            8,
+            359,
+            3217,
+            187,
+            4,
+            2
+          ],
+          "eos": true
+        },
+        "exact": false
+      },
+      {
+        "scene": "Earlier, Owen had seen a small stone near the drawer. Owen had a white car parked outside the shop.",
+        "user": "Owen finished the lemonade and went outside.",
+        "response": "Owen climbed into the white car.",
+        "source": "authored",
+        "family": 5,
+        "split": "validation",
+        "generated": {
+          "text": "George climbed into the white car.",
+          "ids": [
+            2139,
+            648,
+            179,
+            8,
+            636,
+            174,
+            4,
+            2
+          ],
+          "eos": true
+        },
+        "exact": false
+      },
+      {
+        "scene": "Earlier, Nora had seen a red ribbon near the bag. Nora put the brass key in the wooden box. Owen watched carefully.",
+        "user": "Owen opened the wooden box.",
+        "response": "Owen found the brass key inside.",
+        "source": "authored",
+        "family": 0,
+        "split": "validation",
+        "generated": {
+          "text": "George found the brass key inside.",
+          "ids": [
+            2139,
+            122,
+            8,
+            3956,
+            845,
+            3352,
+            134,
+            868,
+            187,
+            4,
+            2
+          ],
+          "eos": true
+        },
+        "exact": false
+      },
+      {
+        "scene": "Earlier, Theo had seen a red ribbon near the basket. Theo had a white car parked outside the shop.",
+        "user": "Theo finished the lemonade and went outside.",
+        "response": "Theo climbed into the white car.",
+        "source": "authored",
+        "family": 5,
+        "split": "validation",
+        "generated": {
+          "text": "The white car was very happy.",
+          "ids": [
+            34,
+            636,
+            174,
+            11,
+            38,
+            43,
+            4,
+            2
+          ],
+          "eos": true
+        },
+        "exact": false
+      },
+      {
+        "scene": "Earlier, Theo had seen a wooden whistle near the cupboard. Theo put the blue marble in the basket. Nora watched carefully.",
+        "user": "Nora opened the basket.",
+        "response": "Nora found the blue marble inside.",
+        "source": "authored",
+        "family": 0,
+        "split": "validation",
+        "generated": {
+          "text": "The blue marble was very careful because it was now in the basket.",
+          "ids": [
+            34,
+            359,
+            3217,
+            11,
+            38,
+            218,
+            209,
+            12,
+            11,
+            309,
+            20,
+            8,
+            917,
+            4,
+            2
+          ],
+          "eos": true
+        },
+        "exact": false
+      },
+      {
+        "scene": "Earlier, Nora had seen a paper flower near the drawer. Nora had a red car parked outside the shop.",
+        "user": "Nora finished the lemonade and went outside.",
+        "response": "Nora climbed into the red car.",
+        "source": "authored",
+        "family": 5,
+        "split": "validation",
+        "generated": {
+          "text": "Urass key was gone because it was now in the drawer.",
+          "ids": [
+            4665,
+            845,
+            3352,
+            134,
+            868,
+            11,
+            569,
+            209,
+            12,
+            11,
+            309,
+            20,
+            8,
+            1960,
+            4,
+            2
+          ],
+          "eos": true
+        },
+        "exact": false
+      },
+      {
+        "scene": "Earlier, Theo had seen a red ribbon near the bag. Theo put the brass key in the coat pocket. Owen watched carefully.",
+        "user": "Owen opened the coat pocket.",
+        "response": "Owen found the brass key inside.",
+        "source": "authored",
+        "family": 0,
+        "split": "validation",
+        "generated": {
+          "text": "George found the brass key inside.",
+          "ids": [
+            2139,
+            122,
+            8,
+            3956,
+            845,
+            3352,
+            134,
+            868,
+            187,
+            4,
+            2
+          ],
+          "eos": true
+        },
+        "exact": false
+      },
+      {
+        "scene": "Earlier, Iris had seen a blue marble near the basket. Iris had a red car parked outside the shop.",
+        "user": "Iris finished the lemonade and went outside.",
+        "response": "Iris climbed into the red car.",
+        "source": "authored",
+        "family": 5,
+        "split": "validation",
+        "generated": {
+          "text": "The red car was gone because it was now in the cupboard.",
+          "ids": [
+            34,
+            281,
+            174,
+            11,
+            569,
+            209,
+            12,
+            11,
+            309,
+            20,
+            8,
+            1935,
+            4,
+            2
+          ],
+          "eos": true
+        },
+        "exact": false
+      },
+      {
+        "scene": "Earlier, Theo had seen a gold ring near the coat pocket. Theo put the blue marble in the basket. Owen watched carefully.",
+        "user": "Owen opened the basket.",
+        "response": "Owen found the blue marble inside.",
+        "source": "authored",
+        "family": 0,
+        "split": "validation",
+        "generated": {
+          "text": "George found the blue marble inside.",
+          "ids": [
+            2139,
+            122,
+            8,
+            359,
+            3217,
+            187,
+            4,
+            2
+          ],
+          "eos": true
+        },
+        "exact": false
+      },
+      {
+        "scene": "Earlier, Theo had seen a blue marble near the wooden box. Theo had a black car parked outside the shop.",
+        "user": "Theo finished the lemonade and went outside.",
+        "response": "Theo climbed into the black car.",
+        "source": "authored",
+        "family": 5,
+        "split": "validation",
+        "generated": {
+          "text": "The black car was gone because it was now in the drawer.",
+          "ids": [
+            34,
+            786,
+            174,
+            11,
+            569,
+            209,
+            12,
+            11,
+            309,
+            20,
+            8,
+            1960,
+            4,
+            2
+          ],
+          "eos": true
+        },
+        "exact": false
+      },
+      {
+        "scene": "Earlier, Owen had seen a small stone near the drawer. Owen put the blue marble in the cupboard. Nora watched carefully.",
+        "user": "Nora opened the cupboard.",
+        "response": "Nora found the blue marble inside.",
+        "source": "authored",
+        "family": 0,
+        "split": "validation",
+        "generated": {
+          "text": "drawer found the blue marble inside.",
+          "ids": [
+            1960,
+            122,
+            8,
+            359,
+            3217,
+            187,
+            4,
+            2
+          ],
+          "eos": true
+        },
+        "exact": false
+      },
+      {
+        "scene": "Earlier, Nora had seen a brass key near the bag. Nora had a yellow car parked outside the shop.",
+        "user": "Nora finished the lemonade and went outside.",
+        "response": "Nora climbed into the yellow car.",
+        "source": "authored",
+        "family": 5,
+        "split": "validation",
+        "generated": {
+          "text": "Urass key was gone because it was now in the bag.",
+          "ids": [
+            4665,
+            845,
+            3352,
+            134,
+            868,
+            11,
+            569,
+            209,
+            12,
+            11,
+            309,
+            20,
+            8,
+            598,
+            4,
+            2
+          ],
+          "eos": true
+        },
+        "exact": false
+      },
+      {
+        "scene": "Earlier, Theo had seen a paper flower near the wooden box. Theo put the red ribbon in the bag. Nora watched carefully.",
+        "user": "Nora opened the bag.",
+        "response": "Nora found the red ribbon inside.",
+        "source": "authored",
+        "family": 0,
+        "split": "validation",
+        "generated": {
+          "text": "The red ribbon was gone because it was now in the bag.",
+          "ids": [
+            34,
+            281,
+            2672,
+            11,
+            569,
+            209,
+            12,
+            11,
+            309,
+            20,
+            8,
+            598,
+            4,
+            2
+          ],
+          "eos": true
+        },
+        "exact": false
+      },
+      {
+        "scene": "Earlier, Theo had seen a blue marble near the cupboard. Theo had a green car parked outside the shop.",
+        "user": "Theo finished the lemonade and went outside.",
+        "response": "Theo climbed into the green car.",
+        "source": "authored",
+        "family": 5,
+        "split": "validation",
+        "generated": {
+          "text": "The green car was very the green car in the cupboard.",
+          "ids": [
+            34,
+            440,
+            174,
+            11,
+            38,
+            8,
+            440,
+            174,
+            20,
+            8,
+            1935,
+            4,
+            2
+          ],
+          "eos": true
+        },
+        "exact": false
+      },
+      {
+        "scene": "Earlier, Nora had seen a wooden whistle near the drawer. Nora put the brass key in the wooden box. Theo watched carefully.",
+        "user": "Theo opened the wooden box.",
+        "response": "Theo found the brass key inside.",
+        "source": "authored",
+        "family": 0,
+        "split": "validation",
+        "generated": {
+          "text": "The brass key was gone because it was now in the wooden box.",
+          "ids": [
+            34,
+            3956,
+            845,
+            3352,
+            134,
+            868,
+            11,
+            569,
+            209,
+            12,
+            11,
+            309,
+            20,
+            8,
+            3409,
+            217,
+            4,
+            2
+          ],
+          "eos": true
+        },
+        "exact": false
+      },
+      {
+        "scene": "Earlier, Owen had seen a red ribbon near the coat pocket. Owen had a red car parked outside the shop.",
+        "user": "Owen finished the lemonade and went outside.",
+        "response": "Owen climbed into the red car.",
+        "source": "authored",
+        "family": 5,
+        "split": "validation",
+        "generated": {
+          "text": "Urass key was gone because it was now in the cupboard.",
+          "ids": [
+            4665,
+            845,
+            3352,
+            134,
+            868,
+            11,
+            569,
+            209,
+            12,
+            11,
+            309,
+            20,
+            8,
+            1935,
+            4,
+            2
+          ],
+          "eos": true
+        },
+        "exact": false
+      },
+      {
+        "scene": "Earlier, Owen had seen a brass key near the basket. Owen put the red ribbon in the coat pocket. Iris watched carefully.",
+        "user": "Iris opened the coat pocket.",
+        "response": "Iris found the red ribbon inside.",
+        "source": "authored",
+        "family": 0,
+        "split": "validation",
+        "generated": {
+          "text": "The red ribbon was gone because it was now in the coat pocket.",
+          "ids": [
+            34,
+            281,
+            2672,
+            11,
+            569,
+            209,
+            12,
+            11,
+            309,
+            20,
+            8,
+            1067,
+            884,
+            4,
+            2
+          ],
+          "eos": true
+        },
+        "exact": false
+      },
+      {
+        "scene": "Earlier, Theo had seen a silver coin near the drawer. Theo had a blue car parked outside the shop.",
+        "user": "Theo finished the lemonade and went outside.",
+        "response": "Theo climbed into the blue car.",
+        "source": "authored",
+        "family": 5,
+        "split": "validation",
+        "generated": {
+          "text": "The blue car was gone because it was now in the drawer.",
+          "ids": [
+            34,
+            359,
+            174,
+            11,
+            569,
+            209,
+            12,
+            11,
+            309,
+            20,
+            8,
+            1960,
+            4,
+            2
+          ],
+          "eos": true
+        },
+        "exact": false
+      },
+      {
+        "scene": "Earlier, Nora had seen a silver coin near the drawer. Nora put the small stone in the cupboard. Owen watched carefully.",
+        "user": "Owen opened the cupboard.",
+        "response": "Owen found the small stone inside.",
+        "source": "authored",
+        "family": 0,
+        "split": "validation",
+        "generated": {
+          "text": "George found the small stone inside.",
+          "ids": [
+            2139,
+            122,
+            8,
+            212,
+            1143,
+            187,
+            4,
+            2
+          ],
+          "eos": true
+        },
+        "exact": false
+      },
+      {
+        "scene": "Earlier, Nora had seen a small stone near the coat pocket. Nora had a red car parked outside the shop.",
+        "user": "Nora finished the lemonade and went outside.",
+        "response": "Nora climbed into the red car.",
+        "source": "authored",
+        "family": 5,
+        "split": "validation",
+        "generated": {
+          "text": "cupboard climbed into the red car.",
+          "ids": [
+            1935,
+            648,
+            179,
+            8,
+            281,
+            174,
+            4,
+            2
+          ],
+          "eos": true
+        },
+        "exact": false
+      },
+      {
+        "scene": "Earlier, Owen had seen a red ribbon near the drawer. Owen put the brass key in the bag. Iris watched carefully.",
+        "user": "Iris opened the bag.",
+        "response": "Iris found the brass key inside.",
+        "source": "authored",
+        "family": 0,
+        "split": "validation",
+        "generated": {
+          "text": "The brass key was gone because it was now in the drawer.",
+          "ids": [
+            34,
+            3956,
+            845,
+            3352,
+            134,
+            868,
+            11,
+            569,
+            209,
+            12,
+            11,
+            309,
+            20,
+            8,
+            1960,
+            4,
+            2
+          ],
+          "eos": true
+        },
+        "exact": false
+      },
+      {
+        "scene": "Earlier, Owen had seen a wooden whistle near the cupboard. Owen had a red car parked outside the shop.",
+        "user": "Owen finished the lemonade and went outside.",
+        "response": "Owen climbed into the red car.",
+        "source": "authored",
+        "family": 5,
+        "split": "validation",
+        "generated": {
+          "text": "Urass key was gone because it was now in the cupboard.",
+          "ids": [
+            4665,
+            845,
+            3352,
+            134,
+            868,
+            11,
+            569,
+            209,
+            12,
+            11,
+            309,
+            20,
+            8,
+            1935,
+            4,
+            2
+          ],
+          "eos": true
+        },
+        "exact": false
+      }
+    ]
+  }
+}

@@ -1,5 +1,5 @@
 {
-  "status": "TRAINING",
+  "status": "PASS",
   "directory": "results/StageOne_20261117T033002Z",
   "dataset": {
     "format": "stage-one-v1",
@@ -51,5 +51,12 @@
   "seconds": 14400,
   "reserve_gib": 0.5,
   "initial_validation_nats_per_target": 4.461606338702017,
-  "choices": "Authored fact-sensitive templates plus natural TinyStories continuations, Scene/User/Reply labels, lr1e-4 to1e-5, warmup100, reply48, fresh optimizer, best-validation deployment. Timing starts at first training step and includes periodic validation/saves."
+  "choices": "Authored fact-sensitive templates plus natural TinyStories continuations, Scene/User/Reply labels, lr1e-4 to1e-5, warmup100, reply48, fresh optimizer, best-validation deployment. Timing starts at first training step and includes periodic validation/saves.",
+  "phase_seconds": 14408.276254599998,
+  "updates": 108794,
+  "best_update": 13698,
+  "best_validation_loss": 2.7838909090784,
+  "selection": "Minute30 validation-loss checkpoint is deployed. Later checkpoints have higher validation loss.",
+  "quality_findings": "Greedy EOS termination works. The brass-key prompt receives an irrelevant generic continuation. The saved response probes include incorrect character names and facts. Stage1 behavioral criteria are not established by the loss reduction.",
+  "generation_comparison_scope": "60 held-out authored examples from families0 and5. Exact match is a strict template diagnostic, not a semantic quality score. Both best/final emit EOS on all60; neither exactly matches a target."
 }

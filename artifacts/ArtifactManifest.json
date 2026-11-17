@@ -236,6 +236,135 @@
         }
       ],
       "needed_for_chat": false
+    },
+    {
+      "file": "model_assets/stage-one.pt",
+      "bytes": 20477429,
+      "sha256": "86119fdb30963664db4517a48a3f117d05cbca9f9aaad0333a7a14791c921726",
+      "parts": [
+        {
+          "path": "artifacts/checkpoint-parts/71d7601a3f839a9b9cc4b2f9fbba0589275d9a11.bin",
+          "bytes": 4194304,
+          "sha256": "c91fb99ed00b007ad9357e1e5b014884069d87fa187abed2296463055d2f8780"
+        },
+        {
+          "path": "artifacts/checkpoint-parts/855df14aed724567e488eb071c34df533943d4e5.bin",
+          "bytes": 4194304,
+          "sha256": "f82c15422fd93f5fa0c5ac28157bb7f8c8ab7a53083946fd4dab1e94577631a2"
+        },
+        {
+          "path": "artifacts/checkpoint-parts/76ccd04fb7d86c6aaf5ff5a4a99f9d3f16d4e448.bin",
+          "bytes": 4194304,
+          "sha256": "f9b21e17189c038f368ed620bc362b08a570bb1cbd20904ecfaa16a0923f29f5"
+        },
+        {
+          "path": "artifacts/checkpoint-parts/a77008274c8afb4cca44e3f042496edbdc18177f.bin",
+          "bytes": 4194304,
+          "sha256": "f24ee5fe72b004c1c8f27f7343b7a69977067eadad6698667e4730cc5cb236bb"
+        },
+        {
+          "path": "artifacts/checkpoint-parts/cead970916b03245b459bd0d7c3d3a2b64ea31dc.bin",
+          "bytes": 3700213,
+          "sha256": "6e5eff54a57a8d76edf7e3c9a551f4a2076f860656c6bd8943d69d823eb0a559"
+        }
+      ],
+      "needed_for_chat": true
+    },
+    {
+      "file": "results/StageOne_20261117T033002Z/latest.pt",
+      "bytes": 61560129,
+      "sha256": "358213b54ca4aebffba59a81e08133b15712afa012427664b86314cf13e88a94",
+      "parts": [
+        {
+          "path": "artifacts/checkpoint-parts/f05c0e0c648793060eebec212a2b52c48194d33a.bin",
+          "bytes": 4194304,
+          "sha256": "e813e63bf32088d58dcfd39a22adc501b6a8bcfc6dedfdfeeea16bbc69dff355"
+        },
+        {
+          "path": "artifacts/checkpoint-parts/1deccb7207111cba03750b251a9ef115b4086827.bin",
+          "bytes": 4194304,
+          "sha256": "eb97e003939a74112e6465516653fa167eba8a119c904719163c41656ebbc0df"
+        },
+        {
+          "path": "artifacts/checkpoint-parts/01e6678b6e1720584468227fd011c49baf669986.bin",
+          "bytes": 4194304,
+          "sha256": "734f92ece0b324e21541ac4f88592e4553b3cb43dbe79defc7ecf09e0bebac35"
+        },
+        {
+          "path": "artifacts/checkpoint-parts/bb2477789c86f3095d8d268b1b561cc6ff6bf7a5.bin",
+          "bytes": 4194304,
+          "sha256": "b09c4c2b31c78abfa2e8f06f8872cc83aa1f473208d8f2691decc9b00fcad2f3"
+        },
+        {
+          "path": "artifacts/checkpoint-parts/889876afad38431f3199a944e70492f5baaf81b1.bin",
+          "bytes": 4194304,
+          "sha256": "f18e815aee1e78972d48a9f82f710b41d1c940a2648d6b93536efd4bba349190"
+        },
+        {
+          "path": "artifacts/checkpoint-parts/6f0830ed3d244e750954b6e9762f9d0faa1c54a7.bin",
+          "bytes": 4194304,
+          "sha256": "ee5007966ab61ce0f04f3a41768ffffe44ce35c8716c68ffd59912670b3708ea"
+        },
+        {
+          "path": "artifacts/checkpoint-parts/874cac6c49f2631975c88d7c120870f715b1c001.bin",
+          "bytes": 4194304,
+          "sha256": "5968066191e2242d063454b3ef4f1eeb495fd417cca6a6f98ecaab57768bea82"
+        },
+        {
+          "path": "artifacts/checkpoint-parts/27a1ff1082c605347a8db0df2a9219d33cec1d8f.bin",
+          "bytes": 4194304,
+          "sha256": "3b752f2068a3c286cc54383da24801d8a188e99d6981244e81a137e6fdd82084"
+        },
+        {
+          "path": "artifacts/checkpoint-parts/017ddb92ef868cad63c2e80825884877508f8417.bin",
+          "bytes": 4194304,
+          "sha256": "c6b623778deef35ae0165e05e5758108bf229820fe8e6c1c15d94d7be81c5aa5"
+        },
+        {
+          "path": "artifacts/checkpoint-parts/d942aa4e041c4e2de1d6264204cd4b0d33bd5398.bin",
+          "bytes": 4194304,
+          "sha256": "0e50b51ae23d7ee949028453a1d4b42aefe3fa34296afa74d56139173abb66b0"
+        },
+        {
+          "path": "artifacts/checkpoint-parts/886e22a3ffe161fca21d642055e3a7d8d513b512.bin",
+          "bytes": 4194304,
+          "sha256": "2c51e115aec8e7091050e2d26108cc2718c8cb68c3e49754a8eb94b182827b98"
+        },
+        {
+          "path": "artifacts/checkpoint-parts/612429367476ff2f47c9755cf7d254406c650264.bin",
+          "bytes": 4194304,
+          "sha256": "5a5331796c10cf383dc811010e3a3a85135b9fee034615c3baaf1d08d14fac2d"
+        },
+        {
+          "path": "artifacts/checkpoint-parts/e02ef75208d234bdc5d15724cbeea57818cdf4c9.bin",
+          "bytes": 4194304,
+          "sha256": "30990ecd2d550ac4920fdcd4901c0a4e806ce1f0d8c833aaa3bcead83944d76f"
+        },
+        {
+          "path": "artifacts/checkpoint-parts/951728a4e7798ff1f61a9ac9374896faba332f3a.bin",
+          "bytes": 4194304,
+          "sha256": "e0b5beca9d4833ebb007b73735c1f81be79104bb87967a1dd253733d94e7afb7"
+        },
+        {
+          "path": "artifacts/checkpoint-parts/9f625ff935860707c7a95e51112f751a5f4a7573.bin",
+          "bytes": 2839873,
+          "sha256": "f883fe01a7255efbe68e6a3f83ca9b5dcb46fdc0625bd9fd550e9d2b42b294a5"
+        }
+      ],
+      "needed_for_chat": false
+    },
+    {
+      "file": "results/StageOne_Artifacts.zip",
+      "bytes": 3872028,
+      "sha256": "3362dea4b234b1b3fd998ce09a3f035a086fdc270fe273c80b199fff37c6543a",
+      "parts": [
+        {
+          "path": "artifacts/log-parts/5322c70b5197f8b8c6efcd6fb4170be3acaf1348.bin",
+          "bytes": 3872028,
+          "sha256": "3362dea4b234b1b3fd998ce09a3f035a086fdc270fe273c80b199fff37c6543a"
+        }
+      ],
+      "needed_for_chat": false
     }
   ],
   "tokenizer": {
@@ -244,5 +373,10 @@
     "sha256": "1e24618cd0587e3ee07a5a2dc7e5673d8b44d30e197ac8050d52dde95ef1b939"
   },
   "scope": "Selected and final five-hour full optimizer checkpoints plus deployed inference weights; all study and prior efficiency reports/logs packaged. All intermediate source/QA/training checkpoints remain local with hashes in the inventory. Published weights are byte-exact.",
-  "restore": "RunChat.cmd restores deployment weights and tokenizer automatically. tools/restore_published_artifacts.py --all restores all listed checkpoints and the log archive."
+  "restore": "RunChat.cmd restores deployment weights and tokenizer automatically. tools/restore_published_artifacts.py --all restores all listed checkpoints and the log archive.",
+  "stage_one": {
+    "run": "results/StageOne_20261117T033002Z",
+    "restore_data": "Restore --all, then extract results/StageOne_Artifacts.zip at the project root.",
+    "summary": "results/StageOne_Results.json"
+  }
 }
