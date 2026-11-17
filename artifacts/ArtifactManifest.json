@@ -365,6 +365,39 @@
         }
       ],
       "needed_for_chat": false
+    },
+    {
+      "file": "results/StageOne_20261117T033002Z/best.pt",
+      "bytes": 20477429,
+      "sha256": "86119fdb30963664db4517a48a3f117d05cbca9f9aaad0333a7a14791c921726",
+      "parts": [
+        {
+          "path": "artifacts/checkpoint-parts/71d7601a3f839a9b9cc4b2f9fbba0589275d9a11.bin",
+          "bytes": 4194304,
+          "sha256": "c91fb99ed00b007ad9357e1e5b014884069d87fa187abed2296463055d2f8780"
+        },
+        {
+          "path": "artifacts/checkpoint-parts/855df14aed724567e488eb071c34df533943d4e5.bin",
+          "bytes": 4194304,
+          "sha256": "f82c15422fd93f5fa0c5ac28157bb7f8c8ab7a53083946fd4dab1e94577631a2"
+        },
+        {
+          "path": "artifacts/checkpoint-parts/76ccd04fb7d86c6aaf5ff5a4a99f9d3f16d4e448.bin",
+          "bytes": 4194304,
+          "sha256": "f9b21e17189c038f368ed620bc362b08a570bb1cbd20904ecfaa16a0923f29f5"
+        },
+        {
+          "path": "artifacts/checkpoint-parts/a77008274c8afb4cca44e3f042496edbdc18177f.bin",
+          "bytes": 4194304,
+          "sha256": "f24ee5fe72b004c1c8f27f7343b7a69977067eadad6698667e4730cc5cb236bb"
+        },
+        {
+          "path": "artifacts/checkpoint-parts/cead970916b03245b459bd0d7c3d3a2b64ea31dc.bin",
+          "bytes": 3700213,
+          "sha256": "6e5eff54a57a8d76edf7e3c9a551f4a2076f860656c6bd8943d69d823eb0a559"
+        }
+      ],
+      "needed_for_chat": false
     }
   ],
   "tokenizer": {

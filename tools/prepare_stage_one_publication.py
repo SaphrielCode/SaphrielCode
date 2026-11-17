@@ -60,6 +60,11 @@ def main():
                 paths.append(path.relative_to(ROOT).as_posix())
         specs.append(dict(file=source.relative_to(ROOT).as_posix(), bytes=source.stat().st_size,
                           sha256=digest(source), parts=parts, needed_for_chat=needed))
+    # Recovery also needs the selected best weights at the original run path.
+    # Reuse the exact same artifact parts as the deployed inference checkpoint.
+    best_alias = dict(specs[0], file=(run / 'best.pt').relative_to(ROOT).as_posix(),
+                      needed_for_chat=False)
+    specs.append(best_alias)
     replaced = {entry['file'] for entry in specs}
     manifest['files'] = [entry for entry in manifest['files'] if entry['file'] not in replaced] + specs
     manifest['stage_one'] = dict(run=run.relative_to(ROOT).as_posix(),
