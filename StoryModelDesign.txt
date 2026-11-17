@@ -111,6 +111,17 @@ Keep separate FFN weights for each layer and the existing SwiGLU structure. Comp
 The supplied recommendation reports that the earlier 128-token comparison achieved better TinyStories validation loss and a shorter training run with SwiGLU than with equal-parameter GELU. This rationale refers to that earlier comparison.
 Project evidence has yet to establish where varying width by layer would help. Additional internal layers, cross-layer FFN weight sharing, and token routing remain outside the selected structure.
 
+Residual connections
+Keep two standard residual additions per block, one after attention and one after the FFN. Each sublayer adds its update to the token representation it received.
+Keep the existing smaller-scale initialization for the attention output and FFN output projections.
+
+Normalization
+Keep RMSNorm before attention and before the FFN, plus a final RMSNorm before token prediction. This retains the layout used in the earlier laptop training.
+
+Depth and model width
+Keep eight transformer blocks at width 192 for this run.
+Six blocks remain a possible compute-reduction comparison. Whether the additional examples processed would compensate for reduced depth remains unmeasured.
+
 7. INPUT REPRESENTATIONS
 Tokenizer
 Reuse the existing tokenizer, vocabulary, and tokenization rules, including when initializing model weights from scratch.
