@@ -1,3 +1,8 @@
+SHORT STORY REDESIGN, 2026-11-16
+Read StoryModelDesign.txt and LearningTask.txt for the current requirements and staged learning goals.
+The redesign selects SwiGLU with intermediate width 512 in all eight layers and separate FFN weights per layer. Width 384 is a candidate for reducing compute.
+Remaining training choices are pending. Commands below describe the existing implementation and earlier experiments.
+
 APPROVED PRODUCTION BASELINE
 Use WorkingSelection.json and DataEval.txt for the current parameter selection.
 Architecture: lm.production.Decoder(seed=42), 8layers/width192/6heads,

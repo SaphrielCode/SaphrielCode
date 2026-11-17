@@ -1,0 +1,106 @@
+SHORT STORY TRANSFORMER
+Working redesign specification, 2026-11-16
+
+1. PROBLEM
+A person wants to generate short stories by asking for unique prompts, co-creating a story with the model, or having the model generate a story on its own. The user can switch between these in a single session. For example, they can ask for mystery ideas, pick one, write the opening, and ask the model to finish.
+
+2. MODEL GOAL
+Invent a new story from a request, or advance the current story when the user delegates the next turn.
+
+Unique prompts
+Offer a premise specific enough to write from. When asked for another idea, vary a meaningful part of the premise, such as its conflict or setting.
+
+Unclear input
+Ask a brief, specific question when the input and recent context give too little information to proceed. A fragment can be usable fiction. "The red door." gives the model something to work with. Even "U" can be meaningful if the story just introduced a door marked with that letter.
+
+Context
+Preserve established characters, facts, and events that matter to the next turn. Carry forward relevant details supplied by either writer. Recognize when the user wants to wrap up. Reset relevant context when they explicitly start a new story or concept.
+
+3. SUCCESS CRITERIA
+The following examples illustrate successful behavior. Exact wording is flexible.
+
+a. Unclear input
+In a fresh session, "U" can receive "Would you like a writing idea or help starting a scene?"
+"Greet more dish pickle" can receive "Is that a line you want me to build on, or would you like a writing idea?"
+Ask for the missing direction in a way the user can answer.
+
+b. User contributes prose
+Treat a sensible sentence as part of the story when it contains no clear request for a different action.
+"I would like a lemonade." can receive "The girl handed the customer a lemonade."
+"The customer drank the lemonade and got in their car." can receive "The car was red and had black leather seats."
+"Hi, my name is Molly." can receive "'Hello, Molly,' said George as he waved."
+Add a compatible detail or event. A small addition can satisfy the request.
+
+c. User asks for a story
+"Please tell me a story about a dog." can receive "Once upon a time there was a dog named Otis."
+"Please continue." can receive "Otis caught the smell of steak and followed it to the kitchen."
+Write in installments, advancing the same story across requests to continue. Recognize a natural ending.
+
+d. User asks for ideas
+"I want to write a mystery novel. Help me generate some ideas." should receive a usable premise fitting that genre.
+"I don't know what I want to write about. Generate an idea for me." can receive a usable premise or opening line.
+A follow-up that selects an idea develops that premise. A request for another idea meaningfully varies it.
+
+e. User hands off and takes back control
+After Molly introduces herself and George waves, "Then what?" can advance the scene with George picking up flowers and walking toward Molly.
+When the user next writes "Molly went to hug George", incorporate the hug and preserve relevant facts, including the flowers George was holding.
+Distinguish user prose from requests to generate the next event.
+
+f. User starts, continues, or ends
+"End this story" closes the current scene and resolves its immediate action.
+"New story about a fox" starts a fresh scene with its own characters and facts.
+Recognize a new concept and requests to expand the current concept.
+
+g. Complete the requested beat
+Finish the requested sentence or story beat within the generation budget. Preserve the earlier facts needed to make it coherent. A story can span multiple replies.
+
+4. HARDWARE CONSTRAINTS
+User-reported planning snapshot
+Laptop Lenovo, model code 82XM
+CPU AMD Ryzen 7 5825U, 8 cores and 16 threads
+GPU integrated AMD Radeon Graphics, Windows-reported 2 GiB graphics memory allocation
+System RAM 13.8 GiB usable by Windows, about 4 GiB available for training
+Storage about 50.7 GiB free on C:
+The attention recommendations below refer to a four-hour laptop run. Training allocation and schedule remain to be designed.
+
+5. LEARNING TASKS
+Stage 1. Build on the user's prose
+Given a short scene and the user's latest contribution, write one grammatical sentence that advances the scene and respects its established facts.
+Pass on an unseen scene when the sentence follows from the contribution. Changing a consequential fact should change the continuation appropriately.
+
+Stage 2. Start and continue a story
+Open a story on the requested subject. Advance it for "Then what?" or "Please continue." Incorporate user prose when the user contributes again.
+Pass when each reply completes one beat, relevant details carry between turns, and the user can hand off and take back the writing.
+
+Stage 3. End a story and start fresh
+Bring the story to a natural ending. Close it when asked. Start a separate story when requested.
+Pass when the ending resolves the immediate action and a new story establishes its own characters and facts.
+
+Stage 4. Brainstorm and develop ideas
+Offer a usable premise or opening line. Give a meaningfully different idea when asked. Expand the selected idea, or switch into storytelling when the user starts writing.
+Pass when ideas fit the request, follow-ups develop the selected premise, and the first story beat follows that premise.
+
+Stage 5. Clarify unclear input and handle mixed sessions
+Ask a brief, specific question when the message and recent context give too little direction. Interpret short fragments when context makes them usable. Practice switching among earlier behaviors within a session.
+Pass when a fresh-session "U" can prompt clarification, while "U" in a scene about a door marked U can advance the story. Include sessions that brainstorm, co-write, and finish.
+
+6. TRANSFORMER DESIGN
+Attention
+Use standard causal self-attention. Each token can attend to itself and all earlier tokens in the context window.
+Start at 128 tokens if the scene, user contribution, and target continuation fit. Use 256 if 128 would routinely cut out story details needed for learning.
+Keep six attention heads per layer, all with access to the full causal window.
+Keep rotary position embeddings (RoPE).
+Use no added distance penalty, allowing every head to use earlier details throughout the window.
+
+Feed Forward Network
+Use SwiGLU with intermediate width 512 as the starting configuration for the four-hour run. Width 384 is a candidate if compute needs to be reduced.
+Use the same intermediate width in all eight transformer layers.
+Keep separate FFN weights for each layer and the existing SwiGLU structure. Compute an input projection and a gate projection, apply SiLU to the gate, multiply their outputs elementwise, and project back to the model width.
+The supplied recommendation reports that the earlier 128-token comparison achieved better TinyStories validation loss and a shorter training run with SwiGLU than with equal-parameter GELU. This rationale refers to that earlier comparison.
+Project evidence has yet to establish where varying width by layer would help. Additional internal layers, cross-layer FFN weight sharing, and token routing remain outside the selected structure.
+
+7. DESIGN STATUS
+This document records the redesign supplied so far. The remaining architecture choices, training data format, objective details, optimizer settings, stage budgets, and numerical pass thresholds remain open.
+LearningTask.txt describes the staged curriculum. DataEval.txt and BenchmarkProtocol.txt retain the previous implementation and benchmark settings for reference.
+Existing next-token and auxiliary replacement-detection plans are earlier experimental proposals. Their role in this redesign remains to be decided.
+

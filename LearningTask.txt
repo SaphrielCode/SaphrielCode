@@ -1,3 +1,20 @@
+SHORT STORY LEARNING TASKS
+Working redesign, 2026-11-16
+
+Use StoryModelDesign.txt Sections 3 and 5 for the current behavioral requirements, staged learning tasks, and pass descriptions.
+
+1. Build on the user's prose with one grammatical sentence that advances the scene and respects its facts.
+2. Start and continue a story, incorporating user prose and requests to hand off the next beat.
+3. End a story naturally or on request, and start a fresh story with its own characters and facts.
+4. Brainstorm usable ideas, vary premises meaningfully, develop the selected idea, and transition into prose.
+5. Clarify input when context gives too little direction, interpret usable fragments, and handle mixed sessions.
+
+Each response should finish the requested sentence or beat within its generation budget. Evaluate on unseen scenes, including cases where a consequential fact changes. Exact example wording is flexible.
+The training implementation, objectives, data format, stage budgets, and numerical pass thresholds for this curriculum remain open.
+
+EARLIER EXPERIMENT PROPOSAL
+The proposal below is retained for reference. Its role in the redesign remains to be decided.
+
 Train a transformer from scratch using **next-token prediction** as its primary learning objective. Then train it on instruction/response examples to develop useful response behavior.
 
 Experiment with **replacement detection as an auxiliary objective**, measuring whether it improves learning efficiency without reducing generation quality.

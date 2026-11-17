@@ -1,3 +1,7 @@
+REDESIGN STATUS, 2026-11-16
+Use StoryModelDesign.txt for the current behavioral pass criteria and attention decisions, and LearningTask.txt for the staged curriculum.
+The procedures below belong to the earlier benchmark plan. The redesigned training schedule and numerical stage thresholds remain open.
+
 BENCHMARK AND EVALUATION PROTOCOL
 
 Planned procedures only. Store every test result and finding in its own file under results/. DataEval.txt defines working transformer parameters.

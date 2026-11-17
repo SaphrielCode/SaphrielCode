@@ -1,3 +1,8 @@
+REDESIGN STATUS, 2026-11-16
+StoryModelDesign.txt defines the current short-story requirements and attention decisions. LearningTask.txt defines the staged learning goals.
+The redesign selects SwiGLU with intermediate width 512 in all eight layers and separate FFN weights per layer. Width 384 is a candidate for reducing compute.
+The settings below describe the existing implementation and earlier benchmark work. The redesigned training setup remains pending.
+
 WORKING TRANSFORMER PARAMETERS
 
 Saphriel laptop language model
