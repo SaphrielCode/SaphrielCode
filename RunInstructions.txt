@@ -1,3 +1,12 @@
+MUON PLUS ADAMW, 2026-11-18
+New Stage 1 runs default to Muon on transformer hidden matrices and AdamW on tied embeddings and RMSNorm vectors.
+To adapt the deployed Stage 1 weights using fresh hybrid optimizer state:
+  .venv-data\Scripts\python.exe tools/train_stage_one.py --checkpoint model_assets/stage-one.pt --optimizer muon-adamw --seconds 14400 --reserve-gib .5
+To begin with the TinyStories reference weights, omit --checkpoint.
+To reproduce the earlier AdamW setup, select --optimizer adamw.
+Resume with --resume results/<run>/latest.pt. The script restores the saved optimizer type automatically, including older AdamW checkpoints. Both Muon and AdamW states are saved for hybrid runs.
+Weights and Muon orthogonalization use FP32. This CPU implementation avoids the slow native BF16 orthogonalization measured on this laptop.
+
 STAGE 1 CONTINUATION ADAPTATION
 Current run uses the compatible TinyStories checkpoint, 128-token context, batch4, eight threads, continuation-and-EOS-only loss, and a 0.5 GiB immediate available-system-RAM guard.
 Preparation is outside the four-hour phase. The phase includes periodic validation/checkpoint saves and stops after the last completed optimizer update.

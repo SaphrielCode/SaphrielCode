@@ -177,3 +177,12 @@ This document records the redesign supplied so far, including the Stage 1 output
 LearningTask.txt describes the staged curriculum. DataEval.txt and BenchmarkProtocol.txt retain the previous implementation and benchmark settings for reference.
 Existing next-token and auxiliary replacement-detection plans are earlier experimental proposals. Their role in this redesign remains to be decided.
 
+
+10. MUON PLUS ADAMW
+Current optimizer choice for new Stage 1 runs, 2026-11-18
+Use PyTorch Muon on the two-dimensional attention and SwiGLU matrices inside each transformer block. Use AdamW on the tied input/output embedding matrix and all RMSNorm vectors. Each parameter belongs to one optimizer.
+Use Muon momentum0.95, Nesterov momentum, five Newton-Schulz steps, weight decay0.1, and match_rms_adamw learning-rate scaling. AdamW retains betas0.9/0.95, epsilon1e-8, weight decay0.1 for embeddings and zero for normalization vectors.
+Apply the existing warmup/cosine base learning-rate schedule to both optimizers and clip the combined model gradient norm once before updating either optimizer. These are starting settings for comparison.
+Use the CPU FP32 Muon implementation in lm/optimizers.py. Model parameters, training activations, and Newton-Schulz orthogonalization stay FP32. It follows PyTorch Muon momentum, Nesterov, decoupled decay, quintic iteration, and match_rms_adamw equations. A real-model smoke update with native BF16 Muon took12.42seconds on this laptop, motivating FP32 orthogonalization. Reference math and checkpoint continuation are tested.
+New runs default to Muon+AdamW. A new run can load existing model weights with --checkpoint while creating fresh optimizer state. Resume restores the saved optimizer type and both hybrid states. Changing optimizer type uses a new run from model weights.
+The completed four-hour November17 experiment used AdamW. Its archived results retain that provenance. Muon+AdamW quality and sustained CPU throughput require a new measured training comparison.

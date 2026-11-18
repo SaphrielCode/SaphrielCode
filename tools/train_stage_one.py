@@ -20,7 +20,8 @@ os.environ.update(OMP_NUM_THREADS='8', MKL_NUM_THREADS='8', OPENBLAS_NUM_THREADS
 import torch
 from tokenizers import Tokenizer
 from lm.efficiency import EfficientDecoder, training_loss
-from lm.experimental_model import Config, make_optimizer, parameter_hash
+from lm.experimental_model import Config, parameter_hash
+from lm.optimizers import checkpoint_optimizer_kind, make_optimizer
 from lm.monitor import Monitor
 from lm.resource_guard import Policy
 from lm.stage_one import encode_example, generate
@@ -54,7 +55,13 @@ def main():
     parser.add_argument('--reserve-gib', type=float, default=.5)
     parser.add_argument('--out', type=Path)
     parser.add_argument('--resume', type=Path)
+    parser.add_argument('--checkpoint', type=Path,
+                        help='Starting weights for a new run with fresh optimizer state')
+    parser.add_argument('--optimizer', choices=('muon-adamw', 'adamw'),
+                        help='New runs default to Muon+AdamW; resume uses the saved optimizer')
     args = parser.parse_args()
+    if args.resume and args.checkpoint:
+        parser.error('Choose checkpoint weights for a new run or resume a saved run')
     if args.seconds <= 0 or args.reserve_gib <= 0:
         parser.error('Duration and RAM reserve must be positive')
     torch.set_num_threads(8)
@@ -78,7 +85,7 @@ def main():
                   hyperparameters=dict(batch=4, threads=8, learning_rate=1e-4,
                                        minimum_learning_rate=1e-5, warmup_updates=100,
                                        schedule='100-update warmup then elapsed-phase cosine',
-                                       optimizer='Fresh AdamW moments; betas .9/.95, eps1e-8, matrix decay .1, norm decay0, clip1',
+                                       optimizer=None,
                                        seed=42, order_seed=5301),
                   guard_authorization='User requested .5 GiB available RAM guard; immediate stop below .5 GiB. Existing 4 GiB process guard retained.')
     elapsed_before = 0.
@@ -90,8 +97,10 @@ def main():
     try:
         monitor.start()
         selection = json.loads((ROOT / 'WorkingSelection.json').read_text())
-        source = ROOT / selection['reference_checkpoint']
-        if digest(source) != selection['reference_checkpoint_sha256']:
+        source = (args.checkpoint or ROOT / selection['reference_checkpoint']).resolve()
+        if not source.is_relative_to(ROOT):
+            raise ValueError('Starting checkpoint must be inside the project')
+        if args.checkpoint is None and digest(source) != selection['reference_checkpoint_sha256']:
             raise ValueError('Starting checkpoint hash mismatch')
         data = ROOT / 'data/StageOne_v1'
         manifest = json.loads((data / 'manifest.json').read_text())
@@ -120,10 +129,26 @@ def main():
             raise ValueError('Checkpoint parameter hash mismatch')
         if checkpoint['tokenizer_sha256'] != tokenizer_hash:
             raise ValueError('Checkpoint tokenizer mismatch')
-        optimizer = make_optimizer(model)
-        report.update(source_checkpoint=selection['reference_checkpoint'],
+        saved_kind = checkpoint_optimizer_kind(checkpoint['optimizer']) if args.resume else None
+        optimizer_kind = args.optimizer or saved_kind or 'muon-adamw'
+        if args.resume and optimizer_kind != saved_kind:
+            raise ValueError('Resume must use the saved optimizer. Use a new run to change optimizers.')
+        optimizer = make_optimizer(model, optimizer_kind)
+        report['hyperparameters']['optimizer'] = optimizer_kind
+        report['hyperparameters']['optimizer_settings'] = dict(
+            weight_decay=.1, normalization_weight_decay=0., clipping=1.,
+            adamw_betas=[.9, .95], adamw_epsilon=1e-8)
+        if optimizer_kind == 'muon-adamw':
+            report['hyperparameters']['optimizer_settings'].update(
+                muon_momentum=.95, muon_nesterov=True, muon_ns_steps=5,
+                muon_lr_adjustment='match_rms_adamw',
+                muon_internal_orthogonalization_dtype='float32',
+                muon_implementation='lm.optimizers.MuonFP32')
+            report['optimizer_parameter_names'] = optimizer.parameter_names
+        report.update(source_checkpoint=source.relative_to(ROOT).as_posix(),
                       source_checkpoint_sha256=digest(source),
-                      source_parameter_sha256=selection['reference_parameter_sha256'],
+                      source_parameter_sha256=checkpoint['parameter_sha256'],
+                      torch_version=str(torch.__version__),
                       tokenizer_sha256=tokenizer_hash, dataset_manifest_sha256=digest(data / 'manifest.json'),
                       dataset=manifest, context=context, parameters=sum(p.numel() for p in model.parameters()))
         if args.resume:
