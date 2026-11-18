@@ -1,3 +1,8 @@
+SHORT OPTIMIZER COMPARISON
+Split a15-minute training budget equally between AdamW and Muon+AdamW, from the same Stage1 weights. Preparation and evaluation add wall time.
+  .venv-data\Scripts\python.exe tools/compare_stage_optimizers.py --total-seconds 900
+Use --validation-only for optimizer selection runs. This excludes the final test split.
+
 MUON PLUS ADAMW, 2026-11-18
 New Stage 1 runs default to Muon on transformer hidden matrices and AdamW on tied embeddings and RMSNorm vectors.
 To adapt the deployed Stage 1 weights using fresh hybrid optimizer state:

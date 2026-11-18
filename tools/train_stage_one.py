@@ -59,6 +59,8 @@ def main():
                         help='Starting weights for a new run with fresh optimizer state')
     parser.add_argument('--optimizer', choices=('muon-adamw', 'adamw'),
                         help='New runs default to Muon+AdamW; resume uses the saved optimizer')
+    parser.add_argument('--validation-only', action='store_true',
+                        help='Keep final test data out of optimizer comparisons')
     args = parser.parse_args()
     if args.resume and args.checkpoint:
         parser.error('Choose checkpoint weights for a new run or resume a saved run')
@@ -80,7 +82,7 @@ def main():
     report = dict(status='PREPARING', run_directory=str(out.relative_to(ROOT)),
                   started_utc=datetime.now(timezone.utc).isoformat(),
                   target_phase_seconds=args.seconds, phase_seconds=0., optimizer_seconds=0.,
-                  updates=0, valid_targets=0, epochs=0, validation=[],
+                  updates=0, valid_targets=0, epochs=0, validation=[], final_test_evaluated=False,
                   timing='Four hours from first training-step start, including periodic validation and checkpoint saves. Preparation and initial/final evaluation excluded. Stop at an update boundary.',
                   hyperparameters=dict(batch=4, threads=8, learning_rate=1e-4,
                                        minimum_learning_rate=1e-5, warmup_updates=100,
@@ -271,13 +273,15 @@ def main():
         del best
         probes('best')
         # Final test is opened only after validation selection is finished.
-        test_path = data / 'test.jsonl'
-        if digest(test_path) != manifest['files']['test.jsonl']:
-            raise ValueError('Test file changed')
-        test = [encode_example(tokenizer, json.loads(line), context)
-                for line in test_path.read_text(encoding='utf-8').splitlines()]
-        tensors['test'] = (torch.tensor([row[0] for row in test]), torch.tensor([row[1] for row in test]))
-        evaluate('test', 'selected_best_test')
+        if not args.validation_only:
+            test_path = data / 'test.jsonl'
+            if digest(test_path) != manifest['files']['test.jsonl']:
+                raise ValueError('Test file changed')
+            test = [encode_example(tokenizer, json.loads(line), context)
+                    for line in test_path.read_text(encoding='utf-8').splitlines()]
+            tensors['test'] = (torch.tensor([row[0] for row in test]), torch.tensor([row[1] for row in test]))
+            evaluate('test', 'selected_best_test')
+            report['final_test_evaluated'] = True
         restored = torch.load(out / 'best.pt', map_location='cpu', weights_only=True)
         check = EfficientDecoder(Config(**restored['config']))
         check.load_state_dict(restored['model'], strict=True)

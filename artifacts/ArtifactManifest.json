@@ -398,6 +398,85 @@
         }
       ],
       "needed_for_chat": false
+    },
+    {
+      "file": "results/MuonAdamW_Compare_20261118T212809Z/adamw/final.pt",
+      "bytes": 20477493,
+      "sha256": "ad1745d080eb46e18cb70a5325e0730de6cb2029e6d945d12dfb8fa02710c5c6",
+      "parts": [
+        {
+          "path": "artifacts/checkpoint-parts/8ef66c825c382756adac05024463aa97f4b49c29.bin",
+          "bytes": 4194304,
+          "sha256": "ae5e3cfba9090d5ab0a6df97d5fc7d85e9956055f89c38bf8381a1c26d374acc"
+        },
+        {
+          "path": "artifacts/checkpoint-parts/900f57ebb3b7dae8571743e3500d5af3751ab2be.bin",
+          "bytes": 4194304,
+          "sha256": "347511abe4536e6940d8ae5ce40ed4fc944edc7498a4d077e38873d9e6051d61"
+        },
+        {
+          "path": "artifacts/checkpoint-parts/fc7d267d88c992effab2cef1458c6bf8b9a50b51.bin",
+          "bytes": 4194304,
+          "sha256": "406966f0e51b157d9bca3ab82899c1ae7bf9fe3a5506bed307204324e7f01042"
+        },
+        {
+          "path": "artifacts/checkpoint-parts/a5652c02e6b91f30e87fe3a5bf21c0f51708d359.bin",
+          "bytes": 4194304,
+          "sha256": "17c960d7a1b0f7333e62002c1085e1065b92183d546952c20c4578d9deb759d2"
+        },
+        {
+          "path": "artifacts/checkpoint-parts/4ba8f63a3664ea5c69f9fe20323a681829ecd585.bin",
+          "bytes": 3700277,
+          "sha256": "907baeb563f945355e6fbfb022d34d9add2fdda44fba4bcae757aa54820dc529"
+        }
+      ],
+      "needed_for_chat": false
+    },
+    {
+      "file": "results/MuonAdamW_Compare_20261118T212809Z/muon-adamw/final.pt",
+      "bytes": 20477493,
+      "sha256": "1b554f4bc6a7407c4b3f0d568f2ee300f70f03f92547d867f7991cb7742095f2",
+      "parts": [
+        {
+          "path": "artifacts/checkpoint-parts/50c91cb6746e6cc19926203afc2955005ecb99ed.bin",
+          "bytes": 4194304,
+          "sha256": "2747b259f3247dc464741e88eba5b37b21e4cbcc5395e8424b3bf9970b27d4d8"
+        },
+        {
+          "path": "artifacts/checkpoint-parts/ba49ac7a98bd883b3f52d2ddbbdce905f2d3bd42.bin",
+          "bytes": 4194304,
+          "sha256": "6e7d3ac5844e4015fd868a85a551b413486874d69922e6cbb78e5bc510339477"
+        },
+        {
+          "path": "artifacts/checkpoint-parts/5f07b9a20e23ab03183be58c732776188e3fedfa.bin",
+          "bytes": 4194304,
+          "sha256": "6e8b8b7cb0f211f9e642a14aee2717c4f10abdcdaf5a9bf78c7090776b74b8a7"
+        },
+        {
+          "path": "artifacts/checkpoint-parts/249fdc5d75766bad31d10a6526dd9cffcc6c73ab.bin",
+          "bytes": 4194304,
+          "sha256": "cad3396c737c0119373fda3405de2f39241216553449bf4e71e25616dcc2df65"
+        },
+        {
+          "path": "artifacts/checkpoint-parts/fce334419405b27610a05eecb29769f3ac109525.bin",
+          "bytes": 3700277,
+          "sha256": "f696fe09ed53cf0a1a388481bd13b17c76f696d3c77fdfdaf9d2b15bf3a6a5ea"
+        }
+      ],
+      "needed_for_chat": false
+    },
+    {
+      "file": "results/MuonAdamW_ComparisonArtifacts.zip",
+      "bytes": 46346,
+      "sha256": "bf668a84b59bdbf89f7334ec33df0aac406115c5847ebe3e55863aaeccdb1f82",
+      "parts": [
+        {
+          "path": "artifacts/log-parts/f51166522f039f65985a539bde439524b1db5caf.bin",
+          "bytes": 46346,
+          "sha256": "bf668a84b59bdbf89f7334ec33df0aac406115c5847ebe3e55863aaeccdb1f82"
+        }
+      ],
+      "needed_for_chat": false
     }
   ],
   "tokenizer": {
@@ -411,5 +490,10 @@
     "run": "results/StageOne_20261117T033002Z",
     "restore_data": "Restore --all, then extract results/StageOne_Artifacts.zip at the project root.",
     "summary": "results/StageOne_Results.json"
+  },
+  "muon_comparison": {
+    "summary": "results/MuonAdamW_Comparison.json",
+    "archive": "results/MuonAdamW_ComparisonArtifacts.zip",
+    "restore": "Restore --all and extract MuonAdamW_ComparisonArtifacts.zip at the project root."
   }
 }

@@ -1,0 +1,43 @@
+{
+  "status": "PASS",
+  "directory": "results/MuonAdamW_Compare_20261118T212809Z",
+  "total_requested_training_seconds": 900.0,
+  "seconds_per_optimizer": 450.0,
+  "comparison": "Equal elapsed training-phase budgets; same initial weights, data, order seed, batch, context, and base learning-rate schedule. Preparation and evaluation are outside the budget.",
+  "final_test_evaluated": false,
+  "runs": {
+    "adamw": {
+      "status": "PASS",
+      "updates": 2905,
+      "valid_targets": 146213,
+      "phase_seconds": 450.0646456000104,
+      "valid_targets_per_phase_second": 324.8711078051331,
+      "before_loss": 2.7838909090784,
+      "final_loss": 2.746269744912697,
+      "best_loss": 2.746269744912697,
+      "best_update": 2905,
+      "source_checkpoint_sha256": "86119fdb30963664db4517a48a3f117d05cbca9f9aaad0333a7a14791c921726",
+      "dataset_manifest_sha256": "5ad1fe9b372ea363282962a817ab6111d45a4db9b43b44398fe68f1db68418ce",
+      "final_test_evaluated": false,
+      "report": "results/MuonAdamW_Compare_20261118T212809Z/adamw/run.json"
+    },
+    "muon-adamw": {
+      "status": "PASS",
+      "updates": 1813,
+      "valid_targets": 91399,
+      "phase_seconds": 450.2500659999787,
+      "valid_targets_per_phase_second": 202.99608351418726,
+      "before_loss": 2.7838909090784,
+      "final_loss": 2.746617854538182,
+      "best_loss": 2.746617854538182,
+      "best_update": 1813,
+      "source_checkpoint_sha256": "86119fdb30963664db4517a48a3f117d05cbca9f9aaad0333a7a14791c921726",
+      "dataset_manifest_sha256": "5ad1fe9b372ea363282962a817ab6111d45a4db9b43b44398fe68f1db68418ce",
+      "final_test_evaluated": false,
+      "report": "results/MuonAdamW_Compare_20261118T212809Z/muon-adamw/run.json"
+    }
+  },
+  "loss_difference_muon_minus_adamw": 0.00034810962548492697,
+  "hybrid_to_adamw_target_throughput": 0.624851144460498,
+  "limitations": "One sequential run per optimizer, fixed shared starting rates, short adaptation horizon. Shared-template validation and next-token loss do not establish factual story continuity. No sustained quality conclusion from this comparison alone."
+}
