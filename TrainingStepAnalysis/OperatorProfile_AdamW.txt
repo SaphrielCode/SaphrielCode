@@ -1,0 +1,40 @@
+-------------------------------------------------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  
+                                                   Name    Self CPU %      Self CPU   CPU total %     CPU total  CPU time avg       CPU Mem  Self CPU Mem    # of Calls  
+-------------------------------------------------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  
+                                               aten::mm        23.34%     128.828ms        23.43%     129.310ms       1.051ms      78.32 MB      78.32 MB           123  
+                                              aten::mul        11.77%      64.970ms        12.00%      66.240ms     204.443us      89.98 MB      89.98 MB           324  
+                                              aten::bmm         5.09%      28.078ms         5.12%      28.230ms     588.116us      40.44 MB      40.44 MB            48  
+                                            aten::copy_         4.05%      22.324ms         4.05%      22.324ms      44.382us           0 B           0 B           503  
+                                       forward_and_loss         3.71%      20.502ms        42.19%     232.847ms     232.847ms      93.83 MB    -104.75 MB             1  
+                                               backward         3.32%      18.342ms        43.93%     242.433ms     242.433ms     -83.79 MB          -4 B             1  
+                                              aten::div         2.96%      16.357ms         3.58%      19.757ms     212.442us      45.38 MB      45.38 MB            93  
+                              Optimizer.step#AdamW.step         2.69%      14.843ms         9.98%      55.054ms      55.054ms           0 B     -20.08 MB             1  
+                                             aten::add_         2.14%      11.825ms         2.80%      15.459ms      78.470us           0 B        -464 B           197  
+                                              aten::add         1.99%      10.994ms         2.10%      11.578ms     196.240us      14.92 MB      14.92 MB            59  
+                                              aten::cat         1.93%      10.638ms         2.04%      11.252ms     450.063us      13.59 MB      13.59 MB            25  
+                    Optimizer.zero_grad#AdamW.zero_grad         1.87%      10.312ms         1.87%      10.312ms      10.312ms           0 B           0 B             1  
+                                             aten::mul_         1.59%       8.797ms         2.16%      11.914ms      75.885us           0 B        -396 B           157  
+                                              aten::sum         1.56%       8.617ms         1.64%       9.025ms     167.122us      54.74 KB      49.30 KB            54  
+                                             aten::sqrt         1.45%       8.009ms         1.45%       8.009ms     138.082us      10.04 MB      10.04 MB            58  
+                                              aten::sub         1.40%       7.744ms         1.40%       7.744ms     484.000us       2.72 MB       2.72 MB            16  
+                                     aten::masked_fill_         1.26%       6.948ms         1.26%       6.948ms     434.248us           0 B           0 B            16  
+                                              aten::pow         1.18%       6.485ms         1.48%       8.161ms     160.011us      11.60 MB      11.60 MB            51  
+       autograd::engine::evaluate_function: MmBackward0         1.14%       6.317ms        14.49%      79.964ms       1.950ms     -31.58 MB     -60.13 MB            41  
+                                         aten::_softmax         1.14%       6.308ms         1.14%       6.308ms     788.504us      14.78 MB      14.78 MB             8  
+                                         aten::_to_copy         1.09%       6.036ms         1.93%      10.625ms      27.813us      12.31 KB           0 B           382  
+autograd::engine::evaluate_function: EmbeddingBackwa...         1.05%       5.793ms         1.37%       7.560ms       7.560ms    -348.00 KB      -8.34 MB             1  
+                                            aten::fill_         0.95%       5.242ms         0.95%       5.242ms      56.974us           0 B           0 B            92  
+                           aten::_softmax_backward_data         0.90%       4.968ms         0.90%       4.968ms     620.981us      14.78 MB      14.78 MB             8  
+                                        aten::transpose         0.89%       4.914ms         1.10%       6.074ms      19.162us           0 B           0 B           317  
+                       aten::_log_softmax_backward_data         0.88%       4.845ms         0.88%       4.845ms       4.845ms      21.56 MB      21.56 MB             1  
+                                             aten::silu         0.87%       4.818ms         0.87%       4.818ms     602.233us       7.31 MB       7.31 MB             8  
+      autograd::engine::evaluate_function: MulBackward0         0.86%       4.733ms         7.12%      39.299ms     370.743us     -21.19 MB     -69.84 MB           106  
+                                         aten::addcdiv_         0.66%       3.623ms         0.66%       3.623ms      62.472us           0 B           0 B            58  
+                                    aten::silu_backward         0.65%       3.610ms         0.65%       3.610ms     451.272us       7.31 MB       7.31 MB             8  
+                                     aten::_log_softmax         0.64%       3.546ms         0.64%       3.546ms       3.546ms      21.56 MB      21.56 MB             1  
+                                          aten::reshape         0.64%       3.523ms         2.64%      14.589ms      45.450us      13.59 MB           0 B           321  
+                                                aten::t         0.63%       3.494ms         1.27%       7.006ms      34.176us           0 B           0 B           205  
+                                            aten::lerp_         0.61%       3.370ms         0.61%       3.370ms      58.112us           0 B           0 B            58  
+                                           aten::matmul         0.53%       2.913ms        15.58%      85.979ms       1.508ms      69.99 MB           0 B            57  
+-------------------------------------------------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  
+Self CPU time total: 551.862ms

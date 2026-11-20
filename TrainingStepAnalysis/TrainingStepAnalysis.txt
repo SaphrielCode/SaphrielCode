@@ -1,4 +1,6 @@
 TrainingStepAnalysis
+
+SECTION 1 - ORIGINAL MUON + ADAMW PROFILE
 Measured 2026-11-20T17:50:33.626690+00:00
 
 Finding: forward/loss, backward and the Muon update each consumed about one third of a complete step. Newton-Schulz accounted for about 91% of the Muon update. This identifies a substantial CPU optimizer cost; it does not establish which optimizer learns best.
@@ -25,3 +27,36 @@ Persistent tensor storage (MiB): parameters 10.04, buffers 0.66, gradients 10.04
 Limits: AesopMuon1 continued training concurrently, so absolute timings are affected by CPU contention. This profile also briefly reduced throughput of that live run; its active training clock continued. RSS sampling used 5 ms intervals and stage boundaries, can miss brief peaks, and includes allocator caching/runtime memory. Per-stage RSS peaks are not additive and are not activation sizes. Operator memory columns report cumulative allocations/net changes, not peak live memory; pre-existing allocations can have unmatched frees. CPU-profiler timing overhead is excluded from the five-step means. One representative batch does not characterize all story lengths. No held-out quality conclusion follows from this profile.
 
 Evidence: Measurements.json contains all five timed steps, exact storage sizes, timestamps and profiler-source SHA256. OperatorProfile.txt contains a separate instrumented CPU operation summary.
+
+SECTION 2 - ADAMW-ONLY PROFILE
+Measured 2026-11-20T17:54:06.811062+00:00 through 2026-11-20T17:54:18.425851+00:00
+Complete step mean: 0.6821 seconds; five timed updates after two warm-up updates.
+Stage                         Time (ms)    Share    Sampled peak RSS (MiB)
+batch_and_zero_grad               6.06     0.9%      441.4
+forward_and_loss                195.40    28.6%      474.9
+backward                        374.42    54.9%      479.4
+gradient_clipping                13.08     1.9%      461.7
+adamw_update                     88.84    13.0%      469.3
+Persistent tensor storage MiB: parameters 10.04, buffers 0.66, gradients 10.04, muon_state 0.00, adamw_state 20.08
+Sampled profiling-process peak RSS 479.4 MiB; minimum available system RAM 1.19 GiB.
+Background: AesopMuon1 was training concurrently throughout this AdamW measurement. Same fresh initial parameter hash, batch, model, precision, threads, clipping and measurement procedure as the hybrid repeat. AdamW updates all trainable parameters, with tied weights counted once.
+
+SECTION 3 - REPEATED MUON + ADAMW PROFILE
+Measured 2026-11-20T17:54:32.961383+00:00 through 2026-11-20T17:54:41.418301+00:00
+Complete step mean: 0.3421 seconds; five timed updates after two warm-up updates.
+Stage                         Time (ms)    Share    Sampled peak RSS (MiB)
+batch_and_zero_grad               6.19     1.8%      485.0
+forward_and_loss                105.72    30.9%      488.3
+backward                        140.38    41.0%      489.6
+gradient_clipping                 3.91     1.1%      485.0
+muon_update                      73.18    21.4%      485.0
+adamw_update                      8.03     2.3%      528.8
+Persistent tensor storage MiB: parameters 10.04, buffers 0.66, gradients 10.04, muon_state 6.03, adamw_state 8.02
+Sampled profiling-process peak RSS 528.8 MiB; minimum available system RAM 2.04 GiB.
+IMPORTANT: the live trainer had stopped before this repeat began. The automatic setting string in Measurements_MuonRepeat.json says the trainer continues concurrently, but that boilerplate is incorrect for this measurement. This report and BackgroundConditions.json provide the corrected observed condition.
+
+SECTION 4 - COMPARISON AND RESOURCE INTERRUPTION
+AdamW under concurrent training: 0.6821 s/step; hybrid after training stopped: 0.3421 s/step. These are NOT a controlled speed comparison. Do not interpret the faster repeated hybrid step as an optimizer speed advantage. Its forward and backward stages were faster too, showing the change in background load.
+Exact tensor-state comparison: AdamW state 20.08 MiB versus hybrid 14.05 MiB (Muon 6.03 + AdamW 8.02). Both use 10.04 MiB weights and 10.04 MiB gradients. These tensor sizes are independent of the timing contention, unlike process RSS.
+At 2026-11-20T17:54:30.535730+00:00 the live run finished with INTERRUPTED status after its available-RAM guard sampled 362,172,416 bytes (about 0.337 GiB), below the 0.5 GiB floor. The additional profiler process contributed system-memory pressure; other workload was not isolated. The first AdamW timed profile had finished; the hybrid repeat was starting up. The trainer saved model/optimizer recovery state at 1,159.1804 active seconds and 3,093 updates. Diagnostic updates never modified trainer weights directly, but resource contention and the guard interruption DID affect live-run execution. Previous records were preserved and the remaining budget is being resumed from recovery.
+A fair optimizer latency comparison requires both profiles under matched background load, preferably after the live run completes. No optimizer-quality conclusion is supported by these step measurements.

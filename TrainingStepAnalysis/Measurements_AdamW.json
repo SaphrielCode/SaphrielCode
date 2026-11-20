@@ -1,0 +1,212 @@
+{
+  "optimizer": "adamw",
+  "initial_parameter_sha256": "1360714359971f029d6429fbc866f5300a2a8168b9415e68ba7048892a4f741a",
+  "started_utc": "2026-11-20T17:54:06.811062+00:00",
+  "finished_utc": "2026-11-20T17:54:18.425851+00:00",
+  "setting": "Separate fresh model instance, same architecture/optimizer, CPU 8 threads, FP32; AesopMuon1 continues concurrently. Absolute latency is contention-affected.",
+  "story_ids": [
+    "aesop-261",
+    "aesop-126",
+    "aesop-005",
+    "aesop-217"
+  ],
+  "batch": 4,
+  "padded_length": 174,
+  "valid_targets": 690,
+  "warmup_updates": 2,
+  "timed_updates": 5,
+  "profiler_updates": 1,
+  "training_run_updates_changed": false,
+  "mean_step_seconds": 0.6821495199925266,
+  "ns_mean_seconds": 0.0,
+  "phases": [
+    {
+      "phase": "batch_and_zero_grad",
+      "mean_seconds": 0.006062060000840574,
+      "percent_step": 0.888670272890757,
+      "rss_start_bytes": 451428352,
+      "peak_rss_bytes": 462815232,
+      "rss_end_bytes": 417398784
+    },
+    {
+      "phase": "forward_and_loss",
+      "mean_seconds": 0.19539865998085587,
+      "percent_step": 28.64454994896084,
+      "rss_start_bytes": 405794816,
+      "peak_rss_bytes": 497967104,
+      "rss_end_bytes": 494112768
+    },
+    {
+      "phase": "backward",
+      "mean_seconds": 0.3744242599932477,
+      "percent_step": 54.888884184416014,
+      "rss_start_bytes": 485269504,
+      "peak_rss_bytes": 502648832,
+      "rss_end_bytes": 502648832
+    },
+    {
+      "phase": "gradient_clipping",
+      "mean_seconds": 0.013079639989882708,
+      "percent_step": 1.9174154062332263,
+      "rss_start_bytes": 445898752,
+      "peak_rss_bytes": 484118528,
+      "rss_end_bytes": 445825024
+    },
+    {
+      "phase": "adamw_update",
+      "mean_seconds": 0.08883741998579353,
+      "percent_step": 13.023159495408983,
+      "rss_start_bytes": 445898752,
+      "peak_rss_bytes": 492105728,
+      "rss_end_bytes": 492105728
+    }
+  ],
+  "persistent_tensor_bytes": {
+    "parameters": 10527232,
+    "buffers": 688128,
+    "gradients": 10527232,
+    "muon_state": 0,
+    "adamw_state": 21054696
+  },
+  "peak_profile_process_rss_bytes": 502648832,
+  "minimum_system_available_bytes": 1282101248,
+  "memory_caveat": "RSS sampled every 5ms plus stage boundaries; allocator cache and unrelated runtime memory are included. Operator CPU memory columns are allocations/net changes, not process peaks. Detailed torch profiler timings excluded from stage means.",
+  "timed_steps": [
+    {
+      "phases": [
+        {
+          "phase": "batch_and_zero_grad",
+          "seconds": 0.012116400001104921
+        },
+        {
+          "phase": "forward_and_loss",
+          "seconds": 0.20038320001913235
+        },
+        {
+          "phase": "backward",
+          "seconds": 0.41380639997078106
+        },
+        {
+          "phase": "gradient_clipping",
+          "seconds": 0.005096799985039979
+        },
+        {
+          "phase": "adamw_update",
+          "seconds": 0.1403695999761112
+        }
+      ],
+      "total_seconds": 0.7767512999707833,
+      "ns_seconds": 0.0,
+      "valid_targets": 690
+    },
+    {
+      "phases": [
+        {
+          "phase": "batch_and_zero_grad",
+          "seconds": 0.007045300037134439
+        },
+        {
+          "phase": "forward_and_loss",
+          "seconds": 0.30753519997233525
+        },
+        {
+          "phase": "backward",
+          "seconds": 0.4319528000196442
+        },
+        {
+          "phase": "gradient_clipping",
+          "seconds": 0.004852099984418601
+        },
+        {
+          "phase": "adamw_update",
+          "seconds": 0.029195899958722293
+        }
+      ],
+      "total_seconds": 0.7844336999696679,
+      "ns_seconds": 0.0,
+      "valid_targets": 690
+    },
+    {
+      "phases": [
+        {
+          "phase": "batch_and_zero_grad",
+          "seconds": 0.0019492999999783933
+        },
+        {
+          "phase": "forward_and_loss",
+          "seconds": 0.13821279996773228
+        },
+        {
+          "phase": "backward",
+          "seconds": 0.2905077000032179
+        },
+        {
+          "phase": "gradient_clipping",
+          "seconds": 0.031240799988154322
+        },
+        {
+          "phase": "adamw_update",
+          "seconds": 0.07534979999763891
+        }
+      ],
+      "total_seconds": 0.5412815000163391,
+      "ns_seconds": 0.0,
+      "valid_targets": 690
+    },
+    {
+      "phases": [
+        {
+          "phase": "batch_and_zero_grad",
+          "seconds": 0.005671099992468953
+        },
+        {
+          "phase": "forward_and_loss",
+          "seconds": 0.14030569995520636
+        },
+        {
+          "phase": "backward",
+          "seconds": 0.5385051000048406
+        },
+        {
+          "phase": "gradient_clipping",
+          "seconds": 0.005496799945831299
+        },
+        {
+          "phase": "adamw_update",
+          "seconds": 0.06013970001367852
+        }
+      ],
+      "total_seconds": 0.7548161000013351,
+      "ns_seconds": 0.0,
+      "valid_targets": 690
+    },
+    {
+      "phases": [
+        {
+          "phase": "batch_and_zero_grad",
+          "seconds": 0.003528199973516166
+        },
+        {
+          "phase": "forward_and_loss",
+          "seconds": 0.19055639998987317
+        },
+        {
+          "phase": "backward",
+          "seconds": 0.19734929996775463
+        },
+        {
+          "phase": "gradient_clipping",
+          "seconds": 0.018711700045969337
+        },
+        {
+          "phase": "adamw_update",
+          "seconds": 0.13913209998281673
+        }
+      ],
+      "total_seconds": 0.5534650000045076,
+      "ns_seconds": 0.0,
+      "valid_targets": 690
+    }
+  ],
+  "script_sha256": "4262fc80d89127000b05c30a2093adfd874570d19f1e19824448aaf4ad199204"
+}

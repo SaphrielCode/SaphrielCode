@@ -1,0 +1,27 @@
+{
+  "adamw": {
+    "started_utc": "2026-11-20T17:54:06.811062+00:00",
+    "finished_utc": "2026-11-20T17:54:18.425851+00:00",
+    "live_trainer_running": true
+  },
+  "muon_repeat": {
+    "started_utc": "2026-11-20T17:54:32.961383+00:00",
+    "finished_utc": "2026-11-20T17:54:41.418301+00:00",
+    "live_trainer_running": false,
+    "raw_measurement_setting_string_is_inaccurate": true
+  },
+  "guard_interruption": {
+    "finished_utc": "2026-11-20T17:54:30.535730+00:00",
+    "available_bytes": 362172416,
+    "active_seconds": 1159.1804146994837,
+    "updates": 3093
+  },
+  "same_initial_parameter_sha256": "1360714359971f029d6429fbc866f5300a2a8168b9415e68ba7048892a4f741a",
+  "same_story_ids": [
+    "aesop-261",
+    "aesop-126",
+    "aesop-005",
+    "aesop-217"
+  ],
+  "controlled_latency_comparison": false
+}
