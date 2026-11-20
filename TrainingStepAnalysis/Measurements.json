@@ -1,0 +1,238 @@
+{
+  "started_utc": "2026-11-20T17:50:33.626690+00:00",
+  "finished_utc": "2026-11-20T17:50:50.692778+00:00",
+  "setting": "Separate fresh model instance, same architecture/optimizer, CPU 8 threads, FP32; AesopMuon1 continues concurrently. Absolute latency is contention-affected.",
+  "story_ids": [
+    "aesop-261",
+    "aesop-126",
+    "aesop-005",
+    "aesop-217"
+  ],
+  "batch": 4,
+  "padded_length": 174,
+  "valid_targets": 690,
+  "warmup_updates": 2,
+  "timed_updates": 5,
+  "profiler_updates": 1,
+  "training_run_updates_changed": false,
+  "mean_step_seconds": 1.0804221200058237,
+  "ns_mean_seconds": 0.32151734000071885,
+  "phases": [
+    {
+      "phase": "batch_and_zero_grad",
+      "mean_seconds": 0.004945060017053038,
+      "percent_step": 0.4576970357684257,
+      "rss_start_bytes": 415502336,
+      "peak_rss_bytes": 461574144,
+      "rss_end_bytes": 414924800
+    },
+    {
+      "phase": "forward_and_loss",
+      "mean_seconds": 0.3315554999979213,
+      "percent_step": 30.687589031973367,
+      "rss_start_bytes": 410189824,
+      "peak_rss_bytes": 489385984,
+      "rss_end_bytes": 482443264
+    },
+    {
+      "phase": "backward",
+      "mean_seconds": 0.3461386200040579,
+      "percent_step": 32.037350364706725,
+      "rss_start_bytes": 479748096,
+      "peak_rss_bytes": 489897984,
+      "rss_end_bytes": 473280512
+    },
+    {
+      "phase": "gradient_clipping",
+      "mean_seconds": 0.011152840009890497,
+      "percent_step": 1.032266907848053,
+      "rss_start_bytes": 483422208,
+      "peak_rss_bytes": 483422208,
+      "rss_end_bytes": 473083904
+    },
+    {
+      "phase": "muon_update",
+      "mean_seconds": 0.35234971998725084,
+      "percent_step": 32.612227523197284,
+      "rss_start_bytes": 483422208,
+      "peak_rss_bytes": 483663872,
+      "rss_end_bytes": 441483264
+    },
+    {
+      "phase": "adamw_update",
+      "mean_seconds": 0.028789079980924726,
+      "percent_step": 2.66461408442559,
+      "rss_start_bytes": 457752576,
+      "peak_rss_bytes": 498405376,
+      "rss_end_bytes": 498405376
+    }
+  ],
+  "persistent_tensor_bytes": {
+    "parameters": 10527232,
+    "buffers": 688128,
+    "gradients": 10527232,
+    "muon_state": 6324224,
+    "adamw_state": 8406088
+  },
+  "peak_profile_process_rss_bytes": 498405376,
+  "minimum_system_available_bytes": 1322717184,
+  "memory_caveat": "RSS sampled every 5ms plus stage boundaries; allocator cache and unrelated runtime memory are included. Operator CPU memory columns are allocations/net changes, not process peaks. Detailed torch profiler timings excluded from stage means.",
+  "timed_steps": [
+    {
+      "phases": [
+        {
+          "phase": "batch_and_zero_grad",
+          "seconds": 0.002194700005929917
+        },
+        {
+          "phase": "forward_and_loss",
+          "seconds": 0.20100070000626147
+        },
+        {
+          "phase": "backward",
+          "seconds": 0.2081700999988243
+        },
+        {
+          "phase": "gradient_clipping",
+          "seconds": 0.005272899987176061
+        },
+        {
+          "phase": "muon_update",
+          "seconds": 0.30169170000590384
+        },
+        {
+          "phase": "adamw_update",
+          "seconds": 0.026211699994746596
+        }
+      ],
+      "total_seconds": 0.7498247000039555,
+      "ns_seconds": 0.2772601999458857,
+      "valid_targets": 690
+    },
+    {
+      "phases": [
+        {
+          "phase": "batch_and_zero_grad",
+          "seconds": 0.0054284000070765615
+        },
+        {
+          "phase": "forward_and_loss",
+          "seconds": 0.30215030000545084
+        },
+        {
+          "phase": "backward",
+          "seconds": 0.2657314999960363
+        },
+        {
+          "phase": "gradient_clipping",
+          "seconds": 0.010678700054995716
+        },
+        {
+          "phase": "muon_update",
+          "seconds": 0.25345189997460693
+        },
+        {
+          "phase": "adamw_update",
+          "seconds": 0.05284289998235181
+        }
+      ],
+      "total_seconds": 0.8956321000005119,
+      "ns_seconds": 0.22048999991966411,
+      "valid_targets": 690
+    },
+    {
+      "phases": [
+        {
+          "phase": "batch_and_zero_grad",
+          "seconds": 0.005810400005429983
+        },
+        {
+          "phase": "forward_and_loss",
+          "seconds": 0.4175303999800235
+        },
+        {
+          "phase": "backward",
+          "seconds": 0.25167129997862503
+        },
+        {
+          "phase": "gradient_clipping",
+          "seconds": 0.005126499978359789
+        },
+        {
+          "phase": "muon_update",
+          "seconds": 0.8617208999930881
+        },
+        {
+          "phase": "adamw_update",
+          "seconds": 0.04737919999752194
+        }
+      ],
+      "total_seconds": 1.5951076000346802,
+      "ns_seconds": 0.7997903999057598,
+      "valid_targets": 690
+    },
+    {
+      "phases": [
+        {
+          "phase": "batch_and_zero_grad",
+          "seconds": 0.009042000048793852
+        },
+        {
+          "phase": "forward_and_loss",
+          "seconds": 0.45417169999564067
+        },
+        {
+          "phase": "backward",
+          "seconds": 0.7504495000466704
+        },
+        {
+          "phase": "gradient_clipping",
+          "seconds": 0.021729800035245717
+        },
+        {
+          "phase": "muon_update",
+          "seconds": 0.15352959994925186
+        },
+        {
+          "phase": "adamw_update",
+          "seconds": 0.008862399961799383
+        }
+      ],
+      "total_seconds": 1.4034543000161648,
+      "ns_seconds": 0.13494780013570562,
+      "valid_targets": 690
+    },
+    {
+      "phases": [
+        {
+          "phase": "batch_and_zero_grad",
+          "seconds": 0.0022498000180348754
+        },
+        {
+          "phase": "forward_and_loss",
+          "seconds": 0.28292440000222996
+        },
+        {
+          "phase": "backward",
+          "seconds": 0.25467070000013337
+        },
+        {
+          "phase": "gradient_clipping",
+          "seconds": 0.012956299993675202
+        },
+        {
+          "phase": "muon_update",
+          "seconds": 0.1913545000134036
+        },
+        {
+          "phase": "adamw_update",
+          "seconds": 0.008649199968203902
+        }
+      ],
+      "total_seconds": 0.758091899973806,
+      "ns_seconds": 0.1750983000965789,
+      "valid_targets": 690
+    }
+  ],
+  "script_sha256": "b8f1fadc0236b3f753167ff1f44e6da7d54223f2e390d6e24efb4d66273133b0"
+}

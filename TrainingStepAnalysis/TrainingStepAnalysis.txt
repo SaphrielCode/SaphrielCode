@@ -1,0 +1,27 @@
+TrainingStepAnalysis
+Measured 2026-11-20T17:50:33.626690+00:00
+
+Finding: forward/loss, backward and the Muon update each consumed about one third of a complete step. Newton-Schulz accounted for about 91% of the Muon update. This identifies a substantial CPU optimizer cost; it does not establish which optimizer learns best.
+
+Setup: Lenovo laptop, AMD Ryzen 7 5825U CPU; FP32; 8 CPU threads, 1 inter-op thread. Eight decoder layers, width 128, four attention heads, SwiGLU width 344; 2,631,808 parameters; frozen 8192-token tokenizer. Muon on hidden matrices, AdamW on tied embeddings/output and normalization.
+Muon: momentum 0.95, Nesterov, five FP32 Newton-Schulz iterations, coefficients (3.4445, -4.775, 2.0315), epsilon 1e-7; LR 0.001 with 0.2*sqrt(max(matrix.shape)) scaling, decay 0.1. AdamW: LR 0.0003, betas (0.9,0.95), epsilon 1e-8, matrix decay 0.1 and zero normalization decay. Global gradient clipping norm 1.
+
+Method: separate fresh model instance; two warm-up updates, five timed complete updates, then one additional CPU-profiler update. None of these diagnostic updates were applied to AesopMuon1. Batch four; padded length 174; 690 valid targets. Story IDs: aesop-261, aesop-126, aesop-005, aesop-217.
+Complete-step mean: 1.0804 seconds (about 639 targets/second under concurrent load).
+
+Stage                         Time (ms)    Share    Sampled peak RSS (MiB)
+batch_and_zero_grad               4.95     0.5%      440.2
+forward_and_loss                331.56    30.7%      466.7
+backward                        346.14    32.0%      467.2
+gradient_clipping                11.15     1.0%      461.0
+muon_update                     352.35    32.6%      461.3
+adamw_update                     28.79     2.7%      475.3
+
+Newton-Schulz: 321.52 ms per step, included inside Muon time (not an additional stage).
+
+Memory: sampled peak profiling-process RSS 475.3 MiB; minimum available system RAM 1.23 GiB.
+Persistent tensor storage (MiB): parameters 10.04, buffers 0.66, gradients 10.04, muon_state 6.03, adamw_state 8.02.
+
+Limits: AesopMuon1 continued training concurrently, so absolute timings are affected by CPU contention. This profile also briefly reduced throughput of that live run; its active training clock continued. RSS sampling used 5 ms intervals and stage boundaries, can miss brief peaks, and includes allocator caching/runtime memory. Per-stage RSS peaks are not additive and are not activation sizes. Operator memory columns report cumulative allocations/net changes, not peak live memory; pre-existing allocations can have unmatched frees. CPU-profiler timing overhead is excluded from the five-step means. One representative batch does not characterize all story lengths. No held-out quality conclusion follows from this profile.
+
+Evidence: Measurements.json contains all five timed steps, exact storage sizes, timestamps and profiler-source SHA256. OperatorProfile.txt contains a separate instrumented CPU operation summary.
